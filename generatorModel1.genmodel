@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.minorityReportPlugin/src" modelPluginID="org.eclipse.minorityReportPlugin"
+    modelName="GeneratorModel1" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>model/model.ecore</foreignModel>
+  <genPackages prefix="Model" disposableProviderFactory="true" ecorePackage="model.ecore#/">
+    <genClasses image="false" ecoreClass="model.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Type/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Type/instances"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Instance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Instance/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Parameter/number"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Parameter/instance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Parameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//ContextRelation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ContextRelation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ContextRelation/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ContextRelation/parameters"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="model.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Event/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//PrimitiveEvent"/>
+    <genClasses ecoreClass="model.ecore#//ComplexEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ComplexEvent/number"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
