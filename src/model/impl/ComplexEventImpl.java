@@ -2,6 +2,7 @@
  */
 package model.impl;
 
+import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ModelPackage;
 
@@ -9,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link model.impl.ComplexEventImpl#getNumber <em>Number</em>}</li>
+ *   <li>{@link model.impl.ComplexEventImpl#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +47,16 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * @ordered
 	 */
 	protected int number = NUMBER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBehaviouralDescriptions() <em>Behavioural Descriptions</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBehaviouralDescriptions()
+	 * @generated
+	 * @ordered
+	 */
+	protected BehaviouralDescription behaviouralDescriptions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,11 +103,52 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BehaviouralDescription getBehaviouralDescriptions() {
+		if (behaviouralDescriptions != null && behaviouralDescriptions.eIsProxy()) {
+			InternalEObject oldBehaviouralDescriptions = (InternalEObject)behaviouralDescriptions;
+			behaviouralDescriptions = (BehaviouralDescription)eResolveProxy(oldBehaviouralDescriptions);
+			if (behaviouralDescriptions != oldBehaviouralDescriptions) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS, oldBehaviouralDescriptions, behaviouralDescriptions));
+			}
+		}
+		return behaviouralDescriptions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BehaviouralDescription basicGetBehaviouralDescriptions() {
+		return behaviouralDescriptions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehaviouralDescriptions(BehaviouralDescription newBehaviouralDescriptions) {
+		BehaviouralDescription oldBehaviouralDescriptions = behaviouralDescriptions;
+		behaviouralDescriptions = newBehaviouralDescriptions;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS, oldBehaviouralDescriptions, behaviouralDescriptions));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ModelPackage.COMPLEX_EVENT__NUMBER:
 				return getNumber();
+			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
+				if (resolve) return getBehaviouralDescriptions();
+				return basicGetBehaviouralDescriptions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,6 +163,9 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 		switch (featureID) {
 			case ModelPackage.COMPLEX_EVENT__NUMBER:
 				setNumber((Integer)newValue);
+				return;
+			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
+				setBehaviouralDescriptions((BehaviouralDescription)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,6 +182,9 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 			case ModelPackage.COMPLEX_EVENT__NUMBER:
 				setNumber(NUMBER_EDEFAULT);
 				return;
+			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
+				setBehaviouralDescriptions((BehaviouralDescription)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -139,6 +199,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 		switch (featureID) {
 			case ModelPackage.COMPLEX_EVENT__NUMBER:
 				return number != NUMBER_EDEFAULT;
+			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
+				return behaviouralDescriptions != null;
 		}
 		return super.eIsSet(featureID);
 	}

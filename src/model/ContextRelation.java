@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.ContextRelation#getName <em>Name</em>}</li>
  *   <li>{@link model.ContextRelation#isValue <em>Value</em>}</li>
  *   <li>{@link model.ContextRelation#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link model.ContextRelation#getInitialComplexEvent <em>Initial Complex Event</em>}</li>
+ *   <li>{@link model.ContextRelation#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getContextRelation()
@@ -92,5 +94,57 @@ public interface ContextRelation extends EObject {
 	 * @generated
 	 */
 	EList<Parameter> getParameters();
+
+	/**
+	 * Returns the value of the '<em><b>Initial Complex Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Initial Complex Event</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Initial Complex Event</em>' reference.
+	 * @see #setInitialComplexEvent(ComplexEvent)
+	 * @see model.ModelPackage#getContextRelation_InitialComplexEvent()
+	 * @model required="true"
+	 * @generated
+	 */
+	ComplexEvent getInitialComplexEvent();
+
+	/**
+	 * Sets the value of the '{@link model.ContextRelation#getInitialComplexEvent <em>Initial Complex Event</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Initial Complex Event</em>' reference.
+	 * @see #getInitialComplexEvent()
+	 * @generated
+	 */
+	void setInitialComplexEvent(ComplexEvent value);
+
+	/**
+	 * Returns the value of the '<em><b>Ending Complex Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ending Complex Event</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ending Complex Event</em>' reference.
+	 * @see #setEndingComplexEvent(ComplexEvent)
+	 * @see model.ModelPackage#getContextRelation_EndingComplexEvent()
+	 * @model required="true"
+	 * @generated
+	 */
+	ComplexEvent getEndingComplexEvent();
+
+	/**
+	 * Sets the value of the '{@link model.ContextRelation#getEndingComplexEvent <em>Ending Complex Event</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ending Complex Event</em>' reference.
+	 * @see #getEndingComplexEvent()
+	 * @generated
+	 */
+	void setEndingComplexEvent(ComplexEvent value);
 
 } // ContextRelation

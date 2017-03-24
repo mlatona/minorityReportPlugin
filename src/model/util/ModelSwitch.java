@@ -110,6 +110,30 @@ public class ModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION: {
+				BehaviouralDescription behaviouralDescription = (BehaviouralDescription)theEObject;
+				T result = caseBehaviouralDescription(behaviouralDescription);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.HOLDS_AT: {
+				HoldsAt holdsAt = (HoldsAt)theEObject;
+				T result = caseHoldsAt(holdsAt);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.HAPPENS: {
+				Happens happens = (Happens)theEObject;
+				T result = caseHappens(happens);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.HOLDS_AT_BETWEEN: {
+				HoldsAtBetween holdsAtBetween = (HoldsAtBetween)theEObject;
+				T result = caseHoldsAtBetween(holdsAtBetween);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -216,6 +240,66 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComplexEvent(ComplexEvent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Behavioural Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Behavioural Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBehaviouralDescription(BehaviouralDescription object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Holds At</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Holds At</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHoldsAt(HoldsAt object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Happens</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Happens</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHappens(Happens object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Holds At Between</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Holds At Between</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHoldsAtBetween(HoldsAtBetween object) {
 		return null;
 	}
 

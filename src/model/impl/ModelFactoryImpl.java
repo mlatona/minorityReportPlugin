@@ -61,6 +61,10 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			case ModelPackage.CONTEXT_RELATION: return createContextRelation();
 			case ModelPackage.PRIMITIVE_EVENT: return createPrimitiveEvent();
 			case ModelPackage.COMPLEX_EVENT: return createComplexEvent();
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION: return createBehaviouralDescription();
+			case ModelPackage.HOLDS_AT: return createHoldsAt();
+			case ModelPackage.HAPPENS: return createHappens();
+			case ModelPackage.HOLDS_AT_BETWEEN: return createHoldsAtBetween();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -114,6 +118,46 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public ComplexEvent createComplexEvent() {
 		ComplexEventImpl complexEvent = new ComplexEventImpl();
 		return complexEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BehaviouralDescription createBehaviouralDescription() {
+		BehaviouralDescriptionImpl behaviouralDescription = new BehaviouralDescriptionImpl();
+		return behaviouralDescription;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HoldsAt createHoldsAt() {
+		HoldsAtImpl holdsAt = new HoldsAtImpl();
+		return holdsAt;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Happens createHappens() {
+		HappensImpl happens = new HappensImpl();
+		return happens;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HoldsAtBetween createHoldsAtBetween() {
+		HoldsAtBetweenImpl holdsAtBetween = new HoldsAtBetweenImpl();
+		return holdsAtBetween;
 	}
 
 	/**

@@ -232,13 +232,31 @@ public interface ModelPackage extends EPackage {
 	int CONTEXT_RELATION__PARAMETERS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Initial Complex Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_RELATION__INITIAL_COMPLEX_EVENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Ending Complex Event</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Context Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION_FEATURE_COUNT = 3;
+	int CONTEXT_RELATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Context Relation</em>' class.
@@ -352,13 +370,22 @@ public interface ModelPackage extends EPackage {
 	int COMPLEX_EVENT__NUMBER = EVENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Behavioural Descriptions</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS = EVENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Complex Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 1;
+	int COMPLEX_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Complex Event</em>' class.
@@ -368,6 +395,227 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPLEX_EVENT_OPERATION_COUNT = EVENT_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link model.impl.BehaviouralDescriptionImpl <em>Behavioural Description</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.BehaviouralDescriptionImpl
+	 * @see model.impl.ModelPackageImpl#getBehaviouralDescription()
+	 * @generated
+	 */
+	int BEHAVIOURAL_DESCRIPTION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Holds Ats</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION__HOLDS_ATS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Happens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION__HAPPENS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Holds At Betweens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION__HOLDS_AT_BETWEENS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Behavioural Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Behavioural Description</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link model.impl.HoldsAtImpl <em>Holds At</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.HoldsAtImpl
+	 * @see model.impl.ModelPackageImpl#getHoldsAt()
+	 * @generated
+	 */
+	int HOLDS_AT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT__TIME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Is Holding</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT__IS_HOLDING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Context Relation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT__CONTEXT_RELATION = 2;
+
+	/**
+	 * The number of structural features of the '<em>Holds At</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Holds At</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link model.impl.HappensImpl <em>Happens</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.HappensImpl
+	 * @see model.impl.ModelPackageImpl#getHappens()
+	 * @generated
+	 */
+	int HAPPENS = 9;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAPPENS__TIME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Context Relation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAPPENS__CONTEXT_RELATION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Happens</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAPPENS_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Happens</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HAPPENS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link model.impl.HoldsAtBetweenImpl <em>Holds At Between</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.HoldsAtBetweenImpl
+	 * @see model.impl.ModelPackageImpl#getHoldsAtBetween()
+	 * @generated
+	 */
+	int HOLDS_AT_BETWEEN = 10;
+
+	/**
+	 * The feature id for the '<em><b>Initial Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT_BETWEEN__INITIAL_TIME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Ending Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT_BETWEEN__ENDING_TIME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Is Holding</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT_BETWEEN__IS_HOLDING = 2;
+
+	/**
+	 * The feature id for the '<em><b>Context Relation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT_BETWEEN__CONTEXT_RELATION = 3;
+
+	/**
+	 * The number of structural features of the '<em>Holds At Between</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT_BETWEEN_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Holds At Between</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOLDS_AT_BETWEEN_OPERATION_COUNT = 0;
 
 
 	/**
@@ -510,6 +758,28 @@ public interface ModelPackage extends EPackage {
 	EReference getContextRelation_Parameters();
 
 	/**
+	 * Returns the meta object for the reference '{@link model.ContextRelation#getInitialComplexEvent <em>Initial Complex Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Initial Complex Event</em>'.
+	 * @see model.ContextRelation#getInitialComplexEvent()
+	 * @see #getContextRelation()
+	 * @generated
+	 */
+	EReference getContextRelation_InitialComplexEvent();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.ContextRelation#getEndingComplexEvent <em>Ending Complex Event</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ending Complex Event</em>'.
+	 * @see model.ContextRelation#getEndingComplexEvent()
+	 * @see #getContextRelation()
+	 * @generated
+	 */
+	EReference getContextRelation_EndingComplexEvent();
+
+	/**
 	 * Returns the meta object for class '{@link model.Event <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -560,6 +830,189 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComplexEvent_Number();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.ComplexEvent#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Behavioural Descriptions</em>'.
+	 * @see model.ComplexEvent#getBehaviouralDescriptions()
+	 * @see #getComplexEvent()
+	 * @generated
+	 */
+	EReference getComplexEvent_BehaviouralDescriptions();
+
+	/**
+	 * Returns the meta object for class '{@link model.BehaviouralDescription <em>Behavioural Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Behavioural Description</em>'.
+	 * @see model.BehaviouralDescription
+	 * @generated
+	 */
+	EClass getBehaviouralDescription();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.BehaviouralDescription#getHoldsAts <em>Holds Ats</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Holds Ats</em>'.
+	 * @see model.BehaviouralDescription#getHoldsAts()
+	 * @see #getBehaviouralDescription()
+	 * @generated
+	 */
+	EReference getBehaviouralDescription_HoldsAts();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.BehaviouralDescription#getHappens <em>Happens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Happens</em>'.
+	 * @see model.BehaviouralDescription#getHappens()
+	 * @see #getBehaviouralDescription()
+	 * @generated
+	 */
+	EReference getBehaviouralDescription_Happens();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.BehaviouralDescription#getHoldsAtBetweens <em>Holds At Betweens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Holds At Betweens</em>'.
+	 * @see model.BehaviouralDescription#getHoldsAtBetweens()
+	 * @see #getBehaviouralDescription()
+	 * @generated
+	 */
+	EReference getBehaviouralDescription_HoldsAtBetweens();
+
+	/**
+	 * Returns the meta object for class '{@link model.HoldsAt <em>Holds At</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Holds At</em>'.
+	 * @see model.HoldsAt
+	 * @generated
+	 */
+	EClass getHoldsAt();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.HoldsAt#getTime <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time</em>'.
+	 * @see model.HoldsAt#getTime()
+	 * @see #getHoldsAt()
+	 * @generated
+	 */
+	EAttribute getHoldsAt_Time();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.HoldsAt#isIsHolding <em>Is Holding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Holding</em>'.
+	 * @see model.HoldsAt#isIsHolding()
+	 * @see #getHoldsAt()
+	 * @generated
+	 */
+	EAttribute getHoldsAt_IsHolding();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.HoldsAt#getContextRelation <em>Context Relation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context Relation</em>'.
+	 * @see model.HoldsAt#getContextRelation()
+	 * @see #getHoldsAt()
+	 * @generated
+	 */
+	EReference getHoldsAt_ContextRelation();
+
+	/**
+	 * Returns the meta object for class '{@link model.Happens <em>Happens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Happens</em>'.
+	 * @see model.Happens
+	 * @generated
+	 */
+	EClass getHappens();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Happens#getTime <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time</em>'.
+	 * @see model.Happens#getTime()
+	 * @see #getHappens()
+	 * @generated
+	 */
+	EAttribute getHappens_Time();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.Happens#getContextRelation <em>Context Relation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context Relation</em>'.
+	 * @see model.Happens#getContextRelation()
+	 * @see #getHappens()
+	 * @generated
+	 */
+	EReference getHappens_ContextRelation();
+
+	/**
+	 * Returns the meta object for class '{@link model.HoldsAtBetween <em>Holds At Between</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Holds At Between</em>'.
+	 * @see model.HoldsAtBetween
+	 * @generated
+	 */
+	EClass getHoldsAtBetween();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.HoldsAtBetween#getInitialTime <em>Initial Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initial Time</em>'.
+	 * @see model.HoldsAtBetween#getInitialTime()
+	 * @see #getHoldsAtBetween()
+	 * @generated
+	 */
+	EAttribute getHoldsAtBetween_InitialTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.HoldsAtBetween#getEndingTime <em>Ending Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ending Time</em>'.
+	 * @see model.HoldsAtBetween#getEndingTime()
+	 * @see #getHoldsAtBetween()
+	 * @generated
+	 */
+	EAttribute getHoldsAtBetween_EndingTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.HoldsAtBetween#isIsHolding <em>Is Holding</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Holding</em>'.
+	 * @see model.HoldsAtBetween#isIsHolding()
+	 * @see #getHoldsAtBetween()
+	 * @generated
+	 */
+	EAttribute getHoldsAtBetween_IsHolding();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.HoldsAtBetween#getContextRelation <em>Context Relation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context Relation</em>'.
+	 * @see model.HoldsAtBetween#getContextRelation()
+	 * @see #getHoldsAtBetween()
+	 * @generated
+	 */
+	EReference getHoldsAtBetween_ContextRelation();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -697,6 +1150,22 @@ public interface ModelPackage extends EPackage {
 		EReference CONTEXT_RELATION__PARAMETERS = eINSTANCE.getContextRelation_Parameters();
 
 		/**
+		 * The meta object literal for the '<em><b>Initial Complex Event</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTEXT_RELATION__INITIAL_COMPLEX_EVENT = eINSTANCE.getContextRelation_InitialComplexEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Ending Complex Event</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTEXT_RELATION__ENDING_COMPLEX_EVENT = eINSTANCE.getContextRelation_EndingComplexEvent();
+
+		/**
 		 * The meta object literal for the '{@link model.impl.EventImpl <em>Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -741,6 +1210,150 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPLEX_EVENT__NUMBER = eINSTANCE.getComplexEvent_Number();
+
+		/**
+		 * The meta object literal for the '<em><b>Behavioural Descriptions</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS = eINSTANCE.getComplexEvent_BehaviouralDescriptions();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.BehaviouralDescriptionImpl <em>Behavioural Description</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.BehaviouralDescriptionImpl
+		 * @see model.impl.ModelPackageImpl#getBehaviouralDescription()
+		 * @generated
+		 */
+		EClass BEHAVIOURAL_DESCRIPTION = eINSTANCE.getBehaviouralDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Holds Ats</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIOURAL_DESCRIPTION__HOLDS_ATS = eINSTANCE.getBehaviouralDescription_HoldsAts();
+
+		/**
+		 * The meta object literal for the '<em><b>Happens</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIOURAL_DESCRIPTION__HAPPENS = eINSTANCE.getBehaviouralDescription_Happens();
+
+		/**
+		 * The meta object literal for the '<em><b>Holds At Betweens</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BEHAVIOURAL_DESCRIPTION__HOLDS_AT_BETWEENS = eINSTANCE.getBehaviouralDescription_HoldsAtBetweens();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.HoldsAtImpl <em>Holds At</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.HoldsAtImpl
+		 * @see model.impl.ModelPackageImpl#getHoldsAt()
+		 * @generated
+		 */
+		EClass HOLDS_AT = eINSTANCE.getHoldsAt();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HOLDS_AT__TIME = eINSTANCE.getHoldsAt_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Holding</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HOLDS_AT__IS_HOLDING = eINSTANCE.getHoldsAt_IsHolding();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Relation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOLDS_AT__CONTEXT_RELATION = eINSTANCE.getHoldsAt_ContextRelation();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.HappensImpl <em>Happens</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.HappensImpl
+		 * @see model.impl.ModelPackageImpl#getHappens()
+		 * @generated
+		 */
+		EClass HAPPENS = eINSTANCE.getHappens();
+
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HAPPENS__TIME = eINSTANCE.getHappens_Time();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Relation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HAPPENS__CONTEXT_RELATION = eINSTANCE.getHappens_ContextRelation();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.HoldsAtBetweenImpl <em>Holds At Between</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.HoldsAtBetweenImpl
+		 * @see model.impl.ModelPackageImpl#getHoldsAtBetween()
+		 * @generated
+		 */
+		EClass HOLDS_AT_BETWEEN = eINSTANCE.getHoldsAtBetween();
+
+		/**
+		 * The meta object literal for the '<em><b>Initial Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HOLDS_AT_BETWEEN__INITIAL_TIME = eINSTANCE.getHoldsAtBetween_InitialTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Ending Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HOLDS_AT_BETWEEN__ENDING_TIME = eINSTANCE.getHoldsAtBetween_EndingTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Holding</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HOLDS_AT_BETWEEN__IS_HOLDING = eINSTANCE.getHoldsAtBetween_IsHolding();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Relation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HOLDS_AT_BETWEEN__CONTEXT_RELATION = eINSTANCE.getHoldsAtBetween_ContextRelation();
 
 	}
 

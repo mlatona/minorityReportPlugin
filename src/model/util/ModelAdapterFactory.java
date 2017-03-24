@@ -96,6 +96,22 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createComplexEventAdapter();
 			}
 			@Override
+			public Adapter caseBehaviouralDescription(BehaviouralDescription object) {
+				return createBehaviouralDescriptionAdapter();
+			}
+			@Override
+			public Adapter caseHoldsAt(HoldsAt object) {
+				return createHoldsAtAdapter();
+			}
+			@Override
+			public Adapter caseHappens(Happens object) {
+				return createHappensAdapter();
+			}
+			@Override
+			public Adapter caseHoldsAtBetween(HoldsAtBetween object) {
+				return createHoldsAtBetweenAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -210,6 +226,62 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComplexEventAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.BehaviouralDescription <em>Behavioural Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.BehaviouralDescription
+	 * @generated
+	 */
+	public Adapter createBehaviouralDescriptionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.HoldsAt <em>Holds At</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.HoldsAt
+	 * @generated
+	 */
+	public Adapter createHoldsAtAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.Happens <em>Happens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.Happens
+	 * @generated
+	 */
+	public Adapter createHappensAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.HoldsAtBetween <em>Holds At Between</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.HoldsAtBetween
+	 * @generated
+	 */
+	public Adapter createHoldsAtBetweenAdapter() {
 		return null;
 	}
 

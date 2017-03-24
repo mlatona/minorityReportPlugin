@@ -67,6 +67,42 @@ public interface ModelFactory extends EFactory {
 	ComplexEvent createComplexEvent();
 
 	/**
+	 * Returns a new object of class '<em>Behavioural Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Behavioural Description</em>'.
+	 * @generated
+	 */
+	BehaviouralDescription createBehaviouralDescription();
+
+	/**
+	 * Returns a new object of class '<em>Holds At</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Holds At</em>'.
+	 * @generated
+	 */
+	HoldsAt createHoldsAt();
+
+	/**
+	 * Returns a new object of class '<em>Happens</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Happens</em>'.
+	 * @generated
+	 */
+	Happens createHappens();
+
+	/**
+	 * Returns a new object of class '<em>Holds At Between</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Holds At Between</em>'.
+	 * @generated
+	 */
+	HoldsAtBetween createHoldsAtBetween();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

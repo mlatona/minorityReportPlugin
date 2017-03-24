@@ -21,6 +21,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" lowerBound="1"
         upperBound="-1" eType="#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialComplexEvent" lowerBound="1"
+        eType="#//ComplexEvent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endingComplexEvent" lowerBound="1"
+        eType="#//ComplexEvent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -28,5 +32,33 @@
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveEvent" eSuperTypes="#//Event"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComplexEvent" eSuperTypes="#//Event">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviouralDescriptions"
+        lowerBound="1" eType="#//BehaviouralDescription"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BehaviouralDescription">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="holdsAts" upperBound="-1"
+        eType="#//HoldsAt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="happens" upperBound="-1"
+        eType="#//Happens"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="holdsAtBetweens" upperBound="-1"
+        eType="#//HoldsAtBetween"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HoldsAt">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHolding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextRelation" lowerBound="1"
+        eType="#//ContextRelation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Happens">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextRelation" lowerBound="1"
+        eType="#//ContextRelation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HoldsAtBetween">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endingTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHolding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextRelation" lowerBound="1"
+        eType="#//ContextRelation"/>
   </eClassifiers>
 </ecore:EPackage>

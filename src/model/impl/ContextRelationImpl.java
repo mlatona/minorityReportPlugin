@@ -4,6 +4,7 @@ package model.impl;
 
 import java.util.Collection;
 
+import model.ComplexEvent;
 import model.ContextRelation;
 import model.ModelPackage;
 import model.Parameter;
@@ -14,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -30,6 +32,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.ContextRelationImpl#getName <em>Name</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#isValue <em>Value</em>}</li>
  *   <li>{@link model.impl.ContextRelationImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link model.impl.ContextRelationImpl#getInitialComplexEvent <em>Initial Complex Event</em>}</li>
+ *   <li>{@link model.impl.ContextRelationImpl#getEndingComplexEvent <em>Ending Complex Event</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,6 +88,26 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected EList<Parameter> parameters;
+
+	/**
+	 * The cached value of the '{@link #getInitialComplexEvent() <em>Initial Complex Event</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInitialComplexEvent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComplexEvent initialComplexEvent;
+
+	/**
+	 * The cached value of the '{@link #getEndingComplexEvent() <em>Ending Complex Event</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEndingComplexEvent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComplexEvent endingComplexEvent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,6 +187,82 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComplexEvent getInitialComplexEvent() {
+		if (initialComplexEvent != null && initialComplexEvent.eIsProxy()) {
+			InternalEObject oldInitialComplexEvent = (InternalEObject)initialComplexEvent;
+			initialComplexEvent = (ComplexEvent)eResolveProxy(oldInitialComplexEvent);
+			if (initialComplexEvent != oldInitialComplexEvent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT, oldInitialComplexEvent, initialComplexEvent));
+			}
+		}
+		return initialComplexEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComplexEvent basicGetInitialComplexEvent() {
+		return initialComplexEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInitialComplexEvent(ComplexEvent newInitialComplexEvent) {
+		ComplexEvent oldInitialComplexEvent = initialComplexEvent;
+		initialComplexEvent = newInitialComplexEvent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT, oldInitialComplexEvent, initialComplexEvent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComplexEvent getEndingComplexEvent() {
+		if (endingComplexEvent != null && endingComplexEvent.eIsProxy()) {
+			InternalEObject oldEndingComplexEvent = (InternalEObject)endingComplexEvent;
+			endingComplexEvent = (ComplexEvent)eResolveProxy(oldEndingComplexEvent);
+			if (endingComplexEvent != oldEndingComplexEvent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT, oldEndingComplexEvent, endingComplexEvent));
+			}
+		}
+		return endingComplexEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComplexEvent basicGetEndingComplexEvent() {
+		return endingComplexEvent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEndingComplexEvent(ComplexEvent newEndingComplexEvent) {
+		ComplexEvent oldEndingComplexEvent = endingComplexEvent;
+		endingComplexEvent = newEndingComplexEvent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT, oldEndingComplexEvent, endingComplexEvent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -172,6 +272,12 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return isValue();
 			case ModelPackage.CONTEXT_RELATION__PARAMETERS:
 				return getParameters();
+			case ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT:
+				if (resolve) return getInitialComplexEvent();
+				return basicGetInitialComplexEvent();
+			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
+				if (resolve) return getEndingComplexEvent();
+				return basicGetEndingComplexEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,6 +301,12 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
+			case ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT:
+				setInitialComplexEvent((ComplexEvent)newValue);
+				return;
+			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
+				setEndingComplexEvent((ComplexEvent)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -216,6 +328,12 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.CONTEXT_RELATION__PARAMETERS:
 				getParameters().clear();
 				return;
+			case ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT:
+				setInitialComplexEvent((ComplexEvent)null);
+				return;
+			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
+				setEndingComplexEvent((ComplexEvent)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -234,6 +352,10 @@ public class ContextRelationImpl extends MinimalEObjectImpl.Container implements
 				return value != VALUE_EDEFAULT;
 			case ModelPackage.CONTEXT_RELATION__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case ModelPackage.CONTEXT_RELATION__INITIAL_COMPLEX_EVENT:
+				return initialComplexEvent != null;
+			case ModelPackage.CONTEXT_RELATION__ENDING_COMPLEX_EVENT:
+				return endingComplexEvent != null;
 		}
 		return super.eIsSet(featureID);
 	}
