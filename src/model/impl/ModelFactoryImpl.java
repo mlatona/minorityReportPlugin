@@ -65,6 +65,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			case ModelPackage.HOLDS_AT: return createHoldsAt();
 			case ModelPackage.HAPPENS: return createHappens();
 			case ModelPackage.HOLDS_AT_BETWEEN: return createHoldsAtBetween();
+			case ModelPackage.INITIALLY: return createInitially();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -158,6 +159,16 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public HoldsAtBetween createHoldsAtBetween() {
 		HoldsAtBetweenImpl holdsAtBetween = new HoldsAtBetweenImpl();
 		return holdsAtBetween;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Initially createInitially() {
+		InitiallyImpl initially = new InitiallyImpl();
+		return initially;
 	}
 
 	/**

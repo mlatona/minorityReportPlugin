@@ -9,6 +9,7 @@ import model.Event;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
+import model.Initially;
 import model.Instance;
 import model.ModelFactory;
 import model.ModelPackage;
@@ -108,6 +109,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	private EClass holdsAtBetweenEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass initiallyEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -191,15 +199,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getType_Instances() {
-		return (EReference)typeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getInstance() {
 		return instanceEClass;
 	}
@@ -211,6 +210,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	public EAttribute getInstance_Name() {
 		return (EAttribute)instanceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInstance_Type() {
+		return (EReference)instanceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -506,6 +514,42 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInitially() {
+		return initiallyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInitially_HoldsAts() {
+		return (EReference)initiallyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInitially_HoldsAtBetweens() {
+		return (EReference)initiallyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInitially_Happens() {
+		return (EReference)initiallyEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ModelFactory getModelFactory() {
 		return (ModelFactory)getEFactoryInstance();
 	}
@@ -531,10 +575,10 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		// Create classes and their features
 		typeEClass = createEClass(TYPE);
 		createEAttribute(typeEClass, TYPE__NAME);
-		createEReference(typeEClass, TYPE__INSTANCES);
 
 		instanceEClass = createEClass(INSTANCE);
 		createEAttribute(instanceEClass, INSTANCE__NAME);
+		createEReference(instanceEClass, INSTANCE__TYPE);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__NUMBER);
@@ -576,6 +620,11 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(holdsAtBetweenEClass, HOLDS_AT_BETWEEN__ENDING_TIME);
 		createEAttribute(holdsAtBetweenEClass, HOLDS_AT_BETWEEN__IS_HOLDING);
 		createEReference(holdsAtBetweenEClass, HOLDS_AT_BETWEEN__CONTEXT_RELATION);
+
+		initiallyEClass = createEClass(INITIALLY);
+		createEReference(initiallyEClass, INITIALLY__HOLDS_ATS);
+		createEReference(initiallyEClass, INITIALLY__HOLDS_AT_BETWEENS);
+		createEReference(initiallyEClass, INITIALLY__HAPPENS);
 	}
 
 	/**
@@ -612,10 +661,10 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(typeEClass, Type.class, "Type", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getType_Name(), ecorePackage.getEString(), "name", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getType_Instances(), this.getInstance(), null, "instances", null, 0, -1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instanceEClass, Instance.class, "Instance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInstance_Type(), this.getType(), null, "type", null, 1, 1, Instance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -657,6 +706,11 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getHoldsAtBetween_EndingTime(), ecorePackage.getEInt(), "endingTime", null, 0, 1, HoldsAtBetween.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHoldsAtBetween_IsHolding(), ecorePackage.getEBoolean(), "isHolding", null, 0, 1, HoldsAtBetween.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHoldsAtBetween_ContextRelation(), this.getContextRelation(), null, "contextRelation", null, 1, 1, HoldsAtBetween.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(initiallyEClass, Initially.class, "Initially", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInitially_HoldsAts(), this.getHoldsAt(), null, "holdsAts", null, 0, -1, Initially.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInitially_HoldsAtBetweens(), this.getHoldsAtBetween(), null, "holdsAtBetweens", null, 0, -1, Initially.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInitially_Happens(), this.getHappens(), null, "happens", null, 0, -1, Initially.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

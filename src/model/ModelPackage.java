@@ -76,22 +76,13 @@ public interface ModelPackage extends EPackage {
 	int TYPE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Instances</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TYPE__INSTANCES = 1;
-
-	/**
 	 * The number of structural features of the '<em>Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE_FEATURE_COUNT = 2;
+	int TYPE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Type</em>' class.
@@ -122,13 +113,22 @@ public interface ModelPackage extends EPackage {
 	int INSTANCE__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTANCE__TYPE = 1;
+
+	/**
 	 * The number of structural features of the '<em>Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTANCE_FEATURE_COUNT = 1;
+	int INSTANCE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Instance</em>' class.
@@ -619,6 +619,62 @@ public interface ModelPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link model.impl.InitiallyImpl <em>Initially</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.InitiallyImpl
+	 * @see model.impl.ModelPackageImpl#getInitially()
+	 * @generated
+	 */
+	int INITIALLY = 11;
+
+	/**
+	 * The feature id for the '<em><b>Holds Ats</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIALLY__HOLDS_ATS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Holds At Betweens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIALLY__HOLDS_AT_BETWEENS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Happens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIALLY__HAPPENS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Initially</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIALLY_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Initially</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIALLY_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link model.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -640,17 +696,6 @@ public interface ModelPackage extends EPackage {
 	EAttribute getType_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link model.Type#getInstances <em>Instances</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Instances</em>'.
-	 * @see model.Type#getInstances()
-	 * @see #getType()
-	 * @generated
-	 */
-	EReference getType_Instances();
-
-	/**
 	 * Returns the meta object for class '{@link model.Instance <em>Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -670,6 +715,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getInstance_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link model.Instance#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see model.Instance#getType()
+	 * @see #getInstance()
+	 * @generated
+	 */
+	EReference getInstance_Type();
 
 	/**
 	 * Returns the meta object for class '{@link model.Parameter <em>Parameter</em>}'.
@@ -1015,6 +1071,49 @@ public interface ModelPackage extends EPackage {
 	EReference getHoldsAtBetween_ContextRelation();
 
 	/**
+	 * Returns the meta object for class '{@link model.Initially <em>Initially</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Initially</em>'.
+	 * @see model.Initially
+	 * @generated
+	 */
+	EClass getInitially();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.Initially#getHoldsAts <em>Holds Ats</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Holds Ats</em>'.
+	 * @see model.Initially#getHoldsAts()
+	 * @see #getInitially()
+	 * @generated
+	 */
+	EReference getInitially_HoldsAts();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.Initially#getHoldsAtBetweens <em>Holds At Betweens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Holds At Betweens</em>'.
+	 * @see model.Initially#getHoldsAtBetweens()
+	 * @see #getInitially()
+	 * @generated
+	 */
+	EReference getInitially_HoldsAtBetweens();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.Initially#getHappens <em>Happens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Happens</em>'.
+	 * @see model.Initially#getHappens()
+	 * @see #getInitially()
+	 * @generated
+	 */
+	EReference getInitially_Happens();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1056,14 +1155,6 @@ public interface ModelPackage extends EPackage {
 		EAttribute TYPE__NAME = eINSTANCE.getType_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Instances</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TYPE__INSTANCES = eINSTANCE.getType_Instances();
-
-		/**
 		 * The meta object literal for the '{@link model.impl.InstanceImpl <em>Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1080,6 +1171,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INSTANCE__NAME = eINSTANCE.getInstance_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INSTANCE__TYPE = eINSTANCE.getInstance_Type();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1354,6 +1453,40 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference HOLDS_AT_BETWEEN__CONTEXT_RELATION = eINSTANCE.getHoldsAtBetween_ContextRelation();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.InitiallyImpl <em>Initially</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.InitiallyImpl
+		 * @see model.impl.ModelPackageImpl#getInitially()
+		 * @generated
+		 */
+		EClass INITIALLY = eINSTANCE.getInitially();
+
+		/**
+		 * The meta object literal for the '<em><b>Holds Ats</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INITIALLY__HOLDS_ATS = eINSTANCE.getInitially_HoldsAts();
+
+		/**
+		 * The meta object literal for the '<em><b>Holds At Betweens</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INITIALLY__HOLDS_AT_BETWEENS = eINSTANCE.getInitially_HoldsAtBetweens();
+
+		/**
+		 * The meta object literal for the '<em><b>Happens</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INITIALLY__HAPPENS = eINSTANCE.getInitially_Happens();
 
 	}
 

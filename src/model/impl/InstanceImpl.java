@@ -5,10 +5,12 @@ package model.impl;
 import model.Instance;
 import model.ModelPackage;
 
+import model.Type;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link model.impl.InstanceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link model.impl.InstanceImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +48,16 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected Type type;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +104,52 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Type getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (Type)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.INSTANCE__TYPE, oldType, type));
+			}
+		}
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(Type newType) {
+		Type oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.INSTANCE__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ModelPackage.INSTANCE__NAME:
 				return getName();
+			case ModelPackage.INSTANCE__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +164,9 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 		switch (featureID) {
 			case ModelPackage.INSTANCE__NAME:
 				setName((String)newValue);
+				return;
+			case ModelPackage.INSTANCE__TYPE:
+				setType((Type)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +183,9 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 			case ModelPackage.INSTANCE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case ModelPackage.INSTANCE__TYPE:
+				setType((Type)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +200,8 @@ public class InstanceImpl extends MinimalEObjectImpl.Container implements Instan
 		switch (featureID) {
 			case ModelPackage.INSTANCE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ModelPackage.INSTANCE__TYPE:
+				return type != null;
 		}
 		return super.eIsSet(featureID);
 	}
