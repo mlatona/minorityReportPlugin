@@ -4,11 +4,10 @@
     nsPrefix="org.eclipse.minorityReportPlugin">
   <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
-        eType="#//Instance"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instance">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -60,5 +59,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHolding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contextRelation" lowerBound="1"
         eType="#//ContextRelation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Initially">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="holdsAts" upperBound="-1"
+        eType="#//HoldsAt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="holdsAtBetweens" upperBound="-1"
+        eType="#//HoldsAtBetween"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="happens" upperBound="-1"
+        eType="#//Happens"/>
   </eClassifiers>
 </ecore:EPackage>
