@@ -287,13 +287,22 @@ public interface ModelPackage extends EPackage {
 	int EVENT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT__PARAMETERS = 1;
+
+	/**
 	 * The number of structural features of the '<em>Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EVENT_FEATURE_COUNT = 1;
+	int EVENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Event</em>' class.
@@ -322,6 +331,15 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_EVENT__NAME = EVENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_EVENT__PARAMETERS = EVENT__PARAMETERS;
 
 	/**
 	 * The number of structural features of the '<em>Primitive Event</em>' class.
@@ -359,6 +377,15 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPLEX_EVENT__NAME = EVENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_EVENT__PARAMETERS = EVENT__PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -857,6 +884,17 @@ public interface ModelPackage extends EPackage {
 	EAttribute getEvent_Name();
 
 	/**
+	 * Returns the meta object for the reference list '{@link model.Event#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Parameters</em>'.
+	 * @see model.Event#getParameters()
+	 * @see #getEvent()
+	 * @generated
+	 */
+	EReference getEvent_Parameters();
+
+	/**
 	 * Returns the meta object for class '{@link model.PrimitiveEvent <em>Primitive Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1281,6 +1319,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EVENT__NAME = eINSTANCE.getEvent_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EVENT__PARAMETERS = eINSTANCE.getEvent_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.PrimitiveEventImpl <em>Primitive Event</em>}' class.

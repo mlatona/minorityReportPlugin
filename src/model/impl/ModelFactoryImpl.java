@@ -56,6 +56,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case ModelPackage.TYPE: return createType();
 			case ModelPackage.INSTANCE: return createInstance();
 			case ModelPackage.PARAMETER: return createParameter();
 			case ModelPackage.CONTEXT_RELATION: return createContextRelation();
@@ -69,6 +70,16 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Type createType() {
+		TypeImpl type = new TypeImpl();
+		return type;
 	}
 
 	/**
