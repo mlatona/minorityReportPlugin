@@ -18,42 +18,54 @@ import model.ComplexEvent;
 import model.Event;
 import model.PrimitiveEvent;
 
+import usingmodel.UsingModel;
+
 
 public class Loader {
 	
 	private DocumentBuilderFactory docBuilderFactory;
 	private DocumentBuilder docBuilder;
 	private Document doc;
+	private Element mainRootElement;
+	private UsingModel model;
 
 	/*
 	 * Constructor
 	 * It initializes the important building classes
 	 */
-	public Loader(){
-		
+	public Loader(UsingModel usingModel){
+				
         try{
         	docBuilderFactory = DocumentBuilderFactory.newInstance();
         	docBuilder = docBuilderFactory.newDocumentBuilder();
         	doc = docBuilder.newDocument();
+        	model = usingModel;
         	
-        	//Element mainRootElement = doc.createElement("Event");
-        	//doc.appendChild(mainRootElement);
-   
-  
-         //    Element mainRootElement = doc.createElementNS("http://crunchify.com/CrunchifyCreateXMLDOM", "Companies");
-         //    doc.appendChild(mainRootElement);
-        	
+        	mainRootElement = doc.createElement("Plugin");
+        	doc.appendChild(mainRootElement);
         }
         catch(Exception e){
         	
         	e.printStackTrace();
         }
      
-		
 	}//End of constructor 
 	
+	
+	public void typeXmlBuilder(){
+		
+		for (int i = 0; i < model.getTypes().size(); i++){
+			Element typeElement = doc.createElement("Type");
+			typeElement.setAttribute("name", model.getTypes().get(i).getName());
+			mainRootElement.appendChild(typeElement);
+			
+		}
+		
+		
+	}
+	
 	/*
-	 * It constructs the XML document
+	 * It constructs the event tags in the XML document
 	 */
 	public void eventXmlBuilder(Event event){
 		
