@@ -4,6 +4,8 @@ package model.impl;
 
 import model.*;
 
+import java.util.ArrayList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,6 +21,17 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * @generated
  */
 public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
+	
+	// Collections of instances
+	private ArrayList<Type> types = new ArrayList<Type>();
+	private ArrayList<Event> events = new ArrayList<Event>();
+	private ArrayList<ContextRelation> contextRelations = new ArrayList<ContextRelation>();
+	private ArrayList<Initially> initials = new ArrayList<Initially>();
+	
+	// Inside BehaviouralDescription I can find all the references to HoldsAt, Happens, ...
+	// Maybe it's Composite Definition and not Behav. Descr.
+	private ArrayList<BehaviouralDescription> behavDescriptions = new ArrayList<BehaviouralDescription>();
+	
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
@@ -74,11 +87,14 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * It creates a new type and the instance is inserted in the 
+	 * corresponding ArrayList
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Type createType() {
 		TypeImpl type = new TypeImpl();
+		types.add(type);
 		return type;
 	}
 
@@ -200,6 +216,49 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	@Deprecated
 	public static ModelPackage getPackage() {
 		return ModelPackage.eINSTANCE;
+	}
+
+	
+	/**** Getters and Setters ****/
+	
+	public ArrayList<Type> getTypes() {
+		return types;
+	}
+
+	public void setTypes(ArrayList<Type> types) {
+		this.types = types;
+	}
+
+	public ArrayList<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(ArrayList<Event> events) {
+		this.events = events;
+	}
+
+	public ArrayList<ContextRelation> getContextRelations() {
+		return contextRelations;
+	}
+
+	public void setContextRelations(ArrayList<ContextRelation> contextRelations) {
+		this.contextRelations = contextRelations;
+	}
+
+	public ArrayList<Initially> getInitials() {
+		return initials;
+	}
+
+	public void setInitials(ArrayList<Initially> initials) {
+		this.initials = initials;
+	}
+
+	public ArrayList<BehaviouralDescription> getBehavDescriptions() {
+		return behavDescriptions;
+	}
+
+	public void setBehavDescriptions(ArrayList<BehaviouralDescription> behavDescriptions) {
+		this.behavDescriptions = behavDescriptions;
 	}
 
 } //ModelFactoryImpl

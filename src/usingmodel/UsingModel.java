@@ -15,18 +15,9 @@ import model.ModelPackage;
 import model.Parameter;
 import model.PrimitiveEvent;
 import model.Type;
+import xmlParser.Loader;
 
 public class UsingModel {
-	
-	private ArrayList<Type> types;
-	private ArrayList<Instance> instances;
-	private ArrayList<Parameter> parameters;
-	private ArrayList<Event> events;
-	private ArrayList<ContextRelation> contextRelations;
-	private ArrayList<BehaviouralDescription> behavDescriptions;
-	private ArrayList<HoldsAt> holdsAts;
-	private ArrayList<Happens> happens;
-	private ArrayList<HoldsAtBetween> holdsAtBetweens;
 	
 	private  ModelFactory modelFactory;
 	private  ModelPackage modelPackage;
@@ -40,25 +31,32 @@ public class UsingModel {
 		
 		modelPackage = model.ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;
-		
-		types = new ArrayList<Type>();
-		instances = new ArrayList<Instance>();
+		scan = new Scanner(System.in);
+
 	}
 
+	// I should create a type using the already existing function in the modelImpl
+	// and use this function to only generate nodes. I still don't know where are
+	// the collections collecting all the instances of the objects
 	public void createType(){
 		
+		// Input information from the user
 		System.out.println("Insert the name of a type:");
-		Scanner scan = new Scanner(System.in);
 		String name = scan.next();
 		
+		// Creation of the type
 		Type type = modelFactory.createType();
-		types.add(type);
 		type.setName(name);
 
+		//Creating DOM Element for the XML output
+		//Maybe I need to call this just when the user press "Save into XML"
+		//loader.createElementType();
+
+		
 	}
 	
 	public void createInstance(){
-		System.out.println("Insert the name of the instance:");
+	/*	System.out.println("Insert the name of the instance:");
 		Scanner scan = new Scanner(System.in);
 		String instanceName = scan.next();
 		System.out.println("Insert the name of the type associated to the instance:");
@@ -80,7 +78,7 @@ public class UsingModel {
 		instances.add(instance);
 		instance.setName(instanceName);
 		instance.setType(types.get(i-1));
-		
+		*/
 	}
 	
 	public void createContextRelation(){
@@ -103,79 +101,8 @@ public class UsingModel {
 		System.out.printf("Primitive Event with name %s created\n", primitiveEvent.getName());
 	}
 	
+	public void createXML(){
+		
+	}
 	
-	/****** Getters and Setters ******/
-	
-
-	public ArrayList<Type> getTypes() {
-		return types;
-	}
-
-	public void setTypes(ArrayList<Type> types) {
-		this.types = types;
-	}
-
-	public ArrayList<Instance> getInstances() {
-		return instances;
-	}
-
-	public void setInstances(ArrayList<Instance> instances) {
-		this.instances = instances;
-	}
-
-	public ArrayList<Parameter> getParameters() {
-		return parameters;
-	}
-
-	public void setParameters(ArrayList<Parameter> parameters) {
-		this.parameters = parameters;
-	}
-
-	public ArrayList<Event> getEvents() {
-		return events;
-	}
-
-	public void setEvents(ArrayList<Event> events) {
-		this.events = events;
-	}
-
-	public ArrayList<ContextRelation> getContextRelations() {
-		return contextRelations;
-	}
-
-	public void setContextRelations(ArrayList<ContextRelation> contextRelations) {
-		this.contextRelations = contextRelations;
-	}
-
-	public ArrayList<BehaviouralDescription> getBehavDescriptions() {
-		return behavDescriptions;
-	}
-
-	public void setBehavDescriptions(ArrayList<BehaviouralDescription> behavDescriptions) {
-		this.behavDescriptions = behavDescriptions;
-	}
-
-	public ArrayList<HoldsAt> getHoldsAts() {
-		return holdsAts;
-	}
-
-	public void setHoldsAts(ArrayList<HoldsAt> holdsAts) {
-		this.holdsAts = holdsAts;
-	}
-
-	public ArrayList<Happens> getHappens() {
-		return happens;
-	}
-
-	public void setHappens(ArrayList<Happens> happens) {
-		this.happens = happens;
-	}
-
-	public ArrayList<HoldsAtBetween> getHoldsAtBetweens() {
-		return holdsAtBetweens;
-	}
-
-	public void setHoldsAtBetweens(ArrayList<HoldsAtBetween> holdsAtBetweens) {
-		this.holdsAtBetweens = holdsAtBetweens;
-	}
-}
+} // UsingModel

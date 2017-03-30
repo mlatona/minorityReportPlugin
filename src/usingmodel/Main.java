@@ -17,6 +17,7 @@ public class Main {
 		
 		Scanner scan = new Scanner(System.in);
 		UsingModel usingModel = new UsingModel();
+		Loader loader = new Loader();
 	
 		int num=0;
 		try{
@@ -27,6 +28,9 @@ public class Main {
 			System.out.println("1. Create a new type");
 			System.out.println("2. Create a new instance");
 			System.out.println("3. Create a new context relation");
+			System.out.println("7. Create DOM");
+			System.out.println("8. Output XML to console");
+			System.out.println("9. Output XML to file");
 			System.out.println("10. Exit the program");
 			
 			num = scan.nextInt();
@@ -39,19 +43,23 @@ public class Main {
 				break;
 				case 3: usingModel.createContextRelation();
 				break;
-				case 8: {
-					Loader loader = new Loader(usingModel);
+				case 7: {
 					//all the calls to the xmlBuilder functions go here
-					loader.typeXmlBuilder();
+					loader.createXML();
 					
-					loader.outputToConsole();
 				} break;
+				case 8: loader.outputToConsole();
+				break;
+				case 9: loader.outputToFile();
+				break;
 			} //End switch
 			
 		} //End while
 		} catch (Exception e){
 			e.printStackTrace();
 		}
+		
+		scan.close();
 		System.out.println("Program terminated");
 		
 	} //End main

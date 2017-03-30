@@ -2,6 +2,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 import org.eclipse.emf.ecore.EFactory;
 
 /**
@@ -20,7 +22,7 @@ public interface ModelFactory extends EFactory {
 	 * @generated
 	 */
 	ModelFactory eINSTANCE = model.impl.ModelFactoryImpl.init();
-
+	
 	/**
 	 * Returns a new object of class '<em>Type</em>'.
 	 * <!-- begin-user-doc -->
@@ -128,5 +130,7 @@ public interface ModelFactory extends EFactory {
 	 * @generated
 	 */
 	ModelPackage getModelPackage();
+	
+	ArrayList<Type> getTypes();
 
 } //ModelFactory
