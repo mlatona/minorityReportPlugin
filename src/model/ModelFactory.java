@@ -132,5 +132,15 @@ public interface ModelFactory extends EFactory {
 	ModelPackage getModelPackage();
 	
 	ArrayList<Type> getTypes();
+	
+	ArrayList<Instance> getInstances();
+	
+	ArrayList<Event> getEvents();
+	
+	ArrayList<ContextRelation> getContextRelations();
+	
+	ArrayList<BehaviouralDescription> getBehavDescriptions();
+	
+	ArrayList<Initially> getInitials();
 
 } //ModelFactory

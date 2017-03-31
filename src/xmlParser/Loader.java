@@ -15,8 +15,7 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
+
 
 import model.ComplexEvent;
 import model.Event;
@@ -33,7 +32,10 @@ public class Loader {
 	private ModelFactory modelFactory;
 	
 	private ArrayList<Element> types;
-
+	private ArrayList<Element> instances;
+	private ArrayList<Element> contextRelations;
+	private ArrayList<Element> parameters;	
+	
 	/*
 	 * Constructor
 	 * It initializes the important building classes
@@ -53,6 +55,11 @@ public class Loader {
         	// Creation of the reference to the singleton model factory
         	modelFactory = model.ModelFactory.eINSTANCE;
         	
+        	// Instantiating ArrayLists
+    		types = new ArrayList<Element>();
+    		instances = new ArrayList<Element>();
+    		contextRelations = new ArrayList<Element>();
+    		parameters = new ArrayList<Element>();
         	
         }
         catch(Exception e){
@@ -66,30 +73,53 @@ public class Loader {
 	 */
 	public void createXML(){
 		
-		// Instantiating arraylists
-		types = new ArrayList<Element>();
-		
 		// I need to write a for cycle for each different class
 		// Maybe is better doing multiple methods
+		
+		// List of types
 		for (int i = 0; i < modelFactory.getTypes().size(); i++){
 			Element element = doc.createElement("Type");
-			element.setAttribute("Name", modelFactory.getTypes().get(i).getName());
+			element.setAttribute("name", modelFactory.getTypes().get(i).getName());
 			types.add(element);
 			mainRootElement.appendChild(element);
 		}
 		
-		
-	}
-	
-	public void typeXmlBuilder(){
-		
-		/*for (int i = 0; i < model.getTypes().size(); i++){
-			Element typeElement = doc.createElement("Type");
-			typeElement.setAttribute("name", model.getTypes().get(i).getName());
-			mainRootElement.appendChild(typeElement);
-			
+		// Association instance - type
+		for (int i = 0; i < modelFactory.getInstances().size(); i++){
+			Element element = doc.createElement("Instance");
+			element.setAttribute("name", modelFactory.getInstances().get(i).getName());
+			element.setAttribute("type", modelFactory.getInstances().get(i).getType().getName());
+			instances.add(element);
+			mainRootElement.appendChild(element);
 		}
-		*/
+		
+		// List of Context Relations
+		for (int i = 0; i < modelFactory.getContextRelations().size(); i++){
+			
+			// Creating ContextRelation element
+			Element contextRelationElement = doc.createElement("ContextRelation");
+			contextRelationElement.setAttribute("name", modelFactory.getContextRelations().get(i).getName());
+			if(modelFactory.getContextRelations().get(i).isValue())
+				contextRelationElement.setAttribute("value", "true");
+			else if (!modelFactory.getContextRelations().get(i).isValue())
+				contextRelationElement.setAttribute("value", "false");
+			
+			contextRelations.add(contextRelationElement);
+			
+			// Creating Parameter elements
+			Element parameter1Element = doc.createElement("Parameter1");
+			Element parameter2Element = doc.createElement("Parameter2");
+			parameter1Element.setAttribute("type", modelFactory.getContextRelations().get(i).getParameters().get(0).getType().getName());
+			parameter2Element.setAttribute("type", modelFactory.getContextRelations().get(i).getParameters().get(1).getType().getName());
+
+			parameters.add(parameter1Element);
+			parameters.add(parameter2Element);
+			
+			mainRootElement.appendChild(contextRelationElement);
+			contextRelationElement.appendChild(parameter1Element);
+			contextRelationElement.appendChild(parameter2Element);
+
+		}
 		
 	}
 	
@@ -126,7 +156,8 @@ public class Loader {
 		
 		// output DOM XML to console 
         Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes"); 
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
         DOMSource source = new DOMSource(doc);
         StreamResult console = new StreamResult(System.out);
         transformer.transform(source, console);
@@ -135,7 +166,8 @@ public class Loader {
 	
 	public void outputToFile() throws TransformerFactoryConfigurationError, TransformerException{
 		Transformer transformer = TransformerFactory.newInstance().newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes"); 
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 		DOMSource source = new DOMSource(doc);
 		StreamResult result = new StreamResult(new File("file.xml"));
         transformer.transform(source, result);

@@ -24,6 +24,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	
 	// Collections of instances
 	private ArrayList<Type> types = new ArrayList<Type>();
+	private ArrayList<Instance> instances = new ArrayList<Instance>();
 	private ArrayList<Event> events = new ArrayList<Event>();
 	private ArrayList<ContextRelation> contextRelations = new ArrayList<ContextRelation>();
 	private ArrayList<Initially> initials = new ArrayList<Initially>();
@@ -105,6 +106,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 */
 	public Instance createInstance() {
 		InstanceImpl instance = new InstanceImpl();
+		instances.add(instance);
 		return instance;
 	}
 
@@ -125,6 +127,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 */
 	public ContextRelation createContextRelation() {
 		ContextRelationImpl contextRelation = new ContextRelationImpl();
+		contextRelations.add(contextRelation);
 		return contextRelation;
 	}
 
@@ -259,6 +262,14 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 
 	public void setBehavDescriptions(ArrayList<BehaviouralDescription> behavDescriptions) {
 		this.behavDescriptions = behavDescriptions;
+	}
+
+	public ArrayList<Instance> getInstances() {
+		return instances;
+	}
+
+	public void setInstances(ArrayList<Instance> instances) {
+		this.instances = instances;
 	}
 
 } //ModelFactoryImpl

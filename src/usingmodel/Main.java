@@ -11,7 +11,7 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 public class Main {
 
 	
-	public static void main(String args[]) throws java.io.FileNotFoundException, TransformerFactoryConfigurationError, TransformerException{
+	public static void main(String args[]){
 	
 		System.out.println("Starting the program...");
 		
