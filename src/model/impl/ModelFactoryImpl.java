@@ -81,6 +81,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			case ModelPackage.HAPPENS: return createHappens();
 			case ModelPackage.HOLDS_AT_BETWEEN: return createHoldsAtBetween();
 			case ModelPackage.INITIALLY: return createInitially();
+			case ModelPackage.ENVIRONMENT: return createEnvironment();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -95,7 +96,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 */
 	public Type createType() {
 		TypeImpl type = new TypeImpl();
-		types.add(type);
 		return type;
 	}
 
@@ -106,7 +106,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 */
 	public Instance createInstance() {
 		InstanceImpl instance = new InstanceImpl();
-		instances.add(instance);
 		return instance;
 	}
 
@@ -127,7 +126,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 */
 	public ContextRelation createContextRelation() {
 		ContextRelationImpl contextRelation = new ContextRelationImpl();
-		contextRelations.add(contextRelation);
 		return contextRelation;
 	}
 
@@ -199,6 +197,16 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public Initially createInitially() {
 		InitiallyImpl initially = new InitiallyImpl();
 		return initially;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Environment createEnvironment() {
+		EnvironmentImpl environment = new EnvironmentImpl();
+		return environment;
 	}
 
 	/**

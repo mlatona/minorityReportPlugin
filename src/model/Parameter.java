@@ -60,7 +60,7 @@ public interface Parameter extends EObject {
 	 * @return the value of the '<em>Instance</em>' reference.
 	 * @see #setInstance(Instance)
 	 * @see model.ModelPackage#getParameter_Instance()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	Instance getInstance();

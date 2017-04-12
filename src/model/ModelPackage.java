@@ -702,6 +702,125 @@ public interface ModelPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link model.impl.EnvironmentImpl <em>Environment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.EnvironmentImpl
+	 * @see model.impl.ModelPackageImpl#getEnvironment()
+	 * @generated
+	 */
+	int ENVIRONMENT = 12;
+
+	/**
+	 * The feature id for the '<em><b>Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__TYPES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Instances</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__INSTANCES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__PARAMETERS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Context Relations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__CONTEXT_RELATIONS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Events</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__EVENTS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Behav Descriptions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__BEHAV_DESCRIPTIONS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Holds Ats</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__HOLDS_ATS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Happens</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__HAPPENS = 7;
+
+	/**
+	 * The feature id for the '<em><b>Holds At Betweens</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__HOLDS_AT_BETWEENS = 8;
+
+	/**
+	 * The feature id for the '<em><b>Initials</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__INITIALS = 9;
+
+	/**
+	 * The number of structural features of the '<em>Environment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT_FEATURE_COUNT = 10;
+
+	/**
+	 * The number of operations of the '<em>Environment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link model.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1152,6 +1271,126 @@ public interface ModelPackage extends EPackage {
 	EReference getInitially_Happens();
 
 	/**
+	 * Returns the meta object for class '{@link model.Environment <em>Environment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Environment</em>'.
+	 * @see model.Environment
+	 * @generated
+	 */
+	EClass getEnvironment();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getTypes <em>Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Types</em>'.
+	 * @see model.Environment#getTypes()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_Types();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getInstances <em>Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Instances</em>'.
+	 * @see model.Environment#getInstances()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_Instances();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see model.Environment#getParameters()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_Parameters();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getContextRelations <em>Context Relations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Context Relations</em>'.
+	 * @see model.Environment#getContextRelations()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_ContextRelations();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getEvents <em>Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Events</em>'.
+	 * @see model.Environment#getEvents()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_Events();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getBehavDescriptions <em>Behav Descriptions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Behav Descriptions</em>'.
+	 * @see model.Environment#getBehavDescriptions()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_BehavDescriptions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getHoldsAts <em>Holds Ats</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Holds Ats</em>'.
+	 * @see model.Environment#getHoldsAts()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_HoldsAts();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getHappens <em>Happens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Happens</em>'.
+	 * @see model.Environment#getHappens()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_Happens();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getHoldsAtBetweens <em>Holds At Betweens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Holds At Betweens</em>'.
+	 * @see model.Environment#getHoldsAtBetweens()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_HoldsAtBetweens();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getInitials <em>Initials</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Initials</em>'.
+	 * @see model.Environment#getInitials()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_Initials();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1533,6 +1772,96 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INITIALLY__HAPPENS = eINSTANCE.getInitially_Happens();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.EnvironmentImpl <em>Environment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.EnvironmentImpl
+		 * @see model.impl.ModelPackageImpl#getEnvironment()
+		 * @generated
+		 */
+		EClass ENVIRONMENT = eINSTANCE.getEnvironment();
+
+		/**
+		 * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__TYPES = eINSTANCE.getEnvironment_Types();
+
+		/**
+		 * The meta object literal for the '<em><b>Instances</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__INSTANCES = eINSTANCE.getEnvironment_Instances();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__PARAMETERS = eINSTANCE.getEnvironment_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Relations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__CONTEXT_RELATIONS = eINSTANCE.getEnvironment_ContextRelations();
+
+		/**
+		 * The meta object literal for the '<em><b>Events</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__EVENTS = eINSTANCE.getEnvironment_Events();
+
+		/**
+		 * The meta object literal for the '<em><b>Behav Descriptions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__BEHAV_DESCRIPTIONS = eINSTANCE.getEnvironment_BehavDescriptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Holds Ats</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__HOLDS_ATS = eINSTANCE.getEnvironment_HoldsAts();
+
+		/**
+		 * The meta object literal for the '<em><b>Happens</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__HAPPENS = eINSTANCE.getEnvironment_Happens();
+
+		/**
+		 * The meta object literal for the '<em><b>Holds At Betweens</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__HOLDS_AT_BETWEENS = eINSTANCE.getEnvironment_HoldsAtBetweens();
+
+		/**
+		 * The meta object literal for the '<em><b>Initials</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__INITIALS = eINSTANCE.getEnvironment_Initials();
 
 	}
 

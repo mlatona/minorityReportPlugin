@@ -11,7 +11,7 @@
       <package
             uri="https://github.com/mlatona/minorityReportPlugin"
             class="model.ModelPackage"
-            genModel="generatorModel1.genmodel"/>
+            genModel="generator.genmodel"/>
    </extension>
 
 </plugin>

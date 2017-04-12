@@ -123,6 +123,15 @@ public interface ModelFactory extends EFactory {
 	Initially createInitially();
 
 	/**
+	 * Returns a new object of class '<em>Environment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Environment</em>'.
+	 * @generated
+	 */
+	Environment createEnvironment();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -142,5 +151,6 @@ public interface ModelFactory extends EFactory {
 	ArrayList<BehaviouralDescription> getBehavDescriptions();
 	
 	ArrayList<Initially> getInitials();
+	
 
 } //ModelFactory
