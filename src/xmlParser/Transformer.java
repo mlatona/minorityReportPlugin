@@ -1,5 +1,6 @@
 package xmlParser;
 
+import model.Environment;
 import model.ModelFactory;
 
 import java.io.FileNotFoundException;
@@ -26,16 +27,16 @@ public class Transformer {
 		
 	}
 	
-	public void createTxtFile() throws FileNotFoundException, UnsupportedEncodingException{
+	public void createTxtFile(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
 	    
 		PrintWriter writer = new PrintWriter("environment.txt", "UTF-8");
-		System.out.println("BOH");
 		// Creating list of types-instances
-		for (int i = 0; i < modelFactory.getTypes().size(); i++){
-			System.out.println("BOH");
-			writer.println(modelFactory.getInstances().get(i).getType().getName() + "(" + 
-			modelFactory.getInstances().get(i).getName() + ")" + ".");		
+		for (int i = 0; i < env.getInstances().size(); i++){
+			writer.println(env.getInstances().get(i).getType().getName() + "(" + 
+			env.getInstances().get(i).getName() + ")" + ".");		
 		}
+		
+		writer.println("Version 2");
 		writer.close();
 
 	}

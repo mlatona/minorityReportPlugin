@@ -7,6 +7,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
+import model.Environment;
+import model.impl.EnvironmentImpl;
 import xmlParser.Loader;
 import xmlParser.Transformer;
 
@@ -16,22 +18,22 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		int num=0;
 		Transformer transform = new Transformer();
-		
 		do{
 			System.out.println("What do you want to do?");
-			System.out.println("1. Parse Types and Instances file");
-			System.out.println("2. Create types");
-			System.out.println("3. Create instances");
+			System.out.println("1. Parse Types and Instances file and output to txt");
+			//System.out.println("2. Create types");
+			//System.out.println("3. Create instances");
 			System.out.println("10. Exit the program");
 			
 			num = scan.nextInt();
 			
 			switch(num){
 				case 1:{
-						transform.getLoader().parseTypesInstances();
+						Environment env = transform.getLoader().parseTypesInstances();
+						transform.createTxtFile(env);
 					
 				}break;
-				case 2: transform.createTxtFile();
+				case 2: 
 					break;
 			}
 			
