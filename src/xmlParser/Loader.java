@@ -35,7 +35,8 @@ public class Loader {
 	}
 
 	/*
-	 * Methods that parses the XMI file
+	 * Methods that parses the XMI file of types and instances and memorize everything in the model
+	 * Maybe I can find a more efficient solution later
 	 */
 	public void parseTypesInstances() throws SAXException, IOException{
 	    System.out.println("I'm in parseTypesInstances");
@@ -68,7 +69,8 @@ public class Loader {
 			System.out.println(temp);
 			
 			// SOLVE CASTING PROBLEM!!!!!
-			Element typeIn = (Element) typeNodes.item(0);
+			System.out.println(String.valueOf(temp));
+			Element typeIn = (Element) typeNodes.item(Character.getNumericValue(temp));
 			System.out.println(typeIn);
 			for (int j = 0; j < modelFactory.getTypes().size(); j++){
 				System.out.println(typeIn.getAttribute("name"));

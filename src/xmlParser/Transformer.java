@@ -1,5 +1,11 @@
 package xmlParser;
 
+import model.ModelFactory;
+
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+
 import javax.xml.parsers.ParserConfigurationException;
 
 /*
@@ -10,12 +16,29 @@ import javax.xml.parsers.ParserConfigurationException;
 public class Transformer {
 	
 	private Loader loader;
+	private ModelFactory modelFactory;
 	
 	public Transformer() throws ParserConfigurationException{
 		
+		modelFactory = model.ModelFactory.eINSTANCE;
+		
 		loader = new Loader();
+		
 	}
 	
+	public void createTxtFile() throws FileNotFoundException, UnsupportedEncodingException{
+	    
+		PrintWriter writer = new PrintWriter("environment.txt", "UTF-8");
+		System.out.println("BOH");
+		// Creating list of types-instances
+		for (int i = 0; i < modelFactory.getTypes().size(); i++){
+			System.out.println("BOH");
+			writer.println(modelFactory.getInstances().get(i).getType().getName() + "(" + 
+			modelFactory.getInstances().get(i).getName() + ")" + ".");		
+		}
+		writer.close();
+
+	}
 	
 	public Loader getLoader(){
 		return loader;

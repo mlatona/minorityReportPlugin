@@ -31,7 +31,7 @@ public class Main {
 						transform.getLoader().parseTypesInstances();
 					
 				}break;
-				case 2:
+				case 2: transform.createTxtFile();
 					break;
 			}
 			
