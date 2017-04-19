@@ -157,7 +157,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EnvironmentImpl() {
+	public EnvironmentImpl() {
 		super();
 	}
 
@@ -480,6 +480,47 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return initials != null && !initials.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	
+	public void setTypes(EList<Type> types) {
+		this.types = types;
+	}
+
+	public void setInstances(EList<Instance> instances) {
+		this.instances = instances;
+	}
+
+	public void setParameters(EList<Parameter> parameters) {
+		this.parameters = parameters;
+	}
+
+	public void setContextRelations(EList<ContextRelation> contextRelations) {
+		this.contextRelations = contextRelations;
+	}
+
+	public void setEvents(EList<Event> events) {
+		this.events = events;
+	}
+
+	public void setBehavDescriptions(EList<BehaviouralDescription> behavDescriptions) {
+		this.behavDescriptions = behavDescriptions;
+	}
+
+	public void setHoldsAts(EList<HoldsAt> holdsAts) {
+		this.holdsAts = holdsAts;
+	}
+
+	public void setHappens(EList<Happens> happens) {
+		this.happens = happens;
+	}
+
+	public void setHoldsAtBetweens(EList<HoldsAtBetween> holdsAtBetweens) {
+		this.holdsAtBetweens = holdsAtBetweens;
+	}
+
+	public void setInitials(EList<Initially> initials) {
+		this.initials = initials;
 	}
 
 } //EnvironmentImpl

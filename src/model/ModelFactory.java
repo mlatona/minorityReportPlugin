@@ -152,5 +152,18 @@ public interface ModelFactory extends EFactory {
 	
 	ArrayList<Initially> getInitials();
 	
+	void setTypes(ArrayList<Type> types);
+	
+	void setInstances(ArrayList<Instance> instances);
+	
+	void setEvents(ArrayList<Event> events);
+	
+	void setContextRelations(ArrayList<ContextRelation> contextRelations);
+	
+	void setBehavDescriptions(ArrayList<BehaviouralDescription> behavDescriptions);
+	
+	void setInitials(ArrayList<Initially> initials);
+	
+	
 
 } //ModelFactory

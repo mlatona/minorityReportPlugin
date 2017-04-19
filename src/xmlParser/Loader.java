@@ -9,9 +9,13 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
@@ -24,7 +28,9 @@ import model.Environment;
 import model.Instance;
 import model.ModelFactory;
 import model.ModelPackage;
+import model.Parameter;
 import model.Type;
+import model.impl.EnvironmentImpl;
 
 
 public class Loader {
@@ -103,15 +109,55 @@ public class Loader {
 		*/
 		
 		/************ SECOND VERSION ALGORITHM **********/
-		XMIResource resource = new XMIResourceImpl(URI.createURI("file:/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/instancesTypes.model"));
-		resource.load(null);
-		Environment environment = (Environment) resource.getContents().get(0);
+		Environment env = new EnvironmentImpl();
+		/*
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+	    Map<String, Object> m = reg.getExtensionToFactoryMap();
+	    m.put("xmi", new XMIResourceFactoryImpl());
+		
+		ResourceSet resSet = new ResourceSetImpl();
+		Resource resource1 = resSet.getResource(URI.createURI("file:/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/instancesTypes.model"), true);
+		Resource resource2 = resSet.getResource(URI.createURI("file:/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/ContextRelations.model"), true);
+		resource1.load(null);
+		resource2.load(null);
+		*/		
+		
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap()
+		.put(Resource.Factory.Registry.DEFAULT_EXTENSION,new XMIResourceFactoryImpl());
 
-		for (int i = 0; i < environment.getInstances().size(); i++){
-			System.out.println("Instance: " + environment.getInstances().get(i).getName() + "  Type: " + environment.getInstances().get(i).getType().getName());
+		// load the resource and resolve the proxies
+		ResourceSet rs = new ResourceSetImpl();
+		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/instancesTypes.model"));
+		Resource r2 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/ContextRelations.model"));
+		Resource r3 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/Events.model"));
+		Resource r4 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/BehavDescriptions.model"));		
+		r1.load(null);
+		r2.load(null);
+		r3.load(null);
+		r4.load(null);
+		//EcoreUtil.resolveAll(rs); 
+		
+		Environment env1 = (Environment) r1.getContents().get(0);
+		Environment env2 = (Environment) r2.getContents().get(0);
+		Environment env3 = (Environment) r3.getContents().get(0);
+		Environment env4 = (Environment) r4.getContents().get(0);		
+						
+		env.setTypes(env1.getTypes());
+		env.setInstances(env1.getInstances());
+		env.setContextRelations(env2.getContextRelations());
+		env.setEvents(env3.getEvents());
+		env.setBehavDescriptions(env4.getBehavDescriptions());
+				
+		// Verification
+		for (int i = 0; i < env.getInstances().size(); i++){
+			System.out.println("Instance: " + env.getInstances().get(i).getName() + "  Type: " + env.getInstances().get(i).getType().getName());
+		}
+		for (int i = 0; i < env.getContextRelations().size(); i++){
+			System.out.println("Context Relation: " + env.getContextRelations().get(i).getName() + "  Parameter1: " + env.getContextRelations().get(i).getParameters().get(0).getType().getName() +
+					"  Initial Event: " + env.getContextRelations().get(i).getInitialComplexEvent().getName() +"  Ending Event: " + env.getContextRelations().get(i).getEndingComplexEvent().getName());
 		}
 
-		return environment;
+		return env; 
 	} //parseTypesInstances()
 	
 }

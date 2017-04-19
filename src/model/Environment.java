@@ -191,5 +191,15 @@ public interface Environment extends EObject {
 	 * @generated
 	 */
 	EList<Initially> getInitials();
+	
+	void setTypes(EList<Type> types);
+	
+	void setInstances(EList<Instance> instances);
+	
+	void setContextRelations(EList<ContextRelation> contextRelations);
+	
+	void setEvents(EList<Event> events);
+	
+	void setBehavDescriptions(EList<BehaviouralDescription> behavDescriptions);
 
 } // Environment
