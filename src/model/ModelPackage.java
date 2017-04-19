@@ -177,13 +177,22 @@ public interface ModelPackage extends EPackage {
 	int PARAMETER__TYPE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = 3;
+	int PARAMETER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -462,13 +471,22 @@ public interface ModelPackage extends EPackage {
 	int BEHAVIOURAL_DESCRIPTION__HOLDS_AT_BETWEENS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Behavioural Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOURAL_DESCRIPTION_FEATURE_COUNT = 3;
+	int BEHAVIOURAL_DESCRIPTION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Behavioural Description</em>' class.
@@ -917,6 +935,17 @@ public interface ModelPackage extends EPackage {
 	EReference getParameter_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link model.Parameter#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see model.Parameter#getName()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Name();
+
+	/**
 	 * Returns the meta object for class '{@link model.ContextRelation <em>Context Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1097,6 +1126,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBehaviouralDescription_HoldsAtBetweens();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.BehaviouralDescription#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see model.BehaviouralDescription#getName()
+	 * @see #getBehaviouralDescription()
+	 * @generated
+	 */
+	EAttribute getBehaviouralDescription_Name();
 
 	/**
 	 * Returns the meta object for class '{@link model.HoldsAt <em>Holds At</em>}'.
@@ -1492,6 +1532,14 @@ public interface ModelPackage extends EPackage {
 		EReference PARAMETER__TYPE = eINSTANCE.getParameter_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
+
+		/**
 		 * The meta object literal for the '{@link model.impl.ContextRelationImpl <em>Context Relation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1636,6 +1684,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BEHAVIOURAL_DESCRIPTION__HOLDS_AT_BETWEENS = eINSTANCE.getBehaviouralDescription_HoldsAtBetweens();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BEHAVIOURAL_DESCRIPTION__NAME = eINSTANCE.getBehaviouralDescription_Name();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.HoldsAtImpl <em>Holds At</em>}' class.

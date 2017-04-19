@@ -106,7 +106,7 @@ public interface ContextRelation extends EObject {
 	 * @return the value of the '<em>Initial Complex Event</em>' reference.
 	 * @see #setInitialComplexEvent(ComplexEvent)
 	 * @see model.ModelPackage#getContextRelation_InitialComplexEvent()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	ComplexEvent getInitialComplexEvent();
@@ -132,7 +132,7 @@ public interface ContextRelation extends EObject {
 	 * @return the value of the '<em>Ending Complex Event</em>' reference.
 	 * @see #setEndingComplexEvent(ComplexEvent)
 	 * @see model.ModelPackage#getContextRelation_EndingComplexEvent()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	ComplexEvent getEndingComplexEvent();

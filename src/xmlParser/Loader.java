@@ -24,6 +24,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import model.ComplexEvent;
 import model.Environment;
 import model.Instance;
 import model.ModelFactory;
@@ -153,8 +154,25 @@ public class Loader {
 			System.out.println("Instance: " + env.getInstances().get(i).getName() + "  Type: " + env.getInstances().get(i).getType().getName());
 		}
 		for (int i = 0; i < env.getContextRelations().size(); i++){
-			System.out.println("Context Relation: " + env.getContextRelations().get(i).getName() + "  Parameter1: " + env.getContextRelations().get(i).getParameters().get(0).getType().getName() +
-					"  Initial Event: " + env.getContextRelations().get(i).getInitialComplexEvent().getName() +"  Ending Event: " + env.getContextRelations().get(i).getEndingComplexEvent().getName());
+			if (env.getContextRelations().get(i).getInitialComplexEvent() != null && env.getContextRelations().get(i).getEndingComplexEvent() != null)
+				System.out.println("Context Relation: " + env.getContextRelations().get(i).getName() + "  Parameter1: " + env.getContextRelations().get(i).getParameters().get(0).getType().getName() +
+						"  Initial Event: " + env.getContextRelations().get(i).getInitialComplexEvent().getName() +"  Ending Event: " + env.getContextRelations().get(i).getEndingComplexEvent().getName());
+			else
+				System.out.println("Context Relation: " + env.getContextRelations().get(i).getName() + "  Parameter1: " + env.getContextRelations().get(i).getParameters().get(0).getType().getName());				
+		}
+		for (int i = 0; i < env.getEvents().size(); i++){
+			if (env.getEvents().get(i) instanceof ComplexEvent){
+				ComplexEvent ce = (ComplexEvent) env.getEvents().get(i);
+				for (int j = 0; j < ce.getBehaviouralDescriptions().getHoldsAts().size(); j++){
+					System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAt: " + ce.getBehaviouralDescriptions().getHoldsAts().get(j).getContextRelation().getName());
+				}
+				for (int j = 0; j < ce.getBehaviouralDescriptions().getHappens().size(); j++){
+					System.out.println("Event: " + env.getEvents().get(i).getName() + "  Happens: " + ce.getBehaviouralDescriptions().getHappens().get(j).getContextRelation().getName());
+				}
+				for (int j = 0; j < ce.getBehaviouralDescriptions().getHoldsAtBetweens().size(); j++){
+					System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAtBetween: " + ce.getBehaviouralDescriptions().getHoldsAtBetweens().get(j).getContextRelation().getName());
+				}
+			}
 		}
 
 		return env; 

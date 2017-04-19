@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.Parameter#getNumber <em>Number</em>}</li>
  *   <li>{@link model.Parameter#getInstance <em>Instance</em>}</li>
  *   <li>{@link model.Parameter#getType <em>Type</em>}</li>
+ *   <li>{@link model.Parameter#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getParameter()
@@ -100,5 +101,31 @@ public interface Parameter extends EObject {
 	 * @generated
 	 */
 	void setType(Type value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see model.ModelPackage#getParameter_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link model.Parameter#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Parameter

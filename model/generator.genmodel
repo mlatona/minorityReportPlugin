@@ -17,6 +17,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Parameter/number"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Parameter/instance"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Parameter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Parameter/name"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//ContextRelation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ContextRelation/name"/>
@@ -38,6 +39,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//BehaviouralDescription/holdsAts"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//BehaviouralDescription/happens"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//BehaviouralDescription/holdsAtBetweens"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//BehaviouralDescription/name"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//HoldsAt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//HoldsAt/time"/>

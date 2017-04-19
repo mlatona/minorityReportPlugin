@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link model.impl.ParameterImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link model.impl.ParameterImpl#getInstance <em>Instance</em>}</li>
  *   <li>{@link model.impl.ParameterImpl#getType <em>Type</em>}</li>
+ *   <li>{@link model.impl.ParameterImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,6 +71,26 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * @ordered
 	 */
 	protected Type type;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -192,6 +213,27 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.PARAMETER__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -203,6 +245,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			case ModelPackage.PARAMETER__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
+			case ModelPackage.PARAMETER__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -223,6 +267,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return;
 			case ModelPackage.PARAMETER__TYPE:
 				setType((Type)newValue);
+				return;
+			case ModelPackage.PARAMETER__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -245,6 +292,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			case ModelPackage.PARAMETER__TYPE:
 				setType((Type)null);
 				return;
+			case ModelPackage.PARAMETER__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -263,6 +313,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 				return instance != null;
 			case ModelPackage.PARAMETER__TYPE:
 				return type != null;
+			case ModelPackage.PARAMETER__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -279,6 +331,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (number: ");
 		result.append(number);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

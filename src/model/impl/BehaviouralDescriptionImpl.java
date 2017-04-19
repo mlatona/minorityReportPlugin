@@ -10,10 +10,12 @@ import model.HoldsAt;
 import model.HoldsAtBetween;
 import model.ModelPackage;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.BehaviouralDescriptionImpl#getHoldsAts <em>Holds Ats</em>}</li>
  *   <li>{@link model.impl.BehaviouralDescriptionImpl#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.impl.BehaviouralDescriptionImpl#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
+ *   <li>{@link model.impl.BehaviouralDescriptionImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,6 +66,26 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<HoldsAtBetween> holdsAtBetweens;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,6 +147,27 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -133,6 +177,8 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 				return getHappens();
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__HOLDS_AT_BETWEENS:
 				return getHoldsAtBetweens();
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,6 +204,9 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 				getHoldsAtBetweens().clear();
 				getHoldsAtBetweens().addAll((Collection<? extends HoldsAtBetween>)newValue);
 				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -179,6 +228,9 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__HOLDS_AT_BETWEENS:
 				getHoldsAtBetweens().clear();
 				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,8 +249,26 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 				return happens != null && !happens.isEmpty();
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__HOLDS_AT_BETWEENS:
 				return holdsAtBetweens != null && !holdsAtBetweens.isEmpty();
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //BehaviouralDescriptionImpl

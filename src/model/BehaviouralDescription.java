@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.BehaviouralDescription#getHoldsAts <em>Holds Ats</em>}</li>
  *   <li>{@link model.BehaviouralDescription#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.BehaviouralDescription#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
+ *   <li>{@link model.BehaviouralDescription#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getBehaviouralDescription()
@@ -72,5 +73,31 @@ public interface BehaviouralDescription extends EObject {
 	 * @generated
 	 */
 	EList<HoldsAtBetween> getHoldsAtBetweens();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see model.ModelPackage#getBehaviouralDescription_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link model.BehaviouralDescription#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // BehaviouralDescription
