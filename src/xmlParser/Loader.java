@@ -57,7 +57,7 @@ public class Loader {
 	 * Methods that parses the XMI file of types and instances and memorize everything in the model
 	 * Maybe I can find a more efficient solution later
 	 */
-	public Environment parseTypesInstances() throws SAXException, IOException{
+	public Environment parseFiles() throws SAXException, IOException{
 	    
 		/**********  FIRST VERSION ALGORITHM *********/
 		

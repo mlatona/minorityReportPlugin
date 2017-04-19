@@ -29,7 +29,7 @@ public class Main {
 			
 			switch(num){
 				case 1:{
-						Environment env = transform.getLoader().parseTypesInstances();
+						Environment env = transform.getLoader().parseFiles();
 						transform.createTxtFile(env);
 					
 				}break;
