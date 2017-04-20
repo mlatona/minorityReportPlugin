@@ -7,11 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated generatorModel1 -->
+      <!-- @generated generator -->
       <package
             uri="https://github.com/mlatona/minorityReportPlugin"
             class="model.ModelPackage"
-            genModel="generator.genmodel"/>
+            genModel="model/generator.genmodel"/>
    </extension>
 
 </plugin>

@@ -5,16 +5,21 @@ import model.ContextRelation;
 import model.Environment;
 import model.Event;
 import model.Type;
+import model.Parameter;
+import model.ModelFactory;
 import model.PrimitiveEvent;
 import model.impl.ComplexEventImpl;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
 import javax.xml.parsers.ParserConfigurationException;
+
+import org.eclipse.emf.common.util.EList;
 
 /*
  * This class has to create a new file .txt based on the information saved in the model
@@ -24,9 +29,14 @@ import javax.xml.parsers.ParserConfigurationException;
 public class Transformer {
 	
 	private Loader loader;
+	private ModelFactory modelFactory;
 	
-	public Transformer() throws ParserConfigurationException{	
+	public Transformer() throws ParserConfigurationException{
+		
+		modelFactory = model.ModelFactory.eINSTANCE;
+		
 		loader = new Loader();
+		
 	}
 	
 	public void createTxtFile(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
@@ -137,7 +147,7 @@ public class Transformer {
 			writer.println();
 			writer.println();
 			
-		} // Behavioural Descriptions
+		} // Behavioural Descriptions 
 		
 		writer.println("% Version 2");
 		writer.close();
