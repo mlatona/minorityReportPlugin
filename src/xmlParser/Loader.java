@@ -35,9 +35,7 @@ import model.impl.EnvironmentImpl;
 
 
 public class Loader {
-	
-	private Document docTypesInstances;
-	private DocumentBuilder dBuilder;
+
 	private ModelPackage modelPackage;
 	private ModelFactory modelFactory;
 	
@@ -46,8 +44,6 @@ public class Loader {
 	 */
 	public Loader() throws ParserConfigurationException{
 
-	    DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-		dBuilder = dbFactory.newDocumentBuilder();
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;
 	   

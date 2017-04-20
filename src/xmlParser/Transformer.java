@@ -4,13 +4,15 @@ import model.ComplexEvent;
 import model.ContextRelation;
 import model.Environment;
 import model.Event;
-import model.ModelFactory;
+import model.Type;
 import model.PrimitiveEvent;
 import model.impl.ComplexEventImpl;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.HashSet;
+import java.util.Iterator;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -22,14 +24,9 @@ import javax.xml.parsers.ParserConfigurationException;
 public class Transformer {
 	
 	private Loader loader;
-	private ModelFactory modelFactory;
 	
-	public Transformer() throws ParserConfigurationException{
-		
-		modelFactory = model.ModelFactory.eINSTANCE;
-		
+	public Transformer() throws ParserConfigurationException{	
 		loader = new Loader();
-		
 	}
 	
 	public void createTxtFile(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
@@ -59,25 +56,25 @@ public class Transformer {
 				else
 					writer.printf("%s(%c).\n", env.getContextRelations().get(i).getParameters().get(j).getType().getName(),env.getContextRelations().get(i).getParameters().get(j).getType().getName().charAt(0));				
 			}
-		} //Context Relations
+		} // Context Relations
 		
-		//EVENTS
+		// EVENTS
 		writer.println("\n\n% ********* Behaviour Descriptions *********\n");
 		writer.println("% ***** Primitive Events *****\n");
 		writer.println("event(V):-\n\tpe(V)");
-		//Creating list of primitive events
+		// Creating list of primitive events
 		for (int i = 0; i < env.getEvents().size(); i++){
 			if (env.getEvents().get(i) instanceof PrimitiveEvent){
 				System.out.println("Primitive event");
 				
-				//TO-DO
+				// TO-DO
 			
 			}
-		} //Primitive events
+		} // Primitive events
 		
 		writer.println("\n% ***** Complex Events *****\n");		
 		writer.printf("event(V):-\nce(V)\n\n");
-		//Creating list of complex events
+		// Creating list of complex events
 		for (int i = 0; i < env.getEvents().size(); i++){
 			if (env.getEvents().get(i) instanceof ComplexEvent){
 				writer.printf("ce("+ env.getEvents().get(i).getName());
@@ -91,7 +88,7 @@ public class Transformer {
 						writer.printf("%s(%c).\n", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
 				}
 			}
-		} //Complex events
+		} // Complex events
 		
 		writer.println("\n\n% ***** Composite Definitions *****\n");
 		for (int i = 0; i < env.getBehavDescriptions().size(); i++){
@@ -103,24 +100,44 @@ public class Transformer {
 				}	
 			}
 			writeEventParameters(event, writer);
-			writer.printf(",T2,TR):-\n");
+			writer.println(",T2,TR):-"); // Where T2 is coming from?
 			writer.println("\ttrace(TR),");
-			writer.println("\ttrace(TR),");
 			
+			// Memorizing all the types of events and context relations related to the behavioural description
+			HashSet<Type> behTypes = new HashSet<Type>();
+			for (int n = 0; n < env.getBehavDescriptions().get(i).getHoldsAts().size(); n++){
+				for (int m = 0; m < env.getBehavDescriptions().get(i).getHoldsAts().get(n).getContextRelation().getParameters().size(); m++){
+					behTypes.add(env.getBehavDescriptions().get(i).getHoldsAts().get(n).getContextRelation().getParameters().get(m).getType());
+				};
+			}
+			for (int n = 0; n < env.getBehavDescriptions().get(i).getHoldsAtBetweens().size(); n++){
+				for (int m = 0; m < env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().size(); m++){
+					behTypes.add(env.getBehavDescriptions().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().get(m).getType());
+				};
+			}
+			for (int n = 0; n < env.getBehavDescriptions().get(i).getHappens().size(); n++){
+				for (int m = 0; m < env.getBehavDescriptions().get(i).getHappens().get(n).getContextRelation().getParameters().size(); m++){
+					behTypes.add(env.getBehavDescriptions().get(i).getHappens().get(n).getContextRelation().getParameters().get(m).getType());
+				};
+			}
+			// Writing all the types on file
+			Iterator<Type> iter = behTypes.iterator();
+			while(iter.hasNext()){
+				Type type = iter.next();
+				writer.println("\t"+type.getName()+"("+type.getName().charAt(0)+"),");
+			}
 			
-			//TO-DO Complete here the behavioural description output
+			//TO-DO Complete here the behavioural description output with times
 			
-			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAts().size(); j++){
-				writer.printf("holdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
-				
+			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAts().size(); j++){				
+				writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
 				writeContextRelationParameters(env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation(), writer);
-				
 				writer.printf(",T"+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getTime() +",TR),\n");
 			}
 			writer.println();
 			writer.println();
 			
-		}
+		} // Behavioural Descriptions
 		
 		writer.println("% Version 2");
 		writer.close();
@@ -150,7 +167,6 @@ public class Transformer {
 		}
 		
 	}
-	
 	
 	public Loader getLoader(){
 		return loader;
