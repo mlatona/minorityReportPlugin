@@ -701,13 +701,22 @@ public interface ModelPackage extends EPackage {
 	int INITIALLY__HAPPENS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Context Relation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIALLY__CONTEXT_RELATION = 3;
+
+	/**
 	 * The number of structural features of the '<em>Initially</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INITIALLY_FEATURE_COUNT = 3;
+	int INITIALLY_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Initially</em>' class.
@@ -1311,6 +1320,17 @@ public interface ModelPackage extends EPackage {
 	EReference getInitially_Happens();
 
 	/**
+	 * Returns the meta object for the reference '{@link model.Initially#getContextRelation <em>Context Relation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Context Relation</em>'.
+	 * @see model.Initially#getContextRelation()
+	 * @see #getInitially()
+	 * @generated
+	 */
+	EReference getInitially_ContextRelation();
+
+	/**
 	 * Returns the meta object for class '{@link model.Environment <em>Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1828,6 +1848,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INITIALLY__HAPPENS = eINSTANCE.getInitially_Happens();
+
+		/**
+		 * The meta object literal for the '<em><b>Context Relation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INITIALLY__CONTEXT_RELATION = eINSTANCE.getInitially_ContextRelation();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.EnvironmentImpl <em>Environment</em>}' class.

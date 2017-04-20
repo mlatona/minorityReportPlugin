@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.Initially#getHoldsAts <em>Holds Ats</em>}</li>
  *   <li>{@link model.Initially#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.Initially#getHappens <em>Happens</em>}</li>
+ *   <li>{@link model.Initially#getContextRelation <em>Context Relation</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getInitially()
@@ -72,5 +73,31 @@ public interface Initially extends EObject {
 	 * @generated
 	 */
 	EList<Happens> getHappens();
+
+	/**
+	 * Returns the value of the '<em><b>Context Relation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Context Relation</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Context Relation</em>' reference.
+	 * @see #setContextRelation(ContextRelation)
+	 * @see model.ModelPackage#getInitially_ContextRelation()
+	 * @model required="true"
+	 * @generated
+	 */
+	ContextRelation getContextRelation();
+
+	/**
+	 * Sets the value of the '{@link model.Initially#getContextRelation <em>Context Relation</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Context Relation</em>' reference.
+	 * @see #getContextRelation()
+	 * @generated
+	 */
+	void setContextRelation(ContextRelation value);
 
 } // Initially

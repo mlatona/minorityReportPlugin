@@ -145,10 +145,18 @@ public class Transformer {
 				writer.printf(",T"+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getTime() +",TR),\n");
 			}
 			writer.println();
-			writer.println();
 			
 		} // Behavioural Descriptions 
 		
+		writer.println("\n\n% Initial state \n");
+		
+		for (int i = 0; i < env.getInitials().size(); i++){
+			writer.printf("initially("+ env.getInitials().get(i).getContextRelation().getName());
+			writeInstances(env.getInitials().get(i).getContextRelation(), writer);
+			writer.printf(").\n");
+		}
+		
+		writer.println();
 		writer.println("% Version 2");
 		writer.close();
 
@@ -174,10 +182,19 @@ public class Transformer {
 				writer.printf("%c,", ev.getParameters().get(j).getType().getName().charAt(0));
 			else
 				writer.printf("%c)", ev.getParameters().get(j).getType().getName().charAt(0));
-		}
-		
+		}	
 	}
 	
+	private void writeInstances(ContextRelation cr, PrintWriter writer){
+		writer.printf("(");
+		for (int j = 0; j < cr.getParameters().size(); j++){
+			if (j != cr.getParameters().size()-1)
+				writer.printf("%s,", cr.getParameters().get(j).getInstance().getName());
+			else
+				writer.printf("%s)", cr.getParameters().get(j).getInstance().getName());
+		}	
+	}
+			
 	public Loader getLoader(){
 		return loader;
 	}

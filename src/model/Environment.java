@@ -201,5 +201,7 @@ public interface Environment extends EObject {
 	void setEvents(EList<Event> events);
 	
 	void setBehavDescriptions(EList<BehaviouralDescription> behavDescriptions);
+	
+	void setInitials(EList<Initially> initials);
 
 } // Environment

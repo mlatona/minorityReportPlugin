@@ -128,22 +128,26 @@ public class Loader {
 		Resource r2 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/ContextRelations.model"));
 		Resource r3 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/Events.model"));
 		Resource r4 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/BehavDescriptions.model"));		
+		Resource r5 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/Initials.model"));		
 		r1.load(null);
 		r2.load(null);
 		r3.load(null);
 		r4.load(null);
+		r5.load(null);
 		//EcoreUtil.resolveAll(rs); 
 		
 		Environment env1 = (Environment) r1.getContents().get(0);
 		Environment env2 = (Environment) r2.getContents().get(0);
 		Environment env3 = (Environment) r3.getContents().get(0);
-		Environment env4 = (Environment) r4.getContents().get(0);		
+		Environment env4 = (Environment) r4.getContents().get(0);	
+		Environment env5 = (Environment) r5.getContents().get(0);
 						
 		env.setTypes(env1.getTypes());
 		env.setInstances(env1.getInstances());
 		env.setContextRelations(env2.getContextRelations());
 		env.setEvents(env3.getEvents());
 		env.setBehavDescriptions(env4.getBehavDescriptions());
+		env.setInitials(env5.getInitials());
 				
 		// Verification
 		for (int i = 0; i < env.getInstances().size(); i++){
@@ -169,6 +173,10 @@ public class Loader {
 					System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAtBetween: " + ce.getBehaviouralDescriptions().getHoldsAtBetweens().get(j).getContextRelation().getName());
 				}
 			}
+		}
+		
+		for (int i = 0; i < env.getInitials().size(); i++){
+			System.out.println("Context relation: "+ env.getInitials().get(i).getContextRelation().getName() + " --> true");
 		}
 
 		return env; 

@@ -4,16 +4,20 @@ package model.impl;
 
 import java.util.Collection;
 
+import model.ContextRelation;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
 import model.Initially;
 import model.ModelPackage;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -29,6 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.InitiallyImpl#getHoldsAts <em>Holds Ats</em>}</li>
  *   <li>{@link model.impl.InitiallyImpl#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.impl.InitiallyImpl#getHappens <em>Happens</em>}</li>
+ *   <li>{@link model.impl.InitiallyImpl#getContextRelation <em>Context Relation</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,6 +68,16 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 	 * @ordered
 	 */
 	protected EList<Happens> happens;
+
+	/**
+	 * The cached value of the '{@link #getContextRelation() <em>Context Relation</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContextRelation()
+	 * @generated
+	 * @ordered
+	 */
+	protected ContextRelation contextRelation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,6 +139,44 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ContextRelation getContextRelation() {
+		if (contextRelation != null && contextRelation.eIsProxy()) {
+			InternalEObject oldContextRelation = (InternalEObject)contextRelation;
+			contextRelation = (ContextRelation)eResolveProxy(oldContextRelation);
+			if (contextRelation != oldContextRelation) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.INITIALLY__CONTEXT_RELATION, oldContextRelation, contextRelation));
+			}
+		}
+		return contextRelation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContextRelation basicGetContextRelation() {
+		return contextRelation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContextRelation(ContextRelation newContextRelation) {
+		ContextRelation oldContextRelation = contextRelation;
+		contextRelation = newContextRelation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.INITIALLY__CONTEXT_RELATION, oldContextRelation, contextRelation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -133,6 +186,9 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 				return getHoldsAtBetweens();
 			case ModelPackage.INITIALLY__HAPPENS:
 				return getHappens();
+			case ModelPackage.INITIALLY__CONTEXT_RELATION:
+				if (resolve) return getContextRelation();
+				return basicGetContextRelation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,6 +214,9 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 				getHappens().clear();
 				getHappens().addAll((Collection<? extends Happens>)newValue);
 				return;
+			case ModelPackage.INITIALLY__CONTEXT_RELATION:
+				setContextRelation((ContextRelation)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -179,6 +238,9 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 			case ModelPackage.INITIALLY__HAPPENS:
 				getHappens().clear();
 				return;
+			case ModelPackage.INITIALLY__CONTEXT_RELATION:
+				setContextRelation((ContextRelation)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,6 +259,8 @@ public class InitiallyImpl extends MinimalEObjectImpl.Container implements Initi
 				return holdsAtBetweens != null && !holdsAtBetweens.isEmpty();
 			case ModelPackage.INITIALLY__HAPPENS:
 				return happens != null && !happens.isEmpty();
+			case ModelPackage.INITIALLY__CONTEXT_RELATION:
+				return contextRelation != null;
 		}
 		return super.eIsSet(featureID);
 	}
