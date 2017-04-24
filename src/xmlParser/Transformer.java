@@ -170,9 +170,6 @@ public class Transformer {
 			else
 				writer.printf("%c)", cr.getParameters().get(j).getType().getName().charAt(0));	
 		}
-		
-		
-		
 	}
 	
 	private void writeEventParameters(Event ev, PrintWriter writer){
