@@ -18,11 +18,9 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		int num=0;
 		Transformer transform = new Transformer();
-		do{
+		do{ 
 			System.out.println("What do you want to do?");
 			System.out.println("1. Parse Types and Instances file and output to txt");
-			//System.out.println("2. Create types");
-			//System.out.println("3. Create instances");
 			System.out.println("10. Exit the program");
 			
 			num = scan.nextInt();
