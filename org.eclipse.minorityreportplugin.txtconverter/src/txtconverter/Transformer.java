@@ -41,7 +41,7 @@ public class Transformer {
 	
 	public void createTxtFile(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
 	    
-		PrintWriter writer = new PrintWriter("/Users/marco/Documents/ForensicReadySystemEclipsePlugin/org.eclipse.minorityreportplugin.txtconverter/environment.txt", "UTF-8");
+		PrintWriter writer = new PrintWriter("/Users/marco/Documents/ThesisWorkspace/WorkspaceRepository/org.eclipse.minorityreportplugin.txtconverter/output/environment.txt", "UTF-8");
 		
 		writer.println("% ****************** Environment Description ******************\n");
 		writer.println("% ********* Context Description *********\n");
@@ -157,7 +157,7 @@ public class Transformer {
 		}
 		
 		writer.println();
-		writer.println("% Version 2");
+		writer.println("% Version 3");
 		writer.close();
 
 	}
