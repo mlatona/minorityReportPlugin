@@ -61,6 +61,7 @@ public class ConvertHandler implements IActionDelegate {
 
 	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
+		
 		// TODO Auto-generated method stub
 		
 	}
