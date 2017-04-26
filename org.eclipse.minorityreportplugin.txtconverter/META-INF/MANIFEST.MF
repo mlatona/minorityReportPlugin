@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Txtconverter
+Bundle-SymbolicName: org.eclipse.minorityreportplugin.txtconverter;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: .
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport,
+ org.eclipse.minorityReportPlugin;visibility:=reexport,
+ org.eclipse.minorityReportPlugin.edit;visibility:=reexport,
+ org.eclipse.minorityReportPlugin.tests;visibility:=reexport,
+ org.eclipse.minorityReportPlugin.editor;bundle-version="1.0.0"

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="generate-txt-action"
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.eclipse.minorityreportplugin.txtconverter.ConvertHandler"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="txtconverter.ConvertHandler"
+               id="org.eclipse.minorityreportplugin.ConvertHandler"
+               label="Generate TXT"
+               menubarPath="additions">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
