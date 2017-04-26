@@ -12,7 +12,7 @@ package model;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link model.ComplexEvent#getNumber <em>Number</em>}</li>
+ *   <li>{@link model.ComplexEvent#getTime <em>Time</em>}</li>
  *   <li>{@link model.ComplexEvent#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}</li>
  * </ul>
  *
@@ -22,30 +22,30 @@ package model;
  */
 public interface ComplexEvent extends Event {
 	/**
-	 * Returns the value of the '<em><b>Number</b></em>' attribute.
+	 * Returns the value of the '<em><b>Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Number</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Time</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Number</em>' attribute.
-	 * @see #setNumber(int)
-	 * @see model.ModelPackage#getComplexEvent_Number()
-	 * @model
+	 * @return the value of the '<em>Time</em>' attribute.
+	 * @see #setTime(int)
+	 * @see model.ModelPackage#getComplexEvent_Time()
+	 * @model required="true"
 	 * @generated
 	 */
-	int getNumber();
+	int getTime();
 
 	/**
-	 * Sets the value of the '{@link model.ComplexEvent#getNumber <em>Number</em>}' attribute.
+	 * Sets the value of the '{@link model.ComplexEvent#getTime <em>Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Number</em>' attribute.
-	 * @see #getNumber()
+	 * @param value the new value of the '<em>Time</em>' attribute.
+	 * @see #getTime()
 	 * @generated
 	 */
-	void setNumber(int value);
+	void setTime(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Behavioural Descriptions</b></em>' reference.

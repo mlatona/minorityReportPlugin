@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link model.impl.ComplexEventImpl#getNumber <em>Number</em>}</li>
+ *   <li>{@link model.impl.ComplexEventImpl#getTime <em>Time</em>}</li>
  *   <li>{@link model.impl.ComplexEventImpl#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}</li>
  * </ul>
  *
@@ -29,24 +29,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	/**
-	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getTime()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NUMBER_EDEFAULT = 0;
+	protected static final int TIME_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * The cached value of the '{@link #getTime() <em>Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNumber()
+	 * @see #getTime()
 	 * @generated
 	 * @ordered
 	 */
-	protected int number = NUMBER_EDEFAULT;
+	protected int time = TIME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getBehaviouralDescriptions() <em>Behavioural Descriptions</em>}' reference.
@@ -82,8 +82,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getNumber() {
-		return number;
+	public int getTime() {
+		return time;
 	}
 
 	/**
@@ -91,11 +91,11 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNumber(int newNumber) {
-		int oldNumber = number;
-		number = newNumber;
+	public void setTime(int newTime) {
+		int oldTime = time;
+		time = newTime;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.COMPLEX_EVENT__NUMBER, oldNumber, number));
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.COMPLEX_EVENT__TIME, oldTime, time));
 	}
 
 	/**
@@ -144,8 +144,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelPackage.COMPLEX_EVENT__NUMBER:
-				return getNumber();
+			case ModelPackage.COMPLEX_EVENT__TIME:
+				return getTime();
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				if (resolve) return getBehaviouralDescriptions();
 				return basicGetBehaviouralDescriptions();
@@ -161,8 +161,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModelPackage.COMPLEX_EVENT__NUMBER:
-				setNumber((Integer)newValue);
+			case ModelPackage.COMPLEX_EVENT__TIME:
+				setTime((Integer)newValue);
 				return;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				setBehaviouralDescriptions((BehaviouralDescription)newValue);
@@ -179,8 +179,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModelPackage.COMPLEX_EVENT__NUMBER:
-				setNumber(NUMBER_EDEFAULT);
+			case ModelPackage.COMPLEX_EVENT__TIME:
+				setTime(TIME_EDEFAULT);
 				return;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				setBehaviouralDescriptions((BehaviouralDescription)null);
@@ -197,8 +197,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelPackage.COMPLEX_EVENT__NUMBER:
-				return number != NUMBER_EDEFAULT;
+			case ModelPackage.COMPLEX_EVENT__TIME:
+				return time != TIME_EDEFAULT;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				return behaviouralDescriptions != null;
 		}
@@ -215,8 +215,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (number: ");
-		result.append(number);
+		result.append(" (time: ");
+		result.append(time);
 		result.append(')');
 		return result.toString();
 	}

@@ -25,6 +25,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ContextRelation/parameters"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ContextRelation/initialComplexEvent"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ContextRelation/endingComplexEvent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ContextRelation/time"/>
     </genClasses>
     <genClasses image="false" ecoreClass="model.ecore#//Event">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Event/name"/>
@@ -32,7 +33,7 @@
     </genClasses>
     <genClasses ecoreClass="model.ecore#//PrimitiveEvent"/>
     <genClasses ecoreClass="model.ecore#//ComplexEvent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ComplexEvent/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ComplexEvent/time"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ComplexEvent/behaviouralDescriptions"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//BehaviouralDescription">

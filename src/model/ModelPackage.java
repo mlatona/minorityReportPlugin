@@ -259,13 +259,22 @@ public interface ModelPackage extends EPackage {
 	int CONTEXT_RELATION__ENDING_COMPLEX_EVENT = 4;
 
 	/**
+	 * The feature id for the '<em><b>Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT_RELATION__TIME = 5;
+
+	/**
 	 * The number of structural features of the '<em>Context Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_RELATION_FEATURE_COUNT = 5;
+	int CONTEXT_RELATION_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Context Relation</em>' class.
@@ -397,13 +406,13 @@ public interface ModelPackage extends EPackage {
 	int COMPLEX_EVENT__PARAMETERS = EVENT__PARAMETERS;
 
 	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT__NUMBER = EVENT_FEATURE_COUNT + 0;
+	int COMPLEX_EVENT__TIME = EVENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Behavioural Descriptions</b></em>' reference.
@@ -1020,6 +1029,17 @@ public interface ModelPackage extends EPackage {
 	EReference getContextRelation_EndingComplexEvent();
 
 	/**
+	 * Returns the meta object for the attribute '{@link model.ContextRelation#getTime <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time</em>'.
+	 * @see model.ContextRelation#getTime()
+	 * @see #getContextRelation()
+	 * @generated
+	 */
+	EAttribute getContextRelation_Time();
+
+	/**
 	 * Returns the meta object for class '{@link model.Event <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1072,15 +1092,15 @@ public interface ModelPackage extends EPackage {
 	EClass getComplexEvent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link model.ComplexEvent#getNumber <em>Number</em>}'.
+	 * Returns the meta object for the attribute '{@link model.ComplexEvent#getTime <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number</em>'.
-	 * @see model.ComplexEvent#getNumber()
+	 * @return the meta object for the attribute '<em>Time</em>'.
+	 * @see model.ComplexEvent#getTime()
 	 * @see #getComplexEvent()
 	 * @generated
 	 */
-	EAttribute getComplexEvent_Number();
+	EAttribute getComplexEvent_Time();
 
 	/**
 	 * Returns the meta object for the reference '{@link model.ComplexEvent#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}'.
@@ -1610,6 +1630,14 @@ public interface ModelPackage extends EPackage {
 		EReference CONTEXT_RELATION__ENDING_COMPLEX_EVENT = eINSTANCE.getContextRelation_EndingComplexEvent();
 
 		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT_RELATION__TIME = eINSTANCE.getContextRelation_Time();
+
+		/**
 		 * The meta object literal for the '{@link model.impl.EventImpl <em>Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1656,12 +1684,12 @@ public interface ModelPackage extends EPackage {
 		EClass COMPLEX_EVENT = eINSTANCE.getComplexEvent();
 
 		/**
-		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPLEX_EVENT__NUMBER = eINSTANCE.getComplexEvent_Number();
+		EAttribute COMPLEX_EVENT__TIME = eINSTANCE.getComplexEvent_Time();
 
 		/**
 		 * The meta object literal for the '<em><b>Behavioural Descriptions</b></em>' reference feature.
