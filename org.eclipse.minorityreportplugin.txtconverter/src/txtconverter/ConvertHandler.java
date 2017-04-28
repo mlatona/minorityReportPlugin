@@ -28,9 +28,8 @@ public class ConvertHandler implements IActionDelegate {
 			
 			do{
 				System.out.println("What do you want to do?");
-				System.out.println("1. Parse Types and Instances file and output to txt");
-				//System.out.println("2. Create types");
-				//System.out.println("3. Create instances");
+				System.out.println("1. Parse Types and Instances file and output to txt (eclipse normal instance)");
+				System.out.println("2. Parse Types and Instances file and output to txt (gmf diagram instance)");
 				System.out.println("10. Exit the program");
 				
 				num = scan.nextInt();
@@ -41,8 +40,11 @@ public class ConvertHandler implements IActionDelegate {
 							env = transform.getLoader().parseFiles();
 							transform.createTxtFile(env);	
 					}break;
-					case 2: 
-						break;
+					case 2:{
+							Environment env;
+							env = transform.getLoader().parseDiagramFile();
+							transform.createTxtFile(env);
+					}break;
 				}
 				
 			}while(num!=10);
