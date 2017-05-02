@@ -56,15 +56,6 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="EventParameters"
-          description="Create new EventParameters">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="ComplexEvent"
           description="Create new ComplexEvent">
         <smallIcon
@@ -76,33 +67,6 @@
           xsi:type="gmftool:CreationTool"
           title="BehaviouralDescription"
           description="Create new BehaviouralDescription">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="BehaviouralDescriptionHoldsAts"
-          description="Create new BehaviouralDescriptionHoldsAts">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="BehaviouralDescriptionHappens"
-          description="Create new BehaviouralDescriptionHappens">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="BehaviouralDescriptionHoldsAtBetweens"
-          description="Create new BehaviouralDescriptionHoldsAtBetweens">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -139,123 +103,6 @@
           xsi:type="gmftool:CreationTool"
           title="Initially"
           description="Create new Initially">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="ParameterInstance"
-          description="Create new ParameterInstance">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="ParameterType"
-          description="Create new ParameterType">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="ContextRelationParameters"
-          description="Create new ContextRelationParameters">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="ContextRelationInitialComplexEvent"
-          description="Create new ContextRelationInitialComplexEvent">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="ContextRelationEndingComplexEvent"
-          description="Create new ContextRelationEndingComplexEvent">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="ComplexEventBehaviouralDescriptions"
-          description="Create new ComplexEventBehaviouralDescriptions">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="HoldsAtContextRelation"
-          description="Create new HoldsAtContextRelation">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="HappensContextRelation"
-          description="Create new HappensContextRelation">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="HoldsAtBetweenContextRelation"
-          description="Create new HoldsAtBetweenContextRelation">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="InitiallyHoldsAts"
-          description="Create new InitiallyHoldsAts">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="InitiallyHoldsAtBetweens"
-          description="Create new InitiallyHoldsAtBetweens">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="InitiallyHappens"
-          description="Create new InitiallyHappens">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="InitiallyContextRelation"
-          description="Create new InitiallyContextRelation">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
