@@ -14,6 +14,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -31,11 +33,11 @@ public class Transformer {
 	private Loader loader;
 	private ModelFactory modelFactory;
 	
-	public Transformer() throws ParserConfigurationException{
-		
+	public Transformer(String filePath) throws ParserConfigurationException{
+		System.out.println("I'm in transformer and the path is: "+ filePath);
 		modelFactory = model.ModelFactory.eINSTANCE;
 		
-		loader = new Loader();
+		this.loader = new Loader(filePath);
 		
 	}
 	
@@ -158,6 +160,8 @@ public class Transformer {
 		
 		writer.println();
 		writer.println("% Version 3");
+		Calendar rightNow = Calendar.getInstance();
+		writer.println("Time: " + rightNow.get(Calendar.HOUR_OF_DAY) +":"+ rightNow.get(Calendar.MINUTE));
 		writer.close();
 
 	}
@@ -193,6 +197,6 @@ public class Transformer {
 	}
 			
 	public Loader getLoader(){
-		return loader;
+		return this.loader;
 	}
 }

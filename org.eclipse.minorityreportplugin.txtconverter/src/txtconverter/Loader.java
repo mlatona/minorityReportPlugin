@@ -41,13 +41,19 @@ public class Loader {
 	//
 	private ModelFactory modelFactory;
 	
+	public String filePath;
+	
 	/*
 	 * Constructor of the class
 	 */
-	public Loader() throws ParserConfigurationException{
+	public Loader(String filePath) throws ParserConfigurationException{
 
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;
+		this.filePath = filePath;
+		System.out.println("I'm in loader and the path is: "+ filePath);
+		System.out.println("I'm in loader and MY path variable is: "+ this.filePath);
+
 	   
 	}
 
@@ -134,7 +140,11 @@ public class Loader {
 		ResourceSet resSet = new ResourceSetImpl();
 
         // Get the resource
-        Resource r = resSet.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/default.model"));
+		System.out.println("Retrieving path again: " + this.filePath);
+		File file = new File(filePath);
+		System.out.println(file.canRead());
+		System.out.println(file.exists());
+        Resource r = resSet.createResource(URI.createFileURI(filePath));
 		r.load(null);
 
 		env = (Environment) r.getContents().get(0);
@@ -169,6 +179,10 @@ public class Loader {
 		
 		for (int i = 0; i < env.getInitials().size(); i++){
 			System.out.println("Context relation: "+ env.getInitials().get(i).getContextRelation().getName() + " --> true");
+		}
+		
+		for (int i = 0; i < env.getParameters().size(); i++){
+			System.out.printf("Parameter %d: %s --> type: %s \n", i+1, env.getParameters().get(i).getName(), env.getParameters().get(i).getType().getName() );
 		}
 		return env;
 	}
