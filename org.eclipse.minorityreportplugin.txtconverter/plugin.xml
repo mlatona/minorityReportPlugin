@@ -2,19 +2,58 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="generate-txt-action"
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            adaptable="false"
-            id="org.eclipse.minorityreportplugin.txtconverter.ConvertHandler"
-            objectClass="org.eclipse.core.resources.IProject">
-         <action
-               class="txtconverter.ConvertHandler"
-               id="org.eclipse.minorityreportplugin.ConvertHandler"
-               label="Generate TXT"
-               menubarPath="additions">
-         </action>
-      </objectContribution>
+         point="org.eclipse.ui.commands">
+      <category
+            description="Category related to the command for generating the txt file"
+            id="org.eclipse.minorityreportplugin.txtconverter.category"
+            name="Generate TXT category">
+      </category>
+      <command
+            categoryId="org.eclipse.minorityreportplugin.txtconverter.category"
+            id="org.eclipse.minorityreportplugin.txtconverter.generateTxt"
+            description="Command related to the txt generation"
+            name="Generate TXT command">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <command
+               commandId="org.eclipse.minorityreportplugin.txtconverter.generateTxt"
+               icon="icons/txtlogo.jpg"
+               label="Generate TXT file"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false"
+                        operator="or">
+                     <or>
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value="model">
+                        </test>
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value="model_diagram">
+                        </test>
+                     </or>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="txtconverter.ConvertHandler"
+            commandId="org.eclipse.minorityreportplugin.txtconverter.generateTxt">
+      </handler>
    </extension>
 
 </plugin>
