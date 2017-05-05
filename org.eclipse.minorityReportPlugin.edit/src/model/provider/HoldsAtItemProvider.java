@@ -197,7 +197,7 @@ public class HoldsAtItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GeneratorEditPlugin.INSTANCE;
+		return ModelEditPlugin.INSTANCE;
 	}
 
 }

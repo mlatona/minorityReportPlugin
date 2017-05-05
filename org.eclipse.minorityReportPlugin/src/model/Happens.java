@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link model.Happens#getTime <em>Time</em>}</li>
- *   <li>{@link model.Happens#getContextRelation <em>Context Relation</em>}</li>
+ *   <li>{@link model.Happens#getEvent <em>Event</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getHappens()
@@ -49,29 +49,29 @@ public interface Happens extends EObject {
 	void setTime(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Context Relation</b></em>' reference.
+	 * Returns the value of the '<em><b>Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Context Relation</em>' reference isn't clear,
+	 * If the meaning of the '<em>Event</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Context Relation</em>' reference.
-	 * @see #setContextRelation(ContextRelation)
-	 * @see model.ModelPackage#getHappens_ContextRelation()
-	 * @model required="true"
+	 * @return the value of the '<em>Event</em>' reference.
+	 * @see #setEvent(Event)
+	 * @see model.ModelPackage#getHappens_Event()
+	 * @model
 	 * @generated
 	 */
-	ContextRelation getContextRelation();
+	Event getEvent();
 
 	/**
-	 * Sets the value of the '{@link model.Happens#getContextRelation <em>Context Relation</em>}' reference.
+	 * Sets the value of the '{@link model.Happens#getEvent <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Context Relation</em>' reference.
-	 * @see #getContextRelation()
+	 * @param value the new value of the '<em>Event</em>' reference.
+	 * @see #getEvent()
 	 * @generated
 	 */
-	void setContextRelation(ContextRelation value);
+	void setEvent(Event value);
 
 } // Happens

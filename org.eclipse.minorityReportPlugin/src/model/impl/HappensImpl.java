@@ -2,7 +2,7 @@
  */
 package model.impl;
 
-import model.ContextRelation;
+import model.Event;
 import model.Happens;
 import model.ModelPackage;
 
@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link model.impl.HappensImpl#getTime <em>Time</em>}</li>
- *   <li>{@link model.impl.HappensImpl#getContextRelation <em>Context Relation</em>}</li>
+ *   <li>{@link model.impl.HappensImpl#getEvent <em>Event</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,14 +50,14 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	protected int time = TIME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getContextRelation() <em>Context Relation</em>}' reference.
+	 * The cached value of the '{@link #getEvent() <em>Event</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContextRelation()
+	 * @see #getEvent()
 	 * @generated
 	 * @ordered
 	 */
-	protected ContextRelation contextRelation;
+	protected Event event;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,16 +104,16 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextRelation getContextRelation() {
-		if (contextRelation != null && contextRelation.eIsProxy()) {
-			InternalEObject oldContextRelation = (InternalEObject)contextRelation;
-			contextRelation = (ContextRelation)eResolveProxy(oldContextRelation);
-			if (contextRelation != oldContextRelation) {
+	public Event getEvent() {
+		if (event != null && event.eIsProxy()) {
+			InternalEObject oldEvent = (InternalEObject)event;
+			event = (Event)eResolveProxy(oldEvent);
+			if (event != oldEvent) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.HAPPENS__CONTEXT_RELATION, oldContextRelation, contextRelation));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.HAPPENS__EVENT, oldEvent, event));
 			}
 		}
-		return contextRelation;
+		return event;
 	}
 
 	/**
@@ -121,8 +121,8 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContextRelation basicGetContextRelation() {
-		return contextRelation;
+	public Event basicGetEvent() {
+		return event;
 	}
 
 	/**
@@ -130,11 +130,11 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setContextRelation(ContextRelation newContextRelation) {
-		ContextRelation oldContextRelation = contextRelation;
-		contextRelation = newContextRelation;
+	public void setEvent(Event newEvent) {
+		Event oldEvent = event;
+		event = newEvent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.HAPPENS__CONTEXT_RELATION, oldContextRelation, contextRelation));
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.HAPPENS__EVENT, oldEvent, event));
 	}
 
 	/**
@@ -147,9 +147,9 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 		switch (featureID) {
 			case ModelPackage.HAPPENS__TIME:
 				return getTime();
-			case ModelPackage.HAPPENS__CONTEXT_RELATION:
-				if (resolve) return getContextRelation();
-				return basicGetContextRelation();
+			case ModelPackage.HAPPENS__EVENT:
+				if (resolve) return getEvent();
+				return basicGetEvent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,8 +165,8 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 			case ModelPackage.HAPPENS__TIME:
 				setTime((Integer)newValue);
 				return;
-			case ModelPackage.HAPPENS__CONTEXT_RELATION:
-				setContextRelation((ContextRelation)newValue);
+			case ModelPackage.HAPPENS__EVENT:
+				setEvent((Event)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -183,8 +183,8 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 			case ModelPackage.HAPPENS__TIME:
 				setTime(TIME_EDEFAULT);
 				return;
-			case ModelPackage.HAPPENS__CONTEXT_RELATION:
-				setContextRelation((ContextRelation)null);
+			case ModelPackage.HAPPENS__EVENT:
+				setEvent((Event)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -200,8 +200,8 @@ public class HappensImpl extends MinimalEObjectImpl.Container implements Happens
 		switch (featureID) {
 			case ModelPackage.HAPPENS__TIME:
 				return time != TIME_EDEFAULT;
-			case ModelPackage.HAPPENS__CONTEXT_RELATION:
-				return contextRelation != null;
+			case ModelPackage.HAPPENS__EVENT:
+				return event != null;
 		}
 		return super.eIsSet(featureID);
 	}

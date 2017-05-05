@@ -221,7 +221,7 @@ public class HoldsAtBetweenItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GeneratorEditPlugin.INSTANCE;
+		return ModelEditPlugin.INSTANCE;
 	}
 
 }

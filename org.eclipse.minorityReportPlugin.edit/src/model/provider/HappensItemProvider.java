@@ -61,7 +61,7 @@ public class HappensItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTimePropertyDescriptor(object);
-			addContextRelationPropertyDescriptor(object);
+			addEventPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,19 +89,19 @@ public class HappensItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Context Relation feature.
+	 * This adds a property descriptor for the Event feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContextRelationPropertyDescriptor(Object object) {
+	protected void addEventPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Happens_contextRelation_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Happens_contextRelation_feature", "_UI_Happens_type"),
-				 ModelPackage.Literals.HAPPENS__CONTEXT_RELATION,
+				 getString("_UI_Happens_event_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Happens_event_feature", "_UI_Happens_type"),
+				 ModelPackage.Literals.HAPPENS__EVENT,
 				 true,
 				 false,
 				 true,
@@ -173,7 +173,7 @@ public class HappensItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GeneratorEditPlugin.INSTANCE;
+		return ModelEditPlugin.INSTANCE;
 	}
 
 }

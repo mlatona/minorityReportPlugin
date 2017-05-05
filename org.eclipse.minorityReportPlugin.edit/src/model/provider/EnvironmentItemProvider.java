@@ -230,7 +230,7 @@ public class EnvironmentItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GeneratorEditPlugin.INSTANCE;
+		return ModelEditPlugin.INSTANCE;
 	}
 
 }

@@ -164,7 +164,7 @@ public class EventItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return GeneratorEditPlugin.INSTANCE;
+		return ModelEditPlugin.INSTANCE;
 	}
 
 }

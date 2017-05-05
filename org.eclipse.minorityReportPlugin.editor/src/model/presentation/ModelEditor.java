@@ -530,7 +530,7 @@ public class ModelEditor
 					}
 				}
 				catch (CoreException exception) {
-					GeneratorEditorPlugin.INSTANCE.log(exception);
+					ModelEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -646,7 +646,7 @@ public class ModelEditor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					GeneratorEditorPlugin.INSTANCE.log(exception);
+					ModelEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -657,7 +657,7 @@ public class ModelEditor
 						markerHelper.createMarkers(diagnostic);
 					}
 					catch (CoreException exception) {
-						GeneratorEditorPlugin.INSTANCE.log(exception);
+						ModelEditorPlugin.INSTANCE.log(exception);
 					}
 				}
 			}
@@ -1523,7 +1523,7 @@ public class ModelEditor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			GeneratorEditorPlugin.INSTANCE.log(exception);
+			ModelEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1727,7 +1727,7 @@ public class ModelEditor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return GeneratorEditorPlugin.INSTANCE.getString(key);
+		return ModelEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1737,7 +1737,7 @@ public class ModelEditor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return GeneratorEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return ModelEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**

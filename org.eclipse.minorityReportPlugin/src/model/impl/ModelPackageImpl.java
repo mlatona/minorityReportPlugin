@@ -504,7 +504,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getHappens_ContextRelation() {
+	public EReference getHappens_Event() {
 		return (EReference)happensEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -769,7 +769,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		happensEClass = createEClass(HAPPENS);
 		createEAttribute(happensEClass, HAPPENS__TIME);
-		createEReference(happensEClass, HAPPENS__CONTEXT_RELATION);
+		createEReference(happensEClass, HAPPENS__EVENT);
 
 		holdsAtBetweenEClass = createEClass(HOLDS_AT_BETWEEN);
 		createEAttribute(holdsAtBetweenEClass, HOLDS_AT_BETWEEN__INITIAL_TIME);
@@ -872,7 +872,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		initEClass(happensEClass, Happens.class, "Happens", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHappens_Time(), ecorePackage.getEInt(), "time", null, 0, 1, Happens.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getHappens_ContextRelation(), this.getContextRelation(), null, "contextRelation", null, 1, 1, Happens.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getHappens_Event(), this.getEvent(), null, "event", null, 0, 1, Happens.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(holdsAtBetweenEClass, HoldsAtBetween.class, "HoldsAtBetween", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHoldsAtBetween_InitialTime(), ecorePackage.getEInt(), "initialTime", null, 0, 1, HoldsAtBetween.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

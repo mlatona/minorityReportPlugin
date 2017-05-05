@@ -581,13 +581,13 @@ public interface ModelPackage extends EPackage {
 	int HAPPENS__TIME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Context Relation</b></em>' reference.
+	 * The feature id for the '<em><b>Event</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HAPPENS__CONTEXT_RELATION = 1;
+	int HAPPENS__EVENT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Happens</em>' class.
@@ -1232,15 +1232,15 @@ public interface ModelPackage extends EPackage {
 	EAttribute getHappens_Time();
 
 	/**
-	 * Returns the meta object for the reference '{@link model.Happens#getContextRelation <em>Context Relation</em>}'.
+	 * Returns the meta object for the reference '{@link model.Happens#getEvent <em>Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Context Relation</em>'.
-	 * @see model.Happens#getContextRelation()
+	 * @return the meta object for the reference '<em>Event</em>'.
+	 * @see model.Happens#getEvent()
 	 * @see #getHappens()
 	 * @generated
 	 */
-	EReference getHappens_ContextRelation();
+	EReference getHappens_Event();
 
 	/**
 	 * Returns the meta object for class '{@link model.HoldsAtBetween <em>Holds At Between</em>}'.
@@ -1794,12 +1794,12 @@ public interface ModelPackage extends EPackage {
 		EAttribute HAPPENS__TIME = eINSTANCE.getHappens_Time();
 
 		/**
-		 * The meta object literal for the '<em><b>Context Relation</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Event</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference HAPPENS__CONTEXT_RELATION = eINSTANCE.getHappens_ContextRelation();
+		EReference HAPPENS__EVENT = eINSTANCE.getHappens_Event();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.HoldsAtBetweenImpl <em>Holds At Between</em>}' class.

@@ -71,9 +71,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 
 import model.ModelFactory;
 import model.ModelPackage;
-import model.provider.GeneratorEditPlugin;
-
-
+import model.provider.ModelEditPlugin;
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;
@@ -99,7 +97,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(GeneratorEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(ModelEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -108,7 +106,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		GeneratorEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		ModelEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -175,8 +173,8 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle(GeneratorEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(GeneratorEditorPlugin.INSTANCE.getImage("full/wizban/NewModel")));
+		setWindowTitle(ModelEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(ModelEditorPlugin.INSTANCE.getImage("full/wizban/NewModel")));
 	}
 
 	/**
@@ -259,7 +257,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 							resource.save(options);
 						}
 						catch (Exception exception) {
-							GeneratorEditorPlugin.INSTANCE.log(exception);
+							ModelEditorPlugin.INSTANCE.log(exception);
 						}
 						finally {
 							progressMonitor.done();
@@ -292,14 +290,14 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
 			}
 			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), GeneratorEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				MessageDialog.openError(workbenchWindow.getShell(), ModelEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
 		}
 		catch (Exception exception) {
-			GeneratorEditorPlugin.INSTANCE.log(exception);
+			ModelEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
 	}
@@ -333,7 +331,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(GeneratorEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(ModelEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -395,8 +393,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE);
-			{
+			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -411,7 +408,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
-				containerLabel.setText(GeneratorEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+				containerLabel.setText(ModelEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -437,7 +434,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 
 			Label encodingLabel = new Label(composite, SWT.LEFT);
 			{
-				encodingLabel.setText(GeneratorEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+				encodingLabel.setText(ModelEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -536,10 +533,10 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 		 */
 		protected String getLabel(String typeName) {
 			try {
-				return GeneratorEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+				return ModelEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
 			catch(MissingResourceException mre) {
-				GeneratorEditorPlugin.INSTANCE.log(mre);
+				ModelEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
 		}
@@ -552,7 +549,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(GeneratorEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(ModelEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -571,9 +568,9 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new ModelModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(GeneratorEditorPlugin.INSTANCE.getString("_UI_ModelModelWizard_label"));
-		newFileCreationPage.setDescription(GeneratorEditorPlugin.INSTANCE.getString("_UI_ModelModelWizard_description"));
-		newFileCreationPage.setFileName(GeneratorEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage.setTitle(ModelEditorPlugin.INSTANCE.getString("_UI_ModelModelWizard_label"));
+		newFileCreationPage.setDescription(ModelEditorPlugin.INSTANCE.getString("_UI_ModelModelWizard_description"));
+		newFileCreationPage.setFileName(ModelEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -599,7 +596,7 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = GeneratorEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = ModelEditorPlugin.INSTANCE.getString("_UI_ModelEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -610,8 +607,8 @@ public class ModelModelWizard extends Wizard implements INewWizard {
 			}
 		}
 		initialObjectCreationPage = new ModelModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(GeneratorEditorPlugin.INSTANCE.getString("_UI_ModelModelWizard_label"));
-		initialObjectCreationPage.setDescription(GeneratorEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		initialObjectCreationPage.setTitle(ModelEditorPlugin.INSTANCE.getString("_UI_ModelModelWizard_label"));
+		initialObjectCreationPage.setDescription(ModelEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
 

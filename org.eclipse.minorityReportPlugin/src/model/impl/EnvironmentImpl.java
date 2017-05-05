@@ -157,7 +157,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EnvironmentImpl() {
+	protected EnvironmentImpl() {
 		super();
 	}
 
