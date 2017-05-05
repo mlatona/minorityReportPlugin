@@ -20,7 +20,7 @@ public class Main {
 		Transformer transform;
 		try {
 			transform = new Transformer("just a string");
-			// comment 
+			
 			do{
 				System.out.println("What do you want to do?");
 				System.out.println("1. Parse Types and Instances file and output to txt (eclipse normal instance)");
