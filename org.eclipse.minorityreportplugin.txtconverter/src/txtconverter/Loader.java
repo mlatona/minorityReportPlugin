@@ -115,7 +115,7 @@ public class Loader {
 					System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAt: " + ce.getBehaviouralDescriptions().getHoldsAts().get(j).getContextRelation().getName());
 				}
 				for (int j = 0; j < ce.getBehaviouralDescriptions().getHappens().size(); j++){
-					System.out.println("Event: " + env.getEvents().get(i).getName() + "  Happens: " + ce.getBehaviouralDescriptions().getHappens().get(j).getContextRelation().getName());
+					System.out.println("Event: " + env.getEvents().get(i).getName() + "  Happens: " + ce.getBehaviouralDescriptions().getHappens().get(j).getEvent().getName());
 				}
 				for (int j = 0; j < ce.getBehaviouralDescriptions().getHoldsAtBetweens().size(); j++){
 					System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAtBetween: " + ce.getBehaviouralDescriptions().getHoldsAtBetweens().get(j).getContextRelation().getName());
@@ -169,7 +169,7 @@ public class Loader {
 					System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAt: " + ce.getBehaviouralDescriptions().getHoldsAts().get(j).getContextRelation().getName());
 				}
 				for (int j = 0; j < ce.getBehaviouralDescriptions().getHappens().size(); j++){
-					System.out.println("Event: " + env.getEvents().get(i).getName() + "  Happens: " + ce.getBehaviouralDescriptions().getHappens().get(j).getContextRelation().getName());
+					System.out.println("Event: " + env.getEvents().get(i).getName() + "  Happens: " + ce.getBehaviouralDescriptions().getHappens().get(j).getEvent().getName());
 				}
 				for (int j = 0; j < ce.getBehaviouralDescriptions().getHoldsAtBetweens().size(); j++){
 					System.out.println("Event: " + env.getEvents().get(i).getName() + "  HoldsAtBetween: " + ce.getBehaviouralDescriptions().getHoldsAtBetweens().get(j).getContextRelation().getName());
