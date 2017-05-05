@@ -1,0 +1,7 @@
+# Tracing options for the org.eclipse.minorityReportPlugin.diagram plug-in
+
+# Common issues
+org.eclipse.minorityReportPlugin.diagram/debug=false
+
+# Visual IDs
+org.eclipse.minorityReportPlugin.diagram/debug/visualID=false
