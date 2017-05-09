@@ -4,7 +4,7 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
-    name="OK">
+    name="General">
   <figures
       name="Default">
     <figures
@@ -27,10 +27,7 @@
         name="ContextRelationEndingComplexEventTargetDecoration"/>
     <figures
         xsi:type="gmfgraph:PolylineDecoration"
-        name="PrimitiveEventParametersTargetDecoration"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="ComplexEventParametersTargetDecoration"/>
+        name="EventParametersTargetDecoration"/>
     <figures
         xsi:type="gmfgraph:PolylineDecoration"
         name="ComplexEventBehaviouralDescriptionsTargetDecoration"/>
@@ -79,18 +76,11 @@
             red="204"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="TypeNameFigure"
-            text="......."/>
-        <children
-            xsi:type="gmfgraph:Label"
             name="TypeTitle"
             text="TYPE"/>
       </actualFigure>
       <accessors
           accessor="getFigureTypeTitle"
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
-      <accessors
-          accessor="getFigureTypeNameFigure"
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
@@ -214,13 +204,6 @@
           figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="PrimitiveEventParametersFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="PrimitiveEventParametersFigure"
-          targetDecoration="//@figures.0/@figures.6"/>
-    </descriptors>
-    <descriptors
         name="ComplexEventFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -237,23 +220,23 @@
             text=""/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
-        name="ComplexEventParametersFigure">
+        name="EventParametersFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
-          name="ComplexEventParametersFigure"
-          targetDecoration="//@figures.0/@figures.7"/>
+          name="EventParametersFigure"
+          targetDecoration="//@figures.0/@figures.6"/>
     </descriptors>
     <descriptors
         name="ComplexEventBehaviouralDescriptionsFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="ComplexEventBehaviouralDescriptionsFigure"
-          targetDecoration="//@figures.0/@figures.8"/>
+          targetDecoration="//@figures.0/@figures.7"/>
     </descriptors>
     <descriptors
         name="BehaviouralDescriptionFigure">
@@ -268,28 +251,28 @@
             text="&lt;...>"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="BehaviouralDescriptionHoldsAtsFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="BehaviouralDescriptionHoldsAtsFigure"
-          targetDecoration="//@figures.0/@figures.9"/>
+          targetDecoration="//@figures.0/@figures.8"/>
     </descriptors>
     <descriptors
         name="BehaviouralDescriptionHappensFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="BehaviouralDescriptionHappensFigure"
-          targetDecoration="//@figures.0/@figures.10"/>
+          targetDecoration="//@figures.0/@figures.9"/>
     </descriptors>
     <descriptors
         name="BehaviouralDescriptionHoldsAtBetweensFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="BehaviouralDescriptionHoldsAtBetweensFigure"
-          targetDecoration="//@figures.0/@figures.11"/>
+          targetDecoration="//@figures.0/@figures.10"/>
     </descriptors>
     <descriptors
         name="HoldsAtFigure">
@@ -308,16 +291,16 @@
             text="&lt;...>"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.19/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors
         name="HoldsAtContextRelationFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="HoldsAtContextRelationFigure"
-          targetDecoration="//@figures.0/@figures.12"/>
+          targetDecoration="//@figures.0/@figures.11"/>
     </descriptors>
     <descriptors
         name="HappensFigure">
@@ -332,14 +315,14 @@
             text="&lt;...>"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.21/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="HappensEventFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="HappensEventFigure"
-          targetDecoration="//@figures.0/@figures.13"/>
+          targetDecoration="//@figures.0/@figures.12"/>
     </descriptors>
     <descriptors
         name="HoldsAtBetweenFigure">
@@ -362,18 +345,18 @@
             text="&lt;...>"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.23/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.0"/>
       <accessors
-          figure="//@figures.0/@descriptors.23/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.1"/>
       <accessors
-          figure="//@figures.0/@descriptors.23/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="HoldsAtBetweenContextRelationFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="HoldsAtBetweenContextRelationFigure"
-          targetDecoration="//@figures.0/@figures.14"/>
+          targetDecoration="//@figures.0/@figures.13"/>
     </descriptors>
     <descriptors
         name="InitiallyFigure">
@@ -386,28 +369,28 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="InitiallyHoldsAtsFigure"
-          targetDecoration="//@figures.0/@figures.15"/>
+          targetDecoration="//@figures.0/@figures.14"/>
     </descriptors>
     <descriptors
         name="InitiallyHoldsAtBetweensFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="InitiallyHoldsAtBetweensFigure"
-          targetDecoration="//@figures.0/@figures.16"/>
+          targetDecoration="//@figures.0/@figures.15"/>
     </descriptors>
     <descriptors
         name="InitiallyHappensFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="InitiallyHappensFigure"
-          targetDecoration="//@figures.0/@figures.17"/>
+          targetDecoration="//@figures.0/@figures.16"/>
     </descriptors>
     <descriptors
         name="InitiallyContextRelationFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="InitiallyContextRelationFigure"
-          targetDecoration="//@figures.0/@figures.18"/>
+          targetDecoration="//@figures.0/@figures.17"/>
     </descriptors>
   </figures>
   <nodes
@@ -462,11 +445,8 @@
       name="ContextRelationEndingComplexEvent"
       figure="ContextRelationEndingComplexEventFigure"/>
   <connections
-      name="PrimitiveEventParameters"
-      figure="PrimitiveEventParametersFigure"/>
-  <connections
-      name="ComplexEventParameters"
-      figure="ComplexEventParametersFigure"/>
+      name="EventParameters"
+      figure="EventParametersFigure"/>
   <connections
       name="ComplexEventBehaviouralDescriptions"
       figure="ComplexEventBehaviouralDescriptionsFigure"/>
@@ -501,10 +481,6 @@
       name="InitiallyContextRelation"
       figure="InitiallyContextRelationFigure"/>
   <labels
-      name="TypeName"
-      figure="TypeFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <labels
       name="InstanceName"
       figure="InstanceFigure"
       accessor="//@figures.0/@descriptors.1/@accessors.0"/>
@@ -535,37 +511,37 @@
   <labels
       name="ComplexEventName"
       figure="ComplexEventFigure"
-      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
   <labels
       name="ComplexEventTime"
       figure="ComplexEventFigure"
-      accessor="//@figures.0/@descriptors.12/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.1"/>
   <labels
       name="BehaviouralDescriptionName"
       figure="BehaviouralDescriptionFigure"
-      accessor="//@figures.0/@descriptors.15/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.14/@accessors.0"/>
   <labels
       name="HoldsAtTime"
       figure="HoldsAtFigure"
-      accessor="//@figures.0/@descriptors.19/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.18/@accessors.0"/>
   <labels
       name="HoldsAtIsHolding"
       figure="HoldsAtFigure"
-      accessor="//@figures.0/@descriptors.19/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.18/@accessors.1"/>
   <labels
       name="HappensTime"
       figure="HappensFigure"
-      accessor="//@figures.0/@descriptors.21/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.20/@accessors.0"/>
   <labels
       name="HoldsAtBetweenInitialTime"
       figure="HoldsAtBetweenFigure"
-      accessor="//@figures.0/@descriptors.23/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.22/@accessors.0"/>
   <labels
       name="HoldsAtBetweenEndingTime"
       figure="HoldsAtBetweenFigure"
-      accessor="//@figures.0/@descriptors.23/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.22/@accessors.1"/>
   <labels
       name="HoldsAtBetweenIsHolding"
       figure="HoldsAtBetweenFigure"
-      accessor="//@figures.0/@descriptors.23/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.22/@accessors.2"/>
 </gmfgraph:Canvas>

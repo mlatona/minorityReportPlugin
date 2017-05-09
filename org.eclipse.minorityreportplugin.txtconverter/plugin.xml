@@ -35,11 +35,11 @@
                      <or>
                         <test
                               property="org.eclipse.core.resources.extension"
-                              value="model">
+                              value="generalmodel">
                         </test>
                         <test
                               property="org.eclipse.core.resources.extension"
-                              value="model_diagram">
+                              value="generalmodel_diagram">
                         </test>
                      </or>
                   </iterate>
