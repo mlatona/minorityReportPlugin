@@ -11,13 +11,6 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//PrimitiveEvent"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="event.gmfgraph#PrimitiveEventName"/>
-        <features
-            href="../model.ecore#//Event/name"/>
-      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="event.gmftool#//@palette/@tools.0/@tools.0"/>
@@ -40,7 +33,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="event.gmftool#//@palette/@tools.0/@tools.2"/>
+          href="event.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
           href="event.gmfgraph#ComplexEvent"/>
     </ownedChild>

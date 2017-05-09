@@ -39,7 +39,7 @@
                         </test>
                         <test
                               property="org.eclipse.core.resources.extension"
-                              value="generalmodel_diagram">
+                              value="instancetypemodel">
                         </test>
                      </or>
                   </iterate>

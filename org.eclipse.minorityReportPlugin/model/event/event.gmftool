@@ -20,35 +20,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="EventParameters"
-          description="Create new EventParameters">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="ComplexEvent"
           description="Create new ComplexEvent">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="EventParameters2"
-          description="Create new EventParameters">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="ComplexEventBehaviouralDescriptions"
-          description="Create new ComplexEventBehaviouralDescriptions">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

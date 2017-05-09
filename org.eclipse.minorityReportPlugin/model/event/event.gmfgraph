@@ -7,37 +7,6 @@
     name="model">
   <figures
       name="Default">
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="PrimitiveEventParametersTargetDecoration"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="ComplexEventParametersTargetDecoration"/>
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="ComplexEventBehaviouralDescriptionsTargetDecoration"/>
-    <descriptors
-        name="PrimitiveEventFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="PrimitiveEventFigure">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="PrimitiveEventNameFigure"
-            text="&lt;...>"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
-        name="PrimitiveEventParametersFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="PrimitiveEventParametersFigure"
-          targetDecoration="//@figures.0/@figures.0"/>
-    </descriptors>
     <descriptors
         name="ComplexEventFigure">
       <actualFigure
@@ -55,23 +24,48 @@
             text="&lt;...>"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-      <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="ComplexEventParametersFigure">
+        name="PrimitiveEventFigure">
       <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="ComplexEventParametersFigure"
-          targetDecoration="//@figures.0/@figures.1"/>
-    </descriptors>
-    <descriptors
-        name="ComplexEventBehaviouralDescriptionsFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="ComplexEventBehaviouralDescriptionsFigure"
-          targetDecoration="//@figures.0/@figures.2"/>
+          xsi:type="gmfgraph:Rectangle"
+          name="PrimitiveEventFigure"
+          outline="false"
+          fill="false">
+        <layout
+            xsi:type="gmfgraph:StackLayout"/>
+        <children
+            xsi:type="gmfgraph:Ellipse"
+            name="Head">
+          <backgroundColor
+              xsi:type="gmfgraph:RGBColor"
+              red="70"
+              green="250"
+              blue="20"/>
+          <size
+              x="20"
+              y="20"/>
+        </children>
+        <children
+            xsi:type="gmfgraph:Polygon"
+            name="Body">
+          <backgroundColor
+              xsi:type="gmfgraph:RGBColor"
+              red="210"
+              green="250"
+              blue="230"/>
+          <template
+              x="10"
+              y="10"/>
+          <template
+              x="5"
+              y="5"/>
+          <template
+              x="20"
+              y="20"/>
+        </children>
+      </actualFigure>
     </descriptors>
   </figures>
   <nodes
@@ -80,25 +74,8 @@
   <nodes
       name="ComplexEvent"
       figure="ComplexEventFigure"/>
-  <connections
-      name="PrimitiveEventParameters"
-      figure="PrimitiveEventParametersFigure"/>
-  <connections
-      name="ComplexEventParameters"
-      figure="ComplexEventParametersFigure"/>
-  <connections
-      name="ComplexEventBehaviouralDescriptions"
-      figure="ComplexEventBehaviouralDescriptionsFigure"/>
-  <labels
-      name="PrimitiveEventName"
-      figure="PrimitiveEventFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="ComplexEventName"
       figure="ComplexEventFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels
-      name="ComplexEventTime"
-      figure="ComplexEventFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

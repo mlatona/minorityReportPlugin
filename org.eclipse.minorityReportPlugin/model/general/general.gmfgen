@@ -4,7 +4,10 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    domainFileExtension="generalmodel">
+    packageNamePrefix="general.model.diagram"
+    modelID="GeneralModel"
+    domainFileExtension="generalmodel"
+    templateDirectory="">
   <diagram
       visualID="1000"
       editPartClassName="EnvironmentEditPart"
@@ -921,7 +924,8 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="org.eclipse.minorityReportPlugin.general.diagram">
+      iD="org.eclipse.minorityReportPlugin.general.diagram"
+      name="General Model Plugin">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
@@ -1510,7 +1514,8 @@
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
-  <diagramUpdater/>
+  <diagramUpdater
+      updateCommandID="model.diagram.updateGeneralDiagram"/>
   <propertySheet>
     <tabs
         xsi:type="gmfgen:GenStandardPropertyTab"

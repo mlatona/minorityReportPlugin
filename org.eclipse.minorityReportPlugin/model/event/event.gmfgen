@@ -4,15 +4,17 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
-    modelID="Diagram_event"
-    diagramFileExtension="event_diagram">
+    packageNamePrefix="event.model.diagram"
+    modelID="Event Model"
+    diagramFileExtension="eventmodel_diagram"
+    domainFileExtension="eventmodel"
+    pluginDirectory="/org.eclipse.minorityReportPlugin.event.diagram/src">
   <diagram
-      visualID="1001"
+      visualID="1000"
       editPartClassName="EnvironmentEditPart"
       itemSemanticEditPolicyClassName="EnvironmentItemSemanticEditPolicy"
       canonicalEditPolicyClassName="EnvironmentCanonicalEditPolicy"
       iconProviderPriority="Low"
-      editingDomainID="SharedEditingDomain"
       validationProviderPriority="Low">
     <diagramRunTimeClass
         href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Diagram"/>
@@ -38,9 +40,8 @@
           editHelperClassName="PrimitiveEventEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          layoutType="FLOW_LAYOUT"
           className="PrimitiveEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePrimitiveEventNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePrimitiveEventNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePrimitiveEventNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigurePrimitiveEventNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePrimitiveEventNameFigure() {&#xA;&#x9;&#x9;return fFigurePrimitiveEventNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse head0 = new org.eclipse.draw2d.Ellipse();&#xA;&#xA;&#x9;head0.setBackgroundColor(HEAD0_BACK&#xA;);&#xA;head0.setSize(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;);&#xA;&#xA;this.add(head0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolygonShape body0 = new org.eclipse.draw2d.PolygonShape();&#xA;&#xA;body0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;body0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;body0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;body0.setFill(true);&#xA;&#x9;body0.setBackgroundColor(BODY0_BACK&#xA;);&#xA;&#xA;this.add(body0);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color HEAD0_BACK = new org.eclipse.swt.graphics.Color(null, 70, 250, 20);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color BODY0_BACK = new org.eclipse.swt.graphics.Color(null, 210, 250, 230);&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/PrimitiveEvent"/>
@@ -49,24 +50,6 @@
         <childMetaFeature
             href="../model.genmodel#//model/Environment/events"/>
       </modelFacet>
-      <labels
-          visualID="5001"
-          editPartClassName="PrimitiveEventNameEditPart"
-          itemSemanticEditPolicyClassName="PrimitiveEventNameItemSemanticEditPolicy"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigurePrimitiveEventNameFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="../model.genmodel#//model/Event/name"/>
-        </modelFacet>
-      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2002"
@@ -84,7 +67,7 @@
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
           className="ComplexEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComplexEventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComplexEventNameFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComplexEventTimeFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComplexEventFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComplexEventNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureComplexEventNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureComplexEventNameFigure);&#xA;&#xA;&#xA;&#xA;fFigureComplexEventTimeFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureComplexEventTimeFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureComplexEventTimeFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComplexEventNameFigure() {&#xA;&#x9;&#x9;return fFigureComplexEventNameFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComplexEventTimeFigure() {&#xA;&#x9;&#x9;return fFigureComplexEventTimeFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComplexEventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComplexEventNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComplexEventFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComplexEventNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureComplexEventNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureComplexEventNameFigure);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel complexEventTimeFigure0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;complexEventTimeFigure0.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(complexEventTimeFigure0);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComplexEventNameFigure() {&#xA;&#x9;&#x9;return fFigureComplexEventNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/ComplexEvent"/>
@@ -122,21 +105,9 @@
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="EventParameters"
-            description="Create new EventParameters"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
             title="ComplexEvent"
             description="Create new ComplexEvent"
             genNodes="//@diagram/@topLevelNodes.1"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="EventParameters2"
-            description="Create new EventParameters"/>
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="ComplexEventBehaviouralDescriptions"
-            description="Create new ComplexEventBehaviouralDescriptions"/>
       </groups>
     </palette>
     <preferencePages
@@ -166,12 +137,12 @@
     </preferencePages>
   </diagram>
   <plugin
-      iD="org.eclipse.minorityReportPlugin.eventdiagram">
+      iD="org.eclipse.minorityReportPlugin.event.diagram"
+      name="Event Model Plugin">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
   </plugin>
-  <editor
-      iD="model.diagram.part.EventDiagramEditorID"/>
+  <editor/>
   <navigator>
     <childReferences
         child="//@diagram"/>
@@ -208,7 +179,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">
