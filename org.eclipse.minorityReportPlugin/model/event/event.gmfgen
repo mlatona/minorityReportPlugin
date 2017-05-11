@@ -41,7 +41,12 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PrimitiveEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventFigure() {&#xA;&#x9;&#x9;this.setLayoutManager(new org.eclipse.draw2d.StackLayout());&#xA;&#x9;&#x9;this.setFill(false);&#xA;this.setOutline(false);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;org.eclipse.draw2d.Ellipse head0 = new org.eclipse.draw2d.Ellipse();&#xA;&#xA;&#x9;head0.setBackgroundColor(HEAD0_BACK&#xA;);&#xA;head0.setSize(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;);&#xA;&#xA;this.add(head0);&#xA;&#xA;&#xA;&#xA;org.eclipse.draw2d.PolygonShape body0 = new org.eclipse.draw2d.PolygonShape();&#xA;&#xA;body0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(10)&#xA;));&#xA;body0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;body0.addPoint(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(20)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;body0.setFill(true);&#xA;&#x9;body0.setBackgroundColor(BODY0_BACK&#xA;);&#xA;&#xA;this.add(body0);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color HEAD0_BACK = new org.eclipse.swt.graphics.Color(null, 70, 250, 20);&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color BODY0_BACK = new org.eclipse.swt.graphics.Color(null, 210, 250, 230);&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventFigure extends org.eclipse.gmf.runtime.lite.svg.SVGFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePrimitiveEventNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setURI(&quot;platform:/plugin/org.eclipse.minorityReportPlugin.event.diagram/icons/agent.svg&quot;);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePrimitiveEventNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePrimitiveEventNameFigure.setText(&quot;--- NAME HERE ---&quot;);&#xA;fFigurePrimitiveEventNameFigure.setLocation(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;&#xA;this.add(fFigurePrimitiveEventNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.swt.graphics.Color getBackgroundColor() {&#xA;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon|//:circle&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;if (nodes.getLength() > 0) {&#xA;&#x9;&#x9;&#x9;org.w3c.dom.Element element = (org.w3c.dom.Element) nodes.item(0);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getColor(element, &quot;fill&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public void setBackgroundColor(org.eclipse.swt.graphics.Color value) {&#xA;&#x9;&#x9;&#x9;&#x9;String svalue = org.eclipse.gmf.runtime.lite.svg.SVGUtils.toSVGColor(getDocument(), value);&#xA;&#x9;&#x9;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon|//:circle&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;for (int i = 0; i &lt; nodes.getLength(); i++) {&#xA;&#x9;&#x9;&#x9;((org.w3c.dom.Element) nodes.item(i)).setAttributeNS(null, &quot;fill&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;svalue);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;super.setBackgroundColor(value);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.swt.graphics.Color getForegroundColor() {&#xA;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon|//:circle&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;if (nodes.getLength() > 0) {&#xA;&#x9;&#x9;&#x9;org.w3c.dom.Element element = (org.w3c.dom.Element) nodes.item(0);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getColor(element, &quot;stroke&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public void setForegroundColor(org.eclipse.swt.graphics.Color value) {&#xA;&#x9;&#x9;&#x9;&#x9;String svalue = org.eclipse.gmf.runtime.lite.svg.SVGUtils.toSVGColor(getDocument(), value);&#xA;&#x9;&#x9;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon|//:circle&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;for (int i = 0; i &lt; nodes.getLength(); i++) {&#xA;&#x9;&#x9;&#x9;((org.w3c.dom.Element) nodes.item(i)).setAttributeNS(null, &quot;stroke&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;svalue);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;super.setForegroundColor(value);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePrimitiveEventNameFigure() {&#xA;&#x9;&#x9;return fFigurePrimitiveEventNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 178, 178, 18);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedForeground="true"
+            fixedBackground="true"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/PrimitiveEvent"/>
@@ -50,6 +55,24 @@
         <childMetaFeature
             href="../model.genmodel#//model/Environment/events"/>
       </modelFacet>
+      <labels
+          visualID="5003"
+          editPartClassName="PrimitiveEventNameEditPart"
+          itemSemanticEditPolicyClassName="PrimitiveEventNameItemSemanticEditPolicy"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigurePrimitiveEventNameFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../model.genmodel#//model/Event/name"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2002"
@@ -141,6 +164,7 @@
       name="Event Model Plugin">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+    <requiredPlugins>org.eclipse.gmf.runtime.lite.svg</requiredPlugins>
   </plugin>
   <editor/>
   <navigator>
@@ -179,7 +203,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">

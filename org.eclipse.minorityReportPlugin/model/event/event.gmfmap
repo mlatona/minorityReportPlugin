@@ -11,6 +11,13 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//PrimitiveEvent"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="event.gmfgraph#PrimitiveEventName"/>
+        <features
+            href="../model.ecore#//Event/name"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="event.gmftool#//@palette/@tools.0/@tools.0"/>

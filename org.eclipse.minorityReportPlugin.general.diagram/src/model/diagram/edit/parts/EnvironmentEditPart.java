@@ -17,7 +17,7 @@ public class EnvironmentEditPart extends DiagramEditPart {
 	/**
 	* @generated
 	*/
-	public final static String MODEL_ID = "Model"; //$NON-NLS-1$
+	public final static String MODEL_ID = "GeneralModel"; //$NON-NLS-1$
 
 	/**
 	* @generated

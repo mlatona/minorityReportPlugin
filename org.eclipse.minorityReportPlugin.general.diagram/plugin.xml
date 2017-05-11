@@ -18,14 +18,14 @@
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="model.diagram.part.ModelDiagramEditorID"
+         id="general.model.diagram.part.ModelDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ModelDiagramFile.gif"
          extensions="generalmodel_diagram"
          default="true"
-         class="model.diagram.part.ModelDiagramEditor"
-         matchingStrategy="model.diagram.part.ModelMatchingStrategy"
-         contributorClass="model.diagram.part.ModelDiagramActionBarContributor">
+         class="general.model.diagram.part.ModelDiagramEditor"
+         matchingStrategy="general.model.diagram.part.ModelMatchingStrategy"
+         contributorClass="general.model.diagram.part.ModelDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -33,7 +33,7 @@
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
-         id="model.diagram.ui.diagramContext"
+         id="general.model.diagram.ui.diagramContext"
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
@@ -45,8 +45,8 @@
   	     name="%newWizardName"
   	     icon="icons/obj16/ModelDiagramFile.gif"
   	     category="org.eclipse.ui.Examples"
-  	     class="model.diagram.part.ModelCreationWizard"
-  	     id="model.diagram.part.ModelCreationWizardID">
+  	     class="general.model.diagram.part.ModelCreationWizard"
+  	     id="general.model.diagram.part.ModelCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
    </extension>
@@ -59,7 +59,7 @@
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
-               class="model.diagram.part.ModelInitDiagramFileAction"
+               class="general.model.diagram.part.ModelInitDiagramFileAction"
                menubarPath="additions"
                enablesFor="1"
                id="org.eclipse.minorityReportPlugin.general.diagram.InitDiagramAction">
@@ -71,9 +71,9 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="ModelPresentation">
+         id="GeneralModelPresentation">
          <Priority name="Lowest"/>
-         <ViewId id="model.diagram.part.ModelDiagramEditorID">
+         <ViewId id="general.model.diagram.part.ModelDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -88,9 +88,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="ModelPresentationIDE">
+         id="GeneralModelPresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="model.diagram.part.ModelDiagramEditorID">
+         <ViewId id="general.model.diagram.part.ModelDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -98,9 +98,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="ModelRender">
+            id="GeneralModelRender">
          <Priority name="Lowest"/>
-         <ViewId id="model.diagram.part.ModelDiagramEditorID">
+         <ViewId id="general.model.diagram.part.ModelDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -113,7 +113,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="model.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="general.model.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -121,31 +121,31 @@
       <page
             id="org.eclipse.minorityReportPlugin.diagram.general"
             name="%prefpage.org.eclipse.minorityReportPlugin.diagram.general"
-            class="model.diagram.preferences.DiagramGeneralPreferencePage">
+            class="general.model.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="org.eclipse.minorityReportPlugin.diagram.appearance"
             name="%prefpage.org.eclipse.minorityReportPlugin.diagram.appearance"
             category="org.eclipse.minorityReportPlugin.diagram.general"
-            class="model.diagram.preferences.DiagramAppearancePreferencePage">
+            class="general.model.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="org.eclipse.minorityReportPlugin.diagram.connections"
             name="%prefpage.org.eclipse.minorityReportPlugin.diagram.connections"
             category="org.eclipse.minorityReportPlugin.diagram.general"
-            class="model.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="general.model.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="org.eclipse.minorityReportPlugin.diagram.printing"
             name="%prefpage.org.eclipse.minorityReportPlugin.diagram.printing"
             category="org.eclipse.minorityReportPlugin.diagram.general"
-            class="model.diagram.preferences.DiagramPrintingPreferencePage">
+            class="general.model.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="org.eclipse.minorityReportPlugin.diagram.rulersAndGrid"
             name="%prefpage.org.eclipse.minorityReportPlugin.diagram.rulersAndGrid"
             category="org.eclipse.minorityReportPlugin.diagram.general"
-            class="model.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="general.model.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -153,7 +153,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="org.eclipse.minorityReportPlugin.general.diagram"
-            labelProvider="model.diagram.sheet.ModelSheetLabelProvider">
+            labelProvider="general.model.diagram.sheet.ModelSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -204,19 +204,19 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="model.diagram.sheet.ModelPropertySection">
+            class="general.model.diagram.sheet.ModelPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="model.diagram.navigator.ModelAbstractNavigatorItem"/>
+            <input type="general.model.diagram.navigator.ModelAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="model.diagram.providers.ModelViewProvider">
+      <viewProvider class="general.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Model"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="GeneralModel"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018"/>
       </viewProvider>
@@ -224,10 +224,10 @@
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="model.diagram.providers.ModelEditPartProvider">
+      <editpartProvider class="general.model.diagram.providers.ModelEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="Model"/>
+            <method name="getType()" value="GeneralModel"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
             <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011"/>
@@ -248,64 +248,64 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfEnvironmentEditPart">
+      <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfEnvironmentEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.EnvironmentEditPart" id="Environment_1000"/>
+         <object class="general.model.diagram.edit.parts.EnvironmentEditPart" id="Environment_1000"/>
          <context elements="Environment_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfTypeEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfTypeEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.TypeEditPart" id="Type_2001"/>
+         <object class="general.model.diagram.edit.parts.TypeEditPart" id="Type_2001"/>
          <context elements="Type_2001"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfParameterEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfParameterEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.ParameterEditPart" id="Parameter_2002"/>
+         <object class="general.model.diagram.edit.parts.ParameterEditPart" id="Parameter_2002"/>
          <context elements="Parameter_2002"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfHoldsAtBetweenEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfHoldsAtBetweenEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.HoldsAtBetweenEditPart" id="HoldsAtBetween_2003"/>
+         <object class="general.model.diagram.edit.parts.HoldsAtBetweenEditPart" id="HoldsAtBetween_2003"/>
          <context elements="HoldsAtBetween_2003"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfInstanceEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfInstanceEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.InstanceEditPart" id="Instance_2004"/>
+         <object class="general.model.diagram.edit.parts.InstanceEditPart" id="Instance_2004"/>
          <context elements="Instance_2004"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfHappensEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfHappensEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.HappensEditPart" id="Happens_2005"/>
+         <object class="general.model.diagram.edit.parts.HappensEditPart" id="Happens_2005"/>
          <context elements="Happens_2005"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfInitiallyEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfInitiallyEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.InitiallyEditPart" id="Initially_2006"/>
+         <object class="general.model.diagram.edit.parts.InitiallyEditPart" id="Initially_2006"/>
          <context elements="Initially_2006"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfBehaviouralDescriptionEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfBehaviouralDescriptionEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.BehaviouralDescriptionEditPart" id="BehaviouralDescription_2007"/>
+         <object class="general.model.diagram.edit.parts.BehaviouralDescriptionEditPart" id="BehaviouralDescription_2007"/>
          <context elements="BehaviouralDescription_2007"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfHoldsAtEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfHoldsAtEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.HoldsAtEditPart" id="HoldsAt_2008"/>
+         <object class="general.model.diagram.edit.parts.HoldsAtEditPart" id="HoldsAt_2008"/>
          <context elements="HoldsAt_2008"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfPrimitiveEventEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfPrimitiveEventEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.PrimitiveEventEditPart" id="PrimitiveEvent_2009"/>
+         <object class="general.model.diagram.edit.parts.PrimitiveEventEditPart" id="PrimitiveEvent_2009"/>
          <context elements="PrimitiveEvent_2009"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfComplexEventEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfComplexEventEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.ComplexEventEditPart" id="ComplexEvent_2010"/>
+         <object class="general.model.diagram.edit.parts.ComplexEventEditPart" id="ComplexEvent_2010"/>
          <context elements="ComplexEvent_2010"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="model.diagram.providers.assistants.ModelModelingAssistantProviderOfContextRelationEditPart">
+            <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfContextRelationEditPart">
          <Priority name="Lowest"/>
-         <object class="model.diagram.edit.parts.ContextRelationEditPart" id="ContextRelation_2011"/>
+         <object class="general.model.diagram.edit.parts.ContextRelationEditPart" id="ContextRelation_2011"/>
          <context elements="ContextRelation_2011"/>
       </modelingAssistantProvider>
       
@@ -314,14 +314,14 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="model.diagram.providers.ModelIconProvider">
+      <IconProvider class="general.model.diagram.providers.ModelIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="model.diagram.providers.ModelParserProvider">
+      <ParserProvider class="general.model.diagram.providers.ModelParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
@@ -334,7 +334,7 @@
                name="%metatype.name.Environment_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Environment"
-               edithelper="model.diagram.edit.helpers.EnvironmentEditHelper">
+               edithelper="general.model.diagram.edit.helpers.EnvironmentEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
@@ -344,7 +344,7 @@
                name="%metatype.name.Type_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Type"
-               edithelper="model.diagram.edit.helpers.TypeEditHelper">
+               edithelper="general.model.diagram.edit.helpers.TypeEditHelper">
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
@@ -354,7 +354,7 @@
                name="%metatype.name.Parameter_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Parameter"
-               edithelper="model.diagram.edit.helpers.ParameterEditHelper">
+               edithelper="general.model.diagram.edit.helpers.ParameterEditHelper">
             <param name="semanticHint" value="2002"/>
          </metamodelType>
       </metamodel>
@@ -364,7 +364,7 @@
                name="%metatype.name.HoldsAtBetween_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HoldsAtBetween"
-               edithelper="model.diagram.edit.helpers.HoldsAtBetweenEditHelper">
+               edithelper="general.model.diagram.edit.helpers.HoldsAtBetweenEditHelper">
             <param name="semanticHint" value="2003"/>
          </metamodelType>
       </metamodel>
@@ -374,7 +374,7 @@
                name="%metatype.name.Instance_2004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Instance"
-               edithelper="model.diagram.edit.helpers.InstanceEditHelper">
+               edithelper="general.model.diagram.edit.helpers.InstanceEditHelper">
             <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
@@ -384,7 +384,7 @@
                name="%metatype.name.Happens_2005"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Happens"
-               edithelper="model.diagram.edit.helpers.HappensEditHelper">
+               edithelper="general.model.diagram.edit.helpers.HappensEditHelper">
             <param name="semanticHint" value="2005"/>
          </metamodelType>
       </metamodel>
@@ -394,7 +394,7 @@
                name="%metatype.name.Initially_2006"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Initially"
-               edithelper="model.diagram.edit.helpers.InitiallyEditHelper">
+               edithelper="general.model.diagram.edit.helpers.InitiallyEditHelper">
             <param name="semanticHint" value="2006"/>
          </metamodelType>
       </metamodel>
@@ -404,7 +404,7 @@
                name="%metatype.name.BehaviouralDescription_2007"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="BehaviouralDescription"
-               edithelper="model.diagram.edit.helpers.BehaviouralDescriptionEditHelper">
+               edithelper="general.model.diagram.edit.helpers.BehaviouralDescriptionEditHelper">
             <param name="semanticHint" value="2007"/>
          </metamodelType>
       </metamodel>
@@ -414,7 +414,7 @@
                name="%metatype.name.HoldsAt_2008"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HoldsAt"
-               edithelper="model.diagram.edit.helpers.HoldsAtEditHelper">
+               edithelper="general.model.diagram.edit.helpers.HoldsAtEditHelper">
             <param name="semanticHint" value="2008"/>
          </metamodelType>
       </metamodel>
@@ -424,7 +424,7 @@
                name="%metatype.name.PrimitiveEvent_2009"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="PrimitiveEvent"
-               edithelper="model.diagram.edit.helpers.PrimitiveEventEditHelper">
+               edithelper="general.model.diagram.edit.helpers.PrimitiveEventEditHelper">
             <param name="semanticHint" value="2009"/>
          </metamodelType>
       </metamodel>
@@ -434,7 +434,7 @@
                name="%metatype.name.ComplexEvent_2010"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ComplexEvent"
-               edithelper="model.diagram.edit.helpers.ComplexEventEditHelper">
+               edithelper="general.model.diagram.edit.helpers.ComplexEventEditHelper">
             <param name="semanticHint" value="2010"/>
          </metamodelType>
       </metamodel>
@@ -444,7 +444,7 @@
                name="%metatype.name.ContextRelation_2011"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="ContextRelation"
-               edithelper="model.diagram.edit.helpers.ContextRelationEditHelper">
+               edithelper="general.model.diagram.edit.helpers.ContextRelationEditHelper">
             <param name="semanticHint" value="2011"/>
          </metamodelType>
       </metamodel>
@@ -662,7 +662,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="org.eclipse.minorityReportPlugin.general.diagram"
            properties="isURIEditorInput"
-           class="model.diagram.part.ModelUriEditorInputTester">
+           class="general.model.diagram.part.ModelUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -688,8 +688,8 @@
             id="org.eclipse.minorityReportPlugin.general.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="model.diagram.navigator.ModelNavigatorContentProvider" 
-            labelProvider="model.diagram.navigator.ModelNavigatorLabelProvider"
+            contentProvider="general.model.diagram.navigator.ModelNavigatorContentProvider" 
+            labelProvider="general.model.diagram.navigator.ModelNavigatorLabelProvider"
             icon="icons/obj16/ModelDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -698,24 +698,24 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="generalmodel_diagram"/>
                </and>
-               <instanceof value="model.diagram.navigator.ModelAbstractNavigatorItem"/>
+               <instanceof value="general.model.diagram.navigator.ModelAbstractNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="model.diagram.navigator.ModelAbstractNavigatorItem"/>
+         	   <instanceof value="general.model.diagram.navigator.ModelAbstractNavigatorItem"/>
             </or>
          </possibleChildren>
          <commonSorter 
                id="org.eclipse.minorityReportPlugin.general.diagram.navigatorSorter" 
-               class="model.diagram.navigator.ModelNavigatorSorter">
+               class="general.model.diagram.navigator.ModelNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
         	         <test property="org.eclipse.core.resources.extension" value="generalmodel_diagram"/>
                   </and>
-                  <instanceof value="model.diagram.navigator.ModelAbstractNavigatorItem"/>
+                  <instanceof value="general.model.diagram.navigator.ModelAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -724,8 +724,8 @@
             id="org.eclipse.minorityReportPlugin.general.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="model.diagram.navigator.ModelDomainNavigatorContentProvider" 
-            labelProvider="model.diagram.navigator.ModelDomainNavigatorLabelProvider"
+            contentProvider="general.model.diagram.navigator.ModelDomainNavigatorContentProvider" 
+            labelProvider="general.model.diagram.navigator.ModelDomainNavigatorLabelProvider"
             icon="icons/obj16/ModelDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
@@ -734,19 +734,19 @@
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
         	      <test property="org.eclipse.core.resources.extension" value="generalmodel"/>
                </and>
-               <instanceof value="model.diagram.navigator.ModelDomainNavigatorItem"/>
+               <instanceof value="general.model.diagram.navigator.ModelDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="model.diagram.navigator.ModelDomainNavigatorItem"/>
+            <instanceof value="general.model.diagram.navigator.ModelDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="org.eclipse.minorityReportPlugin.general.diagram.navigatorActionProvider"
-            class="model.diagram.navigator.ModelNavigatorActionProvider">
+            class="general.model.diagram.navigator.ModelNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="model.diagram.navigator.ModelAbstractNavigatorItem"/>
+               <instanceof value="general.model.diagram.navigator.ModelAbstractNavigatorItem"/>
             </or>
          </enablement>
       </actionProvider>
@@ -756,7 +756,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="org.eclipse.minorityReportPlugin.general.diagram.navigatorLinkHelper"
-            class="model.diagram.navigator.ModelNavigatorLinkHelper">
+            class="general.model.diagram.navigator.ModelNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -764,7 +764,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="model.diagram.navigator.ModelAbstractNavigatorItem"/>
+            <instanceof value="general.model.diagram.navigator.ModelAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -772,17 +772,17 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="model.diagram.part.ModelDiagramUpdateCommand"
+         defaultHandler="general.model.diagram.part.ModelDiagramUpdateCommand"
          description="%update.diagram.description"
-         id="model.diagram.updateDiagram"
+         id="general.model.diagram.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
-         commandId="model.diagram.updateDiagram"
-         contextId="model.diagram.ui.diagramContext"
+         commandId="general.model.diagram.updateDiagram"
+         contextId="general.model.diagram.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
@@ -797,9 +797,9 @@
          <command commandId="org.eclipse.minorityReportPlugin.general.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="model.diagram.part.ModelDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="general.model.diagram.part.ModelDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="model.diagram.edit.parts.EnvironmentEditPart"/>
+                     <instanceof value="general.model.diagram.edit.parts.EnvironmentEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -809,11 +809,11 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="model.diagram.part.ModelDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <category id="general.model.diagram.part.ModelDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="org.eclipse.minorityReportPlugin.general.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="model.diagram.part.ModelDiagramEditorID"
-         defaultHandler="model.diagram.part.LoadResourceAction"/>
+         categoryId="general.model.diagram.part.ModelDiagramEditorID"
+         defaultHandler="general.model.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">

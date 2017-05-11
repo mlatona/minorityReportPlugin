@@ -77,7 +77,11 @@
         <children
             xsi:type="gmfgraph:Label"
             name="TypeTitle"
-            text="TYPE"/>
+            text="TYPE">
+          <location
+              x="20"
+              y="30"/>
+        </children>
       </actualFigure>
       <accessors
           accessor="getFigureTypeTitle"
