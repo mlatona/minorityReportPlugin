@@ -8,40 +8,102 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="../model.ecore#//Environment/agents"/>
+        href="../model.ecore#//Environment/primitiveEvents"/>
     <ownedChild>
       <domainMetaElement
-          href="../model.ecore#//Agent"/>
+          href="../model.ecore#//PrimitiveEvent"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="event.gmfgraph#PrimitiveEventLabel"/>
+        <features
+            href="../model.ecore#//Event/name"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="event.gmftool#//@palette/@tools.0/@tools.0"/>
+          href="event.gmftool#//@palette/@tools.0/@tools.3"/>
       <diagramNode
-          href="event.gmfgraph#Test"/>
+          href="event.gmfgraph#PrimitiveEventNode"/>
     </ownedChild>
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model.ecore#//Environment/observers"/>
+        href="../model.ecore#//Environment/parameters"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//Agent"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="">
+        <diagramLabel
+            href="event.gmfgraph#AgentLabel"/>
+        <features
+            href="../model.ecore#//Parameter/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="event.gmftool#//@palette/@tools.0/@tools.0"/>
+      <diagramNode
+          href="event.gmfgraph#AgentNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/parameters"/>
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Observer"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="event.gmfgraph#ObserverLabel"/>
+        <features
+            href="../model.ecore#//Parameter/name"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="event.gmftool#//@palette/@tools.0/@tools.1"/>
       <diagramNode
-          href="event.gmfgraph#PrimitiveEventObserver"/>
+          href="event.gmfgraph#ObserverNode"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/parameters"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//Parameter"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="event.gmfgraph#AddParamLabel"/>
+        <features
+            href="../model.ecore#//Parameter/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="event.gmftool#//@palette/@tools.0/@tools.2"/>
+      <diagramNode
+          href="event.gmfgraph#AddParamNode"/>
     </ownedChild>
   </nodes>
   <links>
-    <domainMetaElement
-        href="../model.ecore#//PrimitiveEvent"/>
-    <containmentFeature
-        href="../model.ecore#//Environment/events"/>
     <diagramLink
-        href="event.gmfgraph#PEAgentObserver"/>
-    <sourceMetaFeature
+        href="event.gmfgraph#PEAgentConnection"/>
+    <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../model.ecore#//PrimitiveEvent/agent"/>
+  </links>
+  <links>
+    <diagramLink
+        href="event.gmfgraph#PEAddParamConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../model.ecore#//Event/parameters"/>
+  </links>
+  <links>
+    <diagramLink
+        href="event.gmfgraph#PEObserverConnection"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../model.ecore#//PrimitiveEvent/observer"/>
