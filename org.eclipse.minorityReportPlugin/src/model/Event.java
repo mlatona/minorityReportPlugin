@@ -50,7 +50,7 @@ public interface Event extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' reference list.
+	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
 	 * The list contents are of type {@link model.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -58,9 +58,9 @@ public interface Event extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' reference list.
+	 * @return the value of the '<em>Parameters</em>' containment reference list.
 	 * @see model.ModelPackage#getEvent_Parameters()
-	 * @model lower="2"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Parameter> getParameters();

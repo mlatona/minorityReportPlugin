@@ -87,6 +87,9 @@ public class EnvironmentItemProvider
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__HAPPENS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__HOLDS_AT_BETWEENS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__INITIALS);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__AGENTS);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__OBSERVERS);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM);
 		}
 		return childrenFeatures;
 	}
@@ -149,6 +152,9 @@ public class EnvironmentItemProvider
 			case ModelPackage.ENVIRONMENT__HAPPENS:
 			case ModelPackage.ENVIRONMENT__HOLDS_AT_BETWEENS:
 			case ModelPackage.ENVIRONMENT__INITIALS:
+			case ModelPackage.ENVIRONMENT__AGENTS:
+			case ModelPackage.ENVIRONMENT__OBSERVERS:
+			case ModelPackage.ENVIRONMENT__ADD_PARAM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -180,6 +186,16 @@ public class EnvironmentItemProvider
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__PARAMETERS,
 				 ModelFactory.eINSTANCE.createParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__PARAMETERS,
+				 ModelFactory.eINSTANCE.createAgent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__PARAMETERS,
+				 ModelFactory.eINSTANCE.createObserver()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -220,6 +236,76 @@ public class EnvironmentItemProvider
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__INITIALS,
 				 ModelFactory.eINSTANCE.createInitially()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
+				 ModelFactory.eINSTANCE.createParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
+				 ModelFactory.eINSTANCE.createAgent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
+				 ModelFactory.eINSTANCE.createObserver()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
+				 ModelFactory.eINSTANCE.createParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
+				 ModelFactory.eINSTANCE.createAgent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
+				 ModelFactory.eINSTANCE.createObserver()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
+				 ModelFactory.eINSTANCE.createParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
+				 ModelFactory.eINSTANCE.createAgent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
+				 ModelFactory.eINSTANCE.createObserver()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == ModelPackage.Literals.ENVIRONMENT__PARAMETERS ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__AGENTS ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__OBSERVERS ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__ADD_PARAM;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

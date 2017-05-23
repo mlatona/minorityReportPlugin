@@ -25,6 +25,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.Environment#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.Environment#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.Environment#getInitials <em>Initials</em>}</li>
+ *   <li>{@link model.Environment#getAgents <em>Agents</em>}</li>
+ *   <li>{@link model.Environment#getObservers <em>Observers</em>}</li>
+ *   <li>{@link model.Environment#getAddParam <em>Add Param</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getEnvironment()
@@ -192,6 +195,54 @@ public interface Environment extends EObject {
 	 */
 	EList<Initially> getInitials();
 	
+	/**
+	 * Returns the value of the '<em><b>Agents</b></em>' containment reference list.
+	 * The list contents are of type {@link model.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Agents</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agents</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_Agents()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getAgents();
+
+	/**
+	 * Returns the value of the '<em><b>Observers</b></em>' containment reference list.
+	 * The list contents are of type {@link model.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Observers</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Observers</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_Observers()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getObservers();
+
+	/**
+	 * Returns the value of the '<em><b>Add Param</b></em>' containment reference list.
+	 * The list contents are of type {@link model.Parameter}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Add Param</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Add Param</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_AddParam()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Parameter> getAddParam();
+
 	void setTypes(EList<Type> types);
 	
 	void setInstances(EList<Instance> instances);
@@ -203,5 +254,6 @@ public interface Environment extends EObject {
 	void setBehavDescriptions(EList<BehaviouralDescription> behavDescriptions);
 	
 	void setInitials(EList<Initially> initials);
+
 
 } // Environment

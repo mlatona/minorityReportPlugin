@@ -47,6 +47,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link model.impl.EnvironmentImpl#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getInitials <em>Initials</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getAgents <em>Agents</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getObservers <em>Observers</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getAddParam <em>Add Param</em>}</li>
  * </ul>
  *
  * @generated
@@ -151,6 +154,36 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * @ordered
 	 */
 	protected EList<Initially> initials;
+
+	/**
+	 * The cached value of the '{@link #getAgents() <em>Agents</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> agents;
+
+	/**
+	 * The cached value of the '{@link #getObservers() <em>Observers</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getObservers()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> observers;
+
+	/**
+	 * The cached value of the '{@link #getAddParam() <em>Add Param</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddParam()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> addParam;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -296,6 +329,42 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Parameter> getAgents() {
+		if (agents == null) {
+			agents = new EObjectContainmentEList<Parameter>(Parameter.class, this, ModelPackage.ENVIRONMENT__AGENTS);
+		}
+		return agents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Parameter> getObservers() {
+		if (observers == null) {
+			observers = new EObjectContainmentEList<Parameter>(Parameter.class, this, ModelPackage.ENVIRONMENT__OBSERVERS);
+		}
+		return observers;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Parameter> getAddParam() {
+		if (addParam == null) {
+			addParam = new EObjectContainmentEList<Parameter>(Parameter.class, this, ModelPackage.ENVIRONMENT__ADD_PARAM);
+		}
+		return addParam;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -319,6 +388,12 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return ((InternalEList<?>)getHoldsAtBetweens()).basicRemove(otherEnd, msgs);
 			case ModelPackage.ENVIRONMENT__INITIALS:
 				return ((InternalEList<?>)getInitials()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__AGENTS:
+				return ((InternalEList<?>)getAgents()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__OBSERVERS:
+				return ((InternalEList<?>)getObservers()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__ADD_PARAM:
+				return ((InternalEList<?>)getAddParam()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -351,6 +426,12 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return getHoldsAtBetweens();
 			case ModelPackage.ENVIRONMENT__INITIALS:
 				return getInitials();
+			case ModelPackage.ENVIRONMENT__AGENTS:
+				return getAgents();
+			case ModelPackage.ENVIRONMENT__OBSERVERS:
+				return getObservers();
+			case ModelPackage.ENVIRONMENT__ADD_PARAM:
+				return getAddParam();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -404,6 +485,18 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				getInitials().clear();
 				getInitials().addAll((Collection<? extends Initially>)newValue);
 				return;
+			case ModelPackage.ENVIRONMENT__AGENTS:
+				getAgents().clear();
+				getAgents().addAll((Collection<? extends Parameter>)newValue);
+				return;
+			case ModelPackage.ENVIRONMENT__OBSERVERS:
+				getObservers().clear();
+				getObservers().addAll((Collection<? extends Parameter>)newValue);
+				return;
+			case ModelPackage.ENVIRONMENT__ADD_PARAM:
+				getAddParam().clear();
+				getAddParam().addAll((Collection<? extends Parameter>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -446,6 +539,15 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 			case ModelPackage.ENVIRONMENT__INITIALS:
 				getInitials().clear();
 				return;
+			case ModelPackage.ENVIRONMENT__AGENTS:
+				getAgents().clear();
+				return;
+			case ModelPackage.ENVIRONMENT__OBSERVERS:
+				getObservers().clear();
+				return;
+			case ModelPackage.ENVIRONMENT__ADD_PARAM:
+				getAddParam().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -478,6 +580,12 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return holdsAtBetweens != null && !holdsAtBetweens.isEmpty();
 			case ModelPackage.ENVIRONMENT__INITIALS:
 				return initials != null && !initials.isEmpty();
+			case ModelPackage.ENVIRONMENT__AGENTS:
+				return agents != null && !agents.isEmpty();
+			case ModelPackage.ENVIRONMENT__OBSERVERS:
+				return observers != null && !observers.isEmpty();
+			case ModelPackage.ENVIRONMENT__ADD_PARAM:
+				return addParam != null && !addParam.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

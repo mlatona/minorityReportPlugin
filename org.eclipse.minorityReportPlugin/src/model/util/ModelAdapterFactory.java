@@ -120,6 +120,14 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createEnvironmentAdapter();
 			}
 			@Override
+			public Adapter caseAgent(Agent object) {
+				return createAgentAdapter();
+			}
+			@Override
+			public Adapter caseObserver(Observer object) {
+				return createObserverAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -318,6 +326,34 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEnvironmentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.Agent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.Agent
+	 * @generated
+	 */
+	public Adapter createAgentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link model.Observer <em>Observer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see model.Observer
+	 * @generated
+	 */
+	public Adapter createObserverAdapter() {
 		return null;
 	}
 

@@ -4,17 +4,12 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:trace="http://www.eclipse.org/gmf/2006/Trace">
   <nodeTraces
-      visualID="2001"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'PrimitiveEvent') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'events')">
-    <nodeLabelTraces
-        visualID="5003"
-        queryText="true"/>
-  </nodeTraces>
+      visualID="2033"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Agent') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'agents')"/>
   <nodeTraces
-      visualID="2002"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'ComplexEvent') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'events')">
-    <nodeLabelTraces
-        visualID="5002"
-        queryText="true"/>
-  </nodeTraces>
+      visualID="2034"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Observer') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'observers')"/>
+  <linkTraces
+      visualID="4011"
+      queryText="modelFacet.oclIsKindOf(gmfgen::TypeLinkModelFacet) and (let _eClass_:ecore::EClass = modelFacet.oclAsType(gmfgen::TypeLinkModelFacet).metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'PrimitiveEvent')"/>
 </trace:TraceModel>

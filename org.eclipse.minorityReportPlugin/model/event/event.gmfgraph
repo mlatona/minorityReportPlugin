@@ -8,37 +8,39 @@
   <figures
       name="nodes">
     <descriptors
-        name="ComplexEventFigure">
+        name="PrimitiveEventObserverFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="ComplexEventFigure">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"/>
+          name="ObserverFigure">
         <children
             xsi:type="gmfgraph:Label"
-            name="ComplexEventNameFigure"
-            text="&lt;...>"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ComplexEventTimeFigure"
-            text="&lt;...>"/>
+            name="PrimitiveEventObserverNameFigure"
+            text="---OBSERVER NAME HERE---"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="TestFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="TestFigure"/>
     </descriptors>
   </figures>
   <figures
       name="svg"
       implementationBundle="org.eclipse.gmf.runtime.lite.svg">
     <descriptors
-        name="PrimitiveEventFigure">
+        name="PrimitiveEventAgentFigure">
       <actualFigure
           xsi:type="gmfgraph:SVGFigure"
           name="Agent"
           documentURI="platform:/plugin/org.eclipse.minorityReportPlugin.event.diagram/icons/agent.svg">
+        <layout
+            xsi:type="gmfgraph:FlowLayout"/>
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
-            value="black"/>
+            value="blue"/>
         <backgroundColor
             xsi:type="gmfgraph:RGBColor"
             red="178"
@@ -46,44 +48,62 @@
             blue="18"/>
         <children
             xsi:type="gmfgraph:Label"
-            name="PrimitiveEventName"
-            text="--- NAME HERE ---">
-          <location
-              x="10"
-              y="30"/>
-        </children>
+            name="PrimitiveEventAgentNameFigure"
+            text="--- AGENT NAME HERE ---"/>
         <properties
-            query="//:polygon|//:circle"
+            query="//:circle|//:polygon"
             attribute="fill"
             type="COLOR"
             getter="getBackgroundColor"
-            setter="setBackgroundColor"
-            callSuper="true"/>
+            setter="setBackgroundColor"/>
         <properties
-            query="//:polygon|//:circle"
+            query="//:polygon"
             attribute="stroke"
             type="COLOR"
             getter="getForegroundColor"
-            setter="setForegroundColor"
-            callSuper="true"/>
+            setter="setForegroundColor"/>
       </actualFigure>
       <accessors
-          accessor="getFigurePrimitiveEventNameFigure"
+          accessor="getFigurePrimitiveEventAgentNameFigure"
           figure="//@figures.1/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
+  <figures
+      name="links">
+    <figures
+        xsi:type="gmfgraph:PolylineDecoration"
+        name="AgentObserverTargerDecoration"/>
+    <descriptors
+        name="AgentObserverFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="AgentObserverConnection"
+          targetDecoration="//@figures.2/@figures.0"/>
+    </descriptors>
+  </figures>
   <nodes
-      name="PrimitiveEvent"
-      figure="PrimitiveEventFigure"/>
+      name="PrimitiveEventObserver"
+      figure="PrimitiveEventObserverFigure"/>
   <nodes
-      name="ComplexEvent"
-      figure="ComplexEventFigure"/>
+      name="PrimitiveEventAgent"
+      figure="PrimitiveEventAgentFigure"/>
+  <nodes
+      name="Test"
+      figure="TestFigure"/>
+  <connections
+      name="PEAgentObserver"
+      figure="AgentObserverFigure"/>
   <labels
-      name="ComplexEventName"
-      figure="ComplexEventFigure"
+      name="PrimitiveEventObserverName"
+      figure="PrimitiveEventObserverFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
-      name="PrimitiveEventName"
-      figure="PrimitiveEventFigure"
-      accessor="//@figures.1/@descriptors.0/@accessors.0"/>
+      name="PrimitiveEventAgentName"
+      figure="PrimitiveEventAgentFigure"
+      accessor="//@figures.1/@descriptors.0/@accessors.0">
+    <facets
+        xsi:type="gmfgraph:LabelOffsetFacet"
+        x="30"
+        y="-100"/>
+  </labels>
 </gmfgraph:Canvas>

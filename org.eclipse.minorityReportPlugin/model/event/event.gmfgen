@@ -7,8 +7,7 @@
     packageNamePrefix="event.model.diagram"
     modelID="Event Model"
     diagramFileExtension="eventmodel_diagram"
-    domainFileExtension="eventmodel"
-    pluginDirectory="/org.eclipse.minorityReportPlugin.event.diagram/src">
+    domainFileExtension="eventmodel">
   <diagram
       visualID="1000"
       editPartClassName="EnvironmentEditPart"
@@ -27,109 +26,95 @@
     <domainDiagramElement
         href="../model.genmodel#//model/Environment"/>
     <topLevelNodes
-        visualID="2001"
-        editPartClassName="PrimitiveEventEditPart"
-        itemSemanticEditPolicyClassName="PrimitiveEventItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="PrimitiveEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="PrimitiveEventGraphicalNodeEditPolicy"
-        createCommandClassName="PrimitiveEventCreateCommand">
+        visualID="2033"
+        editPartClassName="AgentEditPart"
+        itemSemanticEditPolicyClassName="AgentItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="AgentCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="AgentGraphicalNodeEditPolicy"
+        createCommandClassName="AgentCreateCommand">
       <diagramRunTimeClass
           href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="AgentEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
+      <modelFacet>
+        <metaClass
+            href="../model.genmodel#//model/Agent"/>
+        <containmentMetaFeature
+            href="../model.genmodel#//model/Environment/agents"/>
+        <childMetaFeature
+            href="../model.genmodel#//model/Environment/agents"/>
+      </modelFacet>
+    </topLevelNodes>
+    <topLevelNodes
+        visualID="2034"
+        editPartClassName="ObserverEditPart"
+        itemSemanticEditPolicyClassName="ObserverItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ObserverCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ObserverGraphicalNodeEditPolicy"
+        createCommandClassName="ObserverCreateCommand">
+      <diagramRunTimeClass
+          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ObserverEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="PrimitiveEventObserverFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventObserverFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePrimitiveEventObserverNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventObserverFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePrimitiveEventObserverNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePrimitiveEventObserverNameFigure.setText(&quot;---OBSERVER NAME HERE---&quot;);&#xA;&#xA;this.add(fFigurePrimitiveEventObserverNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePrimitiveEventObserverNameFigure() {&#xA;&#x9;&#x9;return fFigurePrimitiveEventObserverNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="../model.genmodel#//model/Observer"/>
+        <containmentMetaFeature
+            href="../model.genmodel#//model/Environment/observers"/>
+        <childMetaFeature
+            href="../model.genmodel#//model/Environment/observers"/>
+      </modelFacet>
+    </topLevelNodes>
+    <links
+        visualID="4011"
+        editPartClassName="PrimitiveEventEditPart"
+        itemSemanticEditPolicyClassName="PrimitiveEventItemSemanticEditPolicy"
+        createCommandClassName="PrimitiveEventCreateCommand"
+        reorientCommandClassName="PrimitiveEventReorientCommand">
+      <diagramRunTimeClass
+          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
           xsi:type="gmfgen:MetamodelType"
           editHelperClassName="PrimitiveEventEditHelper"/>
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
-          className="PrimitiveEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventFigure extends org.eclipse.gmf.runtime.lite.svg.SVGFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePrimitiveEventNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setURI(&quot;platform:/plugin/org.eclipse.minorityReportPlugin.event.diagram/icons/agent.svg&quot;);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.black);&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePrimitiveEventNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePrimitiveEventNameFigure.setText(&quot;--- NAME HERE ---&quot;);&#xA;fFigurePrimitiveEventNameFigure.setLocation(new org.eclipse.draw2d.geometry.Point(getMapMode().DPtoLP(10)&#xA;, getMapMode().DPtoLP(30)&#xA;));&#xA;&#xA;this.add(fFigurePrimitiveEventNameFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.swt.graphics.Color getBackgroundColor() {&#xA;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon|//:circle&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;if (nodes.getLength() > 0) {&#xA;&#x9;&#x9;&#x9;org.w3c.dom.Element element = (org.w3c.dom.Element) nodes.item(0);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getColor(element, &quot;fill&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public void setBackgroundColor(org.eclipse.swt.graphics.Color value) {&#xA;&#x9;&#x9;&#x9;&#x9;String svalue = org.eclipse.gmf.runtime.lite.svg.SVGUtils.toSVGColor(getDocument(), value);&#xA;&#x9;&#x9;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon|//:circle&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;for (int i = 0; i &lt; nodes.getLength(); i++) {&#xA;&#x9;&#x9;&#x9;((org.w3c.dom.Element) nodes.item(i)).setAttributeNS(null, &quot;fill&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;svalue);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;super.setBackgroundColor(value);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.swt.graphics.Color getForegroundColor() {&#xA;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon|//:circle&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;if (nodes.getLength() > 0) {&#xA;&#x9;&#x9;&#x9;org.w3c.dom.Element element = (org.w3c.dom.Element) nodes.item(0);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getColor(element, &quot;stroke&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public void setForegroundColor(org.eclipse.swt.graphics.Color value) {&#xA;&#x9;&#x9;&#x9;&#x9;String svalue = org.eclipse.gmf.runtime.lite.svg.SVGUtils.toSVGColor(getDocument(), value);&#xA;&#x9;&#x9;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon|//:circle&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;for (int i = 0; i &lt; nodes.getLength(); i++) {&#xA;&#x9;&#x9;&#x9;((org.w3c.dom.Element) nodes.item(i)).setAttributeNS(null, &quot;stroke&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;svalue);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;super.setForegroundColor(value);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePrimitiveEventNameFigure() {&#xA;&#x9;&#x9;return fFigurePrimitiveEventNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 178, 178, 18);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"
-            fixedBackground="true"/>
-      </viewmap>
-      <modelFacet>
+          className="AgentObserverFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgentObserverFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgentObserverFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:TypeLinkModelFacet">
         <metaClass
             href="../model.genmodel#//model/PrimitiveEvent"/>
         <containmentMetaFeature
             href="../model.genmodel#//model/Environment/events"/>
         <childMetaFeature
             href="../model.genmodel#//model/Environment/events"/>
+        <sourceMetaFeature
+            href="../model.genmodel#//model/PrimitiveEvent/agent"/>
+        <targetMetaFeature
+            href="../model.genmodel#//model/PrimitiveEvent/observer"/>
       </modelFacet>
-      <labels
-          visualID="5003"
-          editPartClassName="PrimitiveEventNameEditPart"
-          itemSemanticEditPolicyClassName="PrimitiveEventNameItemSemanticEditPolicy"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigurePrimitiveEventNameFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="../model.genmodel#//model/Event/name"/>
-        </modelFacet>
-      </labels>
-    </topLevelNodes>
-    <topLevelNodes
-        visualID="2002"
-        editPartClassName="ComplexEventEditPart"
-        itemSemanticEditPolicyClassName="ComplexEventItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="ComplexEventCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="ComplexEventGraphicalNodeEditPolicy"
-        createCommandClassName="ComplexEventCreateCommand">
-      <diagramRunTimeClass
-          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="ComplexEventEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          layoutType="FLOW_LAYOUT"
-          className="ComplexEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComplexEventFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComplexEventNameFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComplexEventFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComplexEventNameFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureComplexEventNameFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureComplexEventNameFigure);&#xA;&#xA;&#xA;&#xA;org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel complexEventTimeFigure0 = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;complexEventTimeFigure0.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(complexEventTimeFigure0);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComplexEventNameFigure() {&#xA;&#x9;&#x9;return fFigureComplexEventNameFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../model.genmodel#//model/ComplexEvent"/>
-        <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/events"/>
-        <childMetaFeature
-            href="../model.genmodel#//model/Environment/events"/>
-      </modelFacet>
-      <labels
-          visualID="5002"
-          editPartClassName="ComplexEventNameEditPart"
-          itemSemanticEditPolicyClassName="ComplexEventNameItemSemanticEditPolicy"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureComplexEventNameFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="../model.genmodel#//model/Event/name"/>
-        </modelFacet>
-      </labels>
-    </topLevelNodes>
+    </links>
     <palette>
       <groups
-          title="model">
+          title="Nodes">
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="PrimitiveEvent"
-            description="Create new PrimitiveEvent"
+            title="AgentPrimitiveEvent"
+            description="Create new agent for PE"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="ComplexEvent"
-            description="Create new ComplexEvent"
+            title="ObserverPrimitiveEvent"
+            description="Create new observer for PE"
             genNodes="//@diagram/@topLevelNodes.1"/>
       </groups>
     </palette>
@@ -164,6 +149,7 @@
       name="Event Model Plugin">
     <requiredPlugins>org.eclipse.gmf.tooling.runtime</requiredPlugins>
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
+    <requiredPlugins>org.eclipse.gmf.runtime.draw2d.ui</requiredPlugins>
     <requiredPlugins>org.eclipse.gmf.runtime.lite.svg</requiredPlugins>
   </plugin>
   <editor/>
@@ -176,6 +162,59 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.1"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.0"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@topLevelNodes.0"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@topLevelNodes.1"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@links.0"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@topLevelNodes.0"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.0"
+        child="//@diagram/@topLevelNodes.1"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@links.0"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
   <diagramUpdater/>
   <propertySheet>
@@ -199,12 +238,6 @@
   </propertySheet>
   <domainGenModel
       href="../model.genmodel#/"/>
-  <labelParsers
-      extensibleViaService="true">
-    <implementations
-        xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
-  </labelParsers>
   <contextMenus
       context="//@diagram">
     <items

@@ -8,11 +8,11 @@
       title="modelPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="model">
+        title="Nodes">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="PrimitiveEvent"
-          description="Create new PrimitiveEvent">
+          title="AgentPrimitiveEvent"
+          description="Create new agent for PE">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -20,8 +20,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ComplexEvent"
-          description="Create new ComplexEvent">
+          title="ObserverPrimitiveEvent"
+          description="Create new observer for PE">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

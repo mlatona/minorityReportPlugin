@@ -348,6 +348,52 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link model.Agent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AgentItemProvider agentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.Agent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAgentAdapter() {
+		if (agentItemProvider == null) {
+			agentItemProvider = new AgentItemProvider(this);
+		}
+
+		return agentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link model.Observer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ObserverItemProvider observerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.Observer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createObserverAdapter() {
+		if (observerItemProvider == null) {
+			observerItemProvider = new ObserverItemProvider(this);
+		}
+
+		return observerItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -458,6 +504,8 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 		if (holdsAtBetweenItemProvider != null) holdsAtBetweenItemProvider.dispose();
 		if (initiallyItemProvider != null) initiallyItemProvider.dispose();
 		if (environmentItemProvider != null) environmentItemProvider.dispose();
+		if (agentItemProvider != null) agentItemProvider.dispose();
+		if (observerItemProvider != null) observerItemProvider.dispose();
 	}
 
 }

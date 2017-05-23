@@ -305,7 +305,7 @@ public interface ModelPackage extends EPackage {
 	int EVENT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -351,7 +351,7 @@ public interface ModelPackage extends EPackage {
 	int PRIMITIVE_EVENT__NAME = EVENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -360,13 +360,31 @@ public interface ModelPackage extends EPackage {
 	int PRIMITIVE_EVENT__PARAMETERS = EVENT__PARAMETERS;
 
 	/**
+	 * The feature id for the '<em><b>Agent</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_EVENT__AGENT = EVENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Observer</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_EVENT__OBSERVER = EVENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Primitive Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 0;
+	int PRIMITIVE_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Primitive Event</em>' class.
@@ -397,7 +415,7 @@ public interface ModelPackage extends EPackage {
 	int COMPLEX_EVENT__NAME = EVENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' reference list.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -838,13 +856,40 @@ public interface ModelPackage extends EPackage {
 	int ENVIRONMENT__INITIALS = 9;
 
 	/**
+	 * The feature id for the '<em><b>Agents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__AGENTS = 10;
+
+	/**
+	 * The feature id for the '<em><b>Observers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__OBSERVERS = 11;
+
+	/**
+	 * The feature id for the '<em><b>Add Param</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__ADD_PARAM = 12;
+
+	/**
 	 * The number of structural features of the '<em>Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_FEATURE_COUNT = 10;
+	int ENVIRONMENT_FEATURE_COUNT = 13;
 
 	/**
 	 * The number of operations of the '<em>Environment</em>' class.
@@ -854,6 +899,135 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENVIRONMENT_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link model.impl.AgentImpl <em>Agent</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.AgentImpl
+	 * @see model.impl.ModelPackageImpl#getAgent()
+	 * @generated
+	 */
+	int AGENT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__NUMBER = PARAMETER__NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__INSTANCE = PARAMETER__INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__TYPE = PARAMETER__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__NAME = PARAMETER__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Agent</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Agent</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link model.impl.ObserverImpl <em>Observer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.ObserverImpl
+	 * @see model.impl.ModelPackageImpl#getObserver()
+	 * @generated
+	 */
+	int OBSERVER = 14;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER__NUMBER = PARAMETER__NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER__INSTANCE = PARAMETER__INSTANCE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER__TYPE = PARAMETER__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER__NAME = PARAMETER__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER_FEATURE_COUNT = PARAMETER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Observer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVER_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1061,10 +1235,10 @@ public interface ModelPackage extends EPackage {
 	EAttribute getEvent_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link model.Event#getParameters <em>Parameters</em>}'.
+	 * Returns the meta object for the containment reference list '{@link model.Event#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Parameters</em>'.
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
 	 * @see model.Event#getParameters()
 	 * @see #getEvent()
 	 * @generated
@@ -1080,6 +1254,28 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPrimitiveEvent();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link model.PrimitiveEvent#getAgent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Agent</em>'.
+	 * @see model.PrimitiveEvent#getAgent()
+	 * @see #getPrimitiveEvent()
+	 * @generated
+	 */
+	EReference getPrimitiveEvent_Agent();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link model.PrimitiveEvent#getObserver <em>Observer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Observer</em>'.
+	 * @see model.PrimitiveEvent#getObserver()
+	 * @see #getPrimitiveEvent()
+	 * @generated
+	 */
+	EReference getPrimitiveEvent_Observer();
 
 	/**
 	 * Returns the meta object for class '{@link model.ComplexEvent <em>Complex Event</em>}'.
@@ -1471,6 +1667,59 @@ public interface ModelPackage extends EPackage {
 	EReference getEnvironment_Initials();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getAgents <em>Agents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Agents</em>'.
+	 * @see model.Environment#getAgents()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_Agents();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getObservers <em>Observers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Observers</em>'.
+	 * @see model.Environment#getObservers()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_Observers();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getAddParam <em>Add Param</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Add Param</em>'.
+	 * @see model.Environment#getAddParam()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_AddParam();
+
+	/**
+	 * Returns the meta object for class '{@link model.Agent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Agent</em>'.
+	 * @see model.Agent
+	 * @generated
+	 */
+	EClass getAgent();
+
+	/**
+	 * Returns the meta object for class '{@link model.Observer <em>Observer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Observer</em>'.
+	 * @see model.Observer
+	 * @generated
+	 */
+	EClass getObserver();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1656,7 +1905,7 @@ public interface ModelPackage extends EPackage {
 		EAttribute EVENT__NAME = eINSTANCE.getEvent_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1672,6 +1921,22 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PRIMITIVE_EVENT = eINSTANCE.getPrimitiveEvent();
+
+		/**
+		 * The meta object literal for the '<em><b>Agent</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRIMITIVE_EVENT__AGENT = eINSTANCE.getPrimitiveEvent_Agent();
+
+		/**
+		 * The meta object literal for the '<em><b>Observer</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRIMITIVE_EVENT__OBSERVER = eINSTANCE.getPrimitiveEvent_Observer();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.ComplexEventImpl <em>Complex Event</em>}' class.
@@ -1974,6 +2239,50 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENVIRONMENT__INITIALS = eINSTANCE.getEnvironment_Initials();
+
+		/**
+		 * The meta object literal for the '<em><b>Agents</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__AGENTS = eINSTANCE.getEnvironment_Agents();
+
+		/**
+		 * The meta object literal for the '<em><b>Observers</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__OBSERVERS = eINSTANCE.getEnvironment_Observers();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Param</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__ADD_PARAM = eINSTANCE.getEnvironment_AddParam();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.AgentImpl <em>Agent</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.AgentImpl
+		 * @see model.impl.ModelPackageImpl#getAgent()
+		 * @generated
+		 */
+		EClass AGENT = eINSTANCE.getAgent();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.ObserverImpl <em>Observer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.ObserverImpl
+		 * @see model.impl.ModelPackageImpl#getObserver()
+		 * @generated
+		 */
+		EClass OBSERVER = eINSTANCE.getObserver();
 
 	}
 

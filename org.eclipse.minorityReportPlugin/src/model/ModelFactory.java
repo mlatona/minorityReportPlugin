@@ -132,6 +132,24 @@ public interface ModelFactory extends EFactory {
 	Environment createEnvironment();
 
 	/**
+	 * Returns a new object of class '<em>Agent</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Agent</em>'.
+	 * @generated
+	 */
+	Agent createAgent();
+
+	/**
+	 * Returns a new object of class '<em>Observer</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Observer</em>'.
+	 * @generated
+	 */
+	Observer createObserver();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
