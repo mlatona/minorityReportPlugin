@@ -82,8 +82,8 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			case ModelPackage.HOLDS_AT_BETWEEN: return createHoldsAtBetween();
 			case ModelPackage.INITIALLY: return createInitially();
 			case ModelPackage.ENVIRONMENT: return createEnvironment();
-			case ModelPackage.AGENT: return createAgent();
 			case ModelPackage.OBSERVER: return createObserver();
+			case ModelPackage.AGENT: return createAgent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

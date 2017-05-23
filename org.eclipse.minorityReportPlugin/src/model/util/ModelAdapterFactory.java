@@ -120,12 +120,12 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createEnvironmentAdapter();
 			}
 			@Override
-			public Adapter caseAgent(Agent object) {
-				return createAgentAdapter();
-			}
-			@Override
 			public Adapter caseObserver(Observer object) {
 				return createObserverAdapter();
+			}
+			@Override
+			public Adapter caseAgent(Agent object) {
+				return createAgentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

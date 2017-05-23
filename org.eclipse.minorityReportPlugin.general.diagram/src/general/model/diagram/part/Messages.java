@@ -438,16 +438,6 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_PrimitiveEvent_2009_incominglinks;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_PrimitiveEvent_2009_outgoinglinks;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorGroupName_ComplexEvent_2010_incominglinks;
 
 	/**
@@ -464,6 +454,16 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_ContextRelation_2011_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_PrimitiveEvent_2012_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_PrimitiveEvent_2012_outgoinglinks;
 
 	/**
 	* @generated

@@ -3,11 +3,9 @@ package general.model.diagram.providers.assistants;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
-
 import general.model.diagram.edit.parts.ParameterEditPart;
 import general.model.diagram.edit.parts.PrimitiveEventEditPart;
 import general.model.diagram.providers.ModelElementTypes;

@@ -27,7 +27,7 @@
     <domainDiagramElement
         href="../model.genmodel#//model/Environment"/>
     <topLevelNodes
-        visualID="2001"
+        visualID="2005"
         editPartClassName="InstanceEditPart"
         itemSemanticEditPolicyClassName="InstanceItemSemanticEditPolicy"
         canonicalEditPolicyClassName="InstanceCanonicalEditPolicy"
@@ -51,27 +51,9 @@
         <childMetaFeature
             href="../model.genmodel#//model/Environment/instances"/>
       </modelFacet>
-      <labels
-          visualID="5001"
-          editPartClassName="InstanceNameEditPart"
-          itemSemanticEditPolicyClassName="InstanceNameItemSemanticEditPolicy"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureInstanceNameFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="../model.genmodel#//model/Instance/name"/>
-        </modelFacet>
-      </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2002"
+        visualID="2006"
         editPartClassName="TypeEditPart"
         itemSemanticEditPolicyClassName="TypeItemSemanticEditPolicy"
         canonicalEditPolicyClassName="TypeCanonicalEditPolicy"
@@ -95,27 +77,9 @@
         <childMetaFeature
             href="../model.genmodel#//model/Environment/types"/>
       </modelFacet>
-      <labels
-          visualID="5002"
-          editPartClassName="TypeNameEditPart"
-          itemSemanticEditPolicyClassName="TypeNameItemSemanticEditPolicy"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureTypeNameFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="../model.genmodel#//model/Type/name"/>
-        </modelFacet>
-      </labels>
     </topLevelNodes>
     <links
-        visualID="4001"
+        visualID="4003"
         editPartClassName="InstanceTypeEditPart"
         itemSemanticEditPolicyClassName="InstanceTypeItemSemanticEditPolicy"
         createCommandClassName="InstanceTypeCreateCommand"
@@ -222,8 +186,7 @@
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
   </navigator>
-  <diagramUpdater
-      updateCommandID="typeinstance.model.diagram.updateDiagram"/>
+  <diagramUpdater/>
   <propertySheet>
     <tabs
         xsi:type="gmfgen:GenStandardPropertyTab"
@@ -245,12 +208,6 @@
   </propertySheet>
   <domainGenModel
       href="../model.genmodel#/"/>
-  <labelParsers
-      extensibleViaService="true">
-    <implementations
-        xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet"/>
-  </labelParsers>
   <contextMenus
       context="//@diagram">
     <items

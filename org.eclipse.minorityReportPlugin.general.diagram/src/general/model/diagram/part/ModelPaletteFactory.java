@@ -101,9 +101,9 @@ public class ModelPaletteFactory {
 	private ToolEntry createPrimitiveEvent5CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.PrimitiveEvent5CreationTool_title,
 				Messages.PrimitiveEvent5CreationTool_desc,
-				Collections.singletonList(ModelElementTypes.PrimitiveEvent_2009));
+				Collections.singletonList(ModelElementTypes.PrimitiveEvent_2012));
 		entry.setId("createPrimitiveEvent5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.PrimitiveEvent_2009));
+		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.PrimitiveEvent_2012));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

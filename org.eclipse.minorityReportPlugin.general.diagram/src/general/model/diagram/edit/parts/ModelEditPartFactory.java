@@ -70,9 +70,6 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case PrimitiveEventEditPart.VISUAL_ID:
 				return new PrimitiveEventEditPart(view);
 
-			case PrimitiveEventNameEditPart.VISUAL_ID:
-				return new PrimitiveEventNameEditPart(view);
-
 			case ComplexEventEditPart.VISUAL_ID:
 				return new ComplexEventEditPart(view);
 

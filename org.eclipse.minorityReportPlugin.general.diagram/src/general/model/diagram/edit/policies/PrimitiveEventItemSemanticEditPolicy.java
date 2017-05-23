@@ -1,7 +1,6 @@
 package general.model.diagram.edit.policies;
 
 import java.util.Iterator;
-
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gmf.runtime.diagram.core.commands.DeleteCommand;
@@ -33,7 +32,7 @@ public class PrimitiveEventItemSemanticEditPolicy extends ModelBaseItemSemanticE
 	* @generated
 	*/
 	public PrimitiveEventItemSemanticEditPolicy() {
-		super(ModelElementTypes.PrimitiveEvent_2009);
+		super(ModelElementTypes.PrimitiveEvent_2012);
 	}
 
 	/**
@@ -76,8 +75,8 @@ public class PrimitiveEventItemSemanticEditPolicy extends ModelBaseItemSemanticE
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
@@ -85,8 +84,8 @@ public class PrimitiveEventItemSemanticEditPolicy extends ModelBaseItemSemanticE
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (ModelElementTypes.HappensEvent_4007 == req.getElementType()) {
 			return null;
@@ -98,8 +97,8 @@ public class PrimitiveEventItemSemanticEditPolicy extends ModelBaseItemSemanticE
 	}
 
 	/**
-	 * @generated
-	 */
+	* @generated
+	*/
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (ModelElementTypes.HappensEvent_4007 == req.getElementType()) {
 			return getGEFWrapper(new HappensEventCreateCommand(req, req.getSource(), req.getTarget()));
@@ -111,11 +110,11 @@ public class PrimitiveEventItemSemanticEditPolicy extends ModelBaseItemSemanticE
 	}
 
 	/**
-	 * Returns command to reorient EReference based link. New link target or source
-	 * should be the domain model element associated with this node.
-	 * 
-	 * @generated
-	 */
+	* Returns command to reorient EReference based link. New link target or source
+	* should be the domain model element associated with this node.
+	* 
+	* @generated
+	*/
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case HappensEventEditPart.VISUAL_ID:

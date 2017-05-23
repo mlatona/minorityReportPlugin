@@ -136,23 +136,6 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
-	private IParser primitiveEventName_5007Parser;
-
-	/**
-	* @generated
-	*/
-	private IParser getPrimitiveEventName_5007Parser() {
-		if (primitiveEventName_5007Parser == null) {
-			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getEvent_Name() };
-			MessageFormatParser parser = new MessageFormatParser(features);
-			primitiveEventName_5007Parser = parser;
-		}
-		return primitiveEventName_5007Parser;
-	}
-
-	/**
-	* @generated
-	*/
 	private IParser complexEventName_5008Parser;
 
 	/**
@@ -201,8 +184,6 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 			return getBehaviouralDescriptionName_5005Parser();
 		case HoldsAtTimeEditPart.VISUAL_ID:
 			return getHoldsAtTime_5006Parser();
-		case PrimitiveEventNameEditPart.VISUAL_ID:
-			return getPrimitiveEventName_5007Parser();
 		case ComplexEventNameEditPart.VISUAL_ID:
 			return getComplexEventName_5008Parser();
 		case ContextRelationNameEditPart.VISUAL_ID:

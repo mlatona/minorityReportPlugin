@@ -255,11 +255,6 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			break;
-		case PrimitiveEventEditPart.VISUAL_ID:
-			if (PrimitiveEventNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case ComplexEventEditPart.VISUAL_ID:
 			if (ComplexEventNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -328,9 +323,9 @@ public class ModelVisualIDRegistry {
 		case InitiallyEditPart.VISUAL_ID:
 		case BehaviouralDescriptionEditPart.VISUAL_ID:
 		case HoldsAtEditPart.VISUAL_ID:
-		case PrimitiveEventEditPart.VISUAL_ID:
 		case ComplexEventEditPart.VISUAL_ID:
 		case ContextRelationEditPart.VISUAL_ID:
+		case PrimitiveEventEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

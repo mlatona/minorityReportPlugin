@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.Environment#getAgents <em>Agents</em>}</li>
  *   <li>{@link model.Environment#getObservers <em>Observers</em>}</li>
  *   <li>{@link model.Environment#getAddParam <em>Add Param</em>}</li>
+ *   <li>{@link model.Environment#getPrimitiveEvents <em>Primitive Events</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getEnvironment()
@@ -197,7 +198,7 @@ public interface Environment extends EObject {
 	
 	/**
 	 * Returns the value of the '<em><b>Agents</b></em>' containment reference list.
-	 * The list contents are of type {@link model.Parameter}.
+	 * The list contents are of type {@link model.Agent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agents</em>' containment reference list isn't clear,
@@ -209,7 +210,7 @@ public interface Environment extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Parameter> getAgents();
+	EList<Agent> getAgents();
 
 	/**
 	 * Returns the value of the '<em><b>Observers</b></em>' containment reference list.
@@ -242,6 +243,22 @@ public interface Environment extends EObject {
 	 * @generated
 	 */
 	EList<Parameter> getAddParam();
+
+	/**
+	 * Returns the value of the '<em><b>Primitive Events</b></em>' containment reference list.
+	 * The list contents are of type {@link model.PrimitiveEvent}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Primitive Events</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Primitive Events</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_PrimitiveEvents()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<PrimitiveEvent> getPrimitiveEvents();
 
 	void setTypes(EList<Type> types);
 	

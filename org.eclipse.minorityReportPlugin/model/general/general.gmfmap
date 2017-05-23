@@ -154,17 +154,10 @@
   </nodes>
   <nodes>
     <containmentFeature
-        href="../model.ecore#//Environment/events"/>
+        href="../model.ecore#//Environment/primitiveEvents"/>
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//PrimitiveEvent"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="general.gmfgraph#PrimitiveEventName"/>
-        <features
-            href="../model.ecore#//Event/name"/>
-      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="general.gmftool#//@palette/@tools.0/@tools.4"/>

@@ -60,7 +60,7 @@ public class EnvironmentItemSemanticEditPolicy extends ModelBaseItemSemanticEdit
 		if (ModelElementTypes.HoldsAt_2008 == req.getElementType()) {
 			return getGEFWrapper(new HoldsAtCreateCommand(req));
 		}
-		if (ModelElementTypes.PrimitiveEvent_2009 == req.getElementType()) {
+		if (ModelElementTypes.PrimitiveEvent_2012 == req.getElementType()) {
 			return getGEFWrapper(new PrimitiveEventCreateCommand(req));
 		}
 		if (ModelElementTypes.ComplexEvent_2010 == req.getElementType()) {

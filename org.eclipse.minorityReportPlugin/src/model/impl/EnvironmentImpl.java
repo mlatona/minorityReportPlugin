@@ -4,6 +4,7 @@ package model.impl;
 
 import java.util.Collection;
 
+import model.Agent;
 import model.BehaviouralDescription;
 import model.ContextRelation;
 import model.Environment;
@@ -15,6 +16,7 @@ import model.Initially;
 import model.Instance;
 import model.ModelPackage;
 import model.Parameter;
+import model.PrimitiveEvent;
 import model.Type;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -50,6 +52,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link model.impl.EnvironmentImpl#getAgents <em>Agents</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getObservers <em>Observers</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getAddParam <em>Add Param</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getPrimitiveEvents <em>Primitive Events</em>}</li>
  * </ul>
  *
  * @generated
@@ -163,7 +166,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Parameter> agents;
+	protected EList<Agent> agents;
 
 	/**
 	 * The cached value of the '{@link #getObservers() <em>Observers</em>}' containment reference list.
@@ -184,6 +187,16 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * @ordered
 	 */
 	protected EList<Parameter> addParam;
+
+	/**
+	 * The cached value of the '{@link #getPrimitiveEvents() <em>Primitive Events</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrimitiveEvents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<PrimitiveEvent> primitiveEvents;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -329,9 +342,9 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Parameter> getAgents() {
+	public EList<Agent> getAgents() {
 		if (agents == null) {
-			agents = new EObjectContainmentEList<Parameter>(Parameter.class, this, ModelPackage.ENVIRONMENT__AGENTS);
+			agents = new EObjectContainmentEList<Agent>(Agent.class, this, ModelPackage.ENVIRONMENT__AGENTS);
 		}
 		return agents;
 	}
@@ -358,6 +371,18 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 			addParam = new EObjectContainmentEList<Parameter>(Parameter.class, this, ModelPackage.ENVIRONMENT__ADD_PARAM);
 		}
 		return addParam;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<PrimitiveEvent> getPrimitiveEvents() {
+		if (primitiveEvents == null) {
+			primitiveEvents = new EObjectContainmentEList<PrimitiveEvent>(PrimitiveEvent.class, this, ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS);
+		}
+		return primitiveEvents;
 	}
 
 	/**
@@ -394,6 +419,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return ((InternalEList<?>)getObservers()).basicRemove(otherEnd, msgs);
 			case ModelPackage.ENVIRONMENT__ADD_PARAM:
 				return ((InternalEList<?>)getAddParam()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
+				return ((InternalEList<?>)getPrimitiveEvents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -432,6 +459,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return getObservers();
 			case ModelPackage.ENVIRONMENT__ADD_PARAM:
 				return getAddParam();
+			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
+				return getPrimitiveEvents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -487,7 +516,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return;
 			case ModelPackage.ENVIRONMENT__AGENTS:
 				getAgents().clear();
-				getAgents().addAll((Collection<? extends Parameter>)newValue);
+				getAgents().addAll((Collection<? extends Agent>)newValue);
 				return;
 			case ModelPackage.ENVIRONMENT__OBSERVERS:
 				getObservers().clear();
@@ -496,6 +525,10 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 			case ModelPackage.ENVIRONMENT__ADD_PARAM:
 				getAddParam().clear();
 				getAddParam().addAll((Collection<? extends Parameter>)newValue);
+				return;
+			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
+				getPrimitiveEvents().clear();
+				getPrimitiveEvents().addAll((Collection<? extends PrimitiveEvent>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -548,6 +581,9 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 			case ModelPackage.ENVIRONMENT__ADD_PARAM:
 				getAddParam().clear();
 				return;
+			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
+				getPrimitiveEvents().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -586,6 +622,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return observers != null && !observers.isEmpty();
 			case ModelPackage.ENVIRONMENT__ADD_PARAM:
 				return addParam != null && !addParam.isEmpty();
+			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
+				return primitiveEvents != null && !primitiveEvents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

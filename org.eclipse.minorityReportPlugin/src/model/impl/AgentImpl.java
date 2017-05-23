@@ -4,7 +4,6 @@ package model.impl;
 
 import model.Agent;
 import model.ModelPackage;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**

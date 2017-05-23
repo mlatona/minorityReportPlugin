@@ -7,10 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: general.model.diagram.part.ModelDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: model.diagram.edit.parts,
- model.diagram.part,
- model.diagram.providers,
- general.model.diagram.edit.parts,
+Export-Package: general.model.diagram.edit.parts,
  general.model.diagram.part,
  general.model.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,

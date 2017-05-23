@@ -80,7 +80,7 @@ public class ModelModelingAssistantProviderOfHappensEditPart extends ModelModeli
 	public List<IElementType> doGetTypesForTarget(HappensEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.HappensEvent_4007) {
-			types.add(ModelElementTypes.PrimitiveEvent_2009);
+			types.add(ModelElementTypes.PrimitiveEvent_2012);
 			types.add(ModelElementTypes.ComplexEvent_2010);
 		}
 		return types;

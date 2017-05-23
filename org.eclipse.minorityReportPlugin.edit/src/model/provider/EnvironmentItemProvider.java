@@ -90,6 +90,7 @@ public class EnvironmentItemProvider
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__AGENTS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__OBSERVERS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__PRIMITIVE_EVENTS);
 		}
 		return childrenFeatures;
 	}
@@ -155,6 +156,7 @@ public class EnvironmentItemProvider
 			case ModelPackage.ENVIRONMENT__AGENTS:
 			case ModelPackage.ENVIRONMENT__OBSERVERS:
 			case ModelPackage.ENVIRONMENT__ADD_PARAM:
+			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -190,12 +192,12 @@ public class EnvironmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__PARAMETERS,
-				 ModelFactory.eINSTANCE.createAgent()));
+				 ModelFactory.eINSTANCE.createObserver()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__PARAMETERS,
-				 ModelFactory.eINSTANCE.createObserver()));
+				 ModelFactory.eINSTANCE.createAgent()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -240,17 +242,7 @@ public class EnvironmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
-				 ModelFactory.eINSTANCE.createParameter()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
 				 ModelFactory.eINSTANCE.createAgent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
-				 ModelFactory.eINSTANCE.createObserver()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -260,12 +252,12 @@ public class EnvironmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
-				 ModelFactory.eINSTANCE.createAgent()));
+				 ModelFactory.eINSTANCE.createObserver()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__OBSERVERS,
-				 ModelFactory.eINSTANCE.createObserver()));
+				 ModelFactory.eINSTANCE.createAgent()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -275,12 +267,17 @@ public class EnvironmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
-				 ModelFactory.eINSTANCE.createAgent()));
+				 ModelFactory.eINSTANCE.createObserver()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM,
-				 ModelFactory.eINSTANCE.createObserver()));
+				 ModelFactory.eINSTANCE.createAgent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__PRIMITIVE_EVENTS,
+				 ModelFactory.eINSTANCE.createPrimitiveEvent()));
 	}
 
 	/**
@@ -296,9 +293,11 @@ public class EnvironmentItemProvider
 
 		boolean qualify =
 			childFeature == ModelPackage.Literals.ENVIRONMENT__PARAMETERS ||
-			childFeature == ModelPackage.Literals.ENVIRONMENT__AGENTS ||
 			childFeature == ModelPackage.Literals.ENVIRONMENT__OBSERVERS ||
-			childFeature == ModelPackage.Literals.ENVIRONMENT__ADD_PARAM;
+			childFeature == ModelPackage.Literals.ENVIRONMENT__ADD_PARAM ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__AGENTS ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__EVENTS ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__PRIMITIVE_EVENTS;
 
 		if (qualify) {
 			return getString

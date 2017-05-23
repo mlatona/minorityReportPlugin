@@ -57,7 +57,7 @@ public class PrimitiveEventNameEditPart extends CompartmentEditPart implements I
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5007;
+	public static final int VISUAL_ID = 5010;
 
 	/**
 	* @generated
@@ -292,7 +292,7 @@ public class PrimitiveEventNameEditPart extends CompartmentEditPart implements I
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = ModelParserProvider.getParser(ModelElementTypes.PrimitiveEvent_2009, getParserElement(),
+			parser = ModelParserProvider.getParser(ModelElementTypes.PrimitiveEvent_2012, getParserElement(),
 					ModelVisualIDRegistry
 							.getType(general.model.diagram.edit.parts.PrimitiveEventNameEditPart.VISUAL_ID));
 		}

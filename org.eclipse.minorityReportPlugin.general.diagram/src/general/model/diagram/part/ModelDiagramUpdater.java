@@ -148,13 +148,17 @@ public class ModelDiagramUpdater {
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getEvents().iterator(); it.hasNext();) {
-			Event childElement = (Event) it.next();
+		for (Iterator<?> it = modelElement.getPrimitiveEvents().iterator(); it.hasNext();) {
+			PrimitiveEvent childElement = (PrimitiveEvent) it.next();
 			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == PrimitiveEventEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
+		}
+		for (Iterator<?> it = modelElement.getEvents().iterator(); it.hasNext();) {
+			Event childElement = (Event) it.next();
+			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ComplexEventEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
@@ -195,7 +199,7 @@ public class ModelDiagramUpdater {
 		case HoldsAtEditPart.VISUAL_ID:
 			return getHoldsAt_2008ContainedLinks(view);
 		case PrimitiveEventEditPart.VISUAL_ID:
-			return getPrimitiveEvent_2009ContainedLinks(view);
+			return getPrimitiveEvent_2012ContainedLinks(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2010ContainedLinks(view);
 		case ContextRelationEditPart.VISUAL_ID:
@@ -226,7 +230,7 @@ public class ModelDiagramUpdater {
 		case HoldsAtEditPart.VISUAL_ID:
 			return getHoldsAt_2008IncomingLinks(view);
 		case PrimitiveEventEditPart.VISUAL_ID:
-			return getPrimitiveEvent_2009IncomingLinks(view);
+			return getPrimitiveEvent_2012IncomingLinks(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2010IncomingLinks(view);
 		case ContextRelationEditPart.VISUAL_ID:
@@ -257,7 +261,7 @@ public class ModelDiagramUpdater {
 		case HoldsAtEditPart.VISUAL_ID:
 			return getHoldsAt_2008OutgoingLinks(view);
 		case PrimitiveEventEditPart.VISUAL_ID:
-			return getPrimitiveEvent_2009OutgoingLinks(view);
+			return getPrimitiveEvent_2012OutgoingLinks(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2010OutgoingLinks(view);
 		case ContextRelationEditPart.VISUAL_ID:
@@ -359,7 +363,7 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getPrimitiveEvent_2009ContainedLinks(View view) {
+	public static List<ModelLinkDescriptor> getPrimitiveEvent_2012ContainedLinks(View view) {
 		PrimitiveEvent modelElement = (PrimitiveEvent) view.getElement();
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4012(modelElement));
@@ -492,7 +496,7 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getPrimitiveEvent_2009IncomingLinks(View view) {
+	public static List<ModelLinkDescriptor> getPrimitiveEvent_2012IncomingLinks(View view) {
 		PrimitiveEvent modelElement = (PrimitiveEvent) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
@@ -618,7 +622,7 @@ public class ModelDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<ModelLinkDescriptor> getPrimitiveEvent_2009OutgoingLinks(View view) {
+	public static List<ModelLinkDescriptor> getPrimitiveEvent_2012OutgoingLinks(View view) {
 		PrimitiveEvent modelElement = (PrimitiveEvent) view.getElement();
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4012(modelElement));

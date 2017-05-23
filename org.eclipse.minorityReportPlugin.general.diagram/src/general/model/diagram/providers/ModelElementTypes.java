@@ -122,8 +122,8 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType PrimitiveEvent_2009 = getElementType(
-			"org.eclipse.minorityReportPlugin.general.diagram.PrimitiveEvent_2009"); //$NON-NLS-1$
+	public static final IElementType PrimitiveEvent_2012 = getElementType(
+			"org.eclipse.minorityReportPlugin.general.diagram.PrimitiveEvent_2012"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -281,7 +281,7 @@ public class ModelElementTypes {
 
 			elements.put(HoldsAt_2008, ModelPackage.eINSTANCE.getHoldsAt());
 
-			elements.put(PrimitiveEvent_2009, ModelPackage.eINSTANCE.getPrimitiveEvent());
+			elements.put(PrimitiveEvent_2012, ModelPackage.eINSTANCE.getPrimitiveEvent());
 
 			elements.put(ComplexEvent_2010, ModelPackage.eINSTANCE.getComplexEvent());
 
@@ -355,7 +355,7 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Initially_2006);
 			KNOWN_ELEMENT_TYPES.add(BehaviouralDescription_2007);
 			KNOWN_ELEMENT_TYPES.add(HoldsAt_2008);
-			KNOWN_ELEMENT_TYPES.add(PrimitiveEvent_2009);
+			KNOWN_ELEMENT_TYPES.add(PrimitiveEvent_2012);
 			KNOWN_ELEMENT_TYPES.add(ComplexEvent_2010);
 			KNOWN_ELEMENT_TYPES.add(ContextRelation_2011);
 			KNOWN_ELEMENT_TYPES.add(HoldsAtContextRelation_4001);
@@ -404,7 +404,7 @@ public class ModelElementTypes {
 		case HoldsAtEditPart.VISUAL_ID:
 			return HoldsAt_2008;
 		case PrimitiveEventEditPart.VISUAL_ID:
-			return PrimitiveEvent_2009;
+			return PrimitiveEvent_2012;
 		case ComplexEventEditPart.VISUAL_ID:
 			return ComplexEvent_2010;
 		case ContextRelationEditPart.VISUAL_ID:

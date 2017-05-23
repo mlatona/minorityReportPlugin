@@ -217,7 +217,7 @@
       <viewProvider class="general.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="GeneralModel"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2012,2010,2011"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018"/>
       </viewProvider>
    </extension>
@@ -230,13 +230,13 @@
             <method name="getType()" value="GeneralModel"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011"/>
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2012,2010,2011"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5003,5004,5005,5006,5007,5008,5009"/>
+            <method name="getType()" value="5001,5002,5003,5004,5005,5006,5008,5009"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -295,8 +295,8 @@
       </modelingAssistantProvider>
             <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfPrimitiveEventEditPart">
          <Priority name="Lowest"/>
-         <object class="general.model.diagram.edit.parts.PrimitiveEventEditPart" id="PrimitiveEvent_2009"/>
-         <context elements="PrimitiveEvent_2009"/>
+         <object class="general.model.diagram.edit.parts.PrimitiveEventEditPart" id="PrimitiveEvent_2012"/>
+         <context elements="PrimitiveEvent_2012"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="general.model.diagram.providers.assistants.ModelModelingAssistantProviderOfComplexEventEditPart">
          <Priority name="Lowest"/>
@@ -420,12 +420,12 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.minorityReportPlugin.general.diagram.PrimitiveEvent_2009"
-               name="%metatype.name.PrimitiveEvent_2009"
+               id="org.eclipse.minorityReportPlugin.general.diagram.PrimitiveEvent_2012"
+               name="%metatype.name.PrimitiveEvent_2012"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="PrimitiveEvent"
                edithelper="general.model.diagram.edit.helpers.PrimitiveEventEditHelper">
-            <param name="semanticHint" value="2009"/>
+            <param name="semanticHint" value="2012"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
@@ -631,7 +631,7 @@
          <elementType ref="org.eclipse.minorityReportPlugin.general.diagram.Initially_2006"/>
          <elementType ref="org.eclipse.minorityReportPlugin.general.diagram.BehaviouralDescription_2007"/>
          <elementType ref="org.eclipse.minorityReportPlugin.general.diagram.HoldsAt_2008"/>
-         <elementType ref="org.eclipse.minorityReportPlugin.general.diagram.PrimitiveEvent_2009"/>
+         <elementType ref="org.eclipse.minorityReportPlugin.general.diagram.PrimitiveEvent_2012"/>
          <elementType ref="org.eclipse.minorityReportPlugin.general.diagram.ComplexEvent_2010"/>
          <elementType ref="org.eclipse.minorityReportPlugin.general.diagram.ContextRelation_2011"/>
          <elementType ref="org.eclipse.minorityReportPlugin.general.diagram.HoldsAtContextRelation_4001"/>

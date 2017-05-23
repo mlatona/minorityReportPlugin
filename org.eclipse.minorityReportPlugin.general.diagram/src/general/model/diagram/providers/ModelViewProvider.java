@@ -255,7 +255,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		case HoldsAtEditPart.VISUAL_ID:
 			return createHoldsAt_2008(domainElement, containerView, index, persisted, preferencesHint);
 		case PrimitiveEventEditPart.VISUAL_ID:
-			return createPrimitiveEvent_2009(domainElement, containerView, index, persisted, preferencesHint);
+			return createPrimitiveEvent_2012(domainElement, containerView, index, persisted, preferencesHint);
 		case ComplexEventEditPart.VISUAL_ID:
 			return createComplexEvent_2010(domainElement, containerView, index, persisted, preferencesHint);
 		case ContextRelationEditPart.VISUAL_ID:
@@ -604,7 +604,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	/**
 	* @generated
 	*/
-	public Node createPrimitiveEvent_2009(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createPrimitiveEvent_2012(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
@@ -634,7 +634,6 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5007 = createLabel(node, ModelVisualIDRegistry.getType(PrimitiveEventNameEditPart.VISUAL_ID));
 		return node;
 	}
 

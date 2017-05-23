@@ -146,17 +146,17 @@ public class ModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelPackage.AGENT: {
-				Agent agent = (Agent)theEObject;
-				T result = caseAgent(agent);
-				if (result == null) result = caseParameter(agent);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ModelPackage.OBSERVER: {
 				Observer observer = (Observer)theEObject;
 				T result = caseObserver(observer);
 				if (result == null) result = caseParameter(observer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ModelPackage.AGENT: {
+				Agent agent = (Agent)theEObject;
+				T result = caseAgent(agent);
+				if (result == null) result = caseParameter(agent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

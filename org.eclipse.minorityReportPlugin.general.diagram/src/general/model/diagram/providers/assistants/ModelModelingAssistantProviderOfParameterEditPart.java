@@ -126,7 +126,7 @@ public class ModelModelingAssistantProviderOfParameterEditPart extends ModelMode
 		if (relationshipType == ModelElementTypes.ContextRelationParameters_4003) {
 			types.add(ModelElementTypes.ContextRelation_2011);
 		} else if (relationshipType == ModelElementTypes.EventParameters_4012) {
-			types.add(ModelElementTypes.PrimitiveEvent_2009);
+			types.add(ModelElementTypes.PrimitiveEvent_2012);
 			types.add(ModelElementTypes.ComplexEvent_2010);
 		}
 		return types;

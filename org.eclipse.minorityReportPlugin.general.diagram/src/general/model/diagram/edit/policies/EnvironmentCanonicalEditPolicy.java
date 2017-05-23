@@ -85,6 +85,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Initials());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_BehavDescriptions());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_HoldsAts());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_PrimitiveEvents());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Events());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_ContextRelations());
 		}
@@ -335,7 +336,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		}
 		case PrimitiveEventEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(ModelDiagramUpdater.getPrimitiveEvent_2009ContainedLinks(view));
+				result.addAll(ModelDiagramUpdater.getPrimitiveEvent_2012ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

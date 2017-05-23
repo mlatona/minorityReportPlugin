@@ -504,8 +504,8 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 		if (holdsAtBetweenItemProvider != null) holdsAtBetweenItemProvider.dispose();
 		if (initiallyItemProvider != null) initiallyItemProvider.dispose();
 		if (environmentItemProvider != null) environmentItemProvider.dispose();
-		if (agentItemProvider != null) agentItemProvider.dispose();
 		if (observerItemProvider != null) observerItemProvider.dispose();
+		if (agentItemProvider != null) agentItemProvider.dispose();
 	}
 
 }

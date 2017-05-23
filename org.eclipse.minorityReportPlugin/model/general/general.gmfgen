@@ -344,7 +344,7 @@
       </labels>
     </topLevelNodes>
     <topLevelNodes
-        visualID="2009"
+        visualID="2012"
         editPartClassName="PrimitiveEventEditPart"
         itemSemanticEditPolicyClassName="PrimitiveEventItemSemanticEditPolicy"
         canonicalEditPolicyClassName="PrimitiveEventCanonicalEditPolicy"
@@ -364,28 +364,10 @@
         <metaClass
             href="../model.genmodel#//model/PrimitiveEvent"/>
         <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/events"/>
+            href="../model.genmodel#//model/Environment/primitiveEvents"/>
         <childMetaFeature
-            href="../model.genmodel#//model/Environment/events"/>
+            href="../model.genmodel#//model/Environment/primitiveEvents"/>
       </modelFacet>
-      <labels
-          visualID="5007"
-          editPartClassName="PrimitiveEventNameEditPart"
-          itemSemanticEditPolicyClassName="PrimitiveEventNameItemSemanticEditPolicy"
-          elementIcon="true">
-        <diagramRunTimeClass
-            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigurePrimitiveEventNameFigure"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet
-            xsi:type="gmfgen:FeatureLabelModelFacet"
-            parser="//@labelParsers/@implementations.0">
-          <metaFeatures
-              href="../model.genmodel#//model/Event/name"/>
-        </modelFacet>
-      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2010"
@@ -1540,7 +1522,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@topLevelNodes.8/@labels.0/@modelFacet //@diagram/@topLevelNodes.9/@labels.0/@modelFacet //@diagram/@topLevelNodes.10/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet //@diagram/@topLevelNodes.6/@labels.0/@modelFacet //@diagram/@topLevelNodes.7/@labels.0/@modelFacet //@diagram/@topLevelNodes.9/@labels.0/@modelFacet //@diagram/@topLevelNodes.10/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">

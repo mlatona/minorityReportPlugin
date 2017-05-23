@@ -12,13 +12,6 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Instance"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="typeinstance.gmfgraph#InstanceName"/>
-        <features
-            href="../model.ecore#//Instance/name"/>
-      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="typeinstance.gmftool#//@palette/@tools.0/@tools.1"/>
@@ -32,13 +25,6 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Type"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="typeinstance.gmfgraph#TypeName"/>
-        <features
-            href="../model.ecore#//Type/name"/>
-      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="typeinstance.gmftool#//@palette/@tools.0/@tools.0"/>

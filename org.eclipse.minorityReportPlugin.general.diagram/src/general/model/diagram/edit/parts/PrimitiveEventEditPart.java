@@ -32,7 +32,7 @@ public class PrimitiveEventEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2009;
+	public static final int VISUAL_ID = 2012;
 
 	/**
 	* @generated
@@ -101,55 +101,6 @@ public class PrimitiveEventEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof PrimitiveEventNameEditPart) {
-			((PrimitiveEventNameEditPart) childEditPart)
-					.setLabel(getPrimaryShape().getFigurePrimitiveEventNameFigure());
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	* @generated
-	*/
-	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof PrimitiveEventNameEditPart) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	* @generated
-	*/
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	* @generated
-	*/
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	* @generated
-	*/
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		return getContentPane();
-	}
-
-	/**
-	* @generated
-	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
@@ -179,11 +130,6 @@ public class PrimitiveEventEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if (nodeShape.getLayoutManager() == null) {
-			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-			layout.setSpacing(5);
-			nodeShape.setLayoutManager(layout);
-		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -231,13 +177,6 @@ public class PrimitiveEventEditPart extends ShapeNodeEditPart {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
 		}
-	}
-
-	/**
-	* @generated
-	*/
-	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(ModelVisualIDRegistry.getType(PrimitiveEventNameEditPart.VISUAL_ID));
 	}
 
 	/**

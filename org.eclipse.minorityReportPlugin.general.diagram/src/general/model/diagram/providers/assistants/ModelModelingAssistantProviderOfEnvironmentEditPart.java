@@ -29,7 +29,7 @@ public class ModelModelingAssistantProviderOfEnvironmentEditPart extends ModelMo
 		types.add(ModelElementTypes.Initially_2006);
 		types.add(ModelElementTypes.BehaviouralDescription_2007);
 		types.add(ModelElementTypes.HoldsAt_2008);
-		types.add(ModelElementTypes.PrimitiveEvent_2009);
+		types.add(ModelElementTypes.PrimitiveEvent_2012);
 		types.add(ModelElementTypes.ComplexEvent_2010);
 		types.add(ModelElementTypes.ContextRelation_2011);
 		return types;

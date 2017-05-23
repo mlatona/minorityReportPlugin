@@ -60,6 +60,7 @@ import general.model.diagram.part.ModelVisualIDRegistry;
 import general.model.diagram.providers.ModelElementTypes;
 import general.model.diagram.providers.ModelParserProvider;
 import model.HoldsAtBetween;
+import model.PrimitiveEvent;
 
 /**
  * @generated
@@ -141,15 +142,15 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case HoldsAtEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?HoldsAt", //$NON-NLS-1$
 					ModelElementTypes.HoldsAt_2008);
-		case PrimitiveEventEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?PrimitiveEvent", //$NON-NLS-1$
-					ModelElementTypes.PrimitiveEvent_2009);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?ComplexEvent", //$NON-NLS-1$
 					ModelElementTypes.ComplexEvent_2010);
 		case ContextRelationEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?ContextRelation", //$NON-NLS-1$
 					ModelElementTypes.ContextRelation_2011);
+		case PrimitiveEventEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?PrimitiveEvent", //$NON-NLS-1$
+					ModelElementTypes.PrimitiveEvent_2012);
 		case HoldsAtContextRelationEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?HoldsAt?contextRelation", //$NON-NLS-1$
 					ModelElementTypes.HoldsAtContextRelation_4001);
@@ -279,12 +280,12 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getBehaviouralDescription_2007Text(view);
 		case HoldsAtEditPart.VISUAL_ID:
 			return getHoldsAt_2008Text(view);
-		case PrimitiveEventEditPart.VISUAL_ID:
-			return getPrimitiveEvent_2009Text(view);
 		case ComplexEventEditPart.VISUAL_ID:
 			return getComplexEvent_2010Text(view);
 		case ContextRelationEditPart.VISUAL_ID:
 			return getContextRelation_2011Text(view);
+		case PrimitiveEventEditPart.VISUAL_ID:
+			return getPrimitiveEvent_2012Text(view);
 		case HoldsAtContextRelationEditPart.VISUAL_ID:
 			return getHoldsAtContextRelation_4001Text(view);
 		case ParameterInstanceEditPart.VISUAL_ID:
@@ -451,22 +452,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	/**
 	* @generated
 	*/
-	private String getPrimitiveEvent_2009Text(View view) {
-		IParser parser = ModelParserProvider.getParser(ModelElementTypes.PrimitiveEvent_2009,
-				view.getElement() != null ? view.getElement() : view,
-				ModelVisualIDRegistry.getType(PrimitiveEventNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5007); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
 	private String getComplexEvent_2010Text(View view) {
 		IParser parser = ModelParserProvider.getParser(ModelElementTypes.ComplexEvent_2010,
 				view.getElement() != null ? view.getElement() : view,
@@ -492,6 +477,19 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 					ParserOptions.NONE.intValue());
 		} else {
 			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5009); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getPrimitiveEvent_2012Text(View view) {
+		PrimitiveEvent domainModelElement = (PrimitiveEvent) view.getElement();
+		if (domainModelElement != null) {
+			return domainModelElement.getName();
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2012); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

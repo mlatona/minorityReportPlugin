@@ -2,7 +2,6 @@
  */
 package model;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Primitive Event</b></em>'.
@@ -23,54 +22,54 @@ package model;
 public interface PrimitiveEvent extends Event {
 
 	/**
-	 * Returns the value of the '<em><b>Agent</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Agent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agent</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Agent</em>' containment reference.
-	 * @see #setAgent(Parameter)
+	 * @return the value of the '<em>Agent</em>' reference.
+	 * @see #setAgent(Agent)
 	 * @see model.ModelPackage#getPrimitiveEvent_Agent()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	Parameter getAgent();
+	Agent getAgent();
 
 	/**
-	 * Sets the value of the '{@link model.PrimitiveEvent#getAgent <em>Agent</em>}' containment reference.
+	 * Sets the value of the '{@link model.PrimitiveEvent#getAgent <em>Agent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Agent</em>' containment reference.
+	 * @param value the new value of the '<em>Agent</em>' reference.
 	 * @see #getAgent()
 	 * @generated
 	 */
-	void setAgent(Parameter value);
+	void setAgent(Agent value);
 
 	/**
-	 * Returns the value of the '<em><b>Observer</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Observer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Observer</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Observer</em>' containment reference.
-	 * @see #setObserver(Parameter)
+	 * @return the value of the '<em>Observer</em>' reference.
+	 * @see #setObserver(Observer)
 	 * @see model.ModelPackage#getPrimitiveEvent_Observer()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	Parameter getObserver();
+	Observer getObserver();
 
 	/**
-	 * Sets the value of the '{@link model.PrimitiveEvent#getObserver <em>Observer</em>}' containment reference.
+	 * Sets the value of the '{@link model.PrimitiveEvent#getObserver <em>Observer</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Observer</em>' containment reference.
+	 * @param value the new value of the '<em>Observer</em>' reference.
 	 * @see #getObserver()
 	 * @generated
 	 */
-	void setObserver(Parameter value);
+	void setObserver(Observer value);
 } // PrimitiveEvent
