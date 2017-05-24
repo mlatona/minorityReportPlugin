@@ -53,13 +53,6 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Observer"/>
-      <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
-        <diagramLabel
-            href="event.gmfgraph#ObserverLabel"/>
-        <features
-            href="../model.ecore#//Parameter/name"/>
-      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="event.gmftool#//@palette/@tools.0/@tools.1"/>

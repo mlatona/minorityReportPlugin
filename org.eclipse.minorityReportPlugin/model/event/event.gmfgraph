@@ -26,19 +26,6 @@
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
-        name="ObserverFigure">
-      <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="Observer">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ObserverName"
-            text="---Observer name here---"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors
         name="AddParamFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
@@ -48,7 +35,7 @@
             name="AddParamName"/>
       </actualFigure>
       <accessors
-          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <figures
@@ -78,16 +65,25 @@
             attribute="fill"
             type="COLOR"
             getter="getBackgroundColor"
-            setter="setBackgroundColor"/>
+            setter="setBackgroundColor"
+            callSuper="true"/>
         <properties
             query="//:polygon"
             attribute="stroke"
             type="COLOR"
             getter="getForegroundColor"
-            setter="setForegroundColor"/>
+            setter="setForegroundColor"
+            callSuper="true"/>
       </actualFigure>
       <accessors
           figure="//@figures.1/@descriptors.0/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors
+        name="ObserverFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="Observer"
+          qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
     </descriptors>
   </figures>
   <figures
@@ -145,10 +141,6 @@
       name="PEObserverConnection"
       figure="PEObserverFigure"/>
   <labels
-      name="ObserverLabel"
-      figure="ObserverFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels
       name="AgentLabel"
       figure="AgentFigure"
       accessor="//@figures.1/@descriptors.0/@accessors.0"/>
@@ -159,5 +151,5 @@
   <labels
       name="AddParamLabel"
       figure="AddParamFigure"
-      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
 </gmfgraph:Canvas>
