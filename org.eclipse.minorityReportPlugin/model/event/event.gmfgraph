@@ -29,13 +29,7 @@
         name="AddParamFigure">
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
-          name="AddParam">
-        <children
-            xsi:type="gmfgraph:Label"
-            name="AddParamName"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+          name="AddParam"/>
     </descriptors>
   </figures>
   <figures
@@ -43,40 +37,9 @@
     <descriptors
         name="AgentFigure">
       <actualFigure
-          xsi:type="gmfgraph:SVGFigure"
+          xsi:type="gmfgraph:CustomFigure"
           name="Agent"
-          documentURI="platform:/plugin/org.eclipse.minorityReportPlugin.event.diagram/icons/agent.svg">
-        <layout
-            xsi:type="gmfgraph:FlowLayout"/>
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="blue"/>
-        <backgroundColor
-            xsi:type="gmfgraph:RGBColor"
-            red="18"
-            green="178"
-            blue="178"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="AgentName"
-            text="--AGENT NAME HERE--"/>
-        <properties
-            query="//:circle|//:polygon"
-            attribute="fill"
-            type="COLOR"
-            getter="getBackgroundColor"
-            setter="setBackgroundColor"
-            callSuper="true"/>
-        <properties
-            query="//:polygon"
-            attribute="stroke"
-            type="COLOR"
-            getter="getForegroundColor"
-            setter="setForegroundColor"
-            callSuper="true"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.1/@descriptors.0/@actualFigure/@children.0"/>
+          qualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
     </descriptors>
     <descriptors
         name="ObserverFigure">
@@ -119,6 +82,27 @@
           targetDecoration="//@figures.2/@figures.2"/>
     </descriptors>
   </figures>
+  <figures
+      name="labels">
+    <descriptors
+        name="AddParamNameFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="AddParamName"
+          text="NAME"/>
+      <accessors
+          figure="//@figures.3/@descriptors.0/@actualFigure"/>
+    </descriptors>
+    <descriptors
+        name="AgentNameFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="AgentName"
+          text="NAME"/>
+      <accessors
+          figure="//@figures.3/@descriptors.1/@actualFigure"/>
+    </descriptors>
+  </figures>
   <nodes
       name="PrimitiveEventNode"
       figure="PrimitiveEventFigure"/>
@@ -142,14 +126,13 @@
       figure="PEObserverFigure"/>
   <labels
       name="AgentLabel"
-      figure="AgentFigure"
-      accessor="//@figures.1/@descriptors.0/@accessors.0"/>
+      figure="AgentNameFigure"/>
   <labels
       name="PrimitiveEventLabel"
       figure="PrimitiveEventFigure"
       accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels
       name="AddParamLabel"
-      figure="AddParamFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+      figure="AddParamNameFigure"
+      elementIcon="false"/>
 </gmfgraph:Canvas>

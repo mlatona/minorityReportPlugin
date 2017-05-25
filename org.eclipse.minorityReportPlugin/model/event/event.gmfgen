@@ -87,15 +87,8 @@
           xsi:type="gmfgen:MetamodelType"
           editHelperClassName="AgentEditHelper"/>
       <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          layoutType="FLOW_LAYOUT"
-          className="AgentFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgentFigure extends org.eclipse.gmf.runtime.lite.svg.SVGFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAgentName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgentFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setURI(&quot;platform:/plugin/org.eclipse.minorityReportPlugin.event.diagram/icons/agent.svg&quot;);&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.blue);&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAgentName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureAgentName.setText(&quot;--AGENT NAME HERE--&quot;);&#xA;&#xA;this.add(fFigureAgentName);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.swt.graphics.Color getBackgroundColor() {&#xA;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:circle|//:polygon&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;if (nodes.getLength() > 0) {&#xA;&#x9;&#x9;&#x9;org.w3c.dom.Element element = (org.w3c.dom.Element) nodes.item(0);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getColor(element, &quot;fill&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public void setBackgroundColor(org.eclipse.swt.graphics.Color value) {&#xA;&#x9;&#x9;&#x9;&#x9;String svalue = org.eclipse.gmf.runtime.lite.svg.SVGUtils.toSVGColor(getDocument(), value);&#xA;&#x9;&#x9;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:circle|//:polygon&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;for (int i = 0; i &lt; nodes.getLength(); i++) {&#xA;&#x9;&#x9;&#x9;((org.w3c.dom.Element) nodes.item(i)).setAttributeNS(null, &quot;fill&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;svalue);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;super.setBackgroundColor(value);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.swt.graphics.Color getForegroundColor() {&#xA;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;if (nodes.getLength() > 0) {&#xA;&#x9;&#x9;&#x9;org.w3c.dom.Element element = (org.w3c.dom.Element) nodes.item(0);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;return getColor(element, &quot;stroke&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;return null;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public void setForegroundColor(org.eclipse.swt.graphics.Color value) {&#xA;&#x9;&#x9;&#x9;&#x9;String svalue = org.eclipse.gmf.runtime.lite.svg.SVGUtils.toSVGColor(getDocument(), value);&#xA;&#x9;&#x9;&#x9;&#x9;org.w3c.dom.NodeList nodes = getNodes(&quot;//:polygon&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;for (int i = 0; i &lt; nodes.getLength(); i++) {&#xA;&#x9;&#x9;&#x9;((org.w3c.dom.Element) nodes.item(i)).setAttributeNS(null, &quot;stroke&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;svalue);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;super.setForegroundColor(value);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAgentName() {&#xA;&#x9;&#x9;return fFigureAgentName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 18, 178, 178);&#xA;&#xA;">
-        <attributes
-            xsi:type="gmfgen:StyleAttributes"
-            fixedForeground="true"
-            fixedBackground="true"/>
-      </viewmap>
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure"/>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/Agent"/>
@@ -105,6 +98,7 @@
             href="../model.genmodel#//model/Environment/parameters"/>
       </modelFacet>
       <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5005"
           editPartClassName="AgentNameEditPart"
           itemSemanticEditPolicyClassName="AgentNameItemSemanticEditPolicy"
@@ -112,9 +106,9 @@
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureAgentName"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="AgentNameFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AgentNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAgentName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AgentNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAgentName() {&#xA;&#x9;&#x9;return fFigureAgentName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0"
@@ -161,9 +155,8 @@
           xsi:type="gmfgen:MetamodelType"
           editHelperClassName="ParameterEditHelper"/>
       <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="AddParamFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AddParamFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAddParamName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AddParamFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureAddParamName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureAddParamName.setText(&quot;&quot;);&#xA;&#xA;this.add(fFigureAddParamName);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAddParamName() {&#xA;&#x9;&#x9;return fFigureAddParamName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.draw2d.RectangleFigure"/>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/Parameter"/>
@@ -173,16 +166,16 @@
             href="../model.genmodel#//model/Environment/parameters"/>
       </modelFacet>
       <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
           visualID="5007"
           editPartClassName="ParameterNameEditPart"
-          itemSemanticEditPolicyClassName="ParameterNameItemSemanticEditPolicy"
-          elementIcon="true">
+          itemSemanticEditPolicyClassName="ParameterNameItemSemanticEditPolicy">
         <diagramRunTimeClass
             href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
-            xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureAddParamName"
-            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="AddParamNameFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class AddParamNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureAddParamName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public AddParamNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureAddParamName() {&#xA;&#x9;&#x9;return fFigureAddParamName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
             parser="//@labelParsers/@implementations.0">

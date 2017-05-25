@@ -1,21 +1,39 @@
 package event.model.diagram.edit.parts;
 
+import java.net.URL;
+import java.util.Collections;
+import java.util.List;
+
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
+import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
+import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
+import org.eclipse.gmf.runtime.draw2d.ui.render.factory.RenderedImageFactory;
+import org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.lite.svg.SVGFigure;
@@ -26,12 +44,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import event.model.diagram.edit.policies.AgentItemSemanticEditPolicy;
+import event.model.diagram.part.ModelDiagramEditorPlugin;
 import event.model.diagram.part.ModelVisualIDRegistry;
 
 /**
  * @generated
  */
-public class AgentEditPart extends ShapeNodeEditPart {
+public class AgentEditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	* @generated
@@ -70,14 +89,29 @@ public class AgentEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected LayoutEditPolicy createLayoutEditPolicy() {
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
-		FlowLayoutEditPolicy lep = new FlowLayoutEditPolicy() {
+			protected EditPolicy createChildEditPolicy(EditPart child) {
+				View childView = (View) child.getModel();
+				switch (ModelVisualIDRegistry.getVisualID(childView)) {
+				case AgentNameEditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy() {
 
-			protected Command createAddCommand(EditPart child, EditPart after) {
-				return null;
+						protected List createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
+				}
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				if (result == null) {
+					result = new NonResizableEditPolicy();
+				}
+				return result;
 			}
 
-			protected Command createMoveChildCommand(EditPart child, EditPart after) {
+			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
@@ -89,65 +123,32 @@ public class AgentEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	protected IFigure createNodeShape() {
-		return primaryShape = new AgentFigure();
+		URL url = FileLocator.find(ModelDiagramEditorPlugin.getInstance().getBundle(), new Path("icons/agent.svg"), //$NON-NLS-1$
+				null);
+		return new ScalableImageFigure(RenderedImageFactory.getInstance(url), false, true, true);
 	}
 
 	/**
 	* @generated
 	*/
-	public AgentFigure getPrimaryShape() {
-		return (AgentFigure) primaryShape;
+	public ScalableImageFigure getPrimaryShape() {
+		return (ScalableImageFigure) primaryShape;
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
-	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof AgentNameEditPart) {
-			((AgentNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureAgentName());
-			return true;
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof AgentNameEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(2, -5));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
 		}
-		return false;
-	}
-
-	/**
-	* @generated
-	*/
-	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof AgentNameEditPart) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	* @generated
-	*/
-	protected void addChildVisual(EditPart childEditPart, int index) {
-		if (addFixedChild(childEditPart)) {
-			return;
-		}
-		super.addChildVisual(childEditPart, -1);
-	}
-
-	/**
-	* @generated
-	*/
-	protected void removeChildVisual(EditPart childEditPart) {
-		if (removeFixedChild(childEditPart)) {
-			return;
-		}
-		super.removeChildVisual(childEditPart);
-	}
-
-	/**
-	* @generated
-	*/
-	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		return getContentPane();
 	}
 
 	/**
@@ -166,7 +167,7 @@ public class AgentEditPart extends ShapeNodeEditPart {
 	* 
 	* @generated
 	*/
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -182,11 +183,6 @@ public class AgentEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if (nodeShape.getLayoutManager() == null) {
-			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
-			layout.setSpacing(5);
-			nodeShape.setLayoutManager(layout);
-		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -242,114 +238,5 @@ public class AgentEditPart extends ShapeNodeEditPart {
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(ModelVisualIDRegistry.getType(AgentNameEditPart.VISUAL_ID));
 	}
-
-	/**
-	 * @generated
-	 */
-	public class AgentFigure extends SVGFigure {
-
-		/**
-		 * @generated
-		 */
-		private WrappingLabel fFigureAgentName;
-
-		/**
-		 * @generated
-		 */
-		public AgentFigure() {
-
-			FlowLayout layoutThis = new FlowLayout();
-			layoutThis.setStretchMinorAxis(false);
-			layoutThis.setMinorAlignment(FlowLayout.ALIGN_LEFTTOP);
-
-			layoutThis.setMajorAlignment(FlowLayout.ALIGN_LEFTTOP);
-			layoutThis.setMajorSpacing(5);
-			layoutThis.setMinorSpacing(5);
-			layoutThis.setHorizontal(true);
-
-			this.setLayoutManager(layoutThis);
-
-			this.setURI("platform:/plugin/org.eclipse.minorityReportPlugin.event.diagram/icons/agent.svg");
-			this.setForegroundColor(ColorConstants.blue);
-			this.setBackgroundColor(THIS_BACK);
-			createContents();
-		}
-
-		/**
-		 * @generated
-		 */
-		private void createContents() {
-
-			fFigureAgentName = new WrappingLabel();
-
-			fFigureAgentName.setText("--AGENT NAME HERE--");
-
-			this.add(fFigureAgentName);
-
-		}
-
-		/**
-		 * @generated
-		 */
-		public Color getBackgroundColor() {
-			NodeList nodes = getNodes("//:circle|//:polygon"); //$NON-NLS-1$
-			if (nodes.getLength() > 0) {
-				Element element = (Element) nodes.item(0);
-				return getColor(element, "fill"); //$NON-NLS-1$
-			}
-			return null;
-		}
-
-		/**
-		 * @generated
-		 */
-		public void setBackgroundColor(Color value) {
-			String svalue = SVGUtils.toSVGColor(getDocument(), value);
-			NodeList nodes = getNodes("//:circle|//:polygon"); //$NON-NLS-1$
-			for (int i = 0; i < nodes.getLength(); i++) {
-				((Element) nodes.item(i)).setAttributeNS(null, "fill", //$NON-NLS-1$
-						svalue);
-			}
-			super.setBackgroundColor(value);
-		}
-
-		/**
-		 * @generated
-		 */
-		public Color getForegroundColor() {
-			NodeList nodes = getNodes("//:polygon"); //$NON-NLS-1$
-			if (nodes.getLength() > 0) {
-				Element element = (Element) nodes.item(0);
-				return getColor(element, "stroke"); //$NON-NLS-1$
-			}
-			return null;
-		}
-
-		/**
-		 * @generated
-		 */
-		public void setForegroundColor(Color value) {
-			String svalue = SVGUtils.toSVGColor(getDocument(), value);
-			NodeList nodes = getNodes("//:polygon"); //$NON-NLS-1$
-			for (int i = 0; i < nodes.getLength(); i++) {
-				((Element) nodes.item(i)).setAttributeNS(null, "stroke", //$NON-NLS-1$
-						svalue);
-			}
-			super.setForegroundColor(value);
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureAgentName() {
-			return fFigureAgentName;
-		}
-
-	}
-
-	/**
-	 * @generated
-	 */
-	static final Color THIS_BACK = new Color(null, 18, 178, 178);
 
 }

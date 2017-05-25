@@ -57,7 +57,7 @@ public class ObserverNameEditPart extends CompartmentEditPart implements ITextAw
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5006;
+	public static final int VISUAL_ID = 5008;
 
 	/**
 	* @generated
