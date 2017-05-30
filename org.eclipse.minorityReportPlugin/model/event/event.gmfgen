@@ -141,6 +141,25 @@
         <childMetaFeature
             href="../model.genmodel#//model/Environment/parameters"/>
       </modelFacet>
+      <labels
+          xsi:type="gmfgen:GenExternalNodeLabel"
+          visualID="5008"
+          editPartClassName="ObserverNameEditPart"
+          itemSemanticEditPolicyClassName="ObserverNameItemSemanticEditPolicy"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:InnerClassViewmap"
+            className="ObserverNameFigure"
+            classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ObserverNameFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ObserverNameFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;NAME&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../model.genmodel#//model/Parameter/name"/>
+        </modelFacet>
+      </labels>
     </topLevelNodes>
     <topLevelNodes
         visualID="2009"
@@ -183,6 +202,31 @@
               href="../model.genmodel#//model/Parameter/name"/>
         </modelFacet>
       </labels>
+    </topLevelNodes>
+    <topLevelNodes
+        visualID="2010"
+        editPartClassName="BehaviouralDescriptionEditPart"
+        itemSemanticEditPolicyClassName="BehaviouralDescriptionItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="BehaviouralDescriptionCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="BehaviouralDescriptionGraphicalNodeEditPolicy"
+        createCommandClassName="BehaviouralDescriptionCreateCommand">
+      <diagramRunTimeClass
+          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="BehaviouralDescriptionEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="TestFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestFigure extends org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescritionFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 2;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet>
+        <metaClass
+            href="../model.genmodel#//model/BehaviouralDescription"/>
+        <containmentMetaFeature
+            href="../model.genmodel#//model/Environment/behavDescriptions"/>
+        <childMetaFeature
+            href="../model.genmodel#//model/Environment/behavDescriptions"/>
+      </modelFacet>
     </topLevelNodes>
     <links
         visualID="4001"
@@ -246,15 +290,18 @@
     </links>
     <palette>
       <groups
-          title="model">
+          title="Nodes"
+          collapse="true">
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Agent Primitive Event"
+            smallIconPath="/org.eclipse.minorityReportPlugin.event.diagram/icons/obj16/agent.gif"
             genNodes="//@diagram/@topLevelNodes.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Observer Primitive Event"
             description=""
+            smallIconPath="/org.eclipse.minorityReportPlugin.event.diagram/icons/obj16/observer.ico"
             genNodes="//@diagram/@topLevelNodes.2"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
@@ -265,6 +312,18 @@
             title="Primitive Event"
             description=""
             genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="BehavDesc"
+            genNodes="//@diagram/@topLevelNodes.4"/>
+      </groups>
+      <groups
+          title="Links"
+          collapse="true">
+        <entries
+            xsi:type="gmfgen:ToolEntry"
+            title="PEAgent"
+            genLinks="//@diagram/@links.0"/>
       </groups>
     </palette>
     <preferencePages
@@ -317,6 +376,9 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.3"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.4"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@links.0"
@@ -455,7 +517,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">

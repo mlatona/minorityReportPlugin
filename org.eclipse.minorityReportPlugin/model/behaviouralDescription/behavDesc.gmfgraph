@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
+    name="default">
+  <figures
+      name="nodes">
+    <descriptors
+        name="behavDesc">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="BehavDesc"
+          qualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescritionFigure">
+        <layout
+            xsi:type="gmfgraph:XYLayout"/>
+      </actualFigure>
+    </descriptors>
+  </figures>
+  <nodes
+      name="BehavDescNode"
+      figure="behavDesc"/>
+</gmfgraph:Canvas>

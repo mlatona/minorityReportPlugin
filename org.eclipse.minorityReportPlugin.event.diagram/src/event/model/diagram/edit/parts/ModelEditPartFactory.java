@@ -40,11 +40,17 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case ObserverEditPart.VISUAL_ID:
 				return new ObserverEditPart(view);
 
+			case ObserverNameEditPart.VISUAL_ID:
+				return new ObserverNameEditPart(view);
+
 			case ParameterEditPart.VISUAL_ID:
 				return new ParameterEditPart(view);
 
 			case ParameterNameEditPart.VISUAL_ID:
 				return new ParameterNameEditPart(view);
+
+			case BehaviouralDescriptionEditPart.VISUAL_ID:
+				return new BehaviouralDescriptionEditPart(view);
 
 			case PrimitiveEventAgentEditPart.VISUAL_ID:
 				return new PrimitiveEventAgentEditPart(view);

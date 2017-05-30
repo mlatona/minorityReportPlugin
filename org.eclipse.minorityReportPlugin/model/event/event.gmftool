@@ -8,12 +8,15 @@
       title="modelPalette">
     <tools
         xsi:type="gmftool:ToolGroup"
-        title="model">
+        title="Nodes"
+        collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
           title="Agent Primitive Event">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/agent.gif"
+            bundle="org.eclipse.minorityReportPlugin.event.diagram"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
@@ -22,7 +25,9 @@
           title="Observer Primitive Event"
           description="">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/obj16/observer.ico"
+            bundle="org.eclipse.minorityReportPlugin.event.diagram"/>
         <largeIcon
             xsi:type="gmftool:DefaultImage"/>
       </tools>
@@ -38,6 +43,27 @@
           xsi:type="gmftool:CreationTool"
           title="Primitive Event"
           description="">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="BehavDesc">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+    </tools>
+    <tools
+        xsi:type="gmftool:ToolGroup"
+        title="Links"
+        collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="PEAgent">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

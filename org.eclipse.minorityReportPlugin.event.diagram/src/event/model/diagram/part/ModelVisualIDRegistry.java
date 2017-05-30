@@ -9,6 +9,7 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.AgentNameEditPart;
+import event.model.diagram.edit.parts.BehaviouralDescriptionEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
 import event.model.diagram.edit.parts.ObserverNameEditPart;
@@ -133,6 +134,9 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getParameter().isSuperTypeOf(domainElement.eClass())) {
 				return ParameterEditPart.VISUAL_ID;
 			}
+			if (ModelPackage.eINSTANCE.getBehaviouralDescription().isSuperTypeOf(domainElement.eClass())) {
+				return BehaviouralDescriptionEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -170,6 +174,9 @@ public class ModelVisualIDRegistry {
 			if (ParameterEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (BehaviouralDescriptionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			break;
 		case PrimitiveEventEditPart.VISUAL_ID:
 			if (PrimitiveEventNameEditPart.VISUAL_ID == nodeVisualID) {
@@ -178,6 +185,11 @@ public class ModelVisualIDRegistry {
 			break;
 		case AgentEditPart.VISUAL_ID:
 			if (AgentNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ObserverEditPart.VISUAL_ID:
+			if (ObserverNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -240,6 +252,7 @@ public class ModelVisualIDRegistry {
 		case AgentEditPart.VISUAL_ID:
 		case ObserverEditPart.VISUAL_ID:
 		case ParameterEditPart.VISUAL_ID:
+		case BehaviouralDescriptionEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

@@ -4,9 +4,11 @@ package event.model.diagram.part;
 import java.util.Collections;
 
 import org.eclipse.gef.palette.PaletteContainer;
+import org.eclipse.gef.palette.PaletteDrawer;
 import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
+import org.eclipse.gmf.tooling.runtime.part.DefaultLinkToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
 
 import event.model.diagram.providers.ModelElementTypes;
@@ -20,20 +22,33 @@ public class ModelPaletteFactory {
 	* @generated
 	*/
 	public void fillPalette(PaletteRoot paletteRoot) {
-		paletteRoot.add(createModel1Group());
+		paletteRoot.add(createNodes1Group());
+		paletteRoot.add(createLinks2Group());
 	}
 
 	/**
-	* Creates "model" palette tool group
+	* Creates "Nodes" palette tool group
 	* @generated
 	*/
-	private PaletteContainer createModel1Group() {
-		PaletteGroup paletteContainer = new PaletteGroup(Messages.Model1Group_title);
-		paletteContainer.setId("createModel1Group"); //$NON-NLS-1$
+	private PaletteContainer createNodes1Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Nodes1Group_title);
+		paletteContainer.setId("createNodes1Group"); //$NON-NLS-1$
 		paletteContainer.add(createAgentPrimitiveEvent1CreationTool());
 		paletteContainer.add(createObserverPrimitiveEvent2CreationTool());
 		paletteContainer.add(createGenericparameterPrimitiveEvent3CreationTool());
 		paletteContainer.add(createPrimitiveEvent4CreationTool());
+		paletteContainer.add(createBehavDesc5CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Links" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createLinks2Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Links2Group_title);
+		paletteContainer.setId("createLinks2Group"); //$NON-NLS-1$
+		paletteContainer.add(createPEAgent1CreationTool());
 		return paletteContainer;
 	}
 
@@ -44,7 +59,8 @@ public class ModelPaletteFactory {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.AgentPrimitiveEvent1CreationTool_title, null,
 				Collections.singletonList(ModelElementTypes.Agent_2007));
 		entry.setId("createAgentPrimitiveEvent1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.Agent_2007));
+		entry.setSmallIcon(ModelDiagramEditorPlugin
+				.findImageDescriptor("/org.eclipse.minorityReportPlugin.event.diagram/icons/obj16/agent.gif")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -57,7 +73,8 @@ public class ModelPaletteFactory {
 				Messages.ObserverPrimitiveEvent2CreationTool_desc,
 				Collections.singletonList(ModelElementTypes.Observer_2008));
 		entry.setId("createObserverPrimitiveEvent2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.Observer_2008));
+		entry.setSmallIcon(ModelDiagramEditorPlugin
+				.findImageDescriptor("/org.eclipse.minorityReportPlugin.event.diagram/icons/obj16/observer.ico")); //$NON-NLS-1$
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -84,6 +101,30 @@ public class ModelPaletteFactory {
 				Collections.singletonList(ModelElementTypes.PrimitiveEvent_2005));
 		entry.setId("createPrimitiveEvent4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.PrimitiveEvent_2005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createBehavDesc5CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.BehavDesc5CreationTool_title, null,
+				Collections.singletonList(ModelElementTypes.BehaviouralDescription_2010));
+		entry.setId("createBehavDesc5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.BehaviouralDescription_2010));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createPEAgent1CreationTool() {
+		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.PEAgent1CreationTool_title, null,
+				Collections.singletonList(ModelElementTypes.PrimitiveEventAgent_4001));
+		entry.setId("createPEAgent1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.PrimitiveEventAgent_4001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

@@ -14,6 +14,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
 import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.BehaviouralDescriptionEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
@@ -23,6 +24,7 @@ import event.model.diagram.edit.parts.PrimitiveEventEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventObserverEditPart;
 import event.model.diagram.providers.ModelElementTypes;
 import model.Agent;
+import model.BehaviouralDescription;
 import model.Environment;
 import model.Event;
 import model.ModelPackage;
@@ -79,6 +81,14 @@ public class ModelDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator<?> it = modelElement.getBehavDescriptions().iterator(); it.hasNext();) {
+			BehaviouralDescription childElement = (BehaviouralDescription) it.next();
+			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == BehaviouralDescriptionEditPart.VISUAL_ID) {
+				result.add(new ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 
@@ -97,6 +107,8 @@ public class ModelDiagramUpdater {
 			return getObserver_2008ContainedLinks(view);
 		case ParameterEditPart.VISUAL_ID:
 			return getParameter_2009ContainedLinks(view);
+		case BehaviouralDescriptionEditPart.VISUAL_ID:
+			return getBehaviouralDescription_2010ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -114,6 +126,8 @@ public class ModelDiagramUpdater {
 			return getObserver_2008IncomingLinks(view);
 		case ParameterEditPart.VISUAL_ID:
 			return getParameter_2009IncomingLinks(view);
+		case BehaviouralDescriptionEditPart.VISUAL_ID:
+			return getBehaviouralDescription_2010IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -131,6 +145,8 @@ public class ModelDiagramUpdater {
 			return getObserver_2008OutgoingLinks(view);
 		case ParameterEditPart.VISUAL_ID:
 			return getParameter_2009OutgoingLinks(view);
+		case BehaviouralDescriptionEditPart.VISUAL_ID:
+			return getBehaviouralDescription_2010OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -172,6 +188,13 @@ public class ModelDiagramUpdater {
 	 * @generated
 	 */
 	public static List<ModelLinkDescriptor> getParameter_2009ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ModelLinkDescriptor> getBehaviouralDescription_2010ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -221,6 +244,13 @@ public class ModelDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<ModelLinkDescriptor> getBehaviouralDescription_2010IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<ModelLinkDescriptor> getPrimitiveEvent_2005OutgoingLinks(View view) {
@@ -250,6 +280,13 @@ public class ModelDiagramUpdater {
 	 * @generated
 	 */
 	public static List<ModelLinkDescriptor> getParameter_2009OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<ModelLinkDescriptor> getBehaviouralDescription_2010OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 

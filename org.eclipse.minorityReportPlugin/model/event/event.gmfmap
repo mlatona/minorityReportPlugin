@@ -53,6 +53,13 @@
     <ownedChild>
       <domainMetaElement
           href="../model.ecore#//Observer"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="event.gmfgraph#ObserverLabel"/>
+        <features
+            href="../model.ecore#//Parameter/name"/>
+      </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="event.gmftool#//@palette/@tools.0/@tools.1"/>
@@ -80,7 +87,23 @@
           href="event.gmfgraph#AddParamNode"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/behavDescriptions"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//BehaviouralDescription"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="event.gmftool#//@palette/@tools.0/@tools.4"/>
+      <diagramNode
+          href="event.gmfgraph#TestNode"/>
+    </ownedChild>
+  </nodes>
   <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="event.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
         href="event.gmfgraph#PEAgentConnection"/>
     <linkMetaFeature

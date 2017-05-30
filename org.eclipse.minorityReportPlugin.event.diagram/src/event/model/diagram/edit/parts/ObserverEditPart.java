@@ -2,20 +2,30 @@ package event.model.diagram.edit.parts;
 
 import java.net.URL;
 
+import java.util.Collections;
+import java.util.List;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
+import org.eclipse.gef.handles.MoveHandle;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editpolicies.BorderItemSelectionEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.draw2d.ui.render.factory.RenderedImageFactory;
 import org.eclipse.gmf.runtime.draw2d.ui.render.figures.ScalableImageFigure;
@@ -26,11 +36,12 @@ import org.eclipse.swt.graphics.Color;
 
 import event.model.diagram.edit.policies.ObserverItemSemanticEditPolicy;
 import event.model.diagram.part.ModelDiagramEditorPlugin;
+import event.model.diagram.part.ModelVisualIDRegistry;
 
 /**
  * @generated
  */
-public class ObserverEditPart extends ShapeNodeEditPart {
+public class ObserverEditPart extends AbstractBorderedShapeEditPart {
 
 	/**
 	* @generated
@@ -72,6 +83,18 @@ public class ObserverEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
+				View childView = (View) child.getModel();
+				switch (ModelVisualIDRegistry.getVisualID(childView)) {
+				case ObserverNameEditPart.VISUAL_ID:
+					return new BorderItemSelectionEditPolicy() {
+
+						protected List createSelectionHandles() {
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
+							mh.setBorder(null);
+							return Collections.singletonList(mh);
+						}
+					};
+				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
@@ -109,6 +132,19 @@ public class ObserverEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
+	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
+		if (borderItemEditPart instanceof ObserverNameEditPart) {
+			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			locator.setBorderItemOffset(new Dimension(2, -5));
+			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
+		} else {
+			super.addBorderItem(borderItemContainer, borderItemEditPart);
+		}
+	}
+
+	/**
+	* @generated
+	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
@@ -122,7 +158,7 @@ public class ObserverEditPart extends ShapeNodeEditPart {
 	* 
 	* @generated
 	*/
-	protected NodeFigure createNodeFigure() {
+	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
@@ -185,6 +221,13 @@ public class ObserverEditPart extends ShapeNodeEditPart {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
 		}
+	}
+
+	/**
+	* @generated
+	*/
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(ModelVisualIDRegistry.getType(ObserverNameEditPart.VISUAL_ID));
 	}
 
 }

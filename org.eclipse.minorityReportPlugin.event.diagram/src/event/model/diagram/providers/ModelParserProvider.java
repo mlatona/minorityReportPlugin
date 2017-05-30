@@ -63,6 +63,23 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
+	private IParser observerName_5008Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getObserverName_5008Parser() {
+		if (observerName_5008Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getParameter_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			observerName_5008Parser = parser;
+		}
+		return observerName_5008Parser;
+	}
+
+	/**
+	* @generated
+	*/
 	private IParser parameterName_5007Parser;
 
 	/**
@@ -86,6 +103,8 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 			return getPrimitiveEventName_5003Parser();
 		case AgentNameEditPart.VISUAL_ID:
 			return getAgentName_5005Parser();
+		case ObserverNameEditPart.VISUAL_ID:
+			return getObserverName_5008Parser();
 		case ParameterNameEditPart.VISUAL_ID:
 			return getParameterName_5007Parser();
 		}

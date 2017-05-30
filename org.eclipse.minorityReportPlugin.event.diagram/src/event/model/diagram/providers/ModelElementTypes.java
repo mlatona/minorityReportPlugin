@@ -15,6 +15,7 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.BehaviouralDescriptionEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
@@ -80,6 +81,12 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
+	public static final IElementType BehaviouralDescription_2010 = getElementType(
+			"org.eclipse.minorityReportPlugin.event.diagram.BehaviouralDescription_2010"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
 	public static final IElementType PrimitiveEventAgent_4001 = getElementType(
 			"org.eclipse.minorityReportPlugin.event.diagram.PrimitiveEventAgent_4001"); //$NON-NLS-1$
 	/**
@@ -141,6 +148,8 @@ public class ModelElementTypes {
 
 			elements.put(Parameter_2009, ModelPackage.eINSTANCE.getParameter());
 
+			elements.put(BehaviouralDescription_2010, ModelPackage.eINSTANCE.getBehaviouralDescription());
+
 			elements.put(PrimitiveEventAgent_4001, ModelPackage.eINSTANCE.getPrimitiveEvent_Agent());
 
 			elements.put(EventParameters_4003, ModelPackage.eINSTANCE.getEvent_Parameters());
@@ -168,6 +177,7 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Agent_2007);
 			KNOWN_ELEMENT_TYPES.add(Observer_2008);
 			KNOWN_ELEMENT_TYPES.add(Parameter_2009);
+			KNOWN_ELEMENT_TYPES.add(BehaviouralDescription_2010);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventAgent_4001);
 			KNOWN_ELEMENT_TYPES.add(EventParameters_4003);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventObserver_4002);
@@ -190,6 +200,8 @@ public class ModelElementTypes {
 			return Observer_2008;
 		case ParameterEditPart.VISUAL_ID:
 			return Parameter_2009;
+		case BehaviouralDescriptionEditPart.VISUAL_ID:
+			return BehaviouralDescription_2010;
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return PrimitiveEventAgent_4001;
 		case EventParametersEditPart.VISUAL_ID:

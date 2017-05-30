@@ -24,6 +24,7 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
 import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.BehaviouralDescriptionEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
@@ -231,6 +232,9 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(ParameterEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					ModelVisualIDRegistry.getType(BehaviouralDescriptionEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					ModelVisualIDRegistry.getType(PrimitiveEventAgentEditPart.VISUAL_ID));
