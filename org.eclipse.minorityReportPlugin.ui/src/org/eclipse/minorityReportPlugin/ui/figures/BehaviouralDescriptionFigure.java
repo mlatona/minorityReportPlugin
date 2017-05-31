@@ -56,7 +56,7 @@ public class BehaviouralDescriptionFigure extends Shape {
 	    protected void outlineShape(Graphics graphics) {  
 			System.out.println("I'm in outlineShape()");
 
-	        Rectangle r = new Rectangle(50, 50, 100, 100);
+	        Rectangle r = new Rectangle(50, 50, 400, 200);
 	        
 	        Rectangle r1 = new Rectangle();
 	        ArrayList<Rectangle> sr = new ArrayList<Rectangle>();

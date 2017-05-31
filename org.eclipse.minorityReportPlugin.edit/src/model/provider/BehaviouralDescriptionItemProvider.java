@@ -97,6 +97,8 @@ public class BehaviouralDescriptionItemProvider
 	 * @generated
 	 */
 	protected void addHappensPropertyDescriptor(Object object) {
+		
+		System.out.println("\nSono nel listener di happens!\n");
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
