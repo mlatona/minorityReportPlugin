@@ -20,12 +20,11 @@ public class ModelModelingAssistantProviderOfEnvironmentEditPart extends ModelMo
 	@Override
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
-		List<IElementType> types = new ArrayList<IElementType>(5);
+		List<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(ModelElementTypes.PrimitiveEvent_2005);
 		types.add(ModelElementTypes.Agent_2007);
 		types.add(ModelElementTypes.Observer_2008);
 		types.add(ModelElementTypes.Parameter_2009);
-		types.add(ModelElementTypes.BehaviouralDescription_2010);
 		return types;
 	}
 

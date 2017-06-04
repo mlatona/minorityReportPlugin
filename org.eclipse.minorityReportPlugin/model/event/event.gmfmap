@@ -87,19 +87,6 @@
           href="event.gmfgraph#AddParamNode"/>
     </ownedChild>
   </nodes>
-  <nodes>
-    <containmentFeature
-        href="../model.ecore#//Environment/behavDescriptions"/>
-    <ownedChild>
-      <domainMetaElement
-          href="../model.ecore#//BehaviouralDescription"/>
-      <tool
-          xsi:type="gmftool:CreationTool"
-          href="event.gmftool#//@palette/@tools.0/@tools.4"/>
-      <diagramNode
-          href="event.gmfgraph#TestNode"/>
-    </ownedChild>
-  </nodes>
   <links>
     <tool
         xsi:type="gmftool:CreationTool"

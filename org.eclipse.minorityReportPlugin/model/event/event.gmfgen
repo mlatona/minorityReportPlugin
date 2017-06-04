@@ -203,31 +203,6 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <topLevelNodes
-        visualID="2010"
-        editPartClassName="BehaviouralDescriptionEditPart"
-        itemSemanticEditPolicyClassName="BehaviouralDescriptionItemSemanticEditPolicy"
-        canonicalEditPolicyClassName="BehaviouralDescriptionCanonicalEditPolicy"
-        graphicalNodeEditPolicyClassName="BehaviouralDescriptionGraphicalNodeEditPolicy"
-        createCommandClassName="BehaviouralDescriptionCreateCommand">
-      <diagramRunTimeClass
-          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="BehaviouralDescriptionEditHelper"/>
-      <viewmap
-          xsi:type="gmfgen:InnerClassViewmap"
-          className="TestFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class TestFigure extends org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescritionFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public TestFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.GridLayout layoutThis = new org.eclipse.draw2d.GridLayout();&#xA;&#x9;layoutThis.numColumns = 2;&#xA;&#x9;layoutThis.makeColumnsEqualWidth = true;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
-      <modelFacet>
-        <metaClass
-            href="../model.genmodel#//model/BehaviouralDescription"/>
-        <containmentMetaFeature
-            href="../model.genmodel#//model/Environment/behavDescriptions"/>
-        <childMetaFeature
-            href="../model.genmodel#//model/Environment/behavDescriptions"/>
-      </modelFacet>
-    </topLevelNodes>
     <links
         visualID="4001"
         editPartClassName="PrimitiveEventAgentEditPart"
@@ -314,8 +289,7 @@
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="BehavDesc"
-            genNodes="//@diagram/@topLevelNodes.4"/>
+            title="BehavDesc"/>
       </groups>
       <groups
           title="Links"
@@ -376,9 +350,6 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.3"/>
-    <childReferences
-        parent="//@diagram"
-        child="//@diagram/@topLevelNodes.4"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@links.0"

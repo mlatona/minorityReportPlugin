@@ -12,10 +12,7 @@
       <actualFigure
           xsi:type="gmfgraph:CustomFigure"
           name="BehavDesc"
-          qualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescritionFigure">
-        <layout
-            xsi:type="gmfgraph:XYLayout"/>
-      </actualFigure>
+          qualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescritionFigure"/>
     </descriptors>
   </figures>
   <nodes

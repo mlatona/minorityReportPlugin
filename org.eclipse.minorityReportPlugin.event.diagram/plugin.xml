@@ -217,7 +217,7 @@
       <viewProvider class="event.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Event Model"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,2007,2008,2009,2010"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,2007,2008,2009"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4003,4002"/>
       </viewProvider>
    </extension>
@@ -230,7 +230,7 @@
             <method name="getType()" value="Event Model"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2005,2007,2008,2009,2010"/>
+            <method name="getType()" value="2005,2007,2008,2009"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4003,4002"/>
@@ -272,11 +272,6 @@
          <Priority name="Lowest"/>
          <object class="event.model.diagram.edit.parts.ParameterEditPart" id="Parameter_2009"/>
          <context elements="Parameter_2009"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="event.model.diagram.providers.assistants.ModelModelingAssistantProviderOfBehaviouralDescriptionEditPart">
-         <Priority name="Lowest"/>
-         <object class="event.model.diagram.edit.parts.BehaviouralDescriptionEditPart" id="BehaviouralDescription_2010"/>
-         <context elements="BehaviouralDescription_2010"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -349,16 +344,6 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
-         <metamodelType
-               id="org.eclipse.minorityReportPlugin.event.diagram.BehaviouralDescription_2010"
-               name="%metatype.name.BehaviouralDescription_2010"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="BehaviouralDescription"
-               edithelper="event.model.diagram.edit.helpers.BehaviouralDescriptionEditHelper">
-            <param name="semanticHint" value="2010"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <specializationType
                id="org.eclipse.minorityReportPlugin.event.diagram.PrimitiveEventAgent_4001"
                name="%metatype.name.PrimitiveEventAgent_4001"
@@ -402,7 +387,6 @@
          <elementType ref="org.eclipse.minorityReportPlugin.event.diagram.Agent_2007"/>
          <elementType ref="org.eclipse.minorityReportPlugin.event.diagram.Observer_2008"/>
          <elementType ref="org.eclipse.minorityReportPlugin.event.diagram.Parameter_2009"/>
-         <elementType ref="org.eclipse.minorityReportPlugin.event.diagram.BehaviouralDescription_2010"/>
          <elementType ref="org.eclipse.minorityReportPlugin.event.diagram.PrimitiveEventAgent_4001"/>
          <elementType ref="org.eclipse.minorityReportPlugin.event.diagram.EventParameters_4003"/>
          <elementType ref="org.eclipse.minorityReportPlugin.event.diagram.PrimitiveEventObserver_4002"/>

@@ -109,11 +109,9 @@ public class ModelPaletteFactory {
 	* @generated
 	*/
 	private ToolEntry createBehavDesc5CreationTool() {
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.BehavDesc5CreationTool_title, null,
-				Collections.singletonList(ModelElementTypes.BehaviouralDescription_2010));
+		ToolEntry entry = new ToolEntry(Messages.BehavDesc5CreationTool_title, null, null, null) {
+		};
 		entry.setId("createBehavDesc5CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.BehaviouralDescription_2010));
-		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 

@@ -31,17 +31,6 @@
           xsi:type="gmfgraph:Rectangle"
           name="AddParam"/>
     </descriptors>
-    <descriptors
-        name="TestFigure">
-      <actualFigure
-          xsi:type="gmfgraph:CustomFigure"
-          name="Test"
-          qualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescritionFigure">
-        <layout
-            xsi:type="gmfgraph:GridLayout"
-            numColumns="2"/>
-      </actualFigure>
-    </descriptors>
   </figures>
   <figures
       name="svg">
@@ -121,9 +110,6 @@
           text="NAME"/>
     </descriptors>
   </figures>
-  <nodes
-      name="TestNode"
-      figure="TestFigure"/>
   <nodes
       name="PrimitiveEventNode"
       figure="PrimitiveEventFigure"/>

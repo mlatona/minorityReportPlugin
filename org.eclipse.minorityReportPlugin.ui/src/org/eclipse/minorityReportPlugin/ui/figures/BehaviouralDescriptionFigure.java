@@ -8,6 +8,7 @@ import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.Polyline;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.XYLayout;
@@ -25,10 +26,13 @@ public class BehaviouralDescriptionFigure extends Shape {
 		private Label labelFirstName = new Label();
 		private Label labelCapital = new Label();
 		private XYLayout layout;
-		private int timeInstants = 5;
+		private int timeInstants;
+		private RectangleFigure r;
 
-		public BehaviouralDescriptionFigure() {
+		public BehaviouralDescriptionFigure(RectangleFigure r) {
 			System.out.println("BehaviouralDescription Constructor!");
+			this.r = r;
+			timeInstants = 5;
 		/*	layout = new XYLayout();
 		    setLayoutManager(layout);
 		  
@@ -46,7 +50,7 @@ public class BehaviouralDescriptionFigure extends Shape {
 		
 		@Override
 	    protected void fillShape(Graphics graphics) {
-			System.out.println("I'm in fillShape()");
+		//	System.out.println("I'm in fillShape()");
 	        graphics.pushState();       
 	        graphics.setFillRule(SWT.FILL_WINDING);
 	        graphics.popState();
@@ -54,43 +58,33 @@ public class BehaviouralDescriptionFigure extends Shape {
 		
 		@Override
 	    protected void outlineShape(Graphics graphics) {  
-			System.out.println("I'm in outlineShape()");
 
-	        Rectangle r = new Rectangle(50, 50, 400, 200);
-	        
-	        Rectangle r1 = new Rectangle();
-	        ArrayList<Rectangle> sr = new ArrayList<Rectangle>();
-	        int mainWidth = r.width();
-	        int mainHeight = r.height();
-	        int mainX = r.x();
-	        int mainY = r.y();
+	        ArrayList<RectangleFigure> sr = new ArrayList<RectangleFigure>();
+	        int mainWidth = r.getSize().width();
+	        int mainHeight = r.getSize().height();
+	        int mainX = r.getLocation().x;
+	        int mainY = r.getLocation().y;
 	        int k = 10;
 	        System.out.println("A:" + mainWidth +" B:" +  mainHeight +" C:" +  mainX + " D:" + mainY );
-	        
 	        graphics.setForegroundColor(new Color(null, 129, 23, 45));
 	        
 	        // Creating main line
-	        for (int i = 0; i < 5; i++){
-	        	graphics.drawLine(mainX, mainY+mainHeight/2 +i, r.x +r.width, mainY+mainHeight/2 +i);
+	        for (int i = -2; i < 3; i++){
+	        	graphics.drawLine(mainX, mainY+mainHeight/2 +i, r.getLocation().x +r.getSize().width(), mainY+mainHeight/2 +i);
+	        	System.out.printf("\nParameters mainLine: %d, %d, %d, %d\n", mainX, mainY+mainHeight/2 +i, r.getLocation().x +r.getSize().width(), mainY+mainHeight/2 +i);
 	        }
 	        
-	        graphics.setForegroundColor(new Color(null, 50, 23, 45));
-	        
-	        // Creating secondary rectangles and segments
+	        // Creating small lines
 	        for (int i = 1; i <= timeInstants; i++){
-	        	sr.add(new Rectangle((mainWidth/timeInstants)*i - 5, mainHeight/2 - k -5,  13, 2*k+10));
-	        	graphics.drawLine(sr.get(i-1).x()+sr.get(i-1).width()/2, sr.get(i-1).y()+5, sr.get(i-1).x()+sr.get(i-1).width()/2, sr.get(i-1).y()+5+2*k);
+	        	int length = mainWidth/(timeInstants+1);
+	        	Point p1 = new Point(mainX+length*i, mainY+(mainHeight/2)-10);
+	        	Point p2 = new Point(mainX+length*i, mainY+(mainHeight/2)+10);
+	      
+	        	graphics.drawLine(p1, p2);
+	        	System.out.printf("\nParameters small lines: %d, %d, %d, %d\n", mainX+length*i, mainY+(mainHeight/2)-10, mainX+length*i, mainY+(mainHeight/2)+10);
 
 	        }
-	        
-	        
-	        
-	        
-	    /*  graphics.drawLine(r.x, r.y, r.x+r.width/2, r.y); 
-	        graphics.drawLine(r.x+r.width/2, r.y, r.x+r.width/2, r.y+r.height); 
-	        graphics.drawLine(r.x+r.width/2, r.y+r.height, r.x+r.width, r.y+r.height); 
-	        graphics.drawLine(r.x+r.width, r.y+r.height, r.x+r.width, r.y); 
-	*/   } 
+	    } 
 
 	    @Override
 	    public void paintFigure(Graphics graphics) {

@@ -1,9 +1,15 @@
 package behavDesc.model.diagram.edit.parts;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.XYLayout;
+import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -64,14 +70,22 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected LayoutEditPolicy createLayoutEditPolicy() {
-		XYLayoutEditPolicy lep = new XYLayoutEditPolicy() {
+		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = super.createChildEditPolicy(child);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
-					return new ResizableShapeEditPolicy();
+					result = new NonResizableEditPolicy();
 				}
 				return result;
+			}
+
+			protected Command getMoveChildrenCommand(Request request) {
+				return null;
+			}
+
+			protected Command getCreateCommand(CreateRequest request) {
+				return null;
 			}
 		};
 		return lep;
@@ -80,15 +94,15 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	protected IFigure createNodeShape() {
-		return primaryShape = new BehavDesc();
+	protected IFigure createNodeShape(RectangleFigure r) {
+		return primaryShape = new BehaviouralDescriptionFigure(r);
 	}
 
 	/**
 	* @generated
 	*/
-	public BehavDesc getPrimaryShape() {
-		return (BehavDesc) primaryShape;
+	public BehaviouralDescriptionFigure getPrimaryShape() {
+		return (BehaviouralDescriptionFigure) primaryShape;
 	}
 
 	/**
@@ -96,6 +110,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		System.out.println("DefaultSizeNodeFigure: "+ result.getDefaultSize().height + result.getDefaultSize().width);
 		return result;
 	}
 
@@ -105,14 +120,45 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	* Body of this method does not depend on settings in generation model
 	* so you may safely remove <i>generated</i> tag and modify it.
 	* 
-	* @generated
+	* @generated NOT
 	*/
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
-		IFigure shape = createNodeShape();
+		RectangleFigure r = new RectangleFigure();
+		r.setLineWidth(5);
+		r.setSize(200, 120);
+		figure.add(r);
+		
+	/*	int timeInstants = 5;
+		int mainWidth =r.getSize().width;
+        int mainHeight = r.getSize().height;
+        int mainX = r.getLocation().x;
+        int mainY = r.getLocation().y;
+        int k = 10;
+        System.out.printf("\n%d, %d, %d, %d\n", mainWidth, mainHeight, mainX, mainY);
+        ArrayList<RectangleFigure> sr = new ArrayList<RectangleFigure>();
+
+		for (int i = 0; i < timeInstants; i++){
+	        RectangleFigure rf = new RectangleFigure();
+	        sr.add(rf);
+	        sr.get(i).setLocation(new Point((mainWidth/timeInstants)*(i+1) - 5, mainHeight/2 - k -5));
+	        
+	        sr.get(i).setSize(13, 2*k+10);
+	        r.add(sr.get(i));
+	        System.out.println("Rectangle " + i + ":  " + sr.get(i).getLocation().x + "  " + sr.get(i).getLocation().y);
+	        System.out.printf("\n %d  %d\n", (mainWidth/timeInstants)*i - 5, mainHeight/2 - k -5);
+	        System.out.println("Size:  " + sr.get(i).getSize().height + sr.get(i).getSize().width);
+
+		}
+		*/
+		
+		IFigure shape = createNodeShape(r);
+		
 		figure.add(shape);
+
 		contentPane = setupContentPane(shape);
+		
 		return figure;
 	}
 
@@ -170,20 +216,6 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		if (primaryShape instanceof Shape) {
 			((Shape) primaryShape).setLineStyle(style);
 		}
-	}
-
-	/**
-	* @generated
-	*/
-	public class BehavDesc extends BehaviouralDescriptionFigure {
-
-		/**
-		 * @generated
-		 */
-		public BehavDesc() {
-			this.setLayoutManager(new XYLayout());
-		}
-
 	}
 
 }

@@ -18,7 +18,6 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.AgentNameEditPart;
-import event.model.diagram.edit.parts.BehaviouralDescriptionEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
@@ -103,10 +102,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case ParameterEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Parameter", //$NON-NLS-1$
 					ModelElementTypes.Parameter_2009);
-		case BehaviouralDescriptionEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?BehaviouralDescription", //$NON-NLS-1$
-					ModelElementTypes.BehaviouralDescription_2010);
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?PrimitiveEvent?agent", //$NON-NLS-1$
 					ModelElementTypes.PrimitiveEventAgent_4001);
@@ -176,8 +171,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getObserver_2008Text(view);
 		case ParameterEditPart.VISUAL_ID:
 			return getParameter_2009Text(view);
-		case BehaviouralDescriptionEditPart.VISUAL_ID:
-			return getBehaviouralDescription_2010Text(view);
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return getPrimitiveEventAgent_4001Text(view);
 		case PrimitiveEventObserverEditPart.VISUAL_ID:
@@ -255,19 +248,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 					ParserOptions.NONE.intValue());
 		} else {
 			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5007); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getBehaviouralDescription_2010Text(View view) {
-		BehaviouralDescription domainModelElement = (BehaviouralDescription) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
-		} else {
-			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2010); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
