@@ -2,10 +2,13 @@ package behavDesc.model.diagram.edit.parts;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.draw2d.Border;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
@@ -13,6 +16,8 @@ import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
@@ -21,10 +26,15 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
+import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
+import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
+import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -37,6 +47,9 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.ListDialog;
 
 import behavDesc.model.diagram.part.ModelDiagramEditor;
+import model.Happens;
+import model.ModelPackage;
+import model.impl.HappensImpl;
 
 /**
  * @generated
@@ -60,12 +73,14 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 	private ModelDiagramEditor editor;
 
+	private TransactionalEditingDomain editingDomain;
 	/**
 	* @generated NOT
 	*/
 	public BehaviouralDescriptionEditPart(View view) {
 		super(view);
 		editor = (ModelDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
+		editingDomain = editor.getEditingDomain();;
 	}
 
 	/**
@@ -248,9 +263,38 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 					// Creating Happens
 
-					editor.createAndExecuteShapeRequestCommand(
+					Command cmd = editor.createAndExecuteShapeRequestCommand(
 							behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002,
 							editor.getDiagramEditPart());
+					editor.getDiagramEditPart().getDiagramEditDomain().getDiagramCommandStack();
+					//	SetRequest setRequest = new SetRequest(editingDomain, comp, org.eclipse.minorityReportPlugin.model.eINSTANCE.getClassOne_Name(), name);
+					//SetRequest setRequest = new SetRequest(editingDomain, null, null, model);
+					//setRequest.setParameter("oldValue", comp.getName());
+					Collection<?> results = DiagramCommandStack.getReturnValues(cmd);
+						
+					Iterator<?> iter = results.iterator();
+					
+					while (iter.hasNext()){
+						Object obj = iter.next();
+						
+						if (obj instanceof CreateElementRequestAdapter){
+							
+							CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
+							Happens newHappens;
+							
+							newHappens = (HappensImpl) cra.resolve();
+							
+							SetRequest setRequest = new SetRequest(editor.getEditingDomain(), newHappens, ModelPackage.eINSTANCE.getHappens_Time(), timeSelection);
+							SetValueCommand operation = new SetValueCommand(setRequest);
+							editor.getDiagramEditDomain().getDiagramCommandStack().execute(new 
+									ICommandProxy(operation));
+							
+							System.out.println("Time instant set");
+						}
+						System.out.println(iter.next().toString());
+					
+					}
+			
 					System.out.println("DONE");
 
 				} catch (IOException e) {
