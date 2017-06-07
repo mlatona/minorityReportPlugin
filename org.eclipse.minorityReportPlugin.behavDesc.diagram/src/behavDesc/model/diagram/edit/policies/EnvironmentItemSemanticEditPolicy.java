@@ -27,6 +27,9 @@ public class EnvironmentItemSemanticEditPolicy
 		if (behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescription_2001 == req.getElementType()) {
 			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.BehaviouralDescriptionCreateCommand(req));
 		}
+		if (behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002 == req.getElementType()) {
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.HappensCreateCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 

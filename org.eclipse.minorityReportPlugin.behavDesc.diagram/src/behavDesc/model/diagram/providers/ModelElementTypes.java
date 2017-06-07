@@ -57,6 +57,18 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
+	public static final IElementType Happens_2002 = getElementType(
+			"org.eclipse.minorityReportPlugin.behavDesc.diagram.Happens_2002"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType BehaviouralDescriptionHappens_4001 = getElementType(
+			"org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
 	public static ImageDescriptor getImageDescriptor(ENamedElement element) {
 		return elementTypeImages.getImageDescriptor(element);
 	}
@@ -95,6 +107,11 @@ public class ModelElementTypes {
 			elements.put(Environment_1000, ModelPackage.eINSTANCE.getEnvironment());
 
 			elements.put(BehaviouralDescription_2001, ModelPackage.eINSTANCE.getBehaviouralDescription());
+
+			elements.put(Happens_2002, ModelPackage.eINSTANCE.getHappens());
+
+			elements.put(BehaviouralDescriptionHappens_4001,
+					ModelPackage.eINSTANCE.getBehaviouralDescription_Happens());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -114,6 +131,8 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Environment_1000);
 			KNOWN_ELEMENT_TYPES.add(BehaviouralDescription_2001);
+			KNOWN_ELEMENT_TYPES.add(Happens_2002);
+			KNOWN_ELEMENT_TYPES.add(BehaviouralDescriptionHappens_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -127,6 +146,10 @@ public class ModelElementTypes {
 			return Environment_1000;
 		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart.VISUAL_ID:
 			return BehaviouralDescription_2001;
+		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
+			return Happens_2002;
+		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
+			return BehaviouralDescriptionHappens_4001;
 		}
 		return null;
 	}

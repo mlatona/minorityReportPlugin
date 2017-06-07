@@ -17,14 +17,14 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class BehaviouralDescriptionItemSemanticEditPolicy
+public class HappensItemSemanticEditPolicy
 		extends behavDesc.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy {
 
 	/**
 	* @generated
 	*/
-	public BehaviouralDescriptionItemSemanticEditPolicy() {
-		super(behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescription_2001);
+	public HappensItemSemanticEditPolicy() {
+		super(behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002);
 	}
 
 	/**
@@ -34,14 +34,14 @@ public class BehaviouralDescriptionItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
-			Edge outgoingLink = (Edge) it.next();
+		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
+			Edge incomingLink = (Edge) it.next();
 			if (behavDesc.model.diagram.part.ModelVisualIDRegistry.getVisualID(
-					outgoingLink) == behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
+					incomingLink) == behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
 		}
@@ -72,8 +72,7 @@ public class BehaviouralDescriptionItemSemanticEditPolicy
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescriptionHappens_4001 == req
 				.getElementType()) {
-			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.BehaviouralDescriptionHappensCreateCommand(
-					req, req.getSource(), req.getTarget()));
+			return null;
 		}
 		return null;
 	}
@@ -84,7 +83,8 @@ public class BehaviouralDescriptionItemSemanticEditPolicy
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescriptionHappens_4001 == req
 				.getElementType()) {
-			return null;
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.BehaviouralDescriptionHappensCreateCommand(
+					req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}

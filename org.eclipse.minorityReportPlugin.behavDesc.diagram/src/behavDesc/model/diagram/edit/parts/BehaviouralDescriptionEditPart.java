@@ -32,8 +32,11 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescriptionFigure;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.ListDialog;
+
+import behavDesc.model.diagram.part.ModelDiagramEditor;
 
 /**
  * @generated
@@ -55,11 +58,14 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure primaryShape;
 
+	private ModelDiagramEditor editor;
+
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	public BehaviouralDescriptionEditPart(View view) {
 		super(view);
+		editor = (ModelDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 	}
 
 	/**
@@ -100,26 +106,24 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	protected IFigure createNodeShape(RectangleFigure r) {
-		
 		return primaryShape = new BehaviouralDescriptionFigure(r);
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	public BehaviouralDescriptionFigure getPrimaryShape() {
 		return (BehaviouralDescriptionFigure) primaryShape;
 	}
 
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
-		System.out.println("DefaultSizeNodeFigure: "+ result.getDefaultSize().height + result.getDefaultSize().width);
 		return result;
 	}
 
@@ -141,7 +145,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		IFigure shape = createNodeShape(r);
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
-		
+
 		return figure;
 	}
 
@@ -200,10 +204,10 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			((Shape) primaryShape).setLineStyle(style);
 		}
 	}
-	
+
 	@Override
 	public void performRequest(Request req) {
-		if(req.getType() == RequestConstants.REQ_OPEN){
+		if (req.getType() == RequestConstants.REQ_OPEN) {
 			ElementListSelectionDialog dialog = new ElementListSelectionDialog(null, new LabelProvider());
 			dialog.setElements(new String[] { "Happens", "Holds at", "Holds at between", "Not holds at between" });
 			dialog.setMultipleSelection(false);
@@ -213,66 +217,75 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				return;
 			}
 			String predicateSelection = (String) dialog.getResult()[0];
-			
-			switch(predicateSelection){
-				case "Happens":{
-					getPrimaryShape().setHappens();
-					try {
-						// Parsing event file
-						LoadEvents loadEvents = new LoadEvents();
-						
-						// Creating second dialog
-						ElementListSelectionDialog showEventsDialog = new ElementListSelectionDialog(null, new LabelProvider());
-						String[] eventsNameArray = new String[loadEvents.getEnvironment().getEvents().size()];
-						for (int i = 0; i < loadEvents.getEnvironment().getEvents().size(); i++){
-							eventsNameArray[i] = loadEvents.getEnvironment().getEvents().get(i).getName();
-						}
-						showEventsDialog.setElements(eventsNameArray);
-						showEventsDialog.setMultipleSelection(false);
-						showEventsDialog.setTitle("Select an event");
-						// user pressed cancel
-						if (showEventsDialog.open() != Window.OK) {
-							return;
-						}
-						
-						String eventSelection = (String) showEventsDialog.getResult()[0];
-						System.out.println("event selected: "+ eventSelection);
-						
-						// Creating third dialog
-						int timeSelection = createTimeInstantsDialog();
-						
-						
-					} catch (IOException e) {
-						e.printStackTrace();
+
+			switch (predicateSelection) {
+			case "Happens": {
+				getPrimaryShape().setHappens();
+				try {
+					// Parsing event file
+					LoadEvents loadEvents = new LoadEvents();
+
+					// Creating second dialog
+					ElementListSelectionDialog showEventsDialog = new ElementListSelectionDialog(null,
+							new LabelProvider());
+					String[] eventsNameArray = new String[loadEvents.getEnvironment().getEvents().size()];
+					for (int i = 0; i < loadEvents.getEnvironment().getEvents().size(); i++) {
+						eventsNameArray[i] = loadEvents.getEnvironment().getEvents().get(i).getName();
 					}
-				} break;
-				
-				case "Holds at":{
-					getPrimaryShape().setHoldsAt();
-					
-				} break;
-				
-				case "Holds at between":{
-					getPrimaryShape().setHoldsAtBetween();
-				} break;
-				
-				case "Not holds at between":{
-					getPrimaryShape().setNotHoldsAtBetween();
-				} break;
-			
-			}	
-			
-			
-			
+					showEventsDialog.setElements(eventsNameArray);
+					showEventsDialog.setMultipleSelection(false);
+					showEventsDialog.setTitle("Select an event");
+					// user pressed cancel
+					if (showEventsDialog.open() != Window.OK) {
+						return;
+					}
+
+					String eventSelection = (String) showEventsDialog.getResult()[0];
+					System.out.println("event selected: " + eventSelection);
+
+					// Creating third dialog
+					int timeSelection = createTimeInstantsDialog();
+
+					// Creating Happens
+
+					editor.createAndExecuteShapeRequestCommand(
+							behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002,
+							editor.getDiagramEditPart());
+					System.out.println("DONE");
+
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} // Happens
+				break;
+
+			case "Holds at": {
+				getPrimaryShape().setHoldsAt();
+
+			} // Holds at
+				break;
+
+			case "Holds at between": {
+				getPrimaryShape().setHoldsAtBetween();
+			} // Holds at between
+				break;
+
+			case "Not holds at between": {
+				getPrimaryShape().setNotHoldsAtBetween();
+			} // Not holds at between
+				break;
+
+			}
+
 		}
 	}
-	
-	public int createTimeInstantsDialog(){
+
+	public int createTimeInstantsDialog() {
 		// Creating third dialog
 		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
 		String[] timeInstantsArray = new String[getPrimaryShape().getTimeInstants()];
-		for (int i = 0; i < getPrimaryShape().getTimeInstants(); i++){
-			timeInstantsArray[i] = Integer.toString(i+1);
+		for (int i = 0; i < getPrimaryShape().getTimeInstants(); i++) {
+			timeInstantsArray[i] = Integer.toString(i + 1);
 		}
 		timeInstantDialog.setElements(timeInstantsArray);
 		timeInstantDialog.setMultipleSelection(false);
@@ -282,8 +295,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			return -1;
 		}
 		String timeSelection = (String) timeInstantDialog.getResult()[0];
-		System.out.println("time selected: "+ timeSelection);
-		
+		System.out.println("time selected: " + timeSelection);
+
 		return Integer.parseInt(timeSelection);
 	}
 

@@ -115,6 +115,9 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getBehaviouralDescription().isSuperTypeOf(domainElement.eClass())) {
 				return behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart.VISUAL_ID;
 			}
+			if (ModelPackage.eINSTANCE.getHappens().isSuperTypeOf(domainElement.eClass())) {
+				return behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -141,6 +144,9 @@ public class ModelVisualIDRegistry {
 		switch (containerVisualID) {
 		case behavDesc.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID:
 			if (behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -195,6 +201,7 @@ public class ModelVisualIDRegistry {
 		case behavDesc.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID:
 			return false;
 		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

@@ -8,14 +8,53 @@
   <figures
       name="nodes">
     <descriptors
-        name="behavDesc">
+        name="behavDescFigure">
       <actualFigure
           xsi:type="gmfgraph:CustomFigure"
           name="BehavDesc"
           qualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescritionFigure"/>
     </descriptors>
+    <descriptors
+        name="happensFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="Happens">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="red"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="HappensName"
+            text="Happens"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <figures
+      name="links">
+    <figures
+        xsi:type="gmfgraph:PolylineDecoration"
+        name="BDHappens"/>
+    <descriptors
+        name="BDHappensFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="BDHappens"
+          targetDecoration="//@figures.1/@figures.0"/>
+    </descriptors>
   </figures>
   <nodes
       name="BehavDescNode"
-      figure="behavDesc"/>
+      figure="behavDescFigure"/>
+  <nodes
+      name="HappensNode"
+      figure="happensFigure"/>
+  <connections
+      name="BDHappens"
+      figure="BDHappensFigure"/>
+  <labels
+      name="Happens"
+      figure="happensFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
 </gmfgraph:Canvas>

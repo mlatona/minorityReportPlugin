@@ -31,6 +31,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipReques
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
+import model.BehaviouralDescription;
+import model.Happens;
 
 /**
  * @generated
@@ -273,6 +275,52 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 				continue;
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	public static LinkConstraints getLinkConstraints() {
+		LinkConstraints cached = behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+				.getLinkConstraints();
+		if (cached == null) {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.setLinkConstraints(cached = new LinkConstraints());
+		}
+		return cached;
+	}
+
+	/**
+	* @generated
+	*/
+	public static class LinkConstraints {
+
+		/**
+		* @generated
+		*/
+		LinkConstraints() {
+			// use static method #getLinkConstraints() to access instance
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateBehaviouralDescriptionHappens_4001(BehaviouralDescription source, Happens target) {
+			if (source != null) {
+				if (source.getHappens().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistBehaviouralDescriptionHappens_4001(source, target);
+		}
+
+		/**
+		* @generated
+		*/
+		public boolean canExistBehaviouralDescriptionHappens_4001(BehaviouralDescription source, Happens target) {
+			return true;
 		}
 	}
 

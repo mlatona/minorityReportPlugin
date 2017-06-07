@@ -14,6 +14,7 @@ import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import model.BehaviouralDescription;
+import model.Happens;
 
 /**
  * @generated
@@ -75,6 +76,13 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getImage(
 					"Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?BehaviouralDescription", //$NON-NLS-1$
 					behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescription_2001);
+		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Happens", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002);
+		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?https://github.com/mlatona/minorityReportPlugin?BehaviouralDescription?happens", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescriptionHappens_4001);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -131,6 +139,10 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getEnvironment_1000Text(view);
 		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart.VISUAL_ID:
 			return getBehaviouralDescription_2001Text(view);
+		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
+			return getHappens_2002Text(view);
+		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
+			return getBehaviouralDescriptionHappens_4001Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -154,6 +166,27 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 					.logError("No domain element for view with visualID = " + 2001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getHappens_2002Text(View view) {
+		Happens domainModelElement = (Happens) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getTime());
+		} else {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getBehaviouralDescriptionHappens_4001Text(View view) {
+		return ""; //$NON-NLS-1$
 	}
 
 	/**

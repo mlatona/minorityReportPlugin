@@ -25,6 +25,13 @@ public class ModelEditPartFactory implements EditPartFactory {
 
 			case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart.VISUAL_ID:
 				return new behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart(view);
+
+			case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
+				return new behavDesc.model.diagram.edit.parts.HappensEditPart(view);
+
+			case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
+				return new behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart(view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

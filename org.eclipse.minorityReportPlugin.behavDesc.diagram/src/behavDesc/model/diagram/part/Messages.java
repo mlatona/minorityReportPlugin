@@ -258,6 +258,31 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String NavigatorGroupName_Environment_1000_links;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_BehaviouralDescription_2001_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Happens_2002_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_BehaviouralDescriptionHappens_4001_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_BehaviouralDescriptionHappens_4001_source;
+
+	/**
+	* @generated
+	*/
 	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**
