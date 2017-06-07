@@ -18,7 +18,11 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.AgentNameEditPart;
+import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
+import event.model.diagram.edit.parts.ComplexEventEditPart;
+import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
+import event.model.diagram.edit.parts.EventParameters2EditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
 import event.model.diagram.edit.parts.ObserverNameEditPart;
@@ -102,6 +106,9 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case ParameterEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Parameter", //$NON-NLS-1$
 					ModelElementTypes.Parameter_2009);
+		case ComplexEventEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?ComplexEvent", //$NON-NLS-1$
+					ModelElementTypes.ComplexEvent_2010);
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?PrimitiveEvent?agent", //$NON-NLS-1$
 					ModelElementTypes.PrimitiveEventAgent_4001);
@@ -111,6 +118,12 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case EventParametersEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?Event?parameters", //$NON-NLS-1$
 					ModelElementTypes.EventParameters_4003);
+		case ComplexEventAgentEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?ComplexEvent?agent", //$NON-NLS-1$
+					ModelElementTypes.ComplexEventAgent_4004);
+		case EventParameters2EditPart.VISUAL_ID:
+			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?Event?parameters", //$NON-NLS-1$
+					ModelElementTypes.EventParameters_4005);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -171,12 +184,18 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getObserver_2008Text(view);
 		case ParameterEditPart.VISUAL_ID:
 			return getParameter_2009Text(view);
+		case ComplexEventEditPart.VISUAL_ID:
+			return getComplexEvent_2010Text(view);
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return getPrimitiveEventAgent_4001Text(view);
 		case PrimitiveEventObserverEditPart.VISUAL_ID:
 			return getPrimitiveEventObserver_4002Text(view);
 		case EventParametersEditPart.VISUAL_ID:
 			return getEventParameters_4003Text(view);
+		case ComplexEventAgentEditPart.VISUAL_ID:
+			return getComplexEventAgent_4004Text(view);
+		case EventParameters2EditPart.VISUAL_ID:
+			return getEventParameters_4005Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -255,6 +274,22 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	/**
 	* @generated
 	*/
+	private String getComplexEvent_2010Text(View view) {
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.ComplexEvent_2010,
+				view.getElement() != null ? view.getElement() : view,
+				ModelVisualIDRegistry.getType(ComplexEventNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5009); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
 	private String getPrimitiveEventAgent_4001Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
@@ -270,6 +305,20 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	* @generated
 	*/
 	private String getEventParameters_4003Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	* @generated
+	*/
+	private String getComplexEventAgent_4004Text(View view) {
+		return ""; //$NON-NLS-1$
+	}
+
+	/**
+	* @generated
+	*/
+	private String getEventParameters_4005Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

@@ -32,6 +32,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
 import event.model.diagram.edit.parts.ParameterEditPart;
@@ -72,6 +73,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_PrimitiveEvents());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Parameters());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_ComplexEvents());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -109,6 +111,7 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case AgentEditPart.VISUAL_ID:
 		case ObserverEditPart.VISUAL_ID:
 		case ParameterEditPart.VISUAL_ID:
+		case ComplexEventEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -279,6 +282,13 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case ParameterEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(ModelDiagramUpdater.getParameter_2009ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ComplexEventEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(ModelDiagramUpdater.getComplexEvent_2010ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

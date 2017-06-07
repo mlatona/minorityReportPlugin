@@ -14,6 +14,7 @@ package model;
  * <ul>
  *   <li>{@link model.ComplexEvent#getTime <em>Time</em>}</li>
  *   <li>{@link model.ComplexEvent#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}</li>
+ *   <li>{@link model.ComplexEvent#getAgent <em>Agent</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getComplexEvent()
@@ -72,5 +73,31 @@ public interface ComplexEvent extends Event {
 	 * @generated
 	 */
 	void setBehaviouralDescriptions(BehaviouralDescription value);
+
+	/**
+	 * Returns the value of the '<em><b>Agent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Agent</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Agent</em>' reference.
+	 * @see #setAgent(Agent)
+	 * @see model.ModelPackage#getComplexEvent_Agent()
+	 * @model
+	 * @generated
+	 */
+	Agent getAgent();
+
+	/**
+	 * Sets the value of the '{@link model.ComplexEvent#getAgent <em>Agent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Agent</em>' reference.
+	 * @see #getAgent()
+	 * @generated
+	 */
+	void setAgent(Agent value);
 
 } // ComplexEvent

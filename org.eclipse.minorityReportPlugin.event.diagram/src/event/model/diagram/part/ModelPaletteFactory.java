@@ -23,7 +23,6 @@ public class ModelPaletteFactory {
 	*/
 	public void fillPalette(PaletteRoot paletteRoot) {
 		paletteRoot.add(createNodes1Group());
-		paletteRoot.add(createLinks2Group());
 	}
 
 	/**
@@ -37,18 +36,7 @@ public class ModelPaletteFactory {
 		paletteContainer.add(createObserverPrimitiveEvent2CreationTool());
 		paletteContainer.add(createGenericparameterPrimitiveEvent3CreationTool());
 		paletteContainer.add(createPrimitiveEvent4CreationTool());
-		paletteContainer.add(createBehavDesc5CreationTool());
-		return paletteContainer;
-	}
-
-	/**
-	* Creates "Links" palette tool group
-	* @generated
-	*/
-	private PaletteContainer createLinks2Group() {
-		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Links2Group_title);
-		paletteContainer.setId("createLinks2Group"); //$NON-NLS-1$
-		paletteContainer.add(createPEAgent1CreationTool());
+		paletteContainer.add(createComplexEvent5CreationTool());
 		return paletteContainer;
 	}
 
@@ -108,21 +96,11 @@ public class ModelPaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createBehavDesc5CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.BehavDesc5CreationTool_title, null, null, null) {
-		};
-		entry.setId("createBehavDesc5CreationTool"); //$NON-NLS-1$
-		return entry;
-	}
-
-	/**
-	* @generated
-	*/
-	private ToolEntry createPEAgent1CreationTool() {
-		DefaultLinkToolEntry entry = new DefaultLinkToolEntry(Messages.PEAgent1CreationTool_title, null,
-				Collections.singletonList(ModelElementTypes.PrimitiveEventAgent_4001));
-		entry.setId("createPEAgent1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.PrimitiveEventAgent_4001));
+	private ToolEntry createComplexEvent5CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.ComplexEvent5CreationTool_title, null,
+				Collections.singletonList(ModelElementTypes.ComplexEvent_2010));
+		entry.setId("createComplexEvent5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.ComplexEvent_2010));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

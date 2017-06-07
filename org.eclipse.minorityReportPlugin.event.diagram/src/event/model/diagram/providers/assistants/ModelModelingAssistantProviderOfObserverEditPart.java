@@ -30,8 +30,9 @@ public class ModelModelingAssistantProviderOfObserverEditPart extends ModelModel
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(ObserverEditPart target) {
-		List<IElementType> types = new ArrayList<IElementType>(2);
+		List<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(ModelElementTypes.EventParameters_4003);
+		types.add(ModelElementTypes.EventParameters_4005);
 		types.add(ModelElementTypes.PrimitiveEventObserver_4002);
 		return types;
 	}
@@ -53,6 +54,10 @@ public class ModelModelingAssistantProviderOfObserverEditPart extends ModelModel
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.EventParameters_4003) {
 			types.add(ModelElementTypes.PrimitiveEvent_2005);
+			types.add(ModelElementTypes.ComplexEvent_2010);
+		} else if (relationshipType == ModelElementTypes.EventParameters_4005) {
+			types.add(ModelElementTypes.PrimitiveEvent_2005);
+			types.add(ModelElementTypes.ComplexEvent_2010);
 		} else if (relationshipType == ModelElementTypes.PrimitiveEventObserver_4002) {
 			types.add(ModelElementTypes.PrimitiveEvent_2005);
 		}

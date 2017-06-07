@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.Environment#getObservers <em>Observers</em>}</li>
  *   <li>{@link model.Environment#getAddParam <em>Add Param</em>}</li>
  *   <li>{@link model.Environment#getPrimitiveEvents <em>Primitive Events</em>}</li>
+ *   <li>{@link model.Environment#getComplexEvents <em>Complex Events</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getEnvironment()
@@ -259,6 +260,22 @@ public interface Environment extends EObject {
 	 * @generated
 	 */
 	EList<PrimitiveEvent> getPrimitiveEvents();
+
+	/**
+	 * Returns the value of the '<em><b>Complex Events</b></em>' containment reference list.
+	 * The list contents are of type {@link model.ComplexEvent}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Complex Events</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Complex Events</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_ComplexEvents()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ComplexEvent> getComplexEvents();
 
 	void setTypes(EList<Type> types);
 	

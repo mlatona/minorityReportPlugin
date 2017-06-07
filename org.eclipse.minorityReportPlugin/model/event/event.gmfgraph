@@ -16,11 +16,11 @@
           cornerHeight="20">
         <foregroundColor
             xsi:type="gmfgraph:ConstantColor"
-            value="orange"/>
+            value="green"/>
         <children
             xsi:type="gmfgraph:Label"
             name="PrimitiveEventName"
-            text="---Primitive event name---"/>
+            text="---Primitive Event Name---"/>
       </actualFigure>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
@@ -30,6 +30,22 @@
       <actualFigure
           xsi:type="gmfgraph:Rectangle"
           name="AddParam"/>
+    </descriptors>
+    <descriptors
+        name="ComplexEventFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ComplexEvent">
+        <foregroundColor
+            xsi:type="gmfgraph:ConstantColor"
+            value="orange"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ComplexEventName"
+            text="---Complex Event Name---"/>
+      </actualFigure>
+      <accessors
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
   </figures>
   <figures
@@ -56,10 +72,16 @@
         name="PEAgentDeoration"/>
     <figures
         xsi:type="gmfgraph:PolylineDecoration"
+        name="CEAddParamDecoration"/>
+    <figures
+        xsi:type="gmfgraph:PolylineDecoration"
         name="PEObserverDecoration"/>
     <figures
         xsi:type="gmfgraph:PolylineDecoration"
         name="PEAddParamDecoration"/>
+    <figures
+        xsi:type="gmfgraph:PolylineDecoration"
+        name="CEAgentDecoration"/>
     <descriptors
         name="PEAgentFigure">
       <actualFigure
@@ -72,14 +94,28 @@
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="PEObserver"
-          targetDecoration="//@figures.2/@figures.1"/>
+          targetDecoration="//@figures.2/@figures.2"/>
     </descriptors>
     <descriptors
         name="PEAddParamFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
           name="PEAddParam"
-          targetDecoration="//@figures.2/@figures.2"/>
+          targetDecoration="//@figures.2/@figures.3"/>
+    </descriptors>
+    <descriptors
+        name="CEAgentFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CEAgent"
+          targetDecoration="//@figures.2/@figures.4"/>
+    </descriptors>
+    <descriptors
+        name="CEAddParamFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CEAddParam"
+          targetDecoration="//@figures.2/@figures.1"/>
     </descriptors>
   </figures>
   <figures
@@ -111,6 +147,9 @@
     </descriptors>
   </figures>
   <nodes
+      name="ComplexEventNode"
+      figure="ComplexEventFigure"/>
+  <nodes
       name="PrimitiveEventNode"
       figure="PrimitiveEventFigure"/>
   <nodes
@@ -123,6 +162,12 @@
       name="AgentNode"
       figure="AgentFigure"/>
   <connections
+      name="CEAddParamConnection"
+      figure="CEAddParamFigure"/>
+  <connections
+      name="CEAgentConnection"
+      figure="CEAgentFigure"/>
+  <connections
       name="PEAddParamConnection"
       figure="PEAddParamFigure"/>
   <connections
@@ -131,6 +176,10 @@
   <connections
       name="PEObserverConnection"
       figure="PEObserverFigure"/>
+  <labels
+      name="ComplexEventLabel"
+      figure="ComplexEventFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
       name="AgentLabel"
       figure="AgentNameFigure"/>

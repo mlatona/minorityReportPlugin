@@ -91,7 +91,7 @@ public interface ContextRelation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parameters</em>' reference list.
 	 * @see model.ModelPackage#getContextRelation_Parameters()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Parameter> getParameters();

@@ -248,11 +248,6 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Links2Group_title;
-
-	/**
-	* @generated
-	*/
 	public static String AgentPrimitiveEvent1CreationTool_title;
 
 	/**
@@ -283,12 +278,7 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String BehavDesc5CreationTool_title;
-
-	/**
-	* @generated
-	*/
-	public static String PEAgent1CreationTool_title;
+	public static String ComplexEvent5CreationTool_title;
 
 	/**
 	* @generated
@@ -323,6 +313,11 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String NavigatorGroupName_ComplexEvent_2010_outgoinglinks;
+
+	/**
+	* @generated
+	*/
 	public static String NavigatorGroupName_PrimitiveEventAgent_4001_target;
 
 	/**
@@ -349,6 +344,26 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_EventParameters_4003_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ComplexEventAgent_4004_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_ComplexEventAgent_4004_source;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_EventParameters_4005_target;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_EventParameters_4005_source;
 
 	/**
 	* @generated

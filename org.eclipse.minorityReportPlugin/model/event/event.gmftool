@@ -50,20 +50,7 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="BehavDesc">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-    </tools>
-    <tools
-        xsi:type="gmftool:ToolGroup"
-        title="Links"
-        collapsible="true">
-      <tools
-          xsi:type="gmftool:CreationTool"
-          title="PEAgent">
+          title="Complex Event">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

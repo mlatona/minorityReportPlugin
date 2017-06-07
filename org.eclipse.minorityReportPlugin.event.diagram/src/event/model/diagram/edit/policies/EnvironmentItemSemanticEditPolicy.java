@@ -9,6 +9,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
 import event.model.diagram.edit.commands.AgentCreateCommand;
 import event.model.diagram.edit.commands.BehaviouralDescriptionCreateCommand;
+import event.model.diagram.edit.commands.ComplexEventCreateCommand;
 import event.model.diagram.edit.commands.ObserverCreateCommand;
 import event.model.diagram.edit.commands.ParameterCreateCommand;
 import event.model.diagram.edit.commands.PrimitiveEventCreateCommand;
@@ -41,6 +42,9 @@ public class EnvironmentItemSemanticEditPolicy extends ModelBaseItemSemanticEdit
 		}
 		if (ModelElementTypes.Parameter_2009 == req.getElementType()) {
 			return getGEFWrapper(new ParameterCreateCommand(req));
+		}
+		if (ModelElementTypes.ComplexEvent_2010 == req.getElementType()) {
+			return getGEFWrapper(new ComplexEventCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

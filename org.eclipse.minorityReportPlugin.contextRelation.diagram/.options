@@ -1,0 +1,7 @@
+# Tracing options for the org.eclipse.minorityReportPlugin.contextRelation.diagram plug-in
+
+# Common issues
+org.eclipse.minorityReportPlugin.contextRelation.diagram/debug=false
+
+# Visual IDs
+org.eclipse.minorityReportPlugin.contextRelation.diagram/debug/visualID=false

@@ -259,7 +259,7 @@ public class PrimitiveEventEditPart extends ShapeNodeEditPart {
 		 */
 		public PrimitiveEventFigure() {
 			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(30), getMapMode().DPtoLP(20)));
-			this.setForegroundColor(ColorConstants.orange);
+			this.setForegroundColor(ColorConstants.green);
 			createContents();
 		}
 
@@ -270,7 +270,7 @@ public class PrimitiveEventEditPart extends ShapeNodeEditPart {
 
 			fFigurePrimitiveEventName = new WrappingLabel();
 
-			fFigurePrimitiveEventName.setText("---Primitive event name---");
+			fFigurePrimitiveEventName.setText("---Primitive Event Name---");
 
 			this.add(fFigurePrimitiveEventName);
 

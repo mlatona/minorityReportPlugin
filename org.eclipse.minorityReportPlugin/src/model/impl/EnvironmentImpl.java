@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import model.Agent;
 import model.BehaviouralDescription;
+import model.ComplexEvent;
 import model.ContextRelation;
 import model.Environment;
 import model.Event;
@@ -53,6 +54,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link model.impl.EnvironmentImpl#getObservers <em>Observers</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getAddParam <em>Add Param</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getPrimitiveEvents <em>Primitive Events</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getComplexEvents <em>Complex Events</em>}</li>
  * </ul>
  *
  * @generated
@@ -199,6 +201,16 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	protected EList<PrimitiveEvent> primitiveEvents;
 
 	/**
+	 * The cached value of the '{@link #getComplexEvents() <em>Complex Events</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComplexEvents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComplexEvent> complexEvents;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -268,12 +280,21 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Event> getEvents() {
 		if (events == null) {
 			events = new EObjectContainmentEList<Event>(Event.class, this, ModelPackage.ENVIRONMENT__EVENTS);
 		}
+		if (primitiveEvents == null) {
+			primitiveEvents = new EObjectContainmentEList<PrimitiveEvent>(PrimitiveEvent.class, this, ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS);
+		}
+		if (complexEvents == null) {
+			complexEvents = new EObjectContainmentEList<ComplexEvent>(ComplexEvent.class, this, ModelPackage.ENVIRONMENT__COMPLEX_EVENTS);
+		}
+		
+		events.addAll(primitiveEvents);
+		events.addAll(complexEvents);
 		return events;
 	}
 
@@ -390,6 +411,18 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ComplexEvent> getComplexEvents() {
+		if (complexEvents == null) {
+			complexEvents = new EObjectContainmentEList<ComplexEvent>(ComplexEvent.class, this, ModelPackage.ENVIRONMENT__COMPLEX_EVENTS);
+		}
+		return complexEvents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -421,6 +454,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return ((InternalEList<?>)getAddParam()).basicRemove(otherEnd, msgs);
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				return ((InternalEList<?>)getPrimitiveEvents()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
+				return ((InternalEList<?>)getComplexEvents()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -461,6 +496,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return getAddParam();
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				return getPrimitiveEvents();
+			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
+				return getComplexEvents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -530,6 +567,10 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				getPrimitiveEvents().clear();
 				getPrimitiveEvents().addAll((Collection<? extends PrimitiveEvent>)newValue);
 				return;
+			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
+				getComplexEvents().clear();
+				getComplexEvents().addAll((Collection<? extends ComplexEvent>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -584,6 +625,9 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				getPrimitiveEvents().clear();
 				return;
+			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
+				getComplexEvents().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -624,6 +668,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return addParam != null && !addParam.isEmpty();
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 				return primitiveEvents != null && !primitiveEvents.isEmpty();
+			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
+				return complexEvents != null && !complexEvents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -646,7 +692,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	}
 
 	public void setEvents(EList<Event> events) {
-		this.events = events;
+		this.events.addAll(events);
 	}
 
 	public void setBehavDescriptions(EList<BehaviouralDescription> behavDescriptions) {
@@ -668,5 +714,6 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	public void setInitials(EList<Initially> initials) {
 		this.initials = initials;
 	}
+	
 
 } //EnvironmentImpl

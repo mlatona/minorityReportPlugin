@@ -38,6 +38,7 @@
     <genClasses ecoreClass="model.ecore#//ComplexEvent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//ComplexEvent/time"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ComplexEvent/behaviouralDescriptions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//ComplexEvent/agent"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//BehaviouralDescription">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//BehaviouralDescription/holdsAts"/>
@@ -81,6 +82,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/observers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/addParam"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/primitiveEvents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Environment/complexEvents"/>
     </genClasses>
     <genClasses ecoreClass="model.ecore#//Observer"/>
     <genClasses ecoreClass="model.ecore#//Agent"/>

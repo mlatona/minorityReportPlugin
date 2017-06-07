@@ -47,6 +47,7 @@ public class ComplexEventItemProvider extends EventItemProvider {
 
 			addTimePropertyDescriptor(object);
 			addBehaviouralDescriptionsPropertyDescriptor(object);
+			addAgentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -87,6 +88,28 @@ public class ComplexEventItemProvider extends EventItemProvider {
 				 getString("_UI_ComplexEvent_behaviouralDescriptions_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComplexEvent_behaviouralDescriptions_feature", "_UI_ComplexEvent_type"),
 				 ModelPackage.Literals.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Agent feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAgentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComplexEvent_agent_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComplexEvent_agent_feature", "_UI_ComplexEvent_type"),
+				 ModelPackage.Literals.COMPLEX_EVENT__AGENT,
 				 true,
 				 false,
 				 true,

@@ -46,25 +46,25 @@ public class EventParametersEditPart extends ConnectionNodeEditPart implements I
 	*/
 
 	protected Connection createConnectionFigure() {
-		return new PEAddParamFigure();
+		return new CEAddParamFigure();
 	}
 
 	/**
 	* @generated
 	*/
-	public PEAddParamFigure getPrimaryShape() {
-		return (PEAddParamFigure) getFigure();
+	public CEAddParamFigure getPrimaryShape() {
+		return (CEAddParamFigure) getFigure();
 	}
 
 	/**
-	 * @generated
-	 */
-	public class PEAddParamFigure extends PolylineConnectionEx {
+	* @generated
+	*/
+	public class CEAddParamFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated
 		 */
-		public PEAddParamFigure() {
+		public CEAddParamFigure() {
 
 			setTargetDecoration(createTargetDecoration());
 		}

@@ -2,6 +2,7 @@
  */
 package model.impl;
 
+import model.Agent;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ModelPackage;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link model.impl.ComplexEventImpl#getTime <em>Time</em>}</li>
  *   <li>{@link model.impl.ComplexEventImpl#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}</li>
+ *   <li>{@link model.impl.ComplexEventImpl#getAgent <em>Agent</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,6 +59,16 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * @ordered
 	 */
 	protected BehaviouralDescription behaviouralDescriptions;
+
+	/**
+	 * The cached value of the '{@link #getAgent() <em>Agent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAgent()
+	 * @generated
+	 * @ordered
+	 */
+	protected Agent agent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,6 +153,44 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Agent getAgent() {
+		if (agent != null && agent.eIsProxy()) {
+			InternalEObject oldAgent = (InternalEObject)agent;
+			agent = (Agent)eResolveProxy(oldAgent);
+			if (agent != oldAgent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.COMPLEX_EVENT__AGENT, oldAgent, agent));
+			}
+		}
+		return agent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Agent basicGetAgent() {
+		return agent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAgent(Agent newAgent) {
+		Agent oldAgent = agent;
+		agent = newAgent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.COMPLEX_EVENT__AGENT, oldAgent, agent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -149,6 +199,9 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				if (resolve) return getBehaviouralDescriptions();
 				return basicGetBehaviouralDescriptions();
+			case ModelPackage.COMPLEX_EVENT__AGENT:
+				if (resolve) return getAgent();
+				return basicGetAgent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,6 +219,9 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 				return;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				setBehaviouralDescriptions((BehaviouralDescription)newValue);
+				return;
+			case ModelPackage.COMPLEX_EVENT__AGENT:
+				setAgent((Agent)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -185,6 +241,9 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				setBehaviouralDescriptions((BehaviouralDescription)null);
 				return;
+			case ModelPackage.COMPLEX_EVENT__AGENT:
+				setAgent((Agent)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,6 +260,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 				return time != TIME_EDEFAULT;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
 				return behaviouralDescriptions != null;
+			case ModelPackage.COMPLEX_EVENT__AGENT:
+				return agent != null;
 		}
 		return super.eIsSet(featureID);
 	}

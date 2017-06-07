@@ -15,8 +15,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
+import event.model.diagram.edit.commands.EventParameters2CreateCommand;
+import event.model.diagram.edit.commands.EventParameters2ReorientCommand;
 import event.model.diagram.edit.commands.EventParametersCreateCommand;
 import event.model.diagram.edit.commands.EventParametersReorientCommand;
+import event.model.diagram.edit.parts.EventParameters2EditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.part.ModelVisualIDRegistry;
 import event.model.diagram.providers.ModelElementTypes;
@@ -43,6 +46,13 @@ public class ParameterItemSemanticEditPolicy extends ModelBaseItemSemanticEditPo
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (ModelVisualIDRegistry.getVisualID(incomingLink) == EventParametersEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (ModelVisualIDRegistry.getVisualID(incomingLink) == EventParameters2EditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -78,6 +88,9 @@ public class ParameterItemSemanticEditPolicy extends ModelBaseItemSemanticEditPo
 		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
 			return null;
 		}
+		if (ModelElementTypes.EventParameters_4005 == req.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -87,6 +100,9 @@ public class ParameterItemSemanticEditPolicy extends ModelBaseItemSemanticEditPo
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
 			return getGEFWrapper(new EventParametersCreateCommand(req, req.getSource(), req.getTarget()));
+		}
+		if (ModelElementTypes.EventParameters_4005 == req.getElementType()) {
+			return getGEFWrapper(new EventParameters2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -101,6 +117,8 @@ public class ParameterItemSemanticEditPolicy extends ModelBaseItemSemanticEditPo
 		switch (getVisualID(req)) {
 		case EventParametersEditPart.VISUAL_ID:
 			return getGEFWrapper(new EventParametersReorientCommand(req));
+		case EventParameters2EditPart.VISUAL_ID:
+			return getGEFWrapper(new EventParameters2ReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

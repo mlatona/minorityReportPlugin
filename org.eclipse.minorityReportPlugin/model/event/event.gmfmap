@@ -87,15 +87,46 @@
           href="event.gmfgraph#AddParamNode"/>
     </ownedChild>
   </nodes>
+  <nodes>
+    <containmentFeature
+        href="../model.ecore#//Environment/complexEvents"/>
+    <ownedChild>
+      <domainMetaElement
+          href="../model.ecore#//ComplexEvent"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="event.gmfgraph#ComplexEventLabel"/>
+        <features
+            href="../model.ecore#//Event/name"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="event.gmftool#//@palette/@tools.0/@tools.4"/>
+      <diagramNode
+          href="event.gmfgraph#ComplexEventNode"/>
+    </ownedChild>
+  </nodes>
   <links>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="event.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
         href="event.gmfgraph#PEAgentConnection"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="../model.ecore#//PrimitiveEvent/agent"/>
+  </links>
+  <links>
+    <diagramLink
+        href="event.gmfgraph#CEAddParamConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../model.ecore#//Event/parameters"/>
+  </links>
+  <links>
+    <diagramLink
+        href="event.gmfgraph#CEAgentConnection"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="../model.ecore#//ComplexEvent/agent"/>
   </links>
   <links>
     <diagramLink

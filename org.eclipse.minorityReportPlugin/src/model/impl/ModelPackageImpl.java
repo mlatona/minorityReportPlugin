@@ -439,6 +439,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getComplexEvent_Agent() {
+		return (EReference)complexEventEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBehaviouralDescription() {
 		return behaviouralDescriptionEClass;
 	}
@@ -772,6 +781,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEnvironment_ComplexEvents() {
+		return (EReference)environmentEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAgent() {
 		return agentEClass;
 	}
@@ -845,6 +863,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		complexEventEClass = createEClass(COMPLEX_EVENT);
 		createEAttribute(complexEventEClass, COMPLEX_EVENT__TIME);
 		createEReference(complexEventEClass, COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS);
+		createEReference(complexEventEClass, COMPLEX_EVENT__AGENT);
 
 		behaviouralDescriptionEClass = createEClass(BEHAVIOURAL_DESCRIPTION);
 		createEReference(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__HOLDS_ATS);
@@ -888,6 +907,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(environmentEClass, ENVIRONMENT__OBSERVERS);
 		createEReference(environmentEClass, ENVIRONMENT__ADD_PARAM);
 		createEReference(environmentEClass, ENVIRONMENT__PRIMITIVE_EVENTS);
+		createEReference(environmentEClass, ENVIRONMENT__COMPLEX_EVENTS);
 
 		observerEClass = createEClass(OBSERVER);
 
@@ -944,7 +964,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEClass(contextRelationEClass, ContextRelation.class, "ContextRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContextRelation_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextRelation_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContextRelation_Parameters(), this.getParameter(), null, "parameters", null, 1, -1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContextRelation_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContextRelation_InitialComplexEvent(), this.getComplexEvent(), null, "initialComplexEvent", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContextRelation_EndingComplexEvent(), this.getComplexEvent(), null, "endingComplexEvent", null, 0, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContextRelation_Time(), ecorePackage.getEInt(), "time", null, 1, 1, ContextRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -960,6 +980,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEClass(complexEventEClass, ComplexEvent.class, "ComplexEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComplexEvent_Time(), ecorePackage.getEInt(), "time", null, 1, 1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComplexEvent_BehaviouralDescriptions(), this.getBehaviouralDescription(), null, "behaviouralDescriptions", null, 1, 1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComplexEvent_Agent(), this.getAgent(), null, "agent", null, 0, 1, ComplexEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(behaviouralDescriptionEClass, BehaviouralDescription.class, "BehaviouralDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBehaviouralDescription_HoldsAts(), this.getHoldsAt(), null, "holdsAts", null, 0, -1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1003,6 +1024,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getEnvironment_Observers(), this.getParameter(), null, "observers", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_AddParam(), this.getParameter(), null, "addParam", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnvironment_PrimitiveEvents(), this.getPrimitiveEvent(), null, "primitiveEvents", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnvironment_ComplexEvents(), this.getComplexEvent(), null, "complexEvents", null, 0, -1, Environment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(observerEClass, Observer.class, "Observer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

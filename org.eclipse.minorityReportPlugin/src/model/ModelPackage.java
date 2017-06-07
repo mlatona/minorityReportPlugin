@@ -442,13 +442,22 @@ public interface ModelPackage extends EPackage {
 	int COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS = EVENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Agent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_EVENT__AGENT = EVENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Complex Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 2;
+	int COMPLEX_EVENT_FEATURE_COUNT = EVENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Complex Event</em>' class.
@@ -892,13 +901,22 @@ public interface ModelPackage extends EPackage {
 	int ENVIRONMENT__PRIMITIVE_EVENTS = 13;
 
 	/**
+	 * The feature id for the '<em><b>Complex Events</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__COMPLEX_EVENTS = 14;
+
+	/**
 	 * The number of structural features of the '<em>Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_FEATURE_COUNT = 14;
+	int ENVIRONMENT_FEATURE_COUNT = 15;
 
 	/**
 	 * The number of operations of the '<em>Environment</em>' class.
@@ -1319,6 +1337,17 @@ public interface ModelPackage extends EPackage {
 	EReference getComplexEvent_BehaviouralDescriptions();
 
 	/**
+	 * Returns the meta object for the reference '{@link model.ComplexEvent#getAgent <em>Agent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Agent</em>'.
+	 * @see model.ComplexEvent#getAgent()
+	 * @see #getComplexEvent()
+	 * @generated
+	 */
+	EReference getComplexEvent_Agent();
+
+	/**
 	 * Returns the meta object for class '{@link model.BehaviouralDescription <em>Behavioural Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1720,6 +1749,17 @@ public interface ModelPackage extends EPackage {
 	EReference getEnvironment_PrimitiveEvents();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getComplexEvents <em>Complex Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Complex Events</em>'.
+	 * @see model.Environment#getComplexEvents()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_ComplexEvents();
+
+	/**
 	 * Returns the meta object for class '{@link model.Agent <em>Agent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1983,6 +2023,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS = eINSTANCE.getComplexEvent_BehaviouralDescriptions();
+
+		/**
+		 * The meta object literal for the '<em><b>Agent</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPLEX_EVENT__AGENT = eINSTANCE.getComplexEvent_Agent();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.BehaviouralDescriptionImpl <em>Behavioural Description</em>}' class.
@@ -2291,6 +2339,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENVIRONMENT__PRIMITIVE_EVENTS = eINSTANCE.getEnvironment_PrimitiveEvents();
+
+		/**
+		 * The meta object literal for the '<em><b>Complex Events</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__COMPLEX_EVENTS = eINSTANCE.getEnvironment_ComplexEvents();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.AgentImpl <em>Agent</em>}' class.

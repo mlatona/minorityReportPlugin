@@ -44,7 +44,11 @@ import org.eclipse.swt.graphics.FontData;
 
 import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.AgentNameEditPart;
+import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
+import event.model.diagram.edit.parts.ComplexEventEditPart;
+import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
+import event.model.diagram.edit.parts.EventParameters2EditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
 import event.model.diagram.edit.parts.ObserverNameEditPart;
@@ -141,6 +145,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				case AgentEditPart.VISUAL_ID:
 				case ObserverEditPart.VISUAL_ID:
 				case ParameterEditPart.VISUAL_ID:
+				case ComplexEventEditPart.VISUAL_ID:
 					if (domainElement == null || visualID != ModelVisualIDRegistry
 							.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
@@ -152,7 +157,8 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 			}
 		}
 		return PrimitiveEventEditPart.VISUAL_ID == visualID || AgentEditPart.VISUAL_ID == visualID
-				|| ObserverEditPart.VISUAL_ID == visualID || ParameterEditPart.VISUAL_ID == visualID;
+				|| ObserverEditPart.VISUAL_ID == visualID || ParameterEditPart.VISUAL_ID == visualID
+				|| ComplexEventEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -209,6 +215,8 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 			return createObserver_2008(domainElement, containerView, index, persisted, preferencesHint);
 		case ParameterEditPart.VISUAL_ID:
 			return createParameter_2009(domainElement, containerView, index, persisted, preferencesHint);
+		case ComplexEventEditPart.VISUAL_ID:
+			return createComplexEvent_2010(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -226,6 +234,10 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 			return createPrimitiveEventAgent_4001(containerView, index, persisted, preferencesHint);
 		case EventParametersEditPart.VISUAL_ID:
 			return createEventParameters_4003(containerView, index, persisted, preferencesHint);
+		case ComplexEventAgentEditPart.VISUAL_ID:
+			return createComplexEventAgent_4004(containerView, index, persisted, preferencesHint);
+		case EventParameters2EditPart.VISUAL_ID:
+			return createEventParameters_4005(containerView, index, persisted, preferencesHint);
 		case PrimitiveEventObserverEditPart.VISUAL_ID:
 			return createPrimitiveEventObserver_4002(containerView, index, persisted, preferencesHint);
 		}
@@ -394,6 +406,41 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	/**
 	* @generated
 	*/
+	public Node createComplexEvent_2010(EObject domainElement, View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Node node = NotationFactory.eINSTANCE.createNode();
+		node.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(ModelVisualIDRegistry.getType(ComplexEventEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+		FontStyle nodeFontStyle = (FontStyle) node.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5009 = createLabel(node, ModelVisualIDRegistry.getType(ComplexEventNameEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	* @generated
+	*/
 	public Edge createPrimitiveEventAgent_4001(View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
@@ -447,6 +494,88 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(ModelVisualIDRegistry.getType(EventParametersEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle edgeFontStyle = (FontStyle) edge.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Routing routing = Routing.get(prefStore.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
+		}
+		return edge;
+	}
+
+	/**
+	* @generated
+	*/
+	public Edge createComplexEventAgent_4004(View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(ModelVisualIDRegistry.getType(ComplexEventAgentEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(prefStore,
+				IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle edgeFontStyle = (FontStyle) edge.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore, IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter.getColor(prefStore,
+					IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
+		}
+		Routing routing = Routing.get(prefStore.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
+		}
+		return edge;
+	}
+
+	/**
+	* @generated
+	*/
+	public Edge createEventParameters_4005(View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Connector edge = NotationFactory.eINSTANCE.createConnector();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(ModelVisualIDRegistry.getType(EventParameters2EditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();

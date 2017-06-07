@@ -14,6 +14,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import event.model.diagram.edit.parts.AgentNameEditPart;
+import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.ObserverNameEditPart;
 import event.model.diagram.edit.parts.ParameterNameEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventNameEditPart;
@@ -97,6 +98,23 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 	/**
 	* @generated
 	*/
+	private IParser complexEventName_5009Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getComplexEventName_5009Parser() {
+		if (complexEventName_5009Parser == null) {
+			EAttribute[] features = new EAttribute[] { ModelPackage.eINSTANCE.getEvent_Name() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			complexEventName_5009Parser = parser;
+		}
+		return complexEventName_5009Parser;
+	}
+
+	/**
+	* @generated
+	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case PrimitiveEventNameEditPart.VISUAL_ID:
@@ -107,6 +125,8 @@ public class ModelParserProvider extends AbstractProvider implements IParserProv
 			return getObserverName_5008Parser();
 		case ParameterNameEditPart.VISUAL_ID:
 			return getParameterName_5007Parser();
+		case ComplexEventNameEditPart.VISUAL_ID:
+			return getComplexEventName_5009Parser();
 		}
 		return null;
 	}

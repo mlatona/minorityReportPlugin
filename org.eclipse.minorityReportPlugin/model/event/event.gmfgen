@@ -42,7 +42,7 @@
       <viewmap
           xsi:type="gmfgen:InnerClassViewmap"
           className="PrimitiveEventFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePrimitiveEventName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.orange);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePrimitiveEventName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePrimitiveEventName.setText(&quot;---Primitive event name---&quot;);&#xA;&#xA;this.add(fFigurePrimitiveEventName);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePrimitiveEventName() {&#xA;&#x9;&#x9;return fFigurePrimitiveEventName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class PrimitiveEventFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigurePrimitiveEventName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public PrimitiveEventFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(30)&#xA;, getMapMode().DPtoLP(20)&#xA;));&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.green);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigurePrimitiveEventName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigurePrimitiveEventName.setText(&quot;---Primitive Event Name---&quot;);&#xA;&#xA;this.add(fFigurePrimitiveEventName);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigurePrimitiveEventName() {&#xA;&#x9;&#x9;return fFigurePrimitiveEventName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
         <attributes
             xsi:type="gmfgen:StyleAttributes"
             fixedForeground="true"/>
@@ -203,6 +203,53 @@
         </modelFacet>
       </labels>
     </topLevelNodes>
+    <topLevelNodes
+        visualID="2010"
+        editPartClassName="ComplexEventEditPart"
+        itemSemanticEditPolicyClassName="ComplexEventItemSemanticEditPolicy"
+        canonicalEditPolicyClassName="ComplexEventCanonicalEditPolicy"
+        graphicalNodeEditPolicyClassName="ComplexEventGraphicalNodeEditPolicy"
+        createCommandClassName="ComplexEventCreateCommand">
+      <diagramRunTimeClass
+          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+      <elementType
+          xsi:type="gmfgen:MetamodelType"
+          editHelperClassName="ComplexEventEditHelper"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="ComplexEventFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ComplexEventFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureComplexEventName; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ComplexEventFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;&#x9;this.setForegroundColor(org.eclipse.draw2d.ColorConstants.orange);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureComplexEventName = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureComplexEventName.setText(&quot;---Complex Event Name---&quot;);&#xA;&#xA;this.add(fFigureComplexEventName);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureComplexEventName() {&#xA;&#x9;&#x9;return fFigureComplexEventName;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedForeground="true"/>
+      </viewmap>
+      <modelFacet>
+        <metaClass
+            href="../model.genmodel#//model/ComplexEvent"/>
+        <containmentMetaFeature
+            href="../model.genmodel#//model/Environment/complexEvents"/>
+        <childMetaFeature
+            href="../model.genmodel#//model/Environment/complexEvents"/>
+      </modelFacet>
+      <labels
+          visualID="5009"
+          editPartClassName="ComplexEventNameEditPart"
+          itemSemanticEditPolicyClassName="ComplexEventNameItemSemanticEditPolicy"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureComplexEventName"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:FeatureLabelModelFacet"
+            parser="//@labelParsers/@implementations.0">
+          <metaFeatures
+              href="../model.genmodel#//model/Event/name"/>
+        </modelFacet>
+      </labels>
+    </topLevelNodes>
     <links
         visualID="4001"
         editPartClassName="PrimitiveEventAgentEditPart"
@@ -229,6 +276,46 @@
         itemSemanticEditPolicyClassName="EventParametersItemSemanticEditPolicy"
         createCommandClassName="EventParametersCreateCommand"
         reorientCommandClassName="EventParametersReorientCommand">
+      <diagramRunTimeClass
+          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="CEAddParamFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CEAddParamFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CEAddParamFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="../model.genmodel#//model/Event/parameters"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4004"
+        editPartClassName="ComplexEventAgentEditPart"
+        itemSemanticEditPolicyClassName="ComplexEventAgentItemSemanticEditPolicy"
+        createCommandClassName="ComplexEventAgentCreateCommand"
+        reorientCommandClassName="ComplexEventAgentReorientCommand">
+      <diagramRunTimeClass
+          href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:InnerClassViewmap"
+          className="CEAgentFigure"
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class CEAgentFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public CEAgentFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="../model.genmodel#//model/ComplexEvent/agent"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4005"
+        editPartClassName="EventParameters2EditPart"
+        itemSemanticEditPolicyClassName="EventParameters2ItemSemanticEditPolicy"
+        createCommandClassName="EventParameters2CreateCommand"
+        reorientCommandClassName="EventParameters2ReorientCommand">
       <diagramRunTimeClass
           href="../../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
@@ -289,15 +376,8 @@
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
-            title="BehavDesc"/>
-      </groups>
-      <groups
-          title="Links"
-          collapse="true">
-        <entries
-            xsi:type="gmfgen:ToolEntry"
-            title="PEAgent"
-            genLinks="//@diagram/@links.0"/>
+            title="Complex Event"
+            genNodes="//@diagram/@topLevelNodes.4"/>
       </groups>
     </palette>
     <preferencePages
@@ -350,6 +430,9 @@
     <childReferences
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.3"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@topLevelNodes.4"/>
     <childReferences
         parent="//@diagram"
         child="//@diagram/@links.0"
@@ -433,31 +516,137 @@
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
     <childReferences
+        parent="//@diagram/@links.1"
+        child="//@diagram/@topLevelNodes.4"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@links.1"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
         parent="//@diagram"
         child="//@diagram/@links.2"
         groupName="links"
         groupIcon="icons/linksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
-        child="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@topLevelNodes.1"
         referenceType="out_target"
         groupName="target"
         groupIcon="icons/linkTargetNavigatorGroup.gif"/>
     <childReferences
-        parent="//@diagram/@topLevelNodes.2"
+        parent="//@diagram/@topLevelNodes.1"
         child="//@diagram/@links.2"
         referenceType="in_source"
         groupName="incoming links"
         groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@links.2"
+        child="//@diagram/@topLevelNodes.4"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@links.2"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.3"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@topLevelNodes.1"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.1"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@topLevelNodes.2"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@topLevelNodes.3"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.3"
+        child="//@diagram/@links.3"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
         child="//@diagram/@topLevelNodes.0"
         referenceType="in_source"
         groupName="source"
         groupIcon="icons/linkSourceNavigatorGroup.gif"/>
     <childReferences
         parent="//@diagram/@topLevelNodes.0"
-        child="//@diagram/@links.2"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.3"
+        child="//@diagram/@topLevelNodes.4"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.4"
+        child="//@diagram/@links.3"
+        referenceType="out_target"
+        groupName="outgoing links"
+        groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram"
+        child="//@diagram/@links.4"
+        groupName="links"
+        groupIcon="icons/linksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.4"
+        child="//@diagram/@topLevelNodes.2"
+        referenceType="out_target"
+        groupName="target"
+        groupIcon="icons/linkTargetNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.2"
+        child="//@diagram/@links.4"
+        referenceType="in_source"
+        groupName="incoming links"
+        groupIcon="icons/incomingLinksNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@links.4"
+        child="//@diagram/@topLevelNodes.0"
+        referenceType="in_source"
+        groupName="source"
+        groupIcon="icons/linkSourceNavigatorGroup.gif"/>
+    <childReferences
+        parent="//@diagram/@topLevelNodes.0"
+        child="//@diagram/@links.4"
         referenceType="out_target"
         groupName="outgoing links"
         groupIcon="icons/outgoingLinksNavigatorGroup.gif"/>
@@ -488,7 +677,7 @@
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
-        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet"/>
+        uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet //@diagram/@topLevelNodes.1/@labels.0/@modelFacet //@diagram/@topLevelNodes.2/@labels.0/@modelFacet //@diagram/@topLevelNodes.3/@labels.0/@modelFacet //@diagram/@topLevelNodes.4/@labels.0/@modelFacet"/>
   </labelParsers>
   <contextMenus
       context="//@diagram">

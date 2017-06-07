@@ -15,7 +15,10 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 import event.model.diagram.edit.parts.AgentEditPart;
+import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
+import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
+import event.model.diagram.edit.parts.EventParameters2EditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
 import event.model.diagram.edit.parts.ParameterEditPart;
@@ -80,6 +83,12 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
+	public static final IElementType ComplexEvent_2010 = getElementType(
+			"org.eclipse.minorityReportPlugin.event.diagram.ComplexEvent_2010"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
 	public static final IElementType PrimitiveEventAgent_4001 = getElementType(
 			"org.eclipse.minorityReportPlugin.event.diagram.PrimitiveEventAgent_4001"); //$NON-NLS-1$
 	/**
@@ -87,6 +96,18 @@ public class ModelElementTypes {
 	*/
 	public static final IElementType EventParameters_4003 = getElementType(
 			"org.eclipse.minorityReportPlugin.event.diagram.EventParameters_4003"); //$NON-NLS-1$
+	/**
+	* @generated
+	*/
+	public static final IElementType ComplexEventAgent_4004 = getElementType(
+			"org.eclipse.minorityReportPlugin.event.diagram.ComplexEventAgent_4004"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType EventParameters_4005 = getElementType(
+			"org.eclipse.minorityReportPlugin.event.diagram.EventParameters_4005"); //$NON-NLS-1$
+
 	/**
 	* @generated
 	*/
@@ -141,9 +162,15 @@ public class ModelElementTypes {
 
 			elements.put(Parameter_2009, ModelPackage.eINSTANCE.getParameter());
 
+			elements.put(ComplexEvent_2010, ModelPackage.eINSTANCE.getComplexEvent());
+
 			elements.put(PrimitiveEventAgent_4001, ModelPackage.eINSTANCE.getPrimitiveEvent_Agent());
 
 			elements.put(EventParameters_4003, ModelPackage.eINSTANCE.getEvent_Parameters());
+
+			elements.put(ComplexEventAgent_4004, ModelPackage.eINSTANCE.getComplexEvent_Agent());
+
+			elements.put(EventParameters_4005, ModelPackage.eINSTANCE.getEvent_Parameters());
 
 			elements.put(PrimitiveEventObserver_4002, ModelPackage.eINSTANCE.getPrimitiveEvent_Observer());
 		}
@@ -168,8 +195,11 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Agent_2007);
 			KNOWN_ELEMENT_TYPES.add(Observer_2008);
 			KNOWN_ELEMENT_TYPES.add(Parameter_2009);
+			KNOWN_ELEMENT_TYPES.add(ComplexEvent_2010);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventAgent_4001);
 			KNOWN_ELEMENT_TYPES.add(EventParameters_4003);
+			KNOWN_ELEMENT_TYPES.add(ComplexEventAgent_4004);
+			KNOWN_ELEMENT_TYPES.add(EventParameters_4005);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventObserver_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -190,10 +220,16 @@ public class ModelElementTypes {
 			return Observer_2008;
 		case ParameterEditPart.VISUAL_ID:
 			return Parameter_2009;
+		case ComplexEventEditPart.VISUAL_ID:
+			return ComplexEvent_2010;
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return PrimitiveEventAgent_4001;
 		case EventParametersEditPart.VISUAL_ID:
 			return EventParameters_4003;
+		case ComplexEventAgentEditPart.VISUAL_ID:
+			return ComplexEventAgent_4004;
+		case EventParameters2EditPart.VISUAL_ID:
+			return EventParameters_4005;
 		case PrimitiveEventObserverEditPart.VISUAL_ID:
 			return PrimitiveEventObserver_4002;
 		}
