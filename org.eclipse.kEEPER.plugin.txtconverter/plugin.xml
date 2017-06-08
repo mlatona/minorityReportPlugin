@@ -22,7 +22,6 @@
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
                commandId="org.eclipse.minorityreportplugin.txtconverter.generateTxt"
-               icon="icons/txtlogo.jpg"
                label="Gen Encoding"
                mnemonic="O"
                style="push">
@@ -40,6 +39,10 @@
                         <test
                               property="org.eclipse.core.resources.name"
                               value="default">
+                        </test>
+                        <test
+                              property="org.eclipse.core.resources.extension"
+                              value="eventModel">
                         </test>
                      </or>
                   </iterate>
