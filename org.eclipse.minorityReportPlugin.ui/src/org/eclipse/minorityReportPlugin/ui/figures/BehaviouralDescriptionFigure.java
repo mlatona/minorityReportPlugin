@@ -28,11 +28,13 @@ import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.IInputValidator;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 
+import model.BehaviouralDescription;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
@@ -44,6 +46,7 @@ import org.eclipse.draw2d.Graphics;
 public class BehaviouralDescriptionFigure extends Shape{
 		private int timeInstants;
 		private RectangleFigure r;
+		private BehaviouralDescription behavDesc;
 		
 		private ArrayList<Happens> happensList = new ArrayList<Happens>();
 		private ArrayList<HoldsAt> holdsAtList = new ArrayList<HoldsAt>();
@@ -54,7 +57,7 @@ public class BehaviouralDescriptionFigure extends Shape{
 		 */
 		public BehaviouralDescriptionFigure(RectangleFigure r) {
 			System.out.println("BehaviouralDescription Constructor!");
-			
+			// behavDesc = (BehaviouralDescription) eObject;
 			this.r = r;
 			// Input the number of time instants 
 			InputDialog inputDialog = new InputDialog(null, "Events", "Input the number of events", null, new IInputValidator() {

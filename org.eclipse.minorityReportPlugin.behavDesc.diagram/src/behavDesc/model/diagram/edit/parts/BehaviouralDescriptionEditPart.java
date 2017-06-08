@@ -16,6 +16,8 @@ import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
 import org.eclipse.draw2d.XYLayout;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
@@ -34,10 +36,12 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramCommandStack;
 import org.eclipse.gmf.runtime.emf.type.core.commands.SetValueCommand;
+import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.gmf.runtime.notation.impl.DiagramImpl;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescriptionFigure;
@@ -78,6 +82,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	private ModelDiagramEditor editor;
 
 	private TransactionalEditingDomain editingDomain;
+	
+	private View view;
 
 	/**
 	* @generated NOT
@@ -87,7 +93,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		editor = (ModelDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 				.getActiveEditor();
 		editingDomain = editor.getEditingDomain();
-		;
+		this.view = view;
 	}
 
 	/**
@@ -323,10 +329,18 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (obj instanceof CreateElementRequestAdapter) {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHappens = (HappensImpl) cra.resolve();
+					
+					// Setting the happens EReference of the Behavioural Description
+					SetRequest setRequestHappens = new SetRequest(editor.getEditingDomain(), view.getElement(),
+							ModelPackage.eINSTANCE.getBehaviouralDescription_Happens(), newHappens);
+					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHappens);
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(behavDescOperation));
+					
+					// Setting the property of Happens
 					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHappens,
 							ModelPackage.eINSTANCE.getHappens_Time(), timeSelection);
-					SetValueCommand operation = new SetValueCommand(setRequestTimeInstant);
-					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
+					SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(propertyOperation));
 				}
 			}
 
@@ -390,6 +404,14 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (obj instanceof CreateElementRequestAdapter) {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHoldsAt = (HoldsAtImpl) cra.resolve();
+					
+					// Setting the happens EReference of the Behavioural Description
+					SetRequest setRequestHoldsAt = new SetRequest(editor.getEditingDomain(), view.getElement(),
+							ModelPackage.eINSTANCE.getBehaviouralDescription_HoldsAts(), newHoldsAt);
+					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHoldsAt);
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(behavDescOperation));
+					
+					// Setting the property of HoldsAt
 					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHoldsAt,
 							ModelPackage.eINSTANCE.getHoldsAt_Time(), timeSelection);
 					SetRequest setRequestIsHolding = new SetRequest(editor.getEditingDomain(), newHoldsAt,
@@ -463,6 +485,14 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (obj instanceof CreateElementRequestAdapter) {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHoldsAtBetween = (HoldsAtBetweenImpl) cra.resolve();
+					
+					// Setting the happens EReference of the Behavioural Description
+					SetRequest setRequestHoldsAtBetween = new SetRequest(editor.getEditingDomain(), view.getElement(),
+							ModelPackage.eINSTANCE.getBehaviouralDescription_HoldsAtBetweens(), newHoldsAtBetween);
+					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHoldsAtBetween);
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(behavDescOperation));
+					
+					// Setting the property of HoldsAtBetween
 					SetRequest setRequestTimeInstant1 = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
 							ModelPackage.eINSTANCE.getHoldsAtBetween_InitialTime(), timeSelectedArray[0]);
 					SetRequest setRequestTimeInstant2 = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
