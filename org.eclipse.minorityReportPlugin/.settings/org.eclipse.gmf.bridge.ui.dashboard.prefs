@@ -1,7 +1,0 @@
-eclipse.preferences.version=1
-gmf_dashboard/domainGenerationModel=platform\:/resource/org.eclipse.minorityReportPlugin/model/model.genmodel
-gmf_dashboard/domainModel=platform\:/resource/org.eclipse.minorityReportPlugin/model/model.ecore
-gmf_dashboard/generationModel=platform\:/resource/org.eclipse.minorityReportPlugin/model/model.gmfgen
-gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.eclipse.minorityReportPlugin/model/contextRelation/contextRelation.gmfgraph
-gmf_dashboard/mappingModel=platform\:/resource/org.eclipse.minorityReportPlugin/model/contextRelation/contextRelation.gmfmap
-gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.eclipse.minorityReportPlugin/model/contextRelation/contextRelation.gmftool
