@@ -47,7 +47,7 @@ public class Transformer {
 	
 	public void createTxtFile(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
 	    
-		PrintWriter writer = new PrintWriter("/Users/marco/Documents/ThesisWorkspace/WorkspaceRepository/org.eclipse.minorityreportplugin.txtconverter/output/environment.txt", "UTF-8");
+		PrintWriter writer = new PrintWriter("/Users/marco/Documents/ThesisWorkspace/WorkspaceRepository/org.eclipse.kEEPER.plugin.txtconverter/output/environment.txt", "UTF-8");
 		
 		writer.println("% ****************** Environment Description ******************\n");
 		writer.println("% ********* Context Description *********\n");
@@ -198,8 +198,10 @@ public class Transformer {
 			}
 			// Writing all the types on file
 			Iterator<Type> iter = behTypes.iterator();
+			System.out.println(iter.hasNext());
 			while(iter.hasNext()){
 				Type type = iter.next();
+			//	System.out.println(type.toString());
 				writer.println("\t"+type.getName()+"("+type.getName().charAt(0)+"),");
 			}
 			

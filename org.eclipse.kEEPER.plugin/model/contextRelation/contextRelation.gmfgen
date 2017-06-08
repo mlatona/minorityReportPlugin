@@ -6,7 +6,7 @@
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
     packageNamePrefix="contextRelation.model.diagram"
     modelID="ContextRelation Model"
-    diagramFileExtension="contextRelation_model_diagram"
+    diagramFileExtension="contextRelation_modeldiagram"
     domainFileExtension="contextRelationmodel"
     pluginDirectory="/org.eclipse.kEEPER.plugin.contextRelation.diagram/src">
   <diagram
