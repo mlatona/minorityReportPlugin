@@ -329,7 +329,6 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (obj instanceof CreateElementRequestAdapter) {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHappens = (HappensImpl) cra.resolve();
-					
 					// Setting the happens EReference of the Behavioural Description
 					SetRequest setRequestHappens = new SetRequest(editor.getEditingDomain(), view.getElement(),
 							ModelPackage.eINSTANCE.getBehaviouralDescription_Happens(), newHappens);
