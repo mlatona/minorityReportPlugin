@@ -6,8 +6,8 @@
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
     packageNamePrefix="behavDesc.model.diagram"
     modelID="BehavDesc Model"
-    diagramFileExtension="behavDescmodel_diagram"
-    domainFileExtension="behavDescmodel"
+    diagramFileExtension="bdModel_diagram"
+    domainFileExtension="bdModel"
     pluginDirectory="/org.eclipse.kEEPER.plugin.behavDesc.diagram/src">
   <diagram
       visualID="1000"

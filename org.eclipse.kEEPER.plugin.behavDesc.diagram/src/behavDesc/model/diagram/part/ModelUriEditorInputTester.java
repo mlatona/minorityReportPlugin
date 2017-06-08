@@ -16,7 +16,7 @@ public class ModelUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "behavDescmodel_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
+		return "bdModel_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
 	}
 
 }

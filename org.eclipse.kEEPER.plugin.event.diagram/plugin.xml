@@ -4,13 +4,13 @@
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="eventmodel_diagram"/>
+      <fileTypes type="text" extension="eventModel_diagram"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="eventmodel_diagram"
+         type="eventModel_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -21,7 +21,7 @@
          id="event.model.diagram.part.ModelDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ModelDiagramFile.gif"
-         extensions="eventmodel_diagram"
+         extensions="eventModel_diagram"
          default="true"
          class="event.model.diagram.part.ModelDiagramEditor"
          matchingStrategy="event.model.diagram.part.ModelMatchingStrategy"
@@ -55,7 +55,7 @@
       <?gmfgen generated="true"?>
       <objectContribution
             id="org.eclipse.kEEPER.plugin.event.diagram.InitDiagram"
-            nameFilter="*.eventmodel"
+            nameFilter="*.eventModel"
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
@@ -460,7 +460,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="eventmodel_diagram"/>
+        	      <test property="org.eclipse.core.resources.extension" value="eventModel_diagram"/>
                </and>
                <instanceof value="event.model.diagram.navigator.ModelAbstractNavigatorItem"/>
             </or>
@@ -477,7 +477,7 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="eventmodel_diagram"/>
+        	         <test property="org.eclipse.core.resources.extension" value="eventModel_diagram"/>
                   </and>
                   <instanceof value="event.model.diagram.navigator.ModelAbstractNavigatorItem"/>
                </or>
@@ -496,7 +496,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="eventmodel"/>
+        	      <test property="org.eclipse.core.resources.extension" value="eventModel"/>
                </and>
                <instanceof value="event.model.diagram.navigator.ModelDomainNavigatorItem"/>
             </or>

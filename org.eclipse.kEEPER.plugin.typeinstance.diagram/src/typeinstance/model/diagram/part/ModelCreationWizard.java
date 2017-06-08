@@ -101,19 +101,19 @@ public class ModelCreationWizard extends Wizard implements INewWizard {
 	*/
 	public void addPages() {
 		diagramModelFilePage = new ModelCreationWizardPage("DiagramModelFile", getSelection(), //$NON-NLS-1$
-				"typeinstancemodel_diagram"); //$NON-NLS-1$
+				"typeInstanceModel_diagram"); //$NON-NLS-1$
 		diagramModelFilePage.setTitle(Messages.ModelCreationWizard_DiagramModelFilePageTitle);
 		diagramModelFilePage.setDescription(Messages.ModelCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new ModelCreationWizardPage("DomainModelFile", getSelection(), "typeinstancemodel") { //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new ModelCreationWizardPage("DomainModelFile", getSelection(), "typeInstanceModel") { //$NON-NLS-1$ //$NON-NLS-2$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length() - ".typeinstancemodel_diagram".length()); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".typeInstanceModel_diagram".length()); //$NON-NLS-1$
 					setFileName(ModelDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName,
-							"typeinstancemodel")); //$NON-NLS-1$
+							"typeInstanceModel")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}

@@ -101,7 +101,7 @@ public class ModelCreationWizard extends Wizard implements INewWizard {
 	*/
 	public void addPages() {
 		diagramModelFilePage = new behavDesc.model.diagram.part.ModelCreationWizardPage("DiagramModelFile", //$NON-NLS-1$
-				getSelection(), "behavDescmodel_diagram"); //$NON-NLS-1$
+				getSelection(), "bdModel_diagram"); //$NON-NLS-1$
 		diagramModelFilePage
 				.setTitle(behavDesc.model.diagram.part.Messages.ModelCreationWizard_DiagramModelFilePageTitle);
 		diagramModelFilePage.setDescription(
@@ -109,14 +109,14 @@ public class ModelCreationWizard extends Wizard implements INewWizard {
 		addPage(diagramModelFilePage);
 
 		domainModelFilePage = new behavDesc.model.diagram.part.ModelCreationWizardPage("DomainModelFile", //$NON-NLS-1$
-				getSelection(), "behavDescmodel") { //$NON-NLS-1$
+				getSelection(), "bdModel") { //$NON-NLS-1$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length() - ".behavDescmodel_diagram".length()); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".bdModel_diagram".length()); //$NON-NLS-1$
 					setFileName(behavDesc.model.diagram.part.ModelDiagramEditorUtil
-							.getUniqueFileName(getContainerFullPath(), fileName, "behavDescmodel")); //$NON-NLS-1$
+							.getUniqueFileName(getContainerFullPath(), fileName, "bdModel")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}

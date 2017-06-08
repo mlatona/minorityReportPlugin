@@ -76,7 +76,7 @@ public class ModelNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage.setFileName(behavDesc.model.diagram.part.ModelDiagramEditorUtil.getUniqueFileName(filePath,
-				fileName, "behavDescmodel_diagram")); //$NON-NLS-1$
+				fileName, "bdModel_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				behavDesc.model.diagram.part.Messages.ModelNewDiagramFileWizard_RootSelectionPageName);

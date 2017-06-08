@@ -76,7 +76,7 @@ public class ModelNewDiagramFileWizard extends Wizard {
 		}
 		myFileCreationPage.setContainerFullPath(filePath);
 		myFileCreationPage
-				.setFileName(ModelDiagramEditorUtil.getUniqueFileName(filePath, fileName, "typeinstancemodel_diagram")); //$NON-NLS-1$
+				.setFileName(ModelDiagramEditorUtil.getUniqueFileName(filePath, fileName, "typeInstanceModel_diagram")); //$NON-NLS-1$
 
 		diagramRootElementSelectionPage = new DiagramRootElementSelectionPage(
 				Messages.ModelNewDiagramFileWizard_RootSelectionPageName);

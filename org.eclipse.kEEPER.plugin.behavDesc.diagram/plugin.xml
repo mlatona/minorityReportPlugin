@@ -4,13 +4,13 @@
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="behavDescmodel_diagram"/>
+      <fileTypes type="text" extension="bdModel_diagram"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="behavDescmodel_diagram"
+         type="bdModel_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -21,7 +21,7 @@
          id="behavDesc.model.diagram.part.ModelDiagramEditorID"
          name="%editorName"
          icon="icons/obj16/ModelDiagramFile.gif"
-         extensions="behavDescmodel_diagram"
+         extensions="bdModel_diagram"
          default="true"
          class="behavDesc.model.diagram.part.ModelDiagramEditor"
          matchingStrategy="behavDesc.model.diagram.part.ModelMatchingStrategy"
@@ -55,7 +55,7 @@
       <?gmfgen generated="true"?>
       <objectContribution
             id="org.eclipse.kEEPER.plugin.behavDesc.diagram.InitDiagram"
-            nameFilter="*.behavDescmodel"
+            nameFilter="*.bdModel"
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
@@ -407,7 +407,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="behavDescmodel_diagram"/>
+        	      <test property="org.eclipse.core.resources.extension" value="bdModel_diagram"/>
                </and>
                <instanceof value="behavDesc.model.diagram.navigator.ModelAbstractNavigatorItem"/>
             </or>
@@ -424,7 +424,7 @@
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="behavDescmodel_diagram"/>
+        	         <test property="org.eclipse.core.resources.extension" value="bdModel_diagram"/>
                   </and>
                   <instanceof value="behavDesc.model.diagram.navigator.ModelAbstractNavigatorItem"/>
                </or>
@@ -443,7 +443,7 @@
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="behavDescmodel"/>
+        	      <test property="org.eclipse.core.resources.extension" value="bdModel"/>
                </and>
                <instanceof value="behavDesc.model.diagram.navigator.ModelDomainNavigatorItem"/>
             </or>

@@ -16,7 +16,7 @@ public class ModelUriEditorInputTester extends PropertyTester {
 			return false;
 		}
 		URIEditorInput editorInput = (URIEditorInput) receiver;
-		return "eventmodel_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
+		return "eventModel_diagram".equals(editorInput.getURI().fileExtension()); //$NON-NLS-1$
 	}
 
 }

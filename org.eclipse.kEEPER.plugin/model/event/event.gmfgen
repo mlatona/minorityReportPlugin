@@ -6,8 +6,8 @@
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel"
     packageNamePrefix="event.model.diagram"
     modelID="Event Model"
-    diagramFileExtension="eventmodel_diagram"
-    domainFileExtension="eventmodel"
+    diagramFileExtension="eventModel_diagram"
+    domainFileExtension="eventModel"
     templateDirectory=""
     pluginDirectory="/org.eclipse.kEEPER.plugin.event.diagram/src">
   <diagram

@@ -101,7 +101,7 @@ public class ModelCreationWizard extends Wizard implements INewWizard {
 	*/
 	public void addPages() {
 		diagramModelFilePage = new contextRelation.model.diagram.part.ModelCreationWizardPage("DiagramModelFile", //$NON-NLS-1$
-				getSelection(), "contextRelation_model_diagram"); //$NON-NLS-1$
+				getSelection(), "contextRelationmodel_diagram"); //$NON-NLS-1$
 		diagramModelFilePage
 				.setTitle(contextRelation.model.diagram.part.Messages.ModelCreationWizard_DiagramModelFilePageTitle);
 		diagramModelFilePage.setDescription(
@@ -114,7 +114,7 @@ public class ModelCreationWizard extends Wizard implements INewWizard {
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length() - ".contextRelation_model_diagram".length()); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".contextRelationmodel_diagram".length()); //$NON-NLS-1$
 					setFileName(contextRelation.model.diagram.part.ModelDiagramEditorUtil
 							.getUniqueFileName(getContainerFullPath(), fileName, "contextRelationmodel")); //$NON-NLS-1$
 				}
