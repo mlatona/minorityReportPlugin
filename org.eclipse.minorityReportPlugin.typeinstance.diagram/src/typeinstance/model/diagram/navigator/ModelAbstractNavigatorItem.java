@@ -17,7 +17,7 @@ public abstract class ModelAbstractNavigatorItem extends PlatformObject {
 		final Class[] supportedTypes = new Class[] { ITabbedPropertySheetPageContributor.class };
 		final ITabbedPropertySheetPageContributor propertySheetPageContributor = new ITabbedPropertySheetPageContributor() {
 			public String getContributorId() {
-				return "org.eclipse.minorityReportPlugin.typeinstance.diagram"; //$NON-NLS-1$
+				return "org.eclipse.kEEPER.plugin.typeinstance.diagram"; //$NON-NLS-1$
 			}
 		};
 		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {

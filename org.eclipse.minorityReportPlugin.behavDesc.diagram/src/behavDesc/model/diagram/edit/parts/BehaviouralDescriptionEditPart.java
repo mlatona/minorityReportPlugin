@@ -82,7 +82,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	private ModelDiagramEditor editor;
 
 	private TransactionalEditingDomain editingDomain;
-	
+
 	private View view;
 
 	/**
@@ -237,7 +237,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	public void performRequest(Request req) {
 		if (req.getType() == RequestConstants.REQ_OPEN) {
 			ElementListSelectionDialog dialog = new ElementListSelectionDialog(null, new LabelProvider());
-			dialog.setElements(new String[] { "Happens", "Holds at", "Not Holds at", "Holds at between", "Not holds at between" });
+			dialog.setElements(
+					new String[] { "Happens", "Holds at", "Not Holds at", "Holds at between", "Not holds at between" });
 			dialog.setMultipleSelection(false);
 			dialog.setTitle("Which predicate do you want to select");
 			// user pressed cancel
@@ -261,7 +262,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					getPrimaryShape().setHoldsAt(newHoldsAt);
 			} // Holds at
 				break;
-			
+
 			case "Not Holds at": {
 				HoldsAt newHoldsAt = holdsAtSelected(false);
 				if (newHoldsAt != null)
@@ -333,13 +334,15 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 					SetRequest setRequestHappens = new SetRequest(editor.getEditingDomain(), view.getElement(),
 							ModelPackage.eINSTANCE.getBehaviouralDescription_Happens(), newHappens);
 					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHappens);
-					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(behavDescOperation));
-					
+					editor.getDiagramEditDomain().getDiagramCommandStack()
+							.execute(new ICommandProxy(behavDescOperation));
+
 					// Setting the property of Happens
 					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHappens,
 							ModelPackage.eINSTANCE.getHappens_Time(), timeSelection);
 					SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
-					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(propertyOperation));
+					editor.getDiagramEditDomain().getDiagramCommandStack()
+							.execute(new ICommandProxy(propertyOperation));
 				}
 			}
 
@@ -403,13 +406,14 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (obj instanceof CreateElementRequestAdapter) {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHoldsAt = (HoldsAtImpl) cra.resolve();
-					
+
 					// Setting the happens EReference of the Behavioural Description
 					SetRequest setRequestHoldsAt = new SetRequest(editor.getEditingDomain(), view.getElement(),
 							ModelPackage.eINSTANCE.getBehaviouralDescription_HoldsAts(), newHoldsAt);
 					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHoldsAt);
-					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(behavDescOperation));
-					
+					editor.getDiagramEditDomain().getDiagramCommandStack()
+							.execute(new ICommandProxy(behavDescOperation));
+
 					// Setting the property of HoldsAt
 					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHoldsAt,
 							ModelPackage.eINSTANCE.getHoldsAt_Time(), timeSelection);
@@ -425,9 +429,11 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
 			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
-				if (contextRelationSelected.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
+				if (contextRelationSelected
+						.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
 					SetRequest setRequestContextRelation = new SetRequest(editor.getEditingDomain(), newHoldsAt,
-							ModelPackage.eINSTANCE.getHoldsAt_ContextRelation(), loadContextRelations.getEnvironment().getContextRelations().get(i));
+							ModelPackage.eINSTANCE.getHoldsAt_ContextRelation(),
+							loadContextRelations.getEnvironment().getContextRelations().get(i));
 					SetValueCommand operation = new SetValueCommand(setRequestContextRelation);
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
 				}
@@ -472,7 +478,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 			int[] timeSelectedArray = createMultipleTimeInstantsDialog();
 			// Creating HoldsAt
 			Command cmd = editor.createAndExecuteShapeRequestCommand(
-					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004, editor.getDiagramEditPart());
+					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004,
+					editor.getDiagramEditPart());
 			editor.getDiagramEditPart().getDiagramEditDomain().getDiagramCommandStack();
 
 			// Creating and executing the command to set the properties
@@ -484,13 +491,14 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				if (obj instanceof CreateElementRequestAdapter) {
 					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
 					newHoldsAtBetween = (HoldsAtBetweenImpl) cra.resolve();
-					
+
 					// Setting the happens EReference of the Behavioural Description
 					SetRequest setRequestHoldsAtBetween = new SetRequest(editor.getEditingDomain(), view.getElement(),
 							ModelPackage.eINSTANCE.getBehaviouralDescription_HoldsAtBetweens(), newHoldsAtBetween);
 					SetValueCommand behavDescOperation = new SetValueCommand(setRequestHoldsAtBetween);
-					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(behavDescOperation));
-					
+					editor.getDiagramEditDomain().getDiagramCommandStack()
+							.execute(new ICommandProxy(behavDescOperation));
+
 					// Setting the property of HoldsAtBetween
 					SetRequest setRequestTimeInstant1 = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
 							ModelPackage.eINSTANCE.getHoldsAtBetween_InitialTime(), timeSelectedArray[0]);
@@ -510,9 +518,11 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 
 			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
 			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
-				if (contextRelationSelected.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
+				if (contextRelationSelected
+						.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
 					SetRequest setRequestContextRelation = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
-							ModelPackage.eINSTANCE.getHoldsAt_ContextRelation(), loadContextRelations.getEnvironment().getContextRelations().get(i));
+							ModelPackage.eINSTANCE.getHoldsAt_ContextRelation(),
+							loadContextRelations.getEnvironment().getContextRelations().get(i));
 					SetValueCommand operation = new SetValueCommand(setRequestContextRelation);
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
 				}
@@ -552,7 +562,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	/*
 	 * It creates the dialog where the user inputs the TWO time instants where to place the context relation
 	 */
-	public int[] createMultipleTimeInstantsDialog(){
+	public int[] createMultipleTimeInstantsDialog() {
 		// Creating third dialog
 		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
 		String[] timeInstantsArray = new String[getPrimaryShape().getTimeInstants()];
@@ -571,9 +581,11 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		System.out.println("time selected: " + timeSelection1);
 		System.out.println("time selected: " + timeSelection2);
 		int[] timeSelectedArray = new int[2];
-		timeSelectedArray[0] = Integer.parseInt(timeSelection1);;
-		timeSelectedArray[1] = Integer.parseInt(timeSelection2);;
-		
+		timeSelectedArray[0] = Integer.parseInt(timeSelection1);
+		;
+		timeSelectedArray[1] = Integer.parseInt(timeSelection2);
+		;
+
 		return timeSelectedArray;
 	}
 }

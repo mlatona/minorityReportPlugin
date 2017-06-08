@@ -28,8 +28,14 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case InstanceEditPart.VISUAL_ID:
 				return new InstanceEditPart(view);
 
+			case InstanceNameEditPart.VISUAL_ID:
+				return new InstanceNameEditPart(view);
+
 			case TypeEditPart.VISUAL_ID:
 				return new TypeEditPart(view);
+
+			case TypeNameEditPart.VISUAL_ID:
+				return new TypeNameEditPart(view);
 
 			case InstanceTypeEditPart.VISUAL_ID:
 				return new InstanceTypeEditPart(view);

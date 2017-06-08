@@ -30,9 +30,8 @@ public class ModelModelingAssistantProviderOfParameterEditPart extends ModelMode
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(ParameterEditPart target) {
-		List<IElementType> types = new ArrayList<IElementType>(2);
+		List<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(ModelElementTypes.EventParameters_4003);
-		types.add(ModelElementTypes.EventParameters_4005);
 		return types;
 	}
 
@@ -52,9 +51,6 @@ public class ModelModelingAssistantProviderOfParameterEditPart extends ModelMode
 	public List<IElementType> doGetTypesForSource(ParameterEditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.EventParameters_4003) {
-			types.add(ModelElementTypes.PrimitiveEvent_2005);
-			types.add(ModelElementTypes.ComplexEvent_2010);
-		} else if (relationshipType == ModelElementTypes.EventParameters_4005) {
 			types.add(ModelElementTypes.PrimitiveEvent_2005);
 			types.add(ModelElementTypes.ComplexEvent_2010);
 		}

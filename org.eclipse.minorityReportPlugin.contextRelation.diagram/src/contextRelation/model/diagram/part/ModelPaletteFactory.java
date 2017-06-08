@@ -30,8 +30,6 @@ public class ModelPaletteFactory {
 		paletteContainer.setId("createNodes1Group"); //$NON-NLS-1$
 		paletteContainer.add(createContextRelation1CreationTool());
 		paletteContainer.add(createParameter2CreationTool());
-		paletteContainer.add(createInititialEvent3CreationTool());
-		paletteContainer.add(createEndingEvent4CreationTool());
 		return paletteContainer;
 	}
 
@@ -60,28 +58,6 @@ public class ModelPaletteFactory {
 		entry.setSmallIcon(contextRelation.model.diagram.providers.ModelElementTypes
 				.getImageDescriptor(contextRelation.model.diagram.providers.ModelElementTypes.Parameter_2002));
 		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	* @generated
-	*/
-	private ToolEntry createInititialEvent3CreationTool() {
-		ToolEntry entry = new ToolEntry(contextRelation.model.diagram.part.Messages.InititialEvent3CreationTool_title,
-				null, null, null) {
-		};
-		entry.setId("createInititialEvent3CreationTool"); //$NON-NLS-1$
-		return entry;
-	}
-
-	/**
-	* @generated
-	*/
-	private ToolEntry createEndingEvent4CreationTool() {
-		ToolEntry entry = new ToolEntry(contextRelation.model.diagram.part.Messages.EndingEvent4CreationTool_title,
-				null, null, null) {
-		};
-		entry.setId("createEndingEvent4CreationTool"); //$NON-NLS-1$
 		return entry;
 	}
 

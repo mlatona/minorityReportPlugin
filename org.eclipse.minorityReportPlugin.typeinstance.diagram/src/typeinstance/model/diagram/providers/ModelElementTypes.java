@@ -52,22 +52,22 @@ public class ModelElementTypes {
 	* @generated
 	*/
 	public static final IElementType Environment_1000 = getElementType(
-			"org.eclipse.minorityReportPlugin.typeinstance.diagram.Environment_1000"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.typeinstance.diagram.Environment_1000"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType Instance_2005 = getElementType(
-			"org.eclipse.minorityReportPlugin.typeinstance.diagram.Instance_2005"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.typeinstance.diagram.Instance_2005"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType Type_2006 = getElementType(
-			"org.eclipse.minorityReportPlugin.typeinstance.diagram.Type_2006"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.typeinstance.diagram.Type_2006"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType InstanceType_4003 = getElementType(
-			"org.eclipse.minorityReportPlugin.typeinstance.diagram.InstanceType_4003"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.typeinstance.diagram.InstanceType_4003"); //$NON-NLS-1$
 
 	/**
 	* @generated

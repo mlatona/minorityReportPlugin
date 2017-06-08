@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.eclipse.minorityReportPlugin.event.diagram; singleton:=true
+Bundle-SymbolicName: org.eclipse.kEEPER.plugin.event.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: event.model.diagram.part.ModelDiagramEditorPlugin
@@ -35,10 +35,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.draw2d;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
  org.eclipse.gmf.runtime.lite.svg;visibility:=reexport,
- org.eclipse.minorityReportPlugin;visibility:=reexport,
- org.eclipse.minorityReportPlugin.edit;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
  org.eclipse.gmf.runtime.draw2d.ui.render;bundle-version="1.7.0",
- org.eclipse.minorityReportPlugin.ui;bundle-version="1.0.0"
+ org.eclipse.kEEPER.plugin.ui;bundle-version="1.0.0",
+ org.eclipse.kEEPER.plugin;visibility:=reexport,
+ org.eclipse.kEEPER.plugin.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

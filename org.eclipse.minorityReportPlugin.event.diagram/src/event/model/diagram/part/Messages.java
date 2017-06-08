@@ -358,16 +358,6 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_EventParameters_4005_target;
-
-	/**
-	* @generated
-	*/
-	public static String NavigatorGroupName_EventParameters_4005_source;
-
-	/**
-	* @generated
-	*/
 	public static String NavigatorActionProvider_OpenDiagramActionName;
 
 	/**

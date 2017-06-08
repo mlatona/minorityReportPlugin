@@ -1,7 +1,7 @@
-# Tracing options for the org.eclipse.minorityReportPlugin.event.diagram plug-in
+# Tracing options for the org.eclipse.kEEPER.plugin.event.diagram plug-in
 
 # Common issues
-org.eclipse.minorityReportPlugin.event.diagram/debug=false
+org.eclipse.kEEPER.plugin.event.diagram/debug=false
 
 # Visual IDs
-org.eclipse.minorityReportPlugin.event.diagram/debug/visualID=false
+org.eclipse.kEEPER.plugin.event.diagram/debug/visualID=false

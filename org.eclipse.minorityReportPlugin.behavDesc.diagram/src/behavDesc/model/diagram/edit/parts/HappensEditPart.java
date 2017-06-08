@@ -103,7 +103,7 @@ public class HappensEditPart extends ShapeNodeEditPart {
 	* @generated NOT
 	*/
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(1,1);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(1, 1);
 		return result;
 	}
 
@@ -119,7 +119,7 @@ public class HappensEditPart extends ShapeNodeEditPart {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		IFigure shape = createNodeShape();
-		figure.add(shape);	
+		figure.add(shape);
 		contentPane = setupContentPane(shape);
 		return figure;
 	}

@@ -22,7 +22,6 @@ import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.ComplexEventNameEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
-import event.model.diagram.edit.parts.EventParameters2EditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
 import event.model.diagram.edit.parts.ObserverNameEditPart;
@@ -121,9 +120,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case ComplexEventAgentEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?ComplexEvent?agent", //$NON-NLS-1$
 					ModelElementTypes.ComplexEventAgent_4004);
-		case EventParameters2EditPart.VISUAL_ID:
-			return getImage("Navigator?Link?https://github.com/mlatona/minorityReportPlugin?Event?parameters", //$NON-NLS-1$
-					ModelElementTypes.EventParameters_4005);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -194,8 +190,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getEventParameters_4003Text(view);
 		case ComplexEventAgentEditPart.VISUAL_ID:
 			return getComplexEventAgent_4004Text(view);
-		case EventParameters2EditPart.VISUAL_ID:
-			return getEventParameters_4005Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -312,13 +306,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	* @generated
 	*/
 	private String getComplexEventAgent_4004Text(View view) {
-		return ""; //$NON-NLS-1$
-	}
-
-	/**
-	* @generated
-	*/
-	private String getEventParameters_4005Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

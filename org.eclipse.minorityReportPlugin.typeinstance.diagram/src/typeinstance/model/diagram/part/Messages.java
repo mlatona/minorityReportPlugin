@@ -303,6 +303,11 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String MessageFormatParser_InvalidInputError;
+
+	/**
+	* @generated
+	*/
 	public static String ModelModelingAssistantProviderTitle;
 
 	/**

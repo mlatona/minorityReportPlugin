@@ -17,7 +17,6 @@ import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
-import event.model.diagram.edit.parts.EventParameters2EditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
 import event.model.diagram.edit.parts.ParameterEditPart;
@@ -169,7 +168,6 @@ public class ModelDiagramUpdater {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_PrimitiveEvent_Agent_4001(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4003(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4005(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_PrimitiveEvent_Observer_4002(modelElement));
 		return result;
 	}
@@ -201,9 +199,8 @@ public class ModelDiagramUpdater {
 	public static List<ModelLinkDescriptor> getComplexEvent_2010ContainedLinks(View view) {
 		ComplexEvent modelElement = (ComplexEvent) view.getElement();
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4003(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_ComplexEvent_Agent_4004(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4005(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4003(modelElement));
 		return result;
 	}
 
@@ -223,9 +220,8 @@ public class ModelDiagramUpdater {
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_PrimitiveEvent_Agent_4001(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Event_Parameters_4003(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_ComplexEvent_Agent_4004(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Event_Parameters_4005(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Event_Parameters_4003(modelElement, crossReferences));
 		return result;
 	}
 
@@ -238,7 +234,6 @@ public class ModelDiagramUpdater {
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Event_Parameters_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Event_Parameters_4005(modelElement, crossReferences));
 		result.addAll(getIncomingFeatureModelFacetLinks_PrimitiveEvent_Observer_4002(modelElement, crossReferences));
 		return result;
 	}
@@ -252,7 +247,6 @@ public class ModelDiagramUpdater {
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		result.addAll(getIncomingFeatureModelFacetLinks_Event_Parameters_4003(modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Event_Parameters_4005(modelElement, crossReferences));
 		return result;
 	}
 
@@ -271,7 +265,6 @@ public class ModelDiagramUpdater {
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_PrimitiveEvent_Agent_4001(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4003(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4005(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_PrimitiveEvent_Observer_4002(modelElement));
 		return result;
 	}
@@ -303,9 +296,8 @@ public class ModelDiagramUpdater {
 	public static List<ModelLinkDescriptor> getComplexEvent_2010OutgoingLinks(View view) {
 		ComplexEvent modelElement = (ComplexEvent) view.getElement();
 		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4003(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_ComplexEvent_Agent_4004(modelElement));
-		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4005(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Event_Parameters_4003(modelElement));
 		return result;
 	}
 
@@ -352,22 +344,6 @@ public class ModelDiagramUpdater {
 			if (setting.getEStructuralFeature() == ModelPackage.eINSTANCE.getComplexEvent_Agent()) {
 				result.add(new ModelLinkDescriptor(setting.getEObject(), target,
 						ModelElementTypes.ComplexEventAgent_4004, ComplexEventAgentEditPart.VISUAL_ID));
-			}
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	private static Collection<ModelLinkDescriptor> getIncomingFeatureModelFacetLinks_Event_Parameters_4005(
-			Parameter target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
-		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == ModelPackage.eINSTANCE.getEvent_Parameters()) {
-				result.add(new ModelLinkDescriptor(setting.getEObject(), target, ModelElementTypes.EventParameters_4005,
-						EventParameters2EditPart.VISUAL_ID));
 			}
 		}
 		return result;
@@ -430,20 +406,6 @@ public class ModelDiagramUpdater {
 		}
 		result.add(new ModelLinkDescriptor(source, destination, ModelElementTypes.ComplexEventAgent_4004,
 				ComplexEventAgentEditPart.VISUAL_ID));
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	private static Collection<ModelLinkDescriptor> getOutgoingFeatureModelFacetLinks_Event_Parameters_4005(
-			Event source) {
-		LinkedList<ModelLinkDescriptor> result = new LinkedList<ModelLinkDescriptor>();
-		for (Iterator<?> destinations = source.getParameters().iterator(); destinations.hasNext();) {
-			Parameter destination = (Parameter) destinations.next();
-			result.add(new ModelLinkDescriptor(source, destination, ModelElementTypes.EventParameters_4005,
-					EventParameters2EditPart.VISUAL_ID));
-		}
 		return result;
 	}
 

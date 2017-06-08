@@ -348,19 +348,6 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		}
 
 		/**
-		* @generated
-		*/
-		public boolean canCreateEventParameters_4005(Event source, Parameter target) {
-			if (source != null) {
-				if (source.getParameters().contains(target)) {
-					return false;
-				}
-			}
-
-			return canExistEventParameters_4005(source, target);
-		}
-
-		/**
 			 * @generated
 			 */
 		public boolean canCreatePrimitiveEventObserver_4002(PrimitiveEvent source, Observer target) {
@@ -391,13 +378,6 @@ public class ModelBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		* @generated
 		*/
 		public boolean canExistComplexEventAgent_4004(ComplexEvent source, Agent target) {
-			return true;
-		}
-
-		/**
-		* @generated
-		*/
-		public boolean canExistEventParameters_4005(Event source, Parameter target) {
 			return true;
 		}
 

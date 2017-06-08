@@ -54,7 +54,7 @@
    <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
       <?gmfgen generated="true"?>
       <objectContribution
-            id="org.eclipse.minorityReportPlugin.behavDesc.diagram.InitDiagram"
+            id="org.eclipse.kEEPER.plugin.behavDesc.diagram.InitDiagram"
             nameFilter="*.behavDescmodel"
             objectClass="org.eclipse.core.resources.IFile">
          <action
@@ -62,7 +62,7 @@
                class="behavDesc.model.diagram.part.ModelInitDiagramFileAction"
                menubarPath="additions"
                enablesFor="1"
-               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.InitDiagramAction">
+               id="org.eclipse.kEEPER.plugin.behavDesc.diagram.InitDiagramAction">
          </action>
       </objectContribution>
    </extension>
@@ -152,7 +152,7 @@
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
       <?gmfgen generated="true"?>
       <propertyContributor
-            contributorId="org.eclipse.minorityReportPlugin.behavDesc.diagram"
+            contributorId="org.eclipse.kEEPER.plugin.behavDesc.diagram"
             labelProvider="behavDesc.model.diagram.sheet.ModelSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
@@ -162,7 +162,7 @@
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
       <?gmfgen generated="true"?>   
-      <propertyTabs contributorId="org.eclipse.minorityReportPlugin.behavDesc.diagram">
+      <propertyTabs contributorId="org.eclipse.kEEPER.plugin.behavDesc.diagram">
          <propertyTab
              category="visual"
              id="property.tab.AppearancePropertySection"
@@ -180,7 +180,7 @@
 
    <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
       <?gmfgen generated="true"?>   
-      <propertySections contributorId="org.eclipse.minorityReportPlugin.behavDesc.diagram">
+      <propertySections contributorId="org.eclipse.kEEPER.plugin.behavDesc.diagram">
          <propertySection id="property.section.ConnectorAppearancePropertySection" 
             filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
             class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
@@ -288,7 +288,7 @@
       <?gmfgen generated="true"?>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.Environment_1000"
+               id="org.eclipse.kEEPER.plugin.behavDesc.diagram.Environment_1000"
                name="%metatype.name.Environment_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Environment"
@@ -298,7 +298,7 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescription_2001"
+               id="org.eclipse.kEEPER.plugin.behavDesc.diagram.BehaviouralDescription_2001"
                name="%metatype.name.BehaviouralDescription_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="BehaviouralDescription"
@@ -308,7 +308,7 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.Happens_2002"
+               id="org.eclipse.kEEPER.plugin.behavDesc.diagram.Happens_2002"
                name="%metatype.name.Happens_2002"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Happens"
@@ -318,7 +318,7 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAt_2003"
+               id="org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAt_2003"
                name="%metatype.name.HoldsAt_2003"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HoldsAt"
@@ -328,7 +328,7 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <metamodelType
-               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAtBetween_2004"
+               id="org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAtBetween_2004"
                name="%metatype.name.HoldsAtBetween_2004"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HoldsAtBetween"
@@ -338,7 +338,7 @@
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <specializationType
-               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"
+               id="org.eclipse.kEEPER.plugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"
                name="%metatype.name.BehaviouralDescriptionHappens_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
@@ -349,29 +349,29 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
       <?gmfgen generated="true"?>
-      <clientContext id="org.eclipse.minorityReportPlugin.behavDesc.diagram.TypeContext">
+      <clientContext id="org.eclipse.kEEPER.plugin.behavDesc.diagram.TypeContext">
          <enablement>
             <test
                property="org.eclipse.gmf.runtime.emf.core.editingDomain"
-               value="org.eclipse.minorityReportPlugin.behavDesc.diagram.EditingDomain"/>
+               value="org.eclipse.kEEPER.plugin.behavDesc.diagram.EditingDomain"/>
          </enablement>
       </clientContext> 
-      <binding context="org.eclipse.minorityReportPlugin.behavDesc.diagram.TypeContext">
-         <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.Environment_1000"/>
-         <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescription_2001"/>
-         <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.Happens_2002"/>
-         <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAt_2003"/>
-         <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAtBetween_2004"/>
-         <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"/>
+      <binding context="org.eclipse.kEEPER.plugin.behavDesc.diagram.TypeContext">
+         <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.Environment_1000"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.BehaviouralDescription_2001"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.Happens_2002"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAt_2003"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAtBetween_2004"/>
+         <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
 	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
       <?gmfgen generated="true"?>
        <propertyTester
-           id="org.eclipse.minorityReportPlugin.behavDesc.diagram.URIEditorInputPropertyTester"
+           id="org.eclipse.kEEPER.plugin.behavDesc.diagram.URIEditorInputPropertyTester"
            type="org.eclipse.emf.common.ui.URIEditorInput"
-           namespace="org.eclipse.minorityReportPlugin.behavDesc.diagram"
+           namespace="org.eclipse.kEEPER.plugin.behavDesc.diagram"
            properties="isURIEditorInput"
            class="behavDesc.model.diagram.part.ModelUriEditorInputTester">
        </propertyTester>
@@ -381,14 +381,14 @@
       <?gmfgen generated="true"?>
       <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
-            <contentExtension pattern="org.eclipse.minorityReportPlugin.behavDesc.diagram.resourceContent"/>
-			<contentExtension pattern="org.eclipse.minorityReportPlugin.behavDesc.diagram.domainResourceContent"/>
-            <contentExtension pattern="org.eclipse.minorityReportPlugin.behavDesc.diagram.navigatorLinkHelper"/>
+            <contentExtension pattern="org.eclipse.kEEPER.plugin.behavDesc.diagram.resourceContent"/>
+			<contentExtension pattern="org.eclipse.kEEPER.plugin.behavDesc.diagram.domainResourceContent"/>
+            <contentExtension pattern="org.eclipse.kEEPER.plugin.behavDesc.diagram.navigatorLinkHelper"/>
          </includes>
       </viewerContentBinding>
       <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
          <includes>
-            <actionExtension pattern="org.eclipse.minorityReportPlugin.behavDesc.diagram.navigatorActionProvider"/>
+            <actionExtension pattern="org.eclipse.kEEPER.plugin.behavDesc.diagram.navigatorActionProvider"/>
          </includes>
       </viewerActionBinding>
    </extension>
@@ -396,7 +396,7 @@
    <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
       <?gmfgen generated="true"?>
       <navigatorContent
-            id="org.eclipse.minorityReportPlugin.behavDesc.diagram.resourceContent" 
+            id="org.eclipse.kEEPER.plugin.behavDesc.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
             contentProvider="behavDesc.model.diagram.navigator.ModelNavigatorContentProvider" 
@@ -418,7 +418,7 @@
             </or>
          </possibleChildren>
          <commonSorter 
-               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.navigatorSorter" 
+               id="org.eclipse.kEEPER.plugin.behavDesc.diagram.navigatorSorter" 
                class="behavDesc.model.diagram.navigator.ModelNavigatorSorter">
             <parentExpression>
                <or>
@@ -432,7 +432,7 @@
          </commonSorter>
       </navigatorContent>
       <navigatorContent
-            id="org.eclipse.minorityReportPlugin.behavDesc.diagram.domainResourceContent" 
+            id="org.eclipse.kEEPER.plugin.behavDesc.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
             contentProvider="behavDesc.model.diagram.navigator.ModelDomainNavigatorContentProvider" 
@@ -453,7 +453,7 @@
          </possibleChildren>
       </navigatorContent>
       <actionProvider
-            id="org.eclipse.minorityReportPlugin.behavDesc.diagram.navigatorActionProvider"
+            id="org.eclipse.kEEPER.plugin.behavDesc.diagram.navigatorActionProvider"
             class="behavDesc.model.diagram.navigator.ModelNavigatorActionProvider">
          <enablement>
             <or>
@@ -466,12 +466,12 @@
 	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
       <?gmfgen generated="true"?>
       <linkHelper
-            id="org.eclipse.minorityReportPlugin.behavDesc.diagram.navigatorLinkHelper"
+            id="org.eclipse.kEEPER.plugin.behavDesc.diagram.navigatorLinkHelper"
             class="behavDesc.model.diagram.navigator.ModelNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
-               <test property="org.eclipse.minorityReportPlugin.behavDesc.diagram.isURIEditorInput"/>
+               <test property="org.eclipse.kEEPER.plugin.behavDesc.diagram.isURIEditorInput"/>
             </and>
          </editorInputEnablement>
          <selectionEnablement>
@@ -505,7 +505,7 @@
       <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
       </menuContribution -->
       <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
-         <command commandId="org.eclipse.minorityReportPlugin.behavDesc.diagram.LoadResourceAction">
+         <command commandId="org.eclipse.kEEPER.plugin.behavDesc.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
                   <with variable="activePartId"><equals value="behavDesc.model.diagram.part.ModelDiagramEditorID"/></with>
@@ -521,7 +521,7 @@
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
       <category id="behavDesc.model.diagram.part.ModelDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
-      <command id="org.eclipse.minorityReportPlugin.behavDesc.diagram.LoadResourceAction"
+      <command id="org.eclipse.kEEPER.plugin.behavDesc.diagram.LoadResourceAction"
          name="Load Resource"
          categoryId="behavDesc.model.diagram.part.ModelDiagramEditorID"
          defaultHandler="behavDesc.model.diagram.part.LoadResourceAction"/>

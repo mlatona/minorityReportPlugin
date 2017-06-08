@@ -17,14 +17,11 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import event.model.diagram.edit.commands.ComplexEventAgentCreateCommand;
 import event.model.diagram.edit.commands.ComplexEventAgentReorientCommand;
-import event.model.diagram.edit.commands.EventParameters2CreateCommand;
-import event.model.diagram.edit.commands.EventParameters2ReorientCommand;
 import event.model.diagram.edit.commands.EventParametersCreateCommand;
 import event.model.diagram.edit.commands.EventParametersReorientCommand;
 import event.model.diagram.edit.commands.PrimitiveEventAgentCreateCommand;
 import event.model.diagram.edit.commands.PrimitiveEventAgentReorientCommand;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
-import event.model.diagram.edit.parts.EventParameters2EditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.PrimitiveEventAgentEditPart;
 import event.model.diagram.part.ModelVisualIDRegistry;
@@ -58,13 +55,6 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (ModelVisualIDRegistry.getVisualID(incomingLink) == EventParametersEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
 			if (ModelVisualIDRegistry.getVisualID(incomingLink) == ComplexEventAgentEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -72,7 +62,7 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (ModelVisualIDRegistry.getVisualID(incomingLink) == EventParameters2EditPart.VISUAL_ID) {
+			if (ModelVisualIDRegistry.getVisualID(incomingLink) == EventParametersEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
@@ -108,13 +98,10 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 		if (ModelElementTypes.PrimitiveEventAgent_4001 == req.getElementType()) {
 			return null;
 		}
-		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
-			return null;
-		}
 		if (ModelElementTypes.ComplexEventAgent_4004 == req.getElementType()) {
 			return null;
 		}
-		if (ModelElementTypes.EventParameters_4005 == req.getElementType()) {
+		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -127,14 +114,11 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 		if (ModelElementTypes.PrimitiveEventAgent_4001 == req.getElementType()) {
 			return getGEFWrapper(new PrimitiveEventAgentCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
-			return getGEFWrapper(new EventParametersCreateCommand(req, req.getSource(), req.getTarget()));
-		}
 		if (ModelElementTypes.ComplexEventAgent_4004 == req.getElementType()) {
 			return getGEFWrapper(new ComplexEventAgentCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (ModelElementTypes.EventParameters_4005 == req.getElementType()) {
-			return getGEFWrapper(new EventParameters2CreateCommand(req, req.getSource(), req.getTarget()));
+		if (ModelElementTypes.EventParameters_4003 == req.getElementType()) {
+			return getGEFWrapper(new EventParametersCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -149,12 +133,10 @@ public class AgentItemSemanticEditPolicy extends ModelBaseItemSemanticEditPolicy
 		switch (getVisualID(req)) {
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return getGEFWrapper(new PrimitiveEventAgentReorientCommand(req));
-		case EventParametersEditPart.VISUAL_ID:
-			return getGEFWrapper(new EventParametersReorientCommand(req));
 		case ComplexEventAgentEditPart.VISUAL_ID:
 			return getGEFWrapper(new ComplexEventAgentReorientCommand(req));
-		case EventParameters2EditPart.VISUAL_ID:
-			return getGEFWrapper(new EventParameters2ReorientCommand(req));
+		case EventParametersEditPart.VISUAL_ID:
+			return getGEFWrapper(new EventParametersReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

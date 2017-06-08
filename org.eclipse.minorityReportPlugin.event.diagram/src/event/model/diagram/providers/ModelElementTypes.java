@@ -18,7 +18,6 @@ import event.model.diagram.edit.parts.AgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventAgentEditPart;
 import event.model.diagram.edit.parts.ComplexEventEditPart;
 import event.model.diagram.edit.parts.EnvironmentEditPart;
-import event.model.diagram.edit.parts.EventParameters2EditPart;
 import event.model.diagram.edit.parts.EventParametersEditPart;
 import event.model.diagram.edit.parts.ObserverEditPart;
 import event.model.diagram.edit.parts.ParameterEditPart;
@@ -59,60 +58,53 @@ public class ModelElementTypes {
 	* @generated
 	*/
 	public static final IElementType Environment_1000 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.Environment_1000"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.event.diagram.Environment_1000"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType PrimitiveEvent_2005 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.PrimitiveEvent_2005"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.event.diagram.PrimitiveEvent_2005"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Agent_2007 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.Agent_2007"); //$NON-NLS-1$
+	public static final IElementType Agent_2007 = getElementType("org.eclipse.kEEPER.plugin.event.diagram.Agent_2007"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType Observer_2008 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.Observer_2008"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.event.diagram.Observer_2008"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType Parameter_2009 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.Parameter_2009"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.event.diagram.Parameter_2009"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType ComplexEvent_2010 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.ComplexEvent_2010"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.event.diagram.ComplexEvent_2010"); //$NON-NLS-1$
 
 	/**
 	* @generated
 	*/
 	public static final IElementType PrimitiveEventAgent_4001 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.PrimitiveEventAgent_4001"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.event.diagram.PrimitiveEventAgent_4001"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType EventParameters_4003 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.EventParameters_4003"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.event.diagram.EventParameters_4003"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType ComplexEventAgent_4004 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.ComplexEventAgent_4004"); //$NON-NLS-1$
-
-	/**
-	* @generated
-	*/
-	public static final IElementType EventParameters_4005 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.EventParameters_4005"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.event.diagram.ComplexEventAgent_4004"); //$NON-NLS-1$
 
 	/**
 	* @generated
 	*/
 	public static final IElementType PrimitiveEventObserver_4002 = getElementType(
-			"org.eclipse.minorityReportPlugin.event.diagram.PrimitiveEventObserver_4002"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.event.diagram.PrimitiveEventObserver_4002"); //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -166,11 +158,9 @@ public class ModelElementTypes {
 
 			elements.put(PrimitiveEventAgent_4001, ModelPackage.eINSTANCE.getPrimitiveEvent_Agent());
 
-			elements.put(EventParameters_4003, ModelPackage.eINSTANCE.getEvent_Parameters());
-
 			elements.put(ComplexEventAgent_4004, ModelPackage.eINSTANCE.getComplexEvent_Agent());
 
-			elements.put(EventParameters_4005, ModelPackage.eINSTANCE.getEvent_Parameters());
+			elements.put(EventParameters_4003, ModelPackage.eINSTANCE.getEvent_Parameters());
 
 			elements.put(PrimitiveEventObserver_4002, ModelPackage.eINSTANCE.getPrimitiveEvent_Observer());
 		}
@@ -197,9 +187,8 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Parameter_2009);
 			KNOWN_ELEMENT_TYPES.add(ComplexEvent_2010);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventAgent_4001);
-			KNOWN_ELEMENT_TYPES.add(EventParameters_4003);
 			KNOWN_ELEMENT_TYPES.add(ComplexEventAgent_4004);
-			KNOWN_ELEMENT_TYPES.add(EventParameters_4005);
+			KNOWN_ELEMENT_TYPES.add(EventParameters_4003);
 			KNOWN_ELEMENT_TYPES.add(PrimitiveEventObserver_4002);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -224,12 +213,10 @@ public class ModelElementTypes {
 			return ComplexEvent_2010;
 		case PrimitiveEventAgentEditPart.VISUAL_ID:
 			return PrimitiveEventAgent_4001;
-		case EventParametersEditPart.VISUAL_ID:
-			return EventParameters_4003;
 		case ComplexEventAgentEditPart.VISUAL_ID:
 			return ComplexEventAgent_4004;
-		case EventParameters2EditPart.VISUAL_ID:
-			return EventParameters_4005;
+		case EventParametersEditPart.VISUAL_ID:
+			return EventParameters_4003;
 		case PrimitiveEventObserverEditPart.VISUAL_ID:
 			return PrimitiveEventObserver_4002;
 		}

@@ -30,11 +30,10 @@ public class ModelModelingAssistantProviderOfAgentEditPart extends ModelModeling
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnTarget(AgentEditPart target) {
-		List<IElementType> types = new ArrayList<IElementType>(4);
+		List<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(ModelElementTypes.PrimitiveEventAgent_4001);
-		types.add(ModelElementTypes.EventParameters_4003);
 		types.add(ModelElementTypes.ComplexEventAgent_4004);
-		types.add(ModelElementTypes.EventParameters_4005);
+		types.add(ModelElementTypes.EventParameters_4003);
 		return types;
 	}
 
@@ -55,12 +54,9 @@ public class ModelModelingAssistantProviderOfAgentEditPart extends ModelModeling
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == ModelElementTypes.PrimitiveEventAgent_4001) {
 			types.add(ModelElementTypes.PrimitiveEvent_2005);
-		} else if (relationshipType == ModelElementTypes.EventParameters_4003) {
-			types.add(ModelElementTypes.PrimitiveEvent_2005);
-			types.add(ModelElementTypes.ComplexEvent_2010);
 		} else if (relationshipType == ModelElementTypes.ComplexEventAgent_4004) {
 			types.add(ModelElementTypes.ComplexEvent_2010);
-		} else if (relationshipType == ModelElementTypes.EventParameters_4005) {
+		} else if (relationshipType == ModelElementTypes.EventParameters_4003) {
 			types.add(ModelElementTypes.PrimitiveEvent_2005);
 			types.add(ModelElementTypes.ComplexEvent_2010);
 		}

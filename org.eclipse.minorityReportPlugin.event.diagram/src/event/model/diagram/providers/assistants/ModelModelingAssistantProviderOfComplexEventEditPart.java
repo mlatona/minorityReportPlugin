@@ -34,10 +34,9 @@ public class ModelModelingAssistantProviderOfComplexEventEditPart extends ModelM
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnSource(ComplexEventEditPart source) {
-		List<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(ModelElementTypes.EventParameters_4003);
+		List<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(ModelElementTypes.ComplexEventAgent_4004);
-		types.add(ModelElementTypes.EventParameters_4005);
+		types.add(ModelElementTypes.EventParameters_4003);
 		return types;
 	}
 
@@ -59,25 +58,16 @@ public class ModelModelingAssistantProviderOfComplexEventEditPart extends ModelM
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
 		if (targetEditPart instanceof AgentEditPart) {
-			types.add(ModelElementTypes.EventParameters_4003);
-		}
-		if (targetEditPart instanceof ObserverEditPart) {
-			types.add(ModelElementTypes.EventParameters_4003);
-		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(ModelElementTypes.EventParameters_4003);
-		}
-		if (targetEditPart instanceof AgentEditPart) {
 			types.add(ModelElementTypes.ComplexEventAgent_4004);
 		}
 		if (targetEditPart instanceof AgentEditPart) {
-			types.add(ModelElementTypes.EventParameters_4005);
+			types.add(ModelElementTypes.EventParameters_4003);
 		}
 		if (targetEditPart instanceof ObserverEditPart) {
-			types.add(ModelElementTypes.EventParameters_4005);
+			types.add(ModelElementTypes.EventParameters_4003);
 		}
 		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(ModelElementTypes.EventParameters_4005);
+			types.add(ModelElementTypes.EventParameters_4003);
 		}
 		return types;
 	}
@@ -97,13 +87,9 @@ public class ModelModelingAssistantProviderOfComplexEventEditPart extends ModelM
 	*/
 	public List<IElementType> doGetTypesForTarget(ComplexEventEditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
-		if (relationshipType == ModelElementTypes.EventParameters_4003) {
+		if (relationshipType == ModelElementTypes.ComplexEventAgent_4004) {
 			types.add(ModelElementTypes.Agent_2007);
-			types.add(ModelElementTypes.Observer_2008);
-			types.add(ModelElementTypes.Parameter_2009);
-		} else if (relationshipType == ModelElementTypes.ComplexEventAgent_4004) {
-			types.add(ModelElementTypes.Agent_2007);
-		} else if (relationshipType == ModelElementTypes.EventParameters_4005) {
+		} else if (relationshipType == ModelElementTypes.EventParameters_4003) {
 			types.add(ModelElementTypes.Agent_2007);
 			types.add(ModelElementTypes.Observer_2008);
 			types.add(ModelElementTypes.Parameter_2009);

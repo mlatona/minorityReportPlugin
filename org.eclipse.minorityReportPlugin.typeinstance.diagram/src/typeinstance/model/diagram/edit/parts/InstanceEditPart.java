@@ -10,9 +10,11 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.LayoutEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.FlowLayoutEditPolicy;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
@@ -20,6 +22,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.swt.graphics.Color;
 
 import typeinstance.model.diagram.edit.policies.InstanceItemSemanticEditPolicy;
+import typeinstance.model.diagram.part.ModelVisualIDRegistry;
 
 /**
  * @generated
@@ -98,6 +101,54 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
+	protected boolean addFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof InstanceNameEditPart) {
+			((InstanceNameEditPart) childEditPart).setLabel(getPrimaryShape().getFigureInstanceNameFigure());
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	* @generated
+	*/
+	protected boolean removeFixedChild(EditPart childEditPart) {
+		if (childEditPart instanceof InstanceNameEditPart) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	* @generated
+	*/
+	protected void addChildVisual(EditPart childEditPart, int index) {
+		if (addFixedChild(childEditPart)) {
+			return;
+		}
+		super.addChildVisual(childEditPart, -1);
+	}
+
+	/**
+	* @generated
+	*/
+	protected void removeChildVisual(EditPart childEditPart) {
+		if (removeFixedChild(childEditPart)) {
+			return;
+		}
+		super.removeChildVisual(childEditPart);
+	}
+
+	/**
+	* @generated
+	*/
+	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
+		return getContentPane();
+	}
+
+	/**
+	* @generated
+	*/
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
 		return result;
@@ -127,6 +178,11 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure setupContentPane(IFigure nodeShape) {
+		if (nodeShape.getLayoutManager() == null) {
+			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
+			layout.setSpacing(5);
+			nodeShape.setLayoutManager(layout);
+		}
 		return nodeShape; // use nodeShape itself as contentPane
 	}
 
@@ -177,6 +233,13 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 	}
 
 	/**
+	* @generated
+	*/
+	public EditPart getPrimaryChildEditPart() {
+		return getChildBySemanticHint(ModelVisualIDRegistry.getType(InstanceNameEditPart.VISUAL_ID));
+	}
+
+	/**
 	 * @generated
 	 */
 	public class InstanceFigure extends RectangleFigure {
@@ -212,7 +275,7 @@ public class InstanceEditPart extends ShapeNodeEditPart {
 
 			fFigureInstanceNameFigure = new WrappingLabel();
 
-			fFigureInstanceNameFigure.setText("Insert name of the instance");
+			fFigureInstanceNameFigure.setText("---Name of instance---");
 
 			this.add(fFigureInstanceNameFigure);
 

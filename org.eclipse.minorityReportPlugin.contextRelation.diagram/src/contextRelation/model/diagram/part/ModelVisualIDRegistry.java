@@ -22,7 +22,7 @@ public class ModelVisualIDRegistry {
 	/**
 	* @generated
 	*/
-	private static final String DEBUG_KEY = "org.eclipse.minorityReportPlugin.contextRelation.diagram/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "org.eclipse.kEEPER.plugin.contextRelation.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	* @generated

@@ -23,6 +23,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EMFCoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.gmf.runtime.notation.Connector;
+import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
@@ -42,8 +43,10 @@ import org.eclipse.swt.graphics.FontData;
 
 import typeinstance.model.diagram.edit.parts.EnvironmentEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
+import typeinstance.model.diagram.edit.parts.InstanceNameEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceTypeEditPart;
 import typeinstance.model.diagram.edit.parts.TypeEditPart;
+import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
 
 /**
@@ -74,10 +77,10 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 	*/
 	protected boolean provides(CreateViewForKindOperation op) {
 		/*
-				if (op.getViewKind() == Node.class)
-					return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
-				if (op.getViewKind() == Edge.class)
-					return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		    if (op.getViewKind() == Node.class)
+		      return getNodeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
+		    if (op.getViewKind() == Edge.class)
+		      return getEdgeViewClass(op.getSemanticAdapter(), op.getContainerView(), op.getSemanticHint()) != null;
 		*/
 		return true;
 	}
@@ -245,6 +248,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5001 = createLabel(node, ModelVisualIDRegistry.getType(InstanceNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -281,6 +285,7 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5002 = createLabel(node, ModelVisualIDRegistry.getType(TypeNameEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -335,6 +340,16 @@ public class ModelViewProvider extends AbstractProvider implements IViewProvider
 			shortcutAnnotation.getDetails().put("modelID", EnvironmentEditPart.MODEL_ID); //$NON-NLS-1$
 			target.getEAnnotations().add(shortcutAnnotation);
 		}
+	}
+
+	/**
+	* @generated
+	*/
+	private Node createLabel(View owner, String hint) {
+		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();
+		rv.setType(hint);
+		ViewUtil.insertChildView(owner, rv, ViewUtil.APPEND, true);
+		return rv;
 	}
 
 	/**

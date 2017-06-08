@@ -18,34 +18,30 @@
    <extension
          point="org.eclipse.ui.menus">
       <menuContribution
-            allPopups="false"
+            allPopups="true"
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
-         <command
-               commandId="org.eclipse.minorityreportplugin.txtconverter.generateTxt"
-               icon="icons/txtlogo.jpg"
-               label="Generate TXT file"
-               style="push">
-            <visibleWhen
-                  checkEnabled="false">
-               <with
-                     variable="selection">
-                  <iterate
-                        ifEmpty="false"
-                        operator="or">
-                     <or>
+         <menu
+               label="Convert">
+            <command
+                  commandId="org.eclipse.minorityreportplugin.txtconverter.generateTxt"
+                  icon="icons/txtlogo.jpg"
+                  label="Generate TXT file"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="selection">
+                     <iterate
+                           ifEmpty="false"
+                           operator="or">
                         <test
-                              property="org.eclipse.core.resources.extension"
-                              value="generalmodel">
+                              property="org.eclipse.core.resources.extension.IResource">
                         </test>
-                        <test
-                              property="org.eclipse.core.resources.extension"
-                              value="typeinstancemodel">
-                        </test>
-                     </or>
-                  </iterate>
-               </with>
-            </visibleWhen>
-         </command>
+                     </iterate>
+                  </with>
+               </visibleWhen>
+            </command>
+         </menu>
       </menuContribution>
    </extension>
    <extension

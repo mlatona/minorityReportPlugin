@@ -47,36 +47,36 @@ public class ModelElementTypes {
 	* @generated
 	*/
 	public static final IElementType Environment_1000 = getElementType(
-			"org.eclipse.minorityReportPlugin.behavDesc.diagram.Environment_1000"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.behavDesc.diagram.Environment_1000"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType BehaviouralDescription_2001 = getElementType(
-			"org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescription_2001"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.behavDesc.diagram.BehaviouralDescription_2001"); //$NON-NLS-1$
 
 	/**
 	* @generated
 	*/
 	public static final IElementType Happens_2002 = getElementType(
-			"org.eclipse.minorityReportPlugin.behavDesc.diagram.Happens_2002"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.behavDesc.diagram.Happens_2002"); //$NON-NLS-1$
 
 	/**
 	* @generated
 	*/
 	public static final IElementType HoldsAt_2003 = getElementType(
-			"org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAt_2003"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAt_2003"); //$NON-NLS-1$
 
 	/**
 	* @generated
 	*/
 	public static final IElementType HoldsAtBetween_2004 = getElementType(
-			"org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAtBetween_2004"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAtBetween_2004"); //$NON-NLS-1$
 
 	/**
 	* @generated
 	*/
 	public static final IElementType BehaviouralDescriptionHappens_4001 = getElementType(
-			"org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"); //$NON-NLS-1$
 
 	/**
 	* @generated

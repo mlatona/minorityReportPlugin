@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.eclipse.minorityReportPlugin.contextRelation.diagram; singleton:=true
+Bundle-SymbolicName: org.eclipse.kEEPER.plugin.contextRelation.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: contextRelation.model.diagram.part.ModelDiagramEditorPlugin
@@ -33,9 +33,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide,
  org.eclipse.gmf.tooling.runtime;visibility:=reexport,
  org.eclipse.draw2d;visibility:=reexport,
- org.eclipse.minorityReportPlugin;visibility:=reexport,
- org.eclipse.minorityReportPlugin.edit;visibility:=reexport,
  org.eclipse.gef;visibility:=reexport,
- org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport
+ org.eclipse.gmf.runtime.draw2d.ui;visibility:=reexport,
+ org.eclipse.kEEPER.plugin;visibility:=reexport,
+ org.eclipse.kEEPER.plugin.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

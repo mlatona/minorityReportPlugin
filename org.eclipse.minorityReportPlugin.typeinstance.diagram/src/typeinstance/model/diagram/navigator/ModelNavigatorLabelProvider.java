@@ -1,5 +1,8 @@
 package typeinstance.model.diagram.navigator;
 
+import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
+import org.eclipse.gmf.runtime.common.ui.services.parser.ParserOptions;
+import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -17,11 +20,14 @@ import model.Instance;
 import model.Type;
 import typeinstance.model.diagram.edit.parts.EnvironmentEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
+import typeinstance.model.diagram.edit.parts.InstanceNameEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceTypeEditPart;
 import typeinstance.model.diagram.edit.parts.TypeEditPart;
+import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
 import typeinstance.model.diagram.part.ModelDiagramEditorPlugin;
 import typeinstance.model.diagram.part.ModelVisualIDRegistry;
 import typeinstance.model.diagram.providers.ModelElementTypes;
+import typeinstance.model.diagram.providers.ModelParserProvider;
 
 /**
  * @generated
@@ -160,11 +166,14 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	* @generated
 	*/
 	private String getInstance_2005Text(View view) {
-		Instance domainModelElement = (Instance) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Instance_2005,
+				view.getElement() != null ? view.getElement() : view,
+				ModelVisualIDRegistry.getType(InstanceNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
-			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2005); //$NON-NLS-1$
+			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -173,11 +182,14 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 	* @generated
 	*/
 	private String getType_2006Text(View view) {
-		Type domainModelElement = (Type) view.getElement();
-		if (domainModelElement != null) {
-			return domainModelElement.getName();
+		IParser parser = ModelParserProvider.getParser(ModelElementTypes.Type_2006,
+				view.getElement() != null ? view.getElement() : view,
+				ModelVisualIDRegistry.getType(TypeNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
 		} else {
-			ModelDiagramEditorPlugin.getInstance().logError("No domain element for view with visualID = " + 2006); //$NON-NLS-1$
+			ModelDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

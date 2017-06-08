@@ -142,7 +142,7 @@ public class ModelDocumentProvider extends AbstractDocumentProvider implements I
 	*/
 	private TransactionalEditingDomain createEditingDomain() {
 		TransactionalEditingDomain editingDomain = DiagramEditingDomainFactory.getInstance().createEditingDomain();
-		editingDomain.setID("org.eclipse.minorityReportPlugin.event.diagram.EditingDomain"); //$NON-NLS-1$
+		editingDomain.setID("org.eclipse.kEEPER.plugin.event.diagram.EditingDomain"); //$NON-NLS-1$
 		final NotificationFilter diagramResourceModifiedFilter = NotificationFilter
 				.createNotifierFilter(editingDomain.getResourceSet())
 				.and(NotificationFilter.createEventTypeFilter(Notification.ADD))

@@ -29,7 +29,7 @@ public class ModelDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	* @generated
 	*/
-	public static final String ID = "org.eclipse.minorityReportPlugin.contextRelation.diagram"; //$NON-NLS-1$
+	public static final String ID = "org.eclipse.kEEPER.plugin.contextRelation.diagram"; //$NON-NLS-1$
 
 	/**
 	* @generated

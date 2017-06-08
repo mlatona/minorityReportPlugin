@@ -34,10 +34,9 @@ public class ModelModelingAssistantProviderOfPrimitiveEventEditPart extends Mode
 	* @generated
 	*/
 	public List<IElementType> doGetRelTypesOnSource(PrimitiveEventEditPart source) {
-		List<IElementType> types = new ArrayList<IElementType>(4);
+		List<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(ModelElementTypes.PrimitiveEventAgent_4001);
 		types.add(ModelElementTypes.EventParameters_4003);
-		types.add(ModelElementTypes.EventParameters_4005);
 		types.add(ModelElementTypes.PrimitiveEventObserver_4002);
 		return types;
 	}
@@ -71,15 +70,6 @@ public class ModelModelingAssistantProviderOfPrimitiveEventEditPart extends Mode
 		if (targetEditPart instanceof ParameterEditPart) {
 			types.add(ModelElementTypes.EventParameters_4003);
 		}
-		if (targetEditPart instanceof AgentEditPart) {
-			types.add(ModelElementTypes.EventParameters_4005);
-		}
-		if (targetEditPart instanceof ObserverEditPart) {
-			types.add(ModelElementTypes.EventParameters_4005);
-		}
-		if (targetEditPart instanceof ParameterEditPart) {
-			types.add(ModelElementTypes.EventParameters_4005);
-		}
 		if (targetEditPart instanceof ObserverEditPart) {
 			types.add(ModelElementTypes.PrimitiveEventObserver_4002);
 		}
@@ -104,10 +94,6 @@ public class ModelModelingAssistantProviderOfPrimitiveEventEditPart extends Mode
 		if (relationshipType == ModelElementTypes.PrimitiveEventAgent_4001) {
 			types.add(ModelElementTypes.Agent_2007);
 		} else if (relationshipType == ModelElementTypes.EventParameters_4003) {
-			types.add(ModelElementTypes.Agent_2007);
-			types.add(ModelElementTypes.Observer_2008);
-			types.add(ModelElementTypes.Parameter_2009);
-		} else if (relationshipType == ModelElementTypes.EventParameters_4005) {
 			types.add(ModelElementTypes.Agent_2007);
 			types.add(ModelElementTypes.Observer_2008);
 			types.add(ModelElementTypes.Parameter_2009);

@@ -47,23 +47,23 @@ public class ModelElementTypes {
 	* @generated
 	*/
 	public static final IElementType Environment_1000 = getElementType(
-			"org.eclipse.minorityReportPlugin.contextRelation.diagram.Environment_1000"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.contextRelation.diagram.Environment_1000"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType ContextRelation_2001 = getElementType(
-			"org.eclipse.minorityReportPlugin.contextRelation.diagram.ContextRelation_2001"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.contextRelation.diagram.ContextRelation_2001"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
 	public static final IElementType Parameter_2002 = getElementType(
-			"org.eclipse.minorityReportPlugin.contextRelation.diagram.Parameter_2002"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.contextRelation.diagram.Parameter_2002"); //$NON-NLS-1$
 
 	/**
 	* @generated
 	*/
 	public static final IElementType ContextRelationParameters_4001 = getElementType(
-			"org.eclipse.minorityReportPlugin.contextRelation.diagram.ContextRelationParameters_4001"); //$NON-NLS-1$
+			"org.eclipse.kEEPER.plugin.contextRelation.diagram.ContextRelationParameters_4001"); //$NON-NLS-1$
 
 	/**
 	* @generated

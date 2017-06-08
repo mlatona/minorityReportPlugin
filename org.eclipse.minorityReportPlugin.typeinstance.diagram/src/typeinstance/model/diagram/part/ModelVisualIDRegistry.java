@@ -11,7 +11,9 @@ import model.Environment;
 import model.ModelPackage;
 import typeinstance.model.diagram.edit.parts.EnvironmentEditPart;
 import typeinstance.model.diagram.edit.parts.InstanceEditPart;
+import typeinstance.model.diagram.edit.parts.InstanceNameEditPart;
 import typeinstance.model.diagram.edit.parts.TypeEditPart;
+import typeinstance.model.diagram.edit.parts.TypeNameEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -25,7 +27,7 @@ public class ModelVisualIDRegistry {
 	/**
 	* @generated
 	*/
-	private static final String DEBUG_KEY = "org.eclipse.minorityReportPlugin.typeinstance.diagram/debug/visualID"; //$NON-NLS-1$
+	private static final String DEBUG_KEY = "org.eclipse.kEEPER.plugin.typeinstance.diagram/debug/visualID"; //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -150,6 +152,16 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			if (TypeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InstanceEditPart.VISUAL_ID:
+			if (InstanceNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case TypeEditPart.VISUAL_ID:
+			if (TypeNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
