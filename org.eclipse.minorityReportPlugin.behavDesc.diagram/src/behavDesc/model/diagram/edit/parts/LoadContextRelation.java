@@ -9,21 +9,20 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import model.ContextRelation;
 import model.Environment;
-import model.Event;
 import model.ModelFactory;
 import model.ModelPackage;
-import model.impl.EnvironmentImpl;
 
-public class LoadEvents {
+public class LoadContextRelation {
 	
 	private ModelPackage modelPackage;
 	private ModelFactory modelFactory;
 	private Environment env;
 	
-	public LoadEvents() throws IOException{
+	public LoadContextRelation() throws IOException{
 		
-		System.out.println("I'm in loadEvents");
+		System.out.println("I'm in LoadContextRelation");
 		
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;
@@ -34,15 +33,15 @@ public class LoadEvents {
 
 		// Load the resource and resolve the proxies
 		ResourceSet rs = new ResourceSetImpl();
-		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/default.eventmodel"));
+		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/default.contextRelationmodel"));
 		r1.load(null);
 		env = (Environment) r1.getContents().get(0);
 
 		System.out.println(env.toString());
-		System.out.println(env.getEvents().size());
+		System.out.println(env.getContextRelations().size());
 		
-		for (int i = 0; i< env.getEvents().size(); i++){
-			System.out.println("Event: " + env.getEvents().get(i).getName());
+		for (int i = 0; i< env.getContextRelations().size(); i++){
+			System.out.println("Context Relation: " + env.getContextRelations().get(i).getName());
 		}
 		
 	}
@@ -50,5 +49,4 @@ public class LoadEvents {
 	public Environment getEnvironment(){
 		return env;
 	}
-	
 }

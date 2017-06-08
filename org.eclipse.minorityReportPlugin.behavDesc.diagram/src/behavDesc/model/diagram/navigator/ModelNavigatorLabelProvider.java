@@ -15,6 +15,8 @@ import org.eclipse.ui.navigator.ICommonLabelProvider;
 
 import model.BehaviouralDescription;
 import model.Happens;
+import model.HoldsAt;
+import model.HoldsAtBetween;
 
 /**
  * @generated
@@ -79,6 +81,12 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?Happens", //$NON-NLS-1$
 					behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002);
+		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?HoldsAt", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAt_2003);
+		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?HoldsAtBetween", //$NON-NLS-1$
+					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004);
 		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?https://github.com/mlatona/minorityReportPlugin?BehaviouralDescription?happens", //$NON-NLS-1$
@@ -141,6 +149,10 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getBehaviouralDescription_2001Text(view);
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 			return getHappens_2002Text(view);
+		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+			return getHoldsAt_2003Text(view);
+		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+			return getHoldsAtBetween_2004Text(view);
 		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
 			return getBehaviouralDescriptionHappens_4001Text(view);
 		}
@@ -178,6 +190,34 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		} else {
 			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
 					.logError("No domain element for view with visualID = " + 2002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getHoldsAt_2003Text(View view) {
+		HoldsAt domainModelElement = (HoldsAt) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getTime());
+		} else {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2003); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getHoldsAtBetween_2004Text(View view) {
+		HoldsAtBetween domainModelElement = (HoldsAtBetween) view.getElement();
+		if (domainModelElement != null) {
+			return String.valueOf(domainModelElement.getInitialTime());
+		} else {
+			behavDesc.model.diagram.part.ModelDiagramEditorPlugin.getInstance()
+					.logError("No domain element for view with visualID = " + 2004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

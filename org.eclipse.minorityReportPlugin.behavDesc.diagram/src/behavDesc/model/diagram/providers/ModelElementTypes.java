@@ -63,6 +63,18 @@ public class ModelElementTypes {
 	/**
 	* @generated
 	*/
+	public static final IElementType HoldsAt_2003 = getElementType(
+			"org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAt_2003"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
+	public static final IElementType HoldsAtBetween_2004 = getElementType(
+			"org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAtBetween_2004"); //$NON-NLS-1$
+
+	/**
+	* @generated
+	*/
 	public static final IElementType BehaviouralDescriptionHappens_4001 = getElementType(
 			"org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"); //$NON-NLS-1$
 
@@ -110,6 +122,10 @@ public class ModelElementTypes {
 
 			elements.put(Happens_2002, ModelPackage.eINSTANCE.getHappens());
 
+			elements.put(HoldsAt_2003, ModelPackage.eINSTANCE.getHoldsAt());
+
+			elements.put(HoldsAtBetween_2004, ModelPackage.eINSTANCE.getHoldsAtBetween());
+
 			elements.put(BehaviouralDescriptionHappens_4001,
 					ModelPackage.eINSTANCE.getBehaviouralDescription_Happens());
 		}
@@ -132,6 +148,8 @@ public class ModelElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Environment_1000);
 			KNOWN_ELEMENT_TYPES.add(BehaviouralDescription_2001);
 			KNOWN_ELEMENT_TYPES.add(Happens_2002);
+			KNOWN_ELEMENT_TYPES.add(HoldsAt_2003);
+			KNOWN_ELEMENT_TYPES.add(HoldsAtBetween_2004);
 			KNOWN_ELEMENT_TYPES.add(BehaviouralDescriptionHappens_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -148,6 +166,10 @@ public class ModelElementTypes {
 			return BehaviouralDescription_2001;
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 			return Happens_2002;
+		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+			return HoldsAt_2003;
+		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+			return HoldsAtBetween_2004;
 		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
 			return BehaviouralDescriptionHappens_4001;
 		}

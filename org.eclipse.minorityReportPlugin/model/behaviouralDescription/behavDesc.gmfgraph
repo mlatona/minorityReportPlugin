@@ -17,18 +17,20 @@
     <descriptors
         name="happensFigure">
       <actualFigure
-          xsi:type="gmfgraph:Ellipse"
-          name="Happens">
-        <foregroundColor
-            xsi:type="gmfgraph:ConstantColor"
-            value="red"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="HappensName"
-            text="Happens"/>
-      </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+          xsi:type="gmfgraph:InvisibleRectangle"
+          name="happens"/>
+    </descriptors>
+    <descriptors
+        name="holdsAtFigure">
+      <actualFigure
+          xsi:type="gmfgraph:InvisibleRectangle"
+          name="holdsAt"/>
+    </descriptors>
+    <descriptors
+        name="HoldsAtBetweenFigure">
+      <actualFigure
+          xsi:type="gmfgraph:InvisibleRectangle"
+          name="holdsAtBetween"/>
     </descriptors>
   </figures>
   <figures
@@ -48,13 +50,18 @@
       name="BehavDescNode"
       figure="behavDescFigure"/>
   <nodes
+      name="HoldsAtNode"
+      figure="holdsAtFigure"/>
+  <nodes
       name="HappensNode"
       figure="happensFigure"/>
+  <nodes
+      name="HoldsAtBetween"
+      figure="HoldsAtBetweenFigure"/>
   <connections
       name="BDHappens"
       figure="BDHappensFigure"/>
   <labels
       name="Happens"
-      figure="happensFigure"
-      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+      figure="happensFigure"/>
 </gmfgraph:Canvas>

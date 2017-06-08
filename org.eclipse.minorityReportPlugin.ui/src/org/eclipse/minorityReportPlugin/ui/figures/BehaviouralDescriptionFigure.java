@@ -32,47 +32,28 @@ import org.eclipse.jface.dialogs.IInputValidator;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+
+import model.Happens;
+import model.HoldsAt;
+import model.HoldsAtBetween;
+
 import org.eclipse.draw2d.Graphics;
 
 
 
 public class BehaviouralDescriptionFigure extends Shape{
-		private static final String Component = null;
-		private Label labelName = new Label();
-		private Label labelFirstName = new Label();
-		private Label labelCapital = new Label();
-		private XYLayout layout;
 		private int timeInstants;
 		private RectangleFigure r;
+		
+		private ArrayList<Happens> happensList = new ArrayList<Happens>();
+		private ArrayList<HoldsAt> holdsAtList = new ArrayList<HoldsAt>();
+		private ArrayList<HoldsAtBetween> holdsAtBetweenList = new ArrayList<HoldsAtBetween>();
 		
 		/*
 		 * Constructor that set the number of time instants of the figure
 		 */
 		public BehaviouralDescriptionFigure(RectangleFigure r) {
 			System.out.println("BehaviouralDescription Constructor!");
-
-			this.addMouseListener(new MouseListener(){
-				@Override
-				public void mouseDoubleClicked(MouseEvent me) {
-					// TODO Auto-generated method stub
-				
-						System.out.println("Button clicked!");
-			}
-				@Override
-				public void mousePressed(MouseEvent me) {
-					// TODO Auto-generated method stub
-			
-					System.out.println("Button clicked2!");
-
-				}
-
-				@Override
-				public void mouseReleased(MouseEvent me) {
-					// TODO Auto-generated method stub
-					System.out.println("Button clicked!3");
-
-				}
-			});
 			
 			this.r = r;
 			// Input the number of time instants 
@@ -108,6 +89,7 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        int mainX = r.getLocation().x;
 	        int mainY = r.getLocation().y;
 	        int k = 10;
+	        int length = mainWidth/(timeInstants+1);
 	        //System.out.println("A:" + mainWidth +" B:" +  mainHeight +" C:" +  mainX + " D:" + mainY );
 	        graphics.setForegroundColor(new Color(null, 129, 23, 45));
 	        
@@ -119,7 +101,6 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        
 	        // Creating small lines for the timeline
 	        for (int i = 1; i <= timeInstants; i++){
-	        	int length = mainWidth/(timeInstants+1);
 	        	Point p1 = new Point(mainX+length*i, mainY+(mainHeight/2)-10);
 	        	Point p2 = new Point(mainX+length*i, mainY+(mainHeight/2)+10);
 	      
@@ -128,6 +109,54 @@ public class BehaviouralDescriptionFigure extends Shape{
 
 	        }
 	        
+	        if (!happensList.isEmpty()){
+	        	System.out.println("Creating point for events");
+	        	for (int i = 0; i < happensList.size(); i++){
+	        		graphics.setForegroundColor(new Color(null, 0, 0, 255));
+	        		graphics.setBackgroundColor(new Color(null, 0, 0, 255));
+	        		Point ovalStartingPoint = new Point(mainX + length*happensList.get(i).getTime() -3 , mainY + mainHeight/2 - 20);
+	        		graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
+	        	}
+	        }
+	        
+	        if (!holdsAtList.isEmpty()){
+		        System.out.println("Creating point for CR");
+		        for (int i = 0; i < holdsAtList.size(); i++){
+		        	
+		        	if (holdsAtList.get(i).isIsHolding())
+		        		graphics.setForegroundColor(new Color(null, 50, 205, 50));
+		        	else
+		        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
+		        	
+		        	Point ovalStartingPoint = new Point(mainX + length*holdsAtList.get(i).getTime() -3 , mainY + mainHeight/2 + 30);
+		        	graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
+		        }
+	        	
+	        }
+	        
+	        if (!holdsAtBetweenList.isEmpty()){
+		        System.out.println("Creating rectangle for CR");
+		        for (int i = 0; i < holdsAtBetweenList.size(); i++){
+		        	
+		        	if (holdsAtBetweenList.get(i).isIsHolding())
+		        		graphics.setForegroundColor(new Color(null, 50, 205, 50));
+		        	else
+		        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
+		        	
+		        	Point rectangleP1 = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime() , mainY + mainHeight/2 + 20);
+		        	Point rectangleP2 = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime() , mainY + mainHeight/2 + 25);
+		        	Point rectangleP3 = new Point(mainX + length*holdsAtBetweenList.get(i).getEndingTime() , mainY + mainHeight/2 + 25);
+		        	Point rectangleP4 = new Point(mainX + length*holdsAtBetweenList.get(i).getEndingTime() , mainY + mainHeight/2 + 20);
+		        	PointList points = new PointList();
+		        	points.addPoint(rectangleP1);
+		        	points.addPoint(rectangleP2);
+		        	points.addPoint(rectangleP3);
+		        	points.addPoint(rectangleP4);
+		        	
+		        	graphics.drawPolygon(points);
+		        }
+	        	
+	        }
 	        
 	      /* PointList pointList = new PointList();
 	        pointList.addPoint(new Point(mainX+2,mainY+13));
@@ -144,27 +173,23 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        super.paintFigure(graphics);        
 	    }
 	    
-	    public void setHappens(){
-	    	
+	    public void setHappens(Happens newHappens){
 	    	System.out.println("I'm in happens");
-	    	
+	    	happensList.add(newHappens);
 	    }
 	    
-	    public void setHoldsAt(){
+	    public void setHoldsAt(HoldsAt newHoldsAt){
 	    	System.out.println("I'm in holdsat");
+	    	holdsAtList.add(newHoldsAt);
 
 	    }
 	    
-	    public void setHoldsAtBetween(){
+	    public void setHoldsAtBetween(HoldsAtBetween newHoldsAtBetween){
 	    	System.out.println("I'm in holdsatbetween");
+	    	holdsAtBetweenList.add(newHoldsAtBetween);
 
 	    }
-	    
-	    public void setNotHoldsAtBetween(){
-	    	System.out.println("I'm in NOTholdsatbetween");
-
-	    }
-			    
+ 
 	    public int getTimeInstants(){
 	    	return timeInstants;
 	    }

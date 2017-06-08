@@ -63,6 +63,8 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_BehavDescriptions());
 			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_Happens());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_HoldsAts());
+			myFeaturesToSynchronize.add(ModelPackage.eINSTANCE.getEnvironment_HoldsAtBetweens());
 		}
 		return myFeaturesToSynchronize;
 	}
@@ -95,8 +97,14 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 	*/
 	private boolean isMyDiagramElement(View view) {
 		int visualID = behavDesc.model.diagram.part.ModelVisualIDRegistry.getVisualID(view);
-		return visualID == behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart.VISUAL_ID
-				|| visualID == behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID;
+		switch (visualID) {
+		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -254,6 +262,21 @@ public class EnvironmentCanonicalEditPolicy extends CanonicalEditPolicy {
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(behavDesc.model.diagram.part.ModelDiagramUpdater.getHappens_2002ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(behavDesc.model.diagram.part.ModelDiagramUpdater.getHoldsAt_2003ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(
+						behavDesc.model.diagram.part.ModelDiagramUpdater.getHoldsAtBetween_2004ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

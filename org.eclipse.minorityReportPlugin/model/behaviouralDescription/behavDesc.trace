@@ -9,6 +9,12 @@
   <nodeTraces
       visualID="2002"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Happens') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'happens')"/>
+  <nodeTraces
+      visualID="2003"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'HoldsAt') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'holdsAts')"/>
+  <nodeTraces
+      visualID="2004"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'HoldsAtBetween') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'Environment') and _containmentMF_.name = 'holdsAtBetweens')"/>
   <linkTraces
       visualID="4001"
       queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'https://github.com/mlatona/minorityReportPlugin' and _eClass_.name = 'BehaviouralDescription') and _feature_.name = 'happens')"/>

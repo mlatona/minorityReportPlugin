@@ -48,8 +48,12 @@ import org.eclipse.ui.dialogs.ListDialog;
 
 import behavDesc.model.diagram.part.ModelDiagramEditor;
 import model.Happens;
+import model.HoldsAt;
+import model.HoldsAtBetween;
 import model.ModelPackage;
 import model.impl.HappensImpl;
+import model.impl.HoldsAtBetweenImpl;
+import model.impl.HoldsAtImpl;
 
 /**
  * @generated
@@ -74,13 +78,16 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	private ModelDiagramEditor editor;
 
 	private TransactionalEditingDomain editingDomain;
+
 	/**
 	* @generated NOT
 	*/
 	public BehaviouralDescriptionEditPart(View view) {
 		super(view);
-		editor = (ModelDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		editingDomain = editor.getEditingDomain();;
+		editor = (ModelDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+				.getActiveEditor();
+		editingDomain = editor.getEditingDomain();
+		;
 	}
 
 	/**
@@ -224,107 +231,276 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	public void performRequest(Request req) {
 		if (req.getType() == RequestConstants.REQ_OPEN) {
 			ElementListSelectionDialog dialog = new ElementListSelectionDialog(null, new LabelProvider());
-			dialog.setElements(new String[] { "Happens", "Holds at", "Holds at between", "Not holds at between" });
+			dialog.setElements(new String[] { "Happens", "Holds at", "Not Holds at", "Holds at between", "Not holds at between" });
 			dialog.setMultipleSelection(false);
 			dialog.setTitle("Which predicate do you want to select");
 			// user pressed cancel
 			if (dialog.open() != Window.OK) {
 				return;
 			}
-			String predicateSelection = (String) dialog.getResult()[0];
+			String predicateSelected = (String) dialog.getResult()[0];
 
-			switch (predicateSelection) {
+			switch (predicateSelected) {
 			case "Happens": {
-				getPrimaryShape().setHappens();
-				try {
-					// Parsing event file
-					LoadEvents loadEvents = new LoadEvents();
+				Happens newHappens = happensSelected();
+				if (newHappens != null)
+					getPrimaryShape().setHappens(newHappens);
 
-					// Creating second dialog
-					ElementListSelectionDialog showEventsDialog = new ElementListSelectionDialog(null,
-							new LabelProvider());
-					String[] eventsNameArray = new String[loadEvents.getEnvironment().getEvents().size()];
-					for (int i = 0; i < loadEvents.getEnvironment().getEvents().size(); i++) {
-						eventsNameArray[i] = loadEvents.getEnvironment().getEvents().get(i).getName();
-					}
-					showEventsDialog.setElements(eventsNameArray);
-					showEventsDialog.setMultipleSelection(false);
-					showEventsDialog.setTitle("Select an event");
-					// user pressed cancel
-					if (showEventsDialog.open() != Window.OK) {
-						return;
-					}
-
-					String eventSelection = (String) showEventsDialog.getResult()[0];
-					System.out.println("event selected: " + eventSelection);
-
-					// Creating third dialog
-					int timeSelection = createTimeInstantsDialog();
-
-					// Creating Happens
-
-					Command cmd = editor.createAndExecuteShapeRequestCommand(
-							behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002,
-							editor.getDiagramEditPart());
-					editor.getDiagramEditPart().getDiagramEditDomain().getDiagramCommandStack();
-					//	SetRequest setRequest = new SetRequest(editingDomain, comp, org.eclipse.minorityReportPlugin.model.eINSTANCE.getClassOne_Name(), name);
-					//SetRequest setRequest = new SetRequest(editingDomain, null, null, model);
-					//setRequest.setParameter("oldValue", comp.getName());
-					Collection<?> results = DiagramCommandStack.getReturnValues(cmd);
-						
-					Iterator<?> iter = results.iterator();
-					
-					while (iter.hasNext()){
-						Object obj = iter.next();
-						
-						if (obj instanceof CreateElementRequestAdapter){
-							
-							CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
-							Happens newHappens;
-							
-							newHappens = (HappensImpl) cra.resolve();
-							
-							SetRequest setRequest = new SetRequest(editor.getEditingDomain(), newHappens, ModelPackage.eINSTANCE.getHappens_Time(), timeSelection);
-							SetValueCommand operation = new SetValueCommand(setRequest);
-							editor.getDiagramEditDomain().getDiagramCommandStack().execute(new 
-									ICommandProxy(operation));
-							
-							System.out.println("Time instant set");
-						}
-						System.out.println(iter.next().toString());
-					
-					}
-			
-					System.out.println("DONE");
-
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
 			} // Happens
 				break;
 
 			case "Holds at": {
-				getPrimaryShape().setHoldsAt();
+				HoldsAt newHoldsAt = holdsAtSelected(true);
+				if (newHoldsAt != null)
+					getPrimaryShape().setHoldsAt(newHoldsAt);
+			} // Holds at
+				break;
+			
+			case "Not Holds at": {
+				HoldsAt newHoldsAt = holdsAtSelected(false);
+				if (newHoldsAt != null)
+					getPrimaryShape().setHoldsAt(newHoldsAt);
 
 			} // Holds at
 				break;
-
 			case "Holds at between": {
-				getPrimaryShape().setHoldsAtBetween();
+				HoldsAtBetween newHoldsAtBetween = holdsAtBetweenSelected(true);
+				if (newHoldsAtBetween != null)
+					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 			} // Holds at between
 				break;
 
 			case "Not holds at between": {
-				getPrimaryShape().setNotHoldsAtBetween();
+				HoldsAtBetween newHoldsAtBetween = holdsAtBetweenSelected(false);
+				if (newHoldsAtBetween != null)
+					getPrimaryShape().setHoldsAtBetween(newHoldsAtBetween);
 			} // Not holds at between
 				break;
 
 			}
-
 		}
 	}
 
-	public int createTimeInstantsDialog() {
+	/*
+	 * It shows the list of events and sets the happens predicate attributes
+	 */
+	private Happens happensSelected() {
+		try {
+			// Parsing event file
+			LoadEvents loadEvents = new LoadEvents();
+
+			// Creating second dialog to show the list of the available events
+			ElementListSelectionDialog showEventsDialog = new ElementListSelectionDialog(null, new LabelProvider());
+			String[] eventsNameArray = new String[loadEvents.getEnvironment().getEvents().size()];
+			for (int i = 0; i < loadEvents.getEnvironment().getEvents().size(); i++) {
+				eventsNameArray[i] = loadEvents.getEnvironment().getEvents().get(i).getName();
+			}
+			showEventsDialog.setElements(eventsNameArray);
+			showEventsDialog.setMultipleSelection(false);
+			showEventsDialog.setTitle("Select an event");
+			// User pressed cancel
+			if (showEventsDialog.open() != Window.OK) {
+				return null;
+			}
+
+			String eventSelected = (String) showEventsDialog.getResult()[0];
+			System.out.println("event selected: " + eventSelected);
+
+			// Creating third dialog where the user inputs the time instant where to place the event
+			int timeSelection = createSingleTimeInstantsDialog();
+
+			// Creating Happens
+			Command cmd = editor.createAndExecuteShapeRequestCommand(
+					behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002, editor.getDiagramEditPart());
+			editor.getDiagramEditPart().getDiagramEditDomain().getDiagramCommandStack();
+
+			// Creating and executing the command to set the properties
+			Collection<?> results = DiagramCommandStack.getReturnValues(cmd);
+			Iterator<?> iter = results.iterator();
+			Happens newHappens = new HappensImpl();
+			while (iter.hasNext()) {
+				Object obj = iter.next();
+				if (obj instanceof CreateElementRequestAdapter) {
+					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
+					newHappens = (HappensImpl) cra.resolve();
+					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHappens,
+							ModelPackage.eINSTANCE.getHappens_Time(), timeSelection);
+					SetValueCommand operation = new SetValueCommand(setRequestTimeInstant);
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
+				}
+			}
+
+			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
+			for (int i = 0; i < loadEvents.getEnvironment().getEvents().size(); i++) {
+				if (eventSelected.equals(loadEvents.getEnvironment().getEvents().get(i).getName())) {
+					SetRequest setRequestEvent = new SetRequest(editor.getEditingDomain(), newHappens,
+							ModelPackage.eINSTANCE.getHappens_Event(), loadEvents.getEnvironment().getEvents().get(i));
+					SetValueCommand operation = new SetValueCommand(setRequestEvent);
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
+				}
+			}
+
+			return newHappens;
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	private HoldsAt holdsAtSelected(boolean isHolding) {
+		try {
+			// Parsing event file
+			LoadContextRelation loadContextRelations = new LoadContextRelation();
+
+			// Creating second dialog to show the list of the available events
+			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
+					new LabelProvider());
+			String[] contextRelationsNameArray = new String[loadContextRelations.getEnvironment().getContextRelations()
+					.size()];
+			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
+				contextRelationsNameArray[i] = loadContextRelations.getEnvironment().getContextRelations().get(i)
+						.getName();
+			}
+			showContextRelationsDialog.setElements(contextRelationsNameArray);
+			showContextRelationsDialog.setMultipleSelection(false);
+			showContextRelationsDialog.setTitle("Select a Context Relation");
+			// User pressed cancel
+			if (showContextRelationsDialog.open() != Window.OK) {
+				return null;
+			}
+
+			String contextRelationSelected = (String) showContextRelationsDialog.getResult()[0];
+			System.out.println("CR selected: " + contextRelationSelected);
+
+			// Creating third dialog where the user inputs the time instant where to place the event
+			int timeSelection = createSingleTimeInstantsDialog();
+
+			// Creating HoldsAt
+			Command cmd = editor.createAndExecuteShapeRequestCommand(
+					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAt_2003, editor.getDiagramEditPart());
+			editor.getDiagramEditPart().getDiagramEditDomain().getDiagramCommandStack();
+
+			// Creating and executing the command to set the properties
+			Collection<?> results = DiagramCommandStack.getReturnValues(cmd);
+			Iterator<?> iter = results.iterator();
+			HoldsAt newHoldsAt = new HoldsAtImpl();
+			while (iter.hasNext()) {
+				Object obj = iter.next();
+				if (obj instanceof CreateElementRequestAdapter) {
+					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
+					newHoldsAt = (HoldsAtImpl) cra.resolve();
+					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHoldsAt,
+							ModelPackage.eINSTANCE.getHoldsAt_Time(), timeSelection);
+					SetRequest setRequestIsHolding = new SetRequest(editor.getEditingDomain(), newHoldsAt,
+							ModelPackage.eINSTANCE.getHoldsAt_IsHolding(), isHolding);
+					SetValueCommand operation1 = new SetValueCommand(setRequestTimeInstant);
+					SetValueCommand operation2 = new SetValueCommand(setRequestIsHolding);
+
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation1));
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation2));
+				}
+			}
+
+			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
+			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
+				if (contextRelationSelected.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
+					SetRequest setRequestContextRelation = new SetRequest(editor.getEditingDomain(), newHoldsAt,
+							ModelPackage.eINSTANCE.getHoldsAt_ContextRelation(), loadContextRelations.getEnvironment().getContextRelations().get(i));
+					SetValueCommand operation = new SetValueCommand(setRequestContextRelation);
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
+				}
+			}
+
+			return newHoldsAt;
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+
+	private HoldsAtBetween holdsAtBetweenSelected(boolean isHolding) {
+
+		try {
+			// Parsing event file
+			LoadContextRelation loadContextRelations = new LoadContextRelation();
+
+			// Creating second dialog to show the list of the available events
+			ElementListSelectionDialog showContextRelationsDialog = new ElementListSelectionDialog(null,
+					new LabelProvider());
+			String[] contextRelationsNameArray = new String[loadContextRelations.getEnvironment().getContextRelations()
+					.size()];
+			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
+				contextRelationsNameArray[i] = loadContextRelations.getEnvironment().getContextRelations().get(i)
+						.getName();
+			}
+			showContextRelationsDialog.setElements(contextRelationsNameArray);
+			showContextRelationsDialog.setMultipleSelection(false);
+			showContextRelationsDialog.setTitle("Select a Context Relation");
+			// User pressed cancel
+			if (showContextRelationsDialog.open() != Window.OK) {
+				return null;
+			}
+
+			String contextRelationSelected = (String) showContextRelationsDialog.getResult()[0];
+			System.out.println("CR selected: " + contextRelationSelected);
+
+			// Creating third dialog where the user inputs the time instant where to place the event
+			int[] timeSelectedArray = createMultipleTimeInstantsDialog();
+			// Creating HoldsAt
+			Command cmd = editor.createAndExecuteShapeRequestCommand(
+					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004, editor.getDiagramEditPart());
+			editor.getDiagramEditPart().getDiagramEditDomain().getDiagramCommandStack();
+
+			// Creating and executing the command to set the properties
+			Collection<?> results = DiagramCommandStack.getReturnValues(cmd);
+			Iterator<?> iter = results.iterator();
+			HoldsAtBetween newHoldsAtBetween = new HoldsAtBetweenImpl();
+			while (iter.hasNext()) {
+				Object obj = iter.next();
+				if (obj instanceof CreateElementRequestAdapter) {
+					CreateElementRequestAdapter cra = (CreateElementRequestAdapter) obj;
+					newHoldsAtBetween = (HoldsAtBetweenImpl) cra.resolve();
+					SetRequest setRequestTimeInstant1 = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
+							ModelPackage.eINSTANCE.getHoldsAtBetween_InitialTime(), timeSelectedArray[0]);
+					SetRequest setRequestTimeInstant2 = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
+							ModelPackage.eINSTANCE.getHoldsAtBetween_EndingTime(), timeSelectedArray[1]);
+					SetRequest setRequestIsHolding = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
+							ModelPackage.eINSTANCE.getHoldsAtBetween_IsHolding(), isHolding);
+					SetValueCommand operation1 = new SetValueCommand(setRequestTimeInstant1);
+					SetValueCommand operation2 = new SetValueCommand(setRequestTimeInstant2);
+					SetValueCommand operation3 = new SetValueCommand(setRequestIsHolding);
+
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation1));
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation2));
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation3));
+				}
+			}
+
+			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
+			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
+				if (contextRelationSelected.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
+					SetRequest setRequestContextRelation = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
+							ModelPackage.eINSTANCE.getHoldsAt_ContextRelation(), loadContextRelations.getEnvironment().getContextRelations().get(i));
+					SetValueCommand operation = new SetValueCommand(setRequestContextRelation);
+					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));
+				}
+			}
+
+			return newHoldsAtBetween;
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	/*
+	 * It creates the dialog where the user inputs the time instant where to place the event/context relation
+	 */
+	public int createSingleTimeInstantsDialog() {
 		// Creating third dialog
 		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
 		String[] timeInstantsArray = new String[getPrimaryShape().getTimeInstants()];
@@ -344,4 +520,31 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		return Integer.parseInt(timeSelection);
 	}
 
+	/*
+	 * It creates the dialog where the user inputs the TWO time instants where to place the context relation
+	 */
+	public int[] createMultipleTimeInstantsDialog(){
+		// Creating third dialog
+		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
+		String[] timeInstantsArray = new String[getPrimaryShape().getTimeInstants()];
+		for (int i = 0; i < getPrimaryShape().getTimeInstants(); i++) {
+			timeInstantsArray[i] = Integer.toString(i + 1);
+		}
+		timeInstantDialog.setElements(timeInstantsArray);
+		timeInstantDialog.setMultipleSelection(true);
+		timeInstantDialog.setTitle("Select TWO time instants");
+		// user pressed cancel
+		if (timeInstantDialog.open() != Window.OK) {
+			return null;
+		}
+		String timeSelection1 = (String) timeInstantDialog.getResult()[0];
+		String timeSelection2 = (String) timeInstantDialog.getResult()[1];
+		System.out.println("time selected: " + timeSelection1);
+		System.out.println("time selected: " + timeSelection2);
+		int[] timeSelectedArray = new int[2];
+		timeSelectedArray[0] = Integer.parseInt(timeSelection1);;
+		timeSelectedArray[1] = Integer.parseInt(timeSelection2);;
+		
+		return timeSelectedArray;
+	}
 }

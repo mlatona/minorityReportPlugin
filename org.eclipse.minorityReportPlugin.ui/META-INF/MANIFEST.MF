@@ -7,6 +7,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.draw2d,
  org.eclipse.swt
 Export-Package: org.eclipse.minorityReportPlugin.ui.figures
-Import-Package: org.eclipse.jface.dialogs,
+Import-Package: model,
+ org.eclipse.jface.dialogs,
  org.eclipse.jface.window,
  org.eclipse.ui.dialogs

@@ -16,6 +16,8 @@ import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 import model.BehaviouralDescription;
 import model.Environment;
 import model.Happens;
+import model.HoldsAt;
+import model.HoldsAtBetween;
 import model.ModelPackage;
 
 /**
@@ -60,6 +62,22 @@ public class ModelDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator<?> it = modelElement.getHoldsAts().iterator(); it.hasNext();) {
+			HoldsAt childElement = (HoldsAt) it.next();
+			int visualID = behavDesc.model.diagram.part.ModelVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID) {
+				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getHoldsAtBetweens().iterator(); it.hasNext();) {
+			HoldsAtBetween childElement = (HoldsAtBetween) it.next();
+			int visualID = behavDesc.model.diagram.part.ModelVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID) {
+				result.add(new behavDesc.model.diagram.part.ModelNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 
@@ -74,6 +92,10 @@ public class ModelDiagramUpdater {
 			return getBehaviouralDescription_2001ContainedLinks(view);
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 			return getHappens_2002ContainedLinks(view);
+		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+			return getHoldsAt_2003ContainedLinks(view);
+		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+			return getHoldsAtBetween_2004ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -87,6 +109,10 @@ public class ModelDiagramUpdater {
 			return getBehaviouralDescription_2001IncomingLinks(view);
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 			return getHappens_2002IncomingLinks(view);
+		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+			return getHoldsAt_2003IncomingLinks(view);
+		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+			return getHoldsAtBetween_2004IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -100,6 +126,10 @@ public class ModelDiagramUpdater {
 			return getBehaviouralDescription_2001OutgoingLinks(view);
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 			return getHappens_2002OutgoingLinks(view);
+		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+			return getHoldsAt_2003OutgoingLinks(view);
+		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+			return getHoldsAtBetween_2004OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -130,6 +160,21 @@ public class ModelDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHoldsAt_2003ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHoldsAtBetween_2004ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getBehaviouralDescription_2001IncomingLinks(
@@ -151,6 +196,21 @@ public class ModelDiagramUpdater {
 	}
 
 	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHoldsAt_2003IncomingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHoldsAtBetween_2004IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
 	 * @generated
 	 */
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getBehaviouralDescription_2001OutgoingLinks(
@@ -165,6 +225,21 @@ public class ModelDiagramUpdater {
 	* @generated
 	*/
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHappens_2002OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHoldsAt_2003OutgoingLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHoldsAtBetween_2004OutgoingLinks(
+			View view) {
 		return Collections.emptyList();
 	}
 

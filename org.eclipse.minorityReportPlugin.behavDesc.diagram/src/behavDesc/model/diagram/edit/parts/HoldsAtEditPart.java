@@ -1,7 +1,5 @@
 package behavDesc.model.diagram.edit.parts;
 
-import org.eclipse.draw2d.ColorConstants;
-import org.eclipse.draw2d.Ellipse;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
@@ -15,7 +13,6 @@ import org.eclipse.gef.editpolicies.NonResizableEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
-import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
@@ -24,12 +21,12 @@ import org.eclipse.swt.graphics.Color;
 /**
  * @generated
  */
-public class HappensEditPart extends ShapeNodeEditPart {
+public class HoldsAtEditPart extends ShapeNodeEditPart {
 
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 2002;
+	public static final int VISUAL_ID = 2003;
 
 	/**
 	* @generated
@@ -44,7 +41,7 @@ public class HappensEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
-	public HappensEditPart(View view) {
+	public HoldsAtEditPart(View view) {
 		super(view);
 	}
 
@@ -54,7 +51,7 @@ public class HappensEditPart extends ShapeNodeEditPart {
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new behavDesc.model.diagram.edit.policies.HappensItemSemanticEditPolicy());
+				new behavDesc.model.diagram.edit.policies.HoldsAtItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);

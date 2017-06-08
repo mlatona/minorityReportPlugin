@@ -118,6 +118,12 @@ public class ModelVisualIDRegistry {
 			if (ModelPackage.eINSTANCE.getHappens().isSuperTypeOf(domainElement.eClass())) {
 				return behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID;
 			}
+			if (ModelPackage.eINSTANCE.getHoldsAt().isSuperTypeOf(domainElement.eClass())) {
+				return behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID;
+			}
+			if (ModelPackage.eINSTANCE.getHoldsAtBetween().isSuperTypeOf(domainElement.eClass())) {
+				return behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID;
+			}
 			break;
 		}
 		return -1;
@@ -147,6 +153,12 @@ public class ModelVisualIDRegistry {
 				return true;
 			}
 			if (behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -202,6 +214,8 @@ public class ModelVisualIDRegistry {
 			return false;
 		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionEditPart.VISUAL_ID:
 		case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

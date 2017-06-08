@@ -220,6 +220,14 @@ public class ModelNavigatorContentProvider implements ICommonContentProvider {
 					behavDesc.model.diagram.part.ModelVisualIDRegistry
 							.getType(behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					behavDesc.model.diagram.part.ModelVisualIDRegistry
+							.getType(behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					behavDesc.model.diagram.part.ModelVisualIDRegistry
+							.getType(behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					behavDesc.model.diagram.part.ModelVisualIDRegistry.getType(
 							behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID));

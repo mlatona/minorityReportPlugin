@@ -30,6 +30,12 @@ public class EnvironmentItemSemanticEditPolicy
 		if (behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002 == req.getElementType()) {
 			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.HappensCreateCommand(req));
 		}
+		if (behavDesc.model.diagram.providers.ModelElementTypes.HoldsAt_2003 == req.getElementType()) {
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.HoldsAtCreateCommand(req));
+		}
+		if (behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004 == req.getElementType()) {
+			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.HoldsAtBetweenCreateCommand(req));
+		}
 		return super.getCreateCommand(req);
 	}
 

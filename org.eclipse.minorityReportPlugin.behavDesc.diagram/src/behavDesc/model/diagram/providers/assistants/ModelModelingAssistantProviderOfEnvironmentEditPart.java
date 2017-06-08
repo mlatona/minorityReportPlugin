@@ -18,9 +18,11 @@ public class ModelModelingAssistantProviderOfEnvironmentEditPart
 	@Override
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
-		List<IElementType> types = new ArrayList<IElementType>(2);
+		List<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescription_2001);
 		types.add(behavDesc.model.diagram.providers.ModelElementTypes.Happens_2002);
+		types.add(behavDesc.model.diagram.providers.ModelElementTypes.HoldsAt_2003);
+		types.add(behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004);
 		return types;
 	}
 

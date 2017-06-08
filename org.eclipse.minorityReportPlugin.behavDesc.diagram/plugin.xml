@@ -217,7 +217,7 @@
       <viewProvider class="behavDesc.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="BehavDesc Model"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
@@ -230,7 +230,7 @@
             <method name="getType()" value="BehavDesc Model"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002"/>
+            <method name="getType()" value="2001,2002,2003,2004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001"/>
@@ -262,6 +262,16 @@
          <Priority name="Lowest"/>
          <object class="behavDesc.model.diagram.edit.parts.HappensEditPart" id="Happens_2002"/>
          <context elements="Happens_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="behavDesc.model.diagram.providers.assistants.ModelModelingAssistantProviderOfHoldsAtEditPart">
+         <Priority name="Lowest"/>
+         <object class="behavDesc.model.diagram.edit.parts.HoldsAtEditPart" id="HoldsAt_2003"/>
+         <context elements="HoldsAt_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="behavDesc.model.diagram.providers.assistants.ModelModelingAssistantProviderOfHoldsAtBetweenEditPart">
+         <Priority name="Lowest"/>
+         <object class="behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart" id="HoldsAtBetween_2004"/>
+         <context elements="HoldsAtBetween_2004"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -307,6 +317,26 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
+         <metamodelType
+               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAt_2003"
+               name="%metatype.name.HoldsAt_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="HoldsAt"
+               edithelper="behavDesc.model.diagram.edit.helpers.HoldsAtEditHelper">
+            <param name="semanticHint" value="2003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
+         <metamodelType
+               id="org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAtBetween_2004"
+               name="%metatype.name.HoldsAtBetween_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="HoldsAtBetween"
+               edithelper="behavDesc.model.diagram.edit.helpers.HoldsAtBetweenEditHelper">
+            <param name="semanticHint" value="2004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
          <specializationType
                id="org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"
                name="%metatype.name.BehaviouralDescriptionHappens_4001"
@@ -330,6 +360,8 @@
          <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.Environment_1000"/>
          <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescription_2001"/>
          <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.Happens_2002"/>
+         <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAt_2003"/>
+         <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.HoldsAtBetween_2004"/>
          <elementType ref="org.eclipse.minorityReportPlugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

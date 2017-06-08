@@ -29,6 +29,12 @@ public class ModelEditPartFactory implements EditPartFactory {
 			case behavDesc.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
 				return new behavDesc.model.diagram.edit.parts.HappensEditPart(view);
 
+			case behavDesc.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+				return new behavDesc.model.diagram.edit.parts.HoldsAtEditPart(view);
+
+			case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+				return new behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart(view);
+
 			case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
 				return new behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart(view);
 
