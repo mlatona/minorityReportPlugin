@@ -48,6 +48,7 @@ public class Loader {
 	 */
 	public Loader(String filePath) throws ParserConfigurationException{
 
+		// Initialization
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;
 		this.filePath = filePath;
