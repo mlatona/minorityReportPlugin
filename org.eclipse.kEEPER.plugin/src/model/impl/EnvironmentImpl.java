@@ -292,9 +292,10 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 		if (complexEvents == null) {
 			complexEvents = new EObjectContainmentEList<ComplexEvent>(ComplexEvent.class, this, ModelPackage.ENVIRONMENT__COMPLEX_EVENTS);
 		}
-		
+		System.out.println("I'm in getEvents()");
 		events.addAll(primitiveEvents);
 		events.addAll(complexEvents);
+		System.out.println(events.size());
 		return events;
 	}
 
@@ -692,7 +693,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	}
 
 	public void setEvents(EList<Event> events) {
-		this.events.addAll(events);
+		this.events = events;
 	}
 
 	public void setBehavDescriptions(EList<BehaviouralDescription> behavDescriptions) {

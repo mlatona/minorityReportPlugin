@@ -20,28 +20,32 @@
       <menuContribution
             allPopups="true"
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
-         <menu
-               label="Convert">
-            <command
-                  commandId="org.eclipse.minorityreportplugin.txtconverter.generateTxt"
-                  icon="icons/txtlogo.jpg"
-                  label="Generate TXT file"
-                  style="push">
-               <visibleWhen
-                     checkEnabled="false">
-                  <with
-                        variable="selection">
-                     <iterate
-                           ifEmpty="false"
-                           operator="or">
+         <command
+               commandId="org.eclipse.minorityreportplugin.txtconverter.generateTxt"
+               icon="icons/txtlogo.jpg"
+               label="Gen Encoding"
+               mnemonic="O"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <with
+                     variable="selection">
+                  <iterate
+                        ifEmpty="false"
+                        operator="or">
+                     <or>
+                        <instanceof
+                              value="org.eclipse.core.resources.IResource">
+                        </instanceof>
                         <test
-                              property="org.eclipse.core.resources.extension.IResource">
+                              property="org.eclipse.core.resources.name"
+                              value="default">
                         </test>
-                     </iterate>
-                  </with>
-               </visibleWhen>
-            </command>
-         </menu>
+                     </or>
+                  </iterate>
+               </with>
+            </visibleWhen>
+         </command>
       </menuContribution>
    </extension>
    <extension

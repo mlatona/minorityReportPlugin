@@ -44,7 +44,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.runtime.notation.impl.DiagramImpl;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
-import org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescriptionFigure;
+import org.eclipse.kEEPER.plugin.ui.figures.BehaviouralDescriptionFigure;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;

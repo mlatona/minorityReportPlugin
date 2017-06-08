@@ -1,4 +1,4 @@
-package org.eclipse.minorityReportPlugin.ui.figures;
+package org.eclipse.kEEPER.plugin.ui.figures;
 
 import java.awt.Component;
 

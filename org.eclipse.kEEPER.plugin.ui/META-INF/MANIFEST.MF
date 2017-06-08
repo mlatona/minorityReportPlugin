@@ -6,9 +6,9 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.draw2d,
  org.eclipse.swt
-Export-Package: org.eclipse.minorityReportPlugin.ui.figures
 Import-Package: model,
  org.eclipse.emf.ecore,
  org.eclipse.jface.dialogs,
  org.eclipse.jface.window,
  org.eclipse.ui.dialogs
+Export-Package: org.eclipse.kEEPER.plugin.ui.figures
