@@ -13,6 +13,7 @@ import model.Event;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
+import model.Hypothesis;
 import model.Initially;
 import model.Instance;
 import model.ModelPackage;
@@ -55,6 +56,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link model.impl.EnvironmentImpl#getAddParam <em>Add Param</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getPrimitiveEvents <em>Primitive Events</em>}</li>
  *   <li>{@link model.impl.EnvironmentImpl#getComplexEvents <em>Complex Events</em>}</li>
+ *   <li>{@link model.impl.EnvironmentImpl#getHypothesis <em>Hypothesis</em>}</li>
  * </ul>
  *
  * @generated
@@ -209,6 +211,16 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * @ordered
 	 */
 	protected EList<ComplexEvent> complexEvents;
+
+	/**
+	 * The cached value of the '{@link #getHypothesis() <em>Hypothesis</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHypothesis()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Hypothesis> hypothesis;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -424,6 +436,18 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Hypothesis> getHypothesis() {
+		if (hypothesis == null) {
+			hypothesis = new EObjectContainmentEList<Hypothesis>(Hypothesis.class, this, ModelPackage.ENVIRONMENT__HYPOTHESIS);
+		}
+		return hypothesis;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -457,6 +481,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return ((InternalEList<?>)getPrimitiveEvents()).basicRemove(otherEnd, msgs);
 			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
 				return ((InternalEList<?>)getComplexEvents()).basicRemove(otherEnd, msgs);
+			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
+				return ((InternalEList<?>)getHypothesis()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -499,6 +525,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return getPrimitiveEvents();
 			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
 				return getComplexEvents();
+			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
+				return getHypothesis();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -572,6 +600,10 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				getComplexEvents().clear();
 				getComplexEvents().addAll((Collection<? extends ComplexEvent>)newValue);
 				return;
+			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
+				getHypothesis().clear();
+				getHypothesis().addAll((Collection<? extends Hypothesis>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -629,6 +661,9 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
 				getComplexEvents().clear();
 				return;
+			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
+				getHypothesis().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -671,6 +706,8 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return primitiveEvents != null && !primitiveEvents.isEmpty();
 			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
 				return complexEvents != null && !complexEvents.isEmpty();
+			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
+				return hypothesis != null && !hypothesis.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -714,6 +751,10 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 
 	public void setInitials(EList<Initially> initials) {
 		this.initials = initials;
+	}
+	
+	public void setHypothesis(EList<Hypothesis> hypothesis) {
+		this.hypothesis = hypothesis;
 	}
 	
 

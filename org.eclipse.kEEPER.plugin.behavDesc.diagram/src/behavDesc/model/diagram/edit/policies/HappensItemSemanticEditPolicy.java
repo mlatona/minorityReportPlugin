@@ -34,17 +34,6 @@ public class HappensItemSemanticEditPolicy
 		View view = (View) getHost().getModel();
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
-		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
-			Edge incomingLink = (Edge) it.next();
-			if (behavDesc.model.diagram.part.ModelVisualIDRegistry.getVisualID(
-					incomingLink) == behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
-		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
 			// there are indirectly referenced children, need extra commands: false
@@ -55,53 +44,6 @@ public class HappensItemSemanticEditPolicy
 			cmd.add(new DeleteCommand(getEditingDomain(), view));
 		}
 		return getGEFWrapper(cmd.reduce());
-	}
-
-	/**
-	* @generated
-	*/
-	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
-		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
-				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super.getCreateRelationshipCommand(req);
-	}
-
-	/**
-	* @generated
-	*/
-	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescriptionHappens_4001 == req
-				.getElementType()) {
-			return null;
-		}
-		return null;
-	}
-
-	/**
-	* @generated
-	*/
-	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if (behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescriptionHappens_4001 == req
-				.getElementType()) {
-			return getGEFWrapper(new behavDesc.model.diagram.edit.commands.BehaviouralDescriptionHappensCreateCommand(
-					req, req.getSource(), req.getTarget()));
-		}
-		return null;
-	}
-
-	/**
-	* Returns command to reorient EReference based link. New link target or source
-	* should be the domain model element associated with this node.
-	* 
-	* @generated
-	*/
-	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
-		switch (getVisualID(req)) {
-		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
-			return getGEFWrapper(
-					new behavDesc.model.diagram.edit.commands.BehaviouralDescriptionHappensReorientCommand(req));
-		}
-		return super.getReorientReferenceRelationshipCommand(req);
 	}
 
 }

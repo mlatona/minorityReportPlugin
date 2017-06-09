@@ -34,18 +34,7 @@
     </descriptors>
   </figures>
   <figures
-      name="links">
-    <figures
-        xsi:type="gmfgraph:PolylineDecoration"
-        name="BDHappens"/>
-    <descriptors
-        name="BDHappensFigure">
-      <actualFigure
-          xsi:type="gmfgraph:PolylineConnection"
-          name="BDHappens"
-          targetDecoration="//@figures.1/@figures.0"/>
-    </descriptors>
-  </figures>
+      name="links"/>
   <nodes
       name="BehavDescNode"
       figure="behavDescFigure"/>
@@ -58,9 +47,6 @@
   <nodes
       name="HoldsAtBetween"
       figure="HoldsAtBetweenFigure"/>
-  <connections
-      name="BDHappens"
-      figure="BDHappensFigure"/>
   <labels
       name="Happens"
       figure="happensFigure"/>

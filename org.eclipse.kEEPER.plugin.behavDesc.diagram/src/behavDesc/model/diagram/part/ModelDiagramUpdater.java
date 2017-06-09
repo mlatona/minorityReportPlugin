@@ -146,10 +146,7 @@ public class ModelDiagramUpdater {
 	 */
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getBehaviouralDescription_2001ContainedLinks(
 			View view) {
-		BehaviouralDescription modelElement = (BehaviouralDescription) view.getElement();
-		LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor> result = new LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_BehaviouralDescription_Happens_4001(modelElement));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -186,13 +183,7 @@ public class ModelDiagramUpdater {
 	* @generated
 	*/
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHappens_2002IncomingLinks(View view) {
-		Happens modelElement = (Happens) view.getElement();
-		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
-				.find(view.eResource().getResourceSet().getResources());
-		LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor> result = new LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor>();
-		result.addAll(
-				getIncomingFeatureModelFacetLinks_BehaviouralDescription_Happens_4001(modelElement, crossReferences));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -215,10 +206,7 @@ public class ModelDiagramUpdater {
 	 */
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getBehaviouralDescription_2001OutgoingLinks(
 			View view) {
-		BehaviouralDescription modelElement = (BehaviouralDescription) view.getElement();
-		LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor> result = new LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor>();
-		result.addAll(getOutgoingFeatureModelFacetLinks_BehaviouralDescription_Happens_4001(modelElement));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -241,38 +229,6 @@ public class ModelDiagramUpdater {
 	public static List<behavDesc.model.diagram.part.ModelLinkDescriptor> getHoldsAtBetween_2004OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
-	}
-
-	/**
-	* @generated
-	*/
-	private static Collection<behavDesc.model.diagram.part.ModelLinkDescriptor> getIncomingFeatureModelFacetLinks_BehaviouralDescription_Happens_4001(
-			Happens target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
-		LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor> result = new LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
-		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == ModelPackage.eINSTANCE.getBehaviouralDescription_Happens()) {
-				result.add(new behavDesc.model.diagram.part.ModelLinkDescriptor(setting.getEObject(), target,
-						behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescriptionHappens_4001,
-						behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID));
-			}
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	private static Collection<behavDesc.model.diagram.part.ModelLinkDescriptor> getOutgoingFeatureModelFacetLinks_BehaviouralDescription_Happens_4001(
-			BehaviouralDescription source) {
-		LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor> result = new LinkedList<behavDesc.model.diagram.part.ModelLinkDescriptor>();
-		for (Iterator<?> destinations = source.getHappens().iterator(); destinations.hasNext();) {
-			Happens destination = (Happens) destinations.next();
-			result.add(new behavDesc.model.diagram.part.ModelLinkDescriptor(source, destination,
-					behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescriptionHappens_4001,
-					behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID));
-		}
-		return result;
 	}
 
 	/**

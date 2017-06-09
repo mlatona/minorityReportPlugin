@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.Environment#getAddParam <em>Add Param</em>}</li>
  *   <li>{@link model.Environment#getPrimitiveEvents <em>Primitive Events</em>}</li>
  *   <li>{@link model.Environment#getComplexEvents <em>Complex Events</em>}</li>
+ *   <li>{@link model.Environment#getHypothesis <em>Hypothesis</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getEnvironment()
@@ -277,6 +278,22 @@ public interface Environment extends EObject {
 	 */
 	EList<ComplexEvent> getComplexEvents();
 
+	/**
+	 * Returns the value of the '<em><b>Hypothesis</b></em>' containment reference list.
+	 * The list contents are of type {@link model.Hypothesis}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hypothesis</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hypothesis</em>' containment reference list.
+	 * @see model.ModelPackage#getEnvironment_Hypothesis()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Hypothesis> getHypothesis();
+
 	void setTypes(EList<Type> types);
 	
 	void setInstances(EList<Instance> instances);
@@ -289,5 +306,6 @@ public interface Environment extends EObject {
 	
 	void setInitials(EList<Initially> initials);
 
+	void setHypothesis(EList<Hypothesis> hypothesis);
 
 } // Environment

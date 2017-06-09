@@ -92,6 +92,7 @@ public class EnvironmentItemProvider
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__ADD_PARAM);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__PRIMITIVE_EVENTS);
 			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__COMPLEX_EVENTS);
+			childrenFeatures.add(ModelPackage.Literals.ENVIRONMENT__HYPOTHESIS);
 		}
 		return childrenFeatures;
 	}
@@ -159,6 +160,7 @@ public class EnvironmentItemProvider
 			case ModelPackage.ENVIRONMENT__ADD_PARAM:
 			case ModelPackage.ENVIRONMENT__PRIMITIVE_EVENTS:
 			case ModelPackage.ENVIRONMENT__COMPLEX_EVENTS:
+			case ModelPackage.ENVIRONMENT__HYPOTHESIS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -285,6 +287,11 @@ public class EnvironmentItemProvider
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__COMPLEX_EVENTS,
 				 ModelFactory.eINSTANCE.createComplexEvent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__HYPOTHESIS,
+				 ModelFactory.eINSTANCE.createHypothesis()));
 	}
 
 	/**

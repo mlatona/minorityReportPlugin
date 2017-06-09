@@ -218,7 +218,6 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="BehavDesc Model"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
 
@@ -233,7 +232,7 @@
             <method name="getType()" value="2001,2002,2003,2004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001"/>
+            <method name="getType()" value=""/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value=""/>
@@ -336,15 +335,6 @@
             <param name="semanticHint" value="2004"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="https://github.com/mlatona/minorityReportPlugin">
-         <specializationType
-               id="org.eclipse.kEEPER.plugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"
-               name="%metatype.name.BehaviouralDescriptionHappens_4001"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4001"/>
-         </specializationType>
-      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -362,7 +352,6 @@
          <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.Happens_2002"/>
          <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAt_2003"/>
          <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.HoldsAtBetween_2004"/>
-         <elementType ref="org.eclipse.kEEPER.plugin.behavDesc.diagram.BehaviouralDescriptionHappens_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

@@ -62,8 +62,7 @@ public class ConvertHandler extends AbstractHandler implements IHandler {
 			
 			do{
 				System.out.println("What do you want to do?");
-				System.out.println("1. Parse Types and Instances file and output to txt (eclipse normal instance)");
-				System.out.println("2. Parse Types and Instances file and output to txt (gmf diagram instance)");
+				System.out.println("1. Parse files and output to txt");
 				System.out.println("10. Exit the program");
 				
 				num = scan.nextInt();
@@ -72,6 +71,7 @@ public class ConvertHandler extends AbstractHandler implements IHandler {
 					case 1:{
 							Environment env;
 							env = transform.getLoader().parseFiles();
+							transform.createHypothesisFiles(env);
 							transform.createTxtFile(env);	
 					}break;
 					case 2:{

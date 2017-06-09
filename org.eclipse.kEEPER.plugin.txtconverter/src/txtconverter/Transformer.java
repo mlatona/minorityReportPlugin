@@ -210,14 +210,6 @@ public class Transformer {
 				writer.println("\ttime(T"+times.get(j)+"),");				
 			}
 			
-			/*
-			int count1 = 0;
-			while (count1 < timeMax){
-				count1++;
-				writer.println("\ttime(T"+count1+"),");
-			}
-			*/
-			
 			// Writing all the time constraints
 			for (int j = 0; j < times.size(); j++){
 				for (int m = 0; m < times.size(); m++){
@@ -226,16 +218,6 @@ public class Transformer {
 					}
 				}
 			}
-			
-			/*
-			int count2 = 0;
-			while(count2 < timeMax - 1){
-				int time1 = count2 + 1;
-				int time2 = count2 + 2;
-				writer.println("\tT"+time1+"<T"+time2+",");
-				count2++;
-			}
-			*/
 			
 			for (int j = 0; j < env.getBehavDescriptions().get(i).getHoldsAts().size(); j++){				
 				writer.printf("\tholdsAt("+env.getBehavDescriptions().get(i).getHoldsAts().get(j).getContextRelation().getName());
@@ -336,6 +318,168 @@ public class Transformer {
 		}	
 	}
 			
+	public void createHypothesisFiles(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
+		
+		for (int i = 0; i < env.getHypothesis().size(); i++){
+			
+			String fileName = "h"+ (i+1) +".txt";
+			
+			System.out.println("HYPOTHESIS: " + fileName);
+			
+			PrintWriter writer2 = new PrintWriter("/Users/marco/Documents/ThesisWorkspace/WorkspaceRepository/org.eclipse.kEEPER.plugin.txtconverter/output/" + fileName, "UTF-8");
+			
+			// HYPOTHESIS OUTPUT ALGORITHM
+				writer2.printf("hypothesis("+ "h"+ (i+1));
+				
+				// Computing the maximum time between context relations and events of a specified complex event and
+				// memorizing the integer found in the arraylist for later computations
+				int timeMax = -1;
+				ArrayList<Integer> times = new ArrayList<Integer>();
+				for (Happens h: env.getHypothesis().get(i).getHappens()){
+					if (h.getTime() > timeMax)
+						timeMax = h.getTime();
+					
+					int timesCounter = 0;
+					for (int j = 0; j < times.size(); j++){
+						if (h.getTime() == times.get(j))
+							timesCounter++;
+					}
+					if (timesCounter == 0)
+						times.add(h.getTime());
+				}
+				for (HoldsAt h: env.getHypothesis().get(i).getHoldsAts()){
+					if (h.getTime() > timeMax)
+						timeMax = h.getTime();
+					
+					int timesCounter = 0;
+					for (int j = 0; j < times.size(); j++){
+						if (h.getTime() == times.get(j))
+							timesCounter++;
+					}
+					if (timesCounter == 0)
+						times.add(h.getTime());
+				}
+				for (HoldsAtBetween h: env.getHypothesis().get(i).getHoldsAtBetweens()){
+					if (h.getInitialTime() > timeMax)
+						timeMax = h.getInitialTime();
+					if (h.getEndingTime() > timeMax)
+						timeMax = h.getEndingTime();
+					
+					int timesCounter = 0;
+					for (int j = 0; j < times.size(); j++){
+						if (h.getInitialTime() == times.get(j))
+							timesCounter++;
+					}
+					if (timesCounter == 0)
+						times.add(h.getInitialTime());
+					timesCounter = 0;
+					for (int j = 0; j < times.size(); j++){
+						if (h.getEndingTime() == times.get(j))
+							timesCounter++;
+					}
+					if (timesCounter == 0)
+						times.add(h.getEndingTime());				
+				}
+				
+				// Writing the computed maximum time instant
+				writer2.println(",T" + timeMax + ",TR):-");
+				writer2.println("\ttrace(TR),");
+				
+				// Memorizing all the types of events and context relations related to the hypothesis
+				HashSet<Type> behTypes = new HashSet<Type>();
+				for (int n = 0; n < env.getHypothesis().get(i).getHoldsAts().size(); n++){
+					for (int m = 0; m < env.getHypothesis().get(i).getHoldsAts().get(n).getContextRelation().getParameters().size(); m++){
+						behTypes.add(env.getHypothesis().get(i).getHoldsAts().get(n).getContextRelation().getParameters().get(m).getType());
+					};
+				}
+				for (int n = 0; n < env.getHypothesis().get(i).getHoldsAtBetweens().size(); n++){
+					for (int m = 0; m < env.getHypothesis().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().size(); m++){
+						behTypes.add(env.getHypothesis().get(i).getHoldsAtBetweens().get(n).getContextRelation().getParameters().get(m).getType());
+					};
+				}
+				for (int n = 0; n < env.getHypothesis().get(i).getHappens().size(); n++){
+					for (int m = 0; m < env.getHypothesis().get(i).getHappens().get(n).getEvent().getParameters().size(); m++){
+						behTypes.add(env.getHypothesis().get(i).getHappens().get(n).getEvent().getParameters().get(m).getType());
+					};
+				}
+				// Writing all the types on file
+				Iterator<Type> iter = behTypes.iterator();
+				System.out.println(iter.hasNext());
+				while(iter.hasNext()){
+					Type type = iter.next();
+				//	System.out.println(type.toString());
+					writer2.println("\t"+type.getName()+"("+type.getName().charAt(0)+"),");
+				}
+				
+				// Writing all time instants
+				for (int j = 0; j < times.size(); j++){
+					writer2.println("\ttime(T"+times.get(j)+"),");				
+				}
+				
+				// Writing all the time constraints
+				for (int j = 0; j < times.size(); j++){
+					for (int m = 0; m < times.size(); m++){
+						if (times.get(j) < times.get(m)){
+							writer2.println("\tT"+times.get(j)+"<T"+times.get(m)+",");
+						}
+					}
+				}
+				
+				for (int j = 0; j < env.getHypothesis().get(i).getHoldsAts().size(); j++){				
+					writer2.printf("\tholdsAt("+env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation().getName());
+					writeContextRelationParameters(env.getHypothesis().get(i).getHoldsAts().get(j).getContextRelation(), writer2);
+					writer2.printf(",T"+env.getHypothesis().get(i).getHoldsAts().get(j).getTime() +",TR)");
+					if (j < env.getHypothesis().get(i).getHoldsAts().size() - 1)
+						writer2.printf(",\n");
+					else if (j == env.getHypothesis().get(i).getHoldsAts().size() - 1){
+						if (env.getHypothesis().get(i).getHappens().size() == 0 && env.getHypothesis().get(i).getHoldsAtBetweens().size() == 0)
+							writer2.printf(".");
+						else
+							writer2.printf(",\n");
+					}
+				}
+				for (int j = 0; j < env.getHypothesis().get(i).getHappens().size(); j++){				
+					writer2.printf("\thappens("+env.getHypothesis().get(i).getHappens().get(j).getEvent().getName());
+					writeEventParameters(env.getHypothesis().get(i).getHappens().get(j).getEvent(), writer2);
+					writer2.printf(",T"+env.getHypothesis().get(i).getHappens().get(j).getTime() +",TR)");
+					if (j < env.getHypothesis().get(i).getHappens().size() - 1)
+						writer2.printf(",\n");
+					else if (j == env.getHypothesis().get(i).getHoldsAts().size() - 1){
+						if (env.getHypothesis().get(i).getHoldsAtBetweens().size() == 0)
+							writer2.printf(".");
+						else
+							writer2.printf(",\n");
+					}
+				}
+				for (int j = 0; j < env.getHypothesis().get(i).getHoldsAtBetweens().size(); j++){
+					HoldsAtBetween h = env.getHypothesis().get(i).getHoldsAtBetweens().get(j);
+					if (h.isIsHolding()){
+						writer2.printf("\tholdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+					}
+					else if (!h.isIsHolding()){
+						writer2.printf("\tneg_holdsAt_between(T"+h.getInitialTime()+"," + h.getContextRelation().getName());
+					}
+					writeContextRelationParameters(h.getContextRelation(), writer2);
+					writer2.printf(",T"+h.getEndingTime() +",TR)");
+					if (j < env.getHypothesis().get(i).getHoldsAtBetweens().size() - 1){
+						writer2.printf(",\n");
+					}
+					else if (j == env.getHypothesis().get(i).getHoldsAtBetweens().size() - 1){
+						writer2.printf(".");
+					}
+				}
+
+				writer2.println();
+				writer2.println();
+				
+				System.out.println("Hypothesis written on file");
+				
+				writer2.close();
+
+			} // Behavioural Descriptions 
+
+		}
+	
 	public Loader getLoader(){
 		return this.loader;
 	}

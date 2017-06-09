@@ -394,6 +394,29 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link model.Hypothesis} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected HypothesisItemProvider hypothesisItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link model.Hypothesis}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createHypothesisAdapter() {
+		if (hypothesisItemProvider == null) {
+			hypothesisItemProvider = new HypothesisItemProvider(this);
+		}
+
+		return hypothesisItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -506,6 +529,7 @@ public class ModelItemProviderAdapterFactory extends ModelAdapterFactory impleme
 		if (environmentItemProvider != null) environmentItemProvider.dispose();
 		if (observerItemProvider != null) observerItemProvider.dispose();
 		if (agentItemProvider != null) agentItemProvider.dispose();
+		if (hypothesisItemProvider != null) hypothesisItemProvider.dispose();
 	}
 
 }

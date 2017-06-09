@@ -73,26 +73,32 @@ public class Loader {
 
 		// load the resource and resolve the proxies
 		ResourceSet rs = new ResourceSetImpl();
-		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.typeinstancemodel"));
-		Resource r2 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.contextRelationmodel"));
-		Resource r3 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.eventmodel"));
-		Resource r4 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.behavDescmodel"));		
+		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.typeinstanceModel"));
+		Resource r2 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.contextRelationModel"));
+		Resource r3 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.eventModel"));
+		Resource r4 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.behavDescModel"));	
+		Resource r5 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.hypothesisModel"));		
+
 		r1.load(null);
 		r2.load(null);
 		r3.load(null);
 		r4.load(null);
+		r5.load(null);
 		//EcoreUtil.resolveAll(rs); 
 		
 		Environment env1 = (Environment) r1.getContents().get(0);
 		Environment env2 = (Environment) r2.getContents().get(0);
 		Environment env3 = (Environment) r3.getContents().get(0);
 		Environment env4 = (Environment) r4.getContents().get(0);	
+		Environment env5 = (Environment) r5.getContents().get(0);	
+
 						
 		env.setTypes(env1.getTypes());
 		env.setInstances(env1.getInstances());
 		env.setContextRelations(env2.getContextRelations());
 		env.setEvents(env3.getEvents());
 		env.setBehavDescriptions(env4.getBehavDescriptions());
+		env.setHypothesis(env5.getHypothesis());
 				
 		// Verification
 		for (int i = 0; i < env.getInstances().size(); i++){

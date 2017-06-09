@@ -87,10 +87,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
 			return getImage("Navigator?TopLevelNode?https://github.com/mlatona/minorityReportPlugin?HoldsAtBetween", //$NON-NLS-1$
 					behavDesc.model.diagram.providers.ModelElementTypes.HoldsAtBetween_2004);
-		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Link?https://github.com/mlatona/minorityReportPlugin?BehaviouralDescription?happens", //$NON-NLS-1$
-					behavDesc.model.diagram.providers.ModelElementTypes.BehaviouralDescriptionHappens_4001);
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -153,8 +149,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 			return getHoldsAt_2003Text(view);
 		case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
 			return getHoldsAtBetween_2004Text(view);
-		case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
-			return getBehaviouralDescriptionHappens_4001Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -220,13 +214,6 @@ public class ModelNavigatorLabelProvider extends LabelProvider implements ICommo
 					.logError("No domain element for view with visualID = " + 2004); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
-	}
-
-	/**
-	* @generated
-	*/
-	private String getBehaviouralDescriptionHappens_4001Text(View view) {
-		return ""; //$NON-NLS-1$
 	}
 
 	/**

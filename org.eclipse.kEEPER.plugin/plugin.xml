@@ -10,7 +10,8 @@
       <!-- @generated model -->
       <package
             uri="https://github.com/mlatona/minorityReportPlugin"
-            class="model.ModelPackage"/>
+            class="model.ModelPackage"
+            genModel="model/model.genmodel"/>
    </extension>
 
 </plugin>

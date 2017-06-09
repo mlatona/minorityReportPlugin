@@ -59,11 +59,6 @@ public class ModelDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	* @generated
 	*/
-	private behavDesc.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy.LinkConstraints linkConstraints;
-
-	/**
-	* @generated
-	*/
 	private behavDesc.model.diagram.providers.ElementInitializers initializers;
 
 	/**
@@ -89,7 +84,6 @@ public class ModelDiagramEditorPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
-		linkConstraints = null;
 		initializers = null;
 		instance = null;
 		super.stop(context);
@@ -203,21 +197,6 @@ public class ModelDiagramEditorPlugin extends AbstractUIPlugin {
 			documentProvider = new behavDesc.model.diagram.part.ModelDocumentProvider();
 		}
 		return documentProvider;
-	}
-
-	/**
-	* @generated
-	*/
-	public behavDesc.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy.LinkConstraints getLinkConstraints() {
-		return linkConstraints;
-	}
-
-	/**
-	* @generated
-	*/
-	public void setLinkConstraints(
-			behavDesc.model.diagram.edit.policies.ModelBaseItemSemanticEditPolicy.LinkConstraints lc) {
-		this.linkConstraints = lc;
 	}
 
 	/**

@@ -34,10 +34,6 @@ public class ModelEditPartFactory implements EditPartFactory {
 
 			case behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
 				return new behavDesc.model.diagram.edit.parts.HoldsAtBetweenEditPart(view);
-
-			case behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart.VISUAL_ID:
-				return new behavDesc.model.diagram.edit.parts.BehaviouralDescriptionHappensEditPart(view);
-
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

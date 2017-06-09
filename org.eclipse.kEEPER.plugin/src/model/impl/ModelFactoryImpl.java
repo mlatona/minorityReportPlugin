@@ -70,6 +70,7 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			case ModelPackage.ENVIRONMENT: return createEnvironment();
 			case ModelPackage.OBSERVER: return createObserver();
 			case ModelPackage.AGENT: return createAgent();
+			case ModelPackage.HYPOTHESIS: return createHypothesis();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -213,6 +214,16 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public Agent createAgent() {
 		AgentImpl agent = new AgentImpl();
 		return agent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Hypothesis createHypothesis() {
+		HypothesisImpl hypothesis = new HypothesisImpl();
+		return hypothesis;
 	}
 
 	/**

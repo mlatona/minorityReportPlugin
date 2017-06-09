@@ -106,7 +106,18 @@
         eType="#//PrimitiveEvent" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="complexEvents" upperBound="-1"
         eType="#//ComplexEvent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hypothesis" upperBound="-1"
+        eType="#//Hypothesis" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Observer" eSuperTypes="#//Parameter"/>
   <eClassifiers xsi:type="ecore:EClass" name="Agent" eSuperTypes="#//Parameter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Hypothesis">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="holdsAts" upperBound="-1"
+        eType="#//HoldsAt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="happens" upperBound="-1"
+        eType="#//Happens"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="holdsAtBetweens" upperBound="-1"
+        eType="#//HoldsAtBetween"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

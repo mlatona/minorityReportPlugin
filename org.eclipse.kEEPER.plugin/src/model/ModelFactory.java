@@ -148,6 +148,15 @@ public interface ModelFactory extends EFactory {
 	Agent createAgent();
 
 	/**
+	 * Returns a new object of class '<em>Hypothesis</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hypothesis</em>'.
+	 * @generated
+	 */
+	Hypothesis createHypothesis();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

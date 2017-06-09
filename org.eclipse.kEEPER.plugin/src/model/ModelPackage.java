@@ -907,13 +907,22 @@ public interface ModelPackage extends EPackage {
 	int ENVIRONMENT__COMPLEX_EVENTS = 14;
 
 	/**
+	 * The feature id for the '<em><b>Hypothesis</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENVIRONMENT__HYPOTHESIS = 15;
+
+	/**
 	 * The number of structural features of the '<em>Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENVIRONMENT_FEATURE_COUNT = 15;
+	int ENVIRONMENT_FEATURE_COUNT = 16;
 
 	/**
 	 * The number of operations of the '<em>Environment</em>' class.
@@ -1051,6 +1060,71 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int AGENT_OPERATION_COUNT = PARAMETER_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link model.impl.HypothesisImpl <em>Hypothesis</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see model.impl.HypothesisImpl
+	 * @see model.impl.ModelPackageImpl#getHypothesis()
+	 * @generated
+	 */
+	int HYPOTHESIS = 15;
+
+	/**
+	 * The feature id for the '<em><b>Holds Ats</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS__HOLDS_ATS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Happens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS__HAPPENS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Holds At Betweens</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS__HOLDS_AT_BETWEENS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS__NAME = 3;
+
+	/**
+	 * The number of structural features of the '<em>Hypothesis</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Hypothesis</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS_OPERATION_COUNT = 0;
 
 
 	/**
@@ -1756,6 +1830,17 @@ public interface ModelPackage extends EPackage {
 	EReference getEnvironment_ComplexEvents();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link model.Environment#getHypothesis <em>Hypothesis</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Hypothesis</em>'.
+	 * @see model.Environment#getHypothesis()
+	 * @see #getEnvironment()
+	 * @generated
+	 */
+	EReference getEnvironment_Hypothesis();
+
+	/**
 	 * Returns the meta object for class '{@link model.Observer <em>Observer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1774,6 +1859,60 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAgent();
+
+	/**
+	 * Returns the meta object for class '{@link model.Hypothesis <em>Hypothesis</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hypothesis</em>'.
+	 * @see model.Hypothesis
+	 * @generated
+	 */
+	EClass getHypothesis();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.Hypothesis#getHoldsAts <em>Holds Ats</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Holds Ats</em>'.
+	 * @see model.Hypothesis#getHoldsAts()
+	 * @see #getHypothesis()
+	 * @generated
+	 */
+	EReference getHypothesis_HoldsAts();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.Hypothesis#getHappens <em>Happens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Happens</em>'.
+	 * @see model.Hypothesis#getHappens()
+	 * @see #getHypothesis()
+	 * @generated
+	 */
+	EReference getHypothesis_Happens();
+
+	/**
+	 * Returns the meta object for the reference list '{@link model.Hypothesis#getHoldsAtBetweens <em>Holds At Betweens</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Holds At Betweens</em>'.
+	 * @see model.Hypothesis#getHoldsAtBetweens()
+	 * @see #getHypothesis()
+	 * @generated
+	 */
+	EReference getHypothesis_HoldsAtBetweens();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.Hypothesis#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see model.Hypothesis#getName()
+	 * @see #getHypothesis()
+	 * @generated
+	 */
+	EAttribute getHypothesis_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2345,6 +2484,14 @@ public interface ModelPackage extends EPackage {
 		EReference ENVIRONMENT__COMPLEX_EVENTS = eINSTANCE.getEnvironment_ComplexEvents();
 
 		/**
+		 * The meta object literal for the '<em><b>Hypothesis</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENVIRONMENT__HYPOTHESIS = eINSTANCE.getEnvironment_Hypothesis();
+
+		/**
 		 * The meta object literal for the '{@link model.impl.ObserverImpl <em>Observer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2363,6 +2510,48 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AGENT = eINSTANCE.getAgent();
+
+		/**
+		 * The meta object literal for the '{@link model.impl.HypothesisImpl <em>Hypothesis</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see model.impl.HypothesisImpl
+		 * @see model.impl.ModelPackageImpl#getHypothesis()
+		 * @generated
+		 */
+		EClass HYPOTHESIS = eINSTANCE.getHypothesis();
+
+		/**
+		 * The meta object literal for the '<em><b>Holds Ats</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HYPOTHESIS__HOLDS_ATS = eINSTANCE.getHypothesis_HoldsAts();
+
+		/**
+		 * The meta object literal for the '<em><b>Happens</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HYPOTHESIS__HAPPENS = eINSTANCE.getHypothesis_Happens();
+
+		/**
+		 * The meta object literal for the '<em><b>Holds At Betweens</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference HYPOTHESIS__HOLDS_AT_BETWEENS = eINSTANCE.getHypothesis_HoldsAtBetweens();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPOTHESIS__NAME = eINSTANCE.getHypothesis_Name();
 
 	}
 
