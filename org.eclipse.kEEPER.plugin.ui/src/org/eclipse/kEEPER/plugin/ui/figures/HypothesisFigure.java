@@ -21,7 +21,7 @@ import model.Hypothesis;
 public class HypothesisFigure extends Shape {
 	private int timeInstants;
 	private RectangleFigure r;
-	private BehaviouralDescription behavDesc;
+	private Hypothesis h;
 	
 	private ArrayList<Happens> happensList = new ArrayList<Happens>();
 	private ArrayList<HoldsAt> holdsAtList = new ArrayList<HoldsAt>();
@@ -31,11 +31,16 @@ public class HypothesisFigure extends Shape {
 	 * Constructor that set the number of time instants of the figure
 	 */
 	public HypothesisFigure(RectangleFigure r, Hypothesis h) {
-		System.out.println("BehaviouralDescription Constructor!");
+		System.out.println("Hypothesis Constructor!");
 		// behavDesc = (BehaviouralDescription) eObject;
 		this.r = r;
+		this.h = h;
+		
+		if(h.getTimeInstants() != 0){
+			timeInstants = h.getTimeInstants();
+		}
 		// Input the number of time instants 
-		InputDialog inputDialog = new InputDialog(null, "Events", "Input the number of events", null, new IInputValidator() {
+		/*InputDialog inputDialog = new InputDialog(null, "Events", "Input the number of events", null, new IInputValidator() {
 
 	        public String isValid(final String s) {
 	            if (s.getBytes().length > 1024) {
@@ -48,6 +53,7 @@ public class HypothesisFigure extends Shape {
 		
 		String time = inputDialog.getValue();
 		timeInstants = Integer.parseInt(time);
+		*/
 	}
 	
 	@Override
@@ -67,7 +73,7 @@ public class HypothesisFigure extends Shape {
         int mainX = r.getLocation().x;
         int mainY = r.getLocation().y;
         int k = 10;
-        int length = mainWidth/(timeInstants+1);
+        int length = mainWidth/(h.getTimeInstants()+1);
         //System.out.println("A:" + mainWidth +" B:" +  mainHeight +" C:" +  mainX + " D:" + mainY );
         graphics.setForegroundColor(new Color(null, 129, 23, 45));
         
@@ -77,7 +83,7 @@ public class HypothesisFigure extends Shape {
         }
         
         // Creating small lines for the timeline
-        for (int i = 1; i <= timeInstants; i++){
+        for (int i = 1; i <= h.getTimeInstants(); i++){
         	Point p1 = new Point(mainX+length*i, mainY+(mainHeight/2)-10);
         	Point p2 = new Point(mainX+length*i, mainY+(mainHeight/2)+10);
       
@@ -85,48 +91,48 @@ public class HypothesisFigure extends Shape {
 
         }
         
-        if (!happensList.isEmpty()){
+        if (!h.getHappens().isEmpty()){
         	System.out.println("Creating point for events");
-        	for (int i = 0; i < happensList.size(); i++){
+        	for (int i = 0; i < h.getHappens().size(); i++){
         		graphics.setForegroundColor(new Color(null, 0, 0, 255));
         		graphics.setBackgroundColor(new Color(null, 0, 0, 255));
-        		Point ovalStartingPoint = new Point(mainX + length*happensList.get(i).getTime() -3 , mainY + mainHeight/2 - 20);
+        		Point ovalStartingPoint = new Point(mainX + length*h.getHappens().get(i).getTime() -3 , mainY + mainHeight/2 - 20);
         		graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
-        		Point label = new Point(mainX + length*happensList.get(i).getTime() -3 -10, mainY + mainHeight/2 - 20 - 10);
-        		graphics.drawString(happensList.get(i).getEvent().getName(), label);
+        		Point label = new Point(mainX + length*h.getHappens().get(i).getTime() -3 -10, mainY + mainHeight/2 - 20 - 10);
+        		graphics.drawString(h.getHappens().get(i).getEvent().getName(), label);
         	}
         }
         
-        if (!holdsAtList.isEmpty()){
+        if (!h.getHoldsAts().isEmpty()){
 	        System.out.println("Creating point for CR");
-	        for (int i = 0; i < holdsAtList.size(); i++){
+	        for (int i = 0; i < h.getHoldsAts().size(); i++){
 	        	
-	        	if (holdsAtList.get(i).isIsHolding())
+	        	if (h.getHoldsAts().get(i).isIsHolding())
 	        		graphics.setForegroundColor(new Color(null, 50, 205, 50));
 	        	else
 	        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
 	        	
-	        	Point ovalStartingPoint = new Point(mainX + length*holdsAtList.get(i).getTime() -3 , mainY + mainHeight/2 + 20);
+	        	Point ovalStartingPoint = new Point(mainX + length*h.getHoldsAts().get(i).getTime() -3 , mainY + mainHeight/2 + 20);
 	        	graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
-	        	Point label = new Point(mainX + length*holdsAtList.get(i).getTime() -3 -10, mainY + mainHeight/2 + 20 + 7);
-        		graphics.drawString(holdsAtList.get(i).getContextRelation().getName(), label);
+	        	Point label = new Point(mainX + length*h.getHoldsAts().get(i).getTime() -3 -10, mainY + mainHeight/2 + 20 + 7);
+        		graphics.drawString(h.getHoldsAts().get(i).getContextRelation().getName(), label);
 	        }
 
         }
         
-        if (!holdsAtBetweenList.isEmpty()){
+        if (!h.getHoldsAtBetweens().isEmpty()){
 	        System.out.println("Creating rectangle for CR");
-	        for (int i = 0; i < holdsAtBetweenList.size(); i++){
+	        for (int i = 0; i < h.getHoldsAtBetweens().size(); i++){
 	        	
-	        	if (holdsAtBetweenList.get(i).isIsHolding())
+	        	if (h.getHoldsAtBetweens().get(i).isIsHolding())
 	        		graphics.setForegroundColor(new Color(null, 50, 205, 50));
 	        	else
 	        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
 	        	
-	        	Point rectangleP1 = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime() , mainY + mainHeight/2 + 40);
-	        	Point rectangleP2 = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime() , mainY + mainHeight/2 + 45);
-	        	Point rectangleP3 = new Point(mainX + length*holdsAtBetweenList.get(i).getEndingTime() , mainY + mainHeight/2 + 45);
-	        	Point rectangleP4 = new Point(mainX + length*holdsAtBetweenList.get(i).getEndingTime() , mainY + mainHeight/2 + 40);
+	        	Point rectangleP1 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 40);
+	        	Point rectangleP2 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getInitialTime() , mainY + mainHeight/2 + 45);
+	        	Point rectangleP3 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 45);
+	        	Point rectangleP4 = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getEndingTime() , mainY + mainHeight/2 + 40);
 	        	PointList points = new PointList();
 	        	points.addPoint(rectangleP1);
 	        	points.addPoint(rectangleP2);
@@ -134,8 +140,8 @@ public class HypothesisFigure extends Shape {
 	        	points.addPoint(rectangleP4);
 	        	
 	        	graphics.drawPolygon(points);
-	        	Point label = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime(), mainY + mainHeight/2 +45 + 7);
-        		graphics.drawString(holdsAtBetweenList.get(i).getContextRelation().getName(), label);
+	        	Point label = new Point(mainX + length*h.getHoldsAtBetweens().get(i).getInitialTime(), mainY + mainHeight/2 +45 + 7);
+        		graphics.drawString(h.getHoldsAtBetweens().get(i).getContextRelation().getName(), label);
 
 	        }
 

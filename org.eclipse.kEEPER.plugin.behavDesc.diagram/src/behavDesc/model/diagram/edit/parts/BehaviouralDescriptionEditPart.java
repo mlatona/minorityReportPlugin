@@ -46,6 +46,7 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.kEEPER.plugin.ui.figures.BehaviouralDescriptionFigure;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.ListDialog;
@@ -80,6 +81,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure primaryShape;
 
+	private IEditorPart activeEditor; 
+	
 	private ModelDiagramEditor editor;
 
 	private TransactionalEditingDomain editingDomain;
@@ -93,9 +96,18 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	*/
 	public BehaviouralDescriptionEditPart(View view) {
 		super(view);
-		editor = (ModelDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+		
+		
+		activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 				.getActiveEditor();
-		editingDomain = editor.getEditingDomain();
+		System.out.println("EDITOR: "+ activeEditor);
+		
+		if (activeEditor instanceof ModelDiagramEditor){
+			editor = (ModelDiagramEditor) activeEditor;
+		//	editor =  (ModelDiagramEditor) ((ModelDiagramEditor) activeEditor).getEditingDomain();
+			System.out.println("Editor: " + editor +" ActiveEditor:     " +activeEditor);
+		}
+		
 		this.view = view;
 		this.bd = (BehaviouralDescription) view.getElement();
 	}
@@ -142,6 +154,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure createNodeShape(RectangleFigure r) {
 		return primaryShape = new BehaviouralDescriptionFigure(r, bd);
+		
 	}
 
 	/**
@@ -177,7 +190,13 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		IFigure shape = createNodeShape(r);
 		figure.add(shape);
 		contentPane = setupContentPane(shape);
-
+		System.out.println("Loop?");
+	/*	SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), bd,
+				ModelPackage.eINSTANCE.getBehaviouralDescription_TimeInstants(), ((BehaviouralDescriptionFigure) shape).getTimeInstants());
+		SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
+		editor.getDiagramEditDomain().getDiagramCommandStack()
+				.execute(new ICommandProxy(propertyOperation));
+*/
 		return figure;
 	}
 
@@ -547,8 +566,9 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	public int createSingleTimeInstantsDialog() {
 		// Creating third dialog
 		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
-		String[] timeInstantsArray = new String[getPrimaryShape().getTimeInstants()];
-		for (int i = 0; i < getPrimaryShape().getTimeInstants(); i++) {
+		String[] timeInstantsArray = new String[bd.getTimeInstants()];
+		System.out.println("NUMBERS: "+ bd.getTimeInstants());
+		for (int i = 0; i < bd.getTimeInstants(); i++) {
 			timeInstantsArray[i] = Integer.toString(i + 1);
 		}
 		timeInstantDialog.setElements(timeInstantsArray);
@@ -570,8 +590,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	public int[] createMultipleTimeInstantsDialog() {
 		// Creating third dialog
 		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
-		String[] timeInstantsArray = new String[getPrimaryShape().getTimeInstants()];
-		for (int i = 0; i < getPrimaryShape().getTimeInstants(); i++) {
+		String[] timeInstantsArray = new String[bd.getTimeInstants()];
+		for (int i = 0; i < bd.getTimeInstants(); i++) {
 			timeInstantsArray[i] = Integer.toString(i + 1);
 		}
 		timeInstantDialog.setElements(timeInstantsArray);

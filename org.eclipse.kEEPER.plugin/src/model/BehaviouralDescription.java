@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+//import behavDesc.model.diagram.part.ModelDiagramEditor;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Behavioural Description</b></em>'.
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.BehaviouralDescription#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.BehaviouralDescription#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.BehaviouralDescription#getName <em>Name</em>}</li>
+ *   <li>{@link model.BehaviouralDescription#getTimeInstants <em>Time Instants</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getBehaviouralDescription()
@@ -99,5 +102,35 @@ public interface BehaviouralDescription extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+	
+	//public ModelDiagramEditor getEditor();
+	
+	//public void setEditor(ModelDiagramEditor editor);
+
+	/**
+	 * Returns the value of the '<em><b>Time Instants</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Time Instants</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Instants</em>' attribute.
+	 * @see #setTimeInstants(int)
+	 * @see model.ModelPackage#getBehaviouralDescription_TimeInstants()
+	 * @model
+	 * @generated
+	 */
+	int getTimeInstants();
+
+	/**
+	 * Sets the value of the '{@link model.BehaviouralDescription#getTimeInstants <em>Time Instants</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Instants</em>' attribute.
+	 * @see #getTimeInstants()
+	 * @generated
+	 */
+	void setTimeInstants(int value);
 
 } // BehaviouralDescription

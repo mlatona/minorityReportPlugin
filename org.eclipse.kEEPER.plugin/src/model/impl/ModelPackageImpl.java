@@ -501,6 +501,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getBehaviouralDescription_TimeInstants() {
+		return (EAttribute)behaviouralDescriptionEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHoldsAt() {
 		return holdsAtEClass;
 	}
@@ -870,6 +879,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getHypothesis_TimeInstants() {
+		return (EAttribute)hypothesisEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ModelFactory getModelFactory() {
 		return (ModelFactory)getEFactoryInstance();
 	}
@@ -932,6 +950,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__HAPPENS);
 		createEReference(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__HOLDS_AT_BETWEENS);
 		createEAttribute(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__NAME);
+		createEAttribute(behaviouralDescriptionEClass, BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS);
 
 		holdsAtEClass = createEClass(HOLDS_AT);
 		createEAttribute(holdsAtEClass, HOLDS_AT__TIME);
@@ -981,6 +1000,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(hypothesisEClass, HYPOTHESIS__HAPPENS);
 		createEReference(hypothesisEClass, HYPOTHESIS__HOLDS_AT_BETWEENS);
 		createEAttribute(hypothesisEClass, HYPOTHESIS__NAME);
+		createEAttribute(hypothesisEClass, HYPOTHESIS__TIME_INSTANTS);
 	}
 
 	/**
@@ -1056,6 +1076,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getBehaviouralDescription_Happens(), this.getHappens(), null, "happens", null, 0, -1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBehaviouralDescription_HoldsAtBetweens(), this.getHoldsAtBetween(), null, "holdsAtBetweens", null, 0, -1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBehaviouralDescription_Name(), ecorePackage.getEString(), "name", null, 0, 1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBehaviouralDescription_TimeInstants(), ecorePackage.getEInt(), "timeInstants", null, 0, 1, BehaviouralDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(holdsAtEClass, HoldsAt.class, "HoldsAt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHoldsAt_Time(), ecorePackage.getEInt(), "time", null, 0, 1, HoldsAt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1105,6 +1126,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getHypothesis_Happens(), this.getHappens(), null, "happens", null, 0, -1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getHypothesis_HoldsAtBetweens(), this.getHoldsAtBetween(), null, "holdsAtBetweens", null, 0, -1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHypothesis_Name(), ecorePackage.getEString(), "name", null, 0, 1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHypothesis_TimeInstants(), ecorePackage.getEInt(), "timeInstants", null, 0, 1, Hypothesis.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

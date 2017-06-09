@@ -64,6 +64,7 @@ public class HypothesisItemProvider
 			addHappensPropertyDescriptor(object);
 			addHoldsAtBetweensPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addTimeInstantsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -157,6 +158,28 @@ public class HypothesisItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Time Instants feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimeInstantsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Hypothesis_timeInstants_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Hypothesis_timeInstants_feature", "_UI_Hypothesis_type"),
+				 ModelPackage.Literals.HYPOTHESIS__TIME_INSTANTS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Hypothesis.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -195,6 +218,7 @@ public class HypothesisItemProvider
 
 		switch (notification.getFeatureID(Hypothesis.class)) {
 			case ModelPackage.HYPOTHESIS__NAME:
+			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

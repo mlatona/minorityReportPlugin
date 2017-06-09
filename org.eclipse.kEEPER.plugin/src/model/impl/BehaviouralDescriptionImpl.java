@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Behavioural Description</b></em>'.
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.BehaviouralDescriptionImpl#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.impl.BehaviouralDescriptionImpl#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.impl.BehaviouralDescriptionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link model.impl.BehaviouralDescriptionImpl#getTimeInstants <em>Time Instants</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +89,30 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTimeInstants() <em>Time Instants</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeInstants()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int TIME_INSTANTS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getTimeInstants() <em>Time Instants</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeInstants()
+	 * @generated
+	 * @ordered
+	 */
+	protected int timeInstants = TIME_INSTANTS_EDEFAULT;
+	
+
+	
+	//private ModelDiagramEditor editor;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,6 +195,37 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getTimeInstants() {
+		return timeInstants;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTimeInstants(int newTimeInstants) {
+		int oldTimeInstants = timeInstants;
+		timeInstants = newTimeInstants;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS, oldTimeInstants, timeInstants));
+	}
+
+	
+/*	public ModelDiagramEditor getEditor(){
+		return editor;
+	}
+
+	public void setEditor(ModelDiagramEditor editor){
+		this.editor = editor;
+	}
+	*/
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -180,6 +237,8 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 				return getHoldsAtBetweens();
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME:
 				return getName();
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS:
+				return getTimeInstants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,6 +267,9 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME:
 				setName((String)newValue);
 				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS:
+				setTimeInstants((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,6 +294,9 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS:
+				setTimeInstants(TIME_INSTANTS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,6 +317,8 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 				return holdsAtBetweens != null && !holdsAtBetweens.isEmpty();
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS:
+				return timeInstants != TIME_INSTANTS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,6 +335,8 @@ public class BehaviouralDescriptionImpl extends MinimalEObjectImpl.Container imp
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", timeInstants: ");
+		result.append(timeInstants);
 		result.append(')');
 		return result.toString();
 	}

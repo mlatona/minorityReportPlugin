@@ -64,6 +64,7 @@ public class BehaviouralDescriptionItemProvider
 			addHappensPropertyDescriptor(object);
 			addHoldsAtBetweensPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addTimeInstantsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -157,6 +158,28 @@ public class BehaviouralDescriptionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Time Instants feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimeInstantsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BehaviouralDescription_timeInstants_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BehaviouralDescription_timeInstants_feature", "_UI_BehaviouralDescription_type"),
+				 ModelPackage.Literals.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns BehaviouralDescription.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -195,6 +218,7 @@ public class BehaviouralDescriptionItemProvider
 
 		switch (notification.getFeatureID(BehaviouralDescription.class)) {
 			case ModelPackage.BEHAVIOURAL_DESCRIPTION__NAME:
+			case ModelPackage.BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

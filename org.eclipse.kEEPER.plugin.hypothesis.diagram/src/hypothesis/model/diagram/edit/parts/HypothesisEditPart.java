@@ -31,11 +31,13 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
 import org.eclipse.kEEPER.plugin.ui.figures.HypothesisFigure;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
 import hypothesis.model.diagram.edit.policies.HypothesisItemSemanticEditPolicy;
 import hypothesis.model.diagram.part.ModelDiagramEditor;
+import model.BehaviouralDescription;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
@@ -65,6 +67,8 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	*/
 	protected IFigure primaryShape;
 
+	private IEditorPart activeEditor; 
+	
 	private ModelDiagramEditor editor;
 
 	private TransactionalEditingDomain editingDomain;
@@ -78,9 +82,18 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	*/
 	public HypothesisEditPart(View view) {
 		super(view);
-		editor = (ModelDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
+		
+		
+		activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 				.getActiveEditor();
-		editingDomain = editor.getEditingDomain();
+		System.out.println("EDITOR: "+ activeEditor);
+		
+		if (activeEditor instanceof ModelDiagramEditor){
+			editor = (ModelDiagramEditor) activeEditor;
+		//	editor =  (ModelDiagramEditor) ((ModelDiagramEditor) activeEditor).getEditingDomain();
+			System.out.println("Editor: " + editor +"     " +activeEditor);
+		}
+		
 		this.view = view;
 		this.h = (Hypothesis) view.getElement();
 	}
@@ -531,8 +544,8 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	public int createSingleTimeInstantsDialog() {
 		// Creating third dialog
 		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
-		String[] timeInstantsArray = new String[getPrimaryShape().getTimeInstants()];
-		for (int i = 0; i < getPrimaryShape().getTimeInstants(); i++) {
+		String[] timeInstantsArray = new String[h.getTimeInstants()];
+		for (int i = 0; i < h.getTimeInstants(); i++) {
 			timeInstantsArray[i] = Integer.toString(i + 1);
 		}
 		timeInstantDialog.setElements(timeInstantsArray);
@@ -554,8 +567,8 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	public int[] createMultipleTimeInstantsDialog() {
 		// Creating third dialog
 		ElementListSelectionDialog timeInstantDialog = new ElementListSelectionDialog(null, new LabelProvider());
-		String[] timeInstantsArray = new String[getPrimaryShape().getTimeInstants()];
-		for (int i = 0; i < getPrimaryShape().getTimeInstants(); i++) {
+		String[] timeInstantsArray = new String[h.getTimeInstants()];
+		for (int i = 0; i < h.getTimeInstants(); i++) {
 			timeInstantsArray[i] = Integer.toString(i + 1);
 		}
 		timeInstantDialog.setElements(timeInstantsArray);

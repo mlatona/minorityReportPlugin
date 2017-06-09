@@ -1,6 +1,8 @@
 package txtconverter;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -43,54 +45,19 @@ public class ConvertHandler extends AbstractHandler implements IHandler {
                       String filePath = "\nPath: " + path;
                       
                       System.out.println(filePath);
-                      
-                      
-                  /*    MessageDialog.openInformation(
-                              window.getShell(),
-                              "Menu",
-                              fileName+ filePath); */
                 }
             }
-
         }
-		
-		scan = new Scanner(System.in);
-		int num=0;
-		Transformer transform;
-		try {
-			transform = new Transformer(path);
-			
-			do{
-				System.out.println("What do you want to do?");
-				System.out.println("1. Parse files and output to txt");
-				System.out.println("10. Exit the program");
-				
-				num = scan.nextInt();
-				
-				switch(num){
-					case 1:{
-							Environment env;
-							env = transform.getLoader().parseFiles();
-							transform.createHypothesisFiles(env);
-							transform.createTxtFile(env);	
-					}break;
-					case 2:{
-							Environment env;
-							env = transform.getLoader().parseDiagramFile();
-							transform.createTxtFile(env);
-					}break;
-				}
-				
-			}while(num!=10);
-					
-		} catch (ParserConfigurationException e){
+		try { 
+			Transformer transform = new Transformer(path);
+			Environment env;
+			env = transform.getLoader().parseFiles();
+			transform.createTxtFile(env);	
+			transform.createHypothesisFiles(env);
+		} catch (SAXException | IOException | ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}catch (SAXException | IOException e){
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		}		
 		System.out.println("program terminated");
 		return null;
 	}

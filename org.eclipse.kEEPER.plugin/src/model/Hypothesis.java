@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link model.Hypothesis#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.Hypothesis#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.Hypothesis#getName <em>Name</em>}</li>
+ *   <li>{@link model.Hypothesis#getTimeInstants <em>Time Instants</em>}</li>
  * </ul>
  *
  * @see model.ModelPackage#getHypothesis()
@@ -99,5 +100,31 @@ public interface Hypothesis extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Time Instants</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Time Instants</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Instants</em>' attribute.
+	 * @see #setTimeInstants(int)
+	 * @see model.ModelPackage#getHypothesis_TimeInstants()
+	 * @model
+	 * @generated
+	 */
+	int getTimeInstants();
+
+	/**
+	 * Sets the value of the '{@link model.Hypothesis#getTimeInstants <em>Time Instants</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Instants</em>' attribute.
+	 * @see #getTimeInstants()
+	 * @generated
+	 */
+	void setTimeInstants(int value);
 
 } // Hypothesis

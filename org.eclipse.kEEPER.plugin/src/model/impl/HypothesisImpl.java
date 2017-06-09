@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link model.impl.HypothesisImpl#getHappens <em>Happens</em>}</li>
  *   <li>{@link model.impl.HypothesisImpl#getHoldsAtBetweens <em>Holds At Betweens</em>}</li>
  *   <li>{@link model.impl.HypothesisImpl#getName <em>Name</em>}</li>
+ *   <li>{@link model.impl.HypothesisImpl#getTimeInstants <em>Time Instants</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +88,26 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTimeInstants() <em>Time Instants</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeInstants()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int TIME_INSTANTS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getTimeInstants() <em>Time Instants</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeInstants()
+	 * @generated
+	 * @ordered
+	 */
+	protected int timeInstants = TIME_INSTANTS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,6 +190,27 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getTimeInstants() {
+		return timeInstants;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTimeInstants(int newTimeInstants) {
+		int oldTimeInstants = timeInstants;
+		timeInstants = newTimeInstants;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.HYPOTHESIS__TIME_INSTANTS, oldTimeInstants, timeInstants));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -180,6 +222,8 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 				return getHoldsAtBetweens();
 			case ModelPackage.HYPOTHESIS__NAME:
 				return getName();
+			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
+				return getTimeInstants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -208,6 +252,9 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 			case ModelPackage.HYPOTHESIS__NAME:
 				setName((String)newValue);
 				return;
+			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
+				setTimeInstants((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -232,6 +279,9 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 			case ModelPackage.HYPOTHESIS__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
+				setTimeInstants(TIME_INSTANTS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -252,6 +302,8 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 				return holdsAtBetweens != null && !holdsAtBetweens.isEmpty();
 			case ModelPackage.HYPOTHESIS__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ModelPackage.HYPOTHESIS__TIME_INSTANTS:
+				return timeInstants != TIME_INSTANTS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,6 +320,8 @@ public class HypothesisImpl extends MinimalEObjectImpl.Container implements Hypo
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", timeInstants: ");
+		result.append(timeInstants);
 		result.append(')');
 		return result.toString();
 	}

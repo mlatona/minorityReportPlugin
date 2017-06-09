@@ -515,13 +515,22 @@ public interface ModelPackage extends EPackage {
 	int BEHAVIOURAL_DESCRIPTION__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Time Instants</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Behavioural Description</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BEHAVIOURAL_DESCRIPTION_FEATURE_COUNT = 4;
+	int BEHAVIOURAL_DESCRIPTION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Behavioural Description</em>' class.
@@ -1109,13 +1118,22 @@ public interface ModelPackage extends EPackage {
 	int HYPOTHESIS__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Time Instants</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPOTHESIS__TIME_INSTANTS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Hypothesis</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HYPOTHESIS_FEATURE_COUNT = 4;
+	int HYPOTHESIS_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Hypothesis</em>' class.
@@ -1470,6 +1488,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBehaviouralDescription_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link model.BehaviouralDescription#getTimeInstants <em>Time Instants</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Instants</em>'.
+	 * @see model.BehaviouralDescription#getTimeInstants()
+	 * @see #getBehaviouralDescription()
+	 * @generated
+	 */
+	EAttribute getBehaviouralDescription_TimeInstants();
 
 	/**
 	 * Returns the meta object for class '{@link model.HoldsAt <em>Holds At</em>}'.
@@ -1915,6 +1944,17 @@ public interface ModelPackage extends EPackage {
 	EAttribute getHypothesis_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link model.Hypothesis#getTimeInstants <em>Time Instants</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Instants</em>'.
+	 * @see model.Hypothesis#getTimeInstants()
+	 * @see #getHypothesis()
+	 * @generated
+	 */
+	EAttribute getHypothesis_TimeInstants();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2208,6 +2248,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BEHAVIOURAL_DESCRIPTION__NAME = eINSTANCE.getBehaviouralDescription_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Instants</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BEHAVIOURAL_DESCRIPTION__TIME_INSTANTS = eINSTANCE.getBehaviouralDescription_TimeInstants();
 
 		/**
 		 * The meta object literal for the '{@link model.impl.HoldsAtImpl <em>Holds At</em>}' class.
@@ -2552,6 +2600,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute HYPOTHESIS__NAME = eINSTANCE.getHypothesis_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Instants</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPOTHESIS__TIME_INSTANTS = eINSTANCE.getHypothesis_TimeInstants();
 
 	}
 
