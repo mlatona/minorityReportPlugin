@@ -238,7 +238,7 @@ public class Transformer {
 				writer.printf(",T"+env.getBehavDescriptions().get(i).getHappens().get(j).getTime() +",TR)");
 				if (j < env.getBehavDescriptions().get(i).getHappens().size() - 1)
 					writer.printf(",\n");
-				else if (j == env.getBehavDescriptions().get(i).getHoldsAts().size() - 1){
+				else if (j == env.getBehavDescriptions().get(i).getHappens().size() - 1){
 					if (env.getBehavDescriptions().get(i).getHoldsAtBetweens().size() == 0)
 						writer.printf(".");
 					else
