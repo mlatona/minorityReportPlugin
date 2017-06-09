@@ -29,10 +29,13 @@ import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.dialogs.IInputValidator;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+
+import org.eclipse.emf.common.util.EList;
 
 import model.BehaviouralDescription;
 import model.Happens;
@@ -46,7 +49,7 @@ import org.eclipse.draw2d.Graphics;
 public class BehaviouralDescriptionFigure extends Shape{
 		private int timeInstants;
 		private RectangleFigure r;
-		private BehaviouralDescription behavDesc;
+		private BehaviouralDescription bd;
 		
 		private ArrayList<Happens> happensList = new ArrayList<Happens>();
 		private ArrayList<HoldsAt> holdsAtList = new ArrayList<HoldsAt>();
@@ -55,10 +58,11 @@ public class BehaviouralDescriptionFigure extends Shape{
 		/*
 		 * Constructor that set the number of time instants of the figure
 		 */
-		public BehaviouralDescriptionFigure(RectangleFigure r) {
+		public BehaviouralDescriptionFigure(RectangleFigure r, BehaviouralDescription bd) {
 			System.out.println("BehaviouralDescription Constructor!");
 			// behavDesc = (BehaviouralDescription) eObject;
 			this.r = r;
+			this.bd = bd;
 			// Input the number of time instants 
 			InputDialog inputDialog = new InputDialog(null, "Events", "Input the number of events", null, new IInputValidator() {
 
@@ -99,7 +103,6 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        // Creating main line
 	        for (int i = -2; i < 3; i++){
 	        	graphics.drawLine(mainX, mainY+mainHeight/2 +i, r.getLocation().x +r.getSize().width(), mainY+mainHeight/2 +i);
-	        	//System.out.printf("\nParameters mainLine: %d, %d, %d, %d\n", mainX, mainY+mainHeight/2 +i, r.getLocation().x +r.getSize().width(), mainY+mainHeight/2 +i);
 	        }
 	        
 	        // Creating small lines for the timeline
@@ -108,7 +111,6 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        	Point p2 = new Point(mainX+length*i, mainY+(mainHeight/2)+10);
 	      
 	        	graphics.drawLine(p1, p2);
-	        	//System.out.printf("\nParameters small lines: %d, %d, %d, %d\n", mainX+length*i, mainY+(mainHeight/2)-10, mainX+length*i, mainY+(mainHeight/2)+10);
 
 	        }
 	        
@@ -119,7 +121,10 @@ public class BehaviouralDescriptionFigure extends Shape{
 	        		graphics.setBackgroundColor(new Color(null, 0, 0, 255));
 	        		Point ovalStartingPoint = new Point(mainX + length*happensList.get(i).getTime() -3 , mainY + mainHeight/2 - 20);
 	        		graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
+	        		Point label = new Point(mainX + length*happensList.get(i).getTime() -3 -10, mainY + mainHeight/2 - 20 - 10);
+	        		graphics.drawString(happensList.get(i).getEvent().getName(), label);
 	        	}
+	        	
 	        }
 	        
 	        if (!holdsAtList.isEmpty()){
@@ -131,10 +136,12 @@ public class BehaviouralDescriptionFigure extends Shape{
 		        	else
 		        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
 		        	
-		        	Point ovalStartingPoint = new Point(mainX + length*holdsAtList.get(i).getTime() -3 , mainY + mainHeight/2 + 30);
+		        	Point ovalStartingPoint = new Point(mainX + length*holdsAtList.get(i).getTime() -3 , mainY + mainHeight/2 + 20);
 		        	graphics.drawOval(ovalStartingPoint.x, ovalStartingPoint.y, 6, 6);
+		        	Point label = new Point(mainX + length*holdsAtList.get(i).getTime() -3 -10, mainY + mainHeight/2 + 20 + 7);
+	        		graphics.drawString(holdsAtList.get(i).getContextRelation().getName(), label);
 		        }
-	        	
+
 	        }
 	        
 	        if (!holdsAtBetweenList.isEmpty()){
@@ -146,10 +153,10 @@ public class BehaviouralDescriptionFigure extends Shape{
 		        	else
 		        		graphics.setForegroundColor(new Color(null, 255, 0, 0));
 		        	
-		        	Point rectangleP1 = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime() , mainY + mainHeight/2 + 20);
-		        	Point rectangleP2 = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime() , mainY + mainHeight/2 + 25);
-		        	Point rectangleP3 = new Point(mainX + length*holdsAtBetweenList.get(i).getEndingTime() , mainY + mainHeight/2 + 25);
-		        	Point rectangleP4 = new Point(mainX + length*holdsAtBetweenList.get(i).getEndingTime() , mainY + mainHeight/2 + 20);
+		        	Point rectangleP1 = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime() , mainY + mainHeight/2 + 40);
+		        	Point rectangleP2 = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime() , mainY + mainHeight/2 + 45);
+		        	Point rectangleP3 = new Point(mainX + length*holdsAtBetweenList.get(i).getEndingTime() , mainY + mainHeight/2 + 45);
+		        	Point rectangleP4 = new Point(mainX + length*holdsAtBetweenList.get(i).getEndingTime() , mainY + mainHeight/2 + 40);
 		        	PointList points = new PointList();
 		        	points.addPoint(rectangleP1);
 		        	points.addPoint(rectangleP2);
@@ -157,17 +164,13 @@ public class BehaviouralDescriptionFigure extends Shape{
 		        	points.addPoint(rectangleP4);
 		        	
 		        	graphics.drawPolygon(points);
+		        	Point label = new Point(mainX + length*holdsAtBetweenList.get(i).getInitialTime(), mainY + mainHeight/2 +45 + 7);
+	        		graphics.drawString(holdsAtBetweenList.get(i).getContextRelation().getName(), label);
+
 		        }
-	        	
+
 	        }
 	        
-	      /* PointList pointList = new PointList();
-	        pointList.addPoint(new Point(mainX+2,mainY+13));
-	        pointList.addPoint(new Point(mainX+10,mainY+23));
-	        pointList.addPoint(new Point(mainX+22,mainY+31));
-	        pointList.addPoint(new Point(mainX+23,mainY+36));
-
-	        graphics.drawPolygon(pointList); */
 	    } 
 
 	    @Override

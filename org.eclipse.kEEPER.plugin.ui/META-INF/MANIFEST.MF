@@ -5,9 +5,11 @@ Bundle-SymbolicName: org.eclipse.kEEPER.plugin.ui
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.draw2d,
- org.eclipse.swt
+ org.eclipse.swt,
+ org.eclipse.emf.common
 Import-Package: model,
  org.eclipse.emf.ecore,
+ org.eclipse.gmf.runtime.notation,
  org.eclipse.jface.dialogs,
  org.eclipse.jface.window,
  org.eclipse.ui.dialogs

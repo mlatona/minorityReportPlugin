@@ -7,9 +7,13 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
+import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
+import hypothesis.model.diagram.edit.parts.HappensEditPart;
+import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
+import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
+import hypothesis.model.diagram.edit.parts.HypothesisEditPart;
 import model.Environment;
 import model.ModelPackage;
-
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -30,8 +34,8 @@ public class ModelVisualIDRegistry {
 	*/
 	public static int getVisualID(View view) {
 		if (view instanceof Diagram) {
-			if (hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID.equals(view.getType())) {
-				return hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID;
+			if (EnvironmentEditPart.MODEL_ID.equals(view.getType())) {
+				return EnvironmentEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
@@ -85,7 +89,7 @@ public class ModelVisualIDRegistry {
 		}
 		if (ModelPackage.eINSTANCE.getEnvironment().isSuperTypeOf(domainElement.eClass())
 				&& isDiagram((Environment) domainElement)) {
-			return hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID;
+			return EnvironmentEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -98,32 +102,32 @@ public class ModelVisualIDRegistry {
 			return -1;
 		}
 		String containerModelID = hypothesis.model.diagram.part.ModelVisualIDRegistry.getModelID(containerView);
-		if (!hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!EnvironmentEditPart.MODEL_ID.equals(containerModelID)) {
 			return -1;
 		}
 		int containerVisualID;
-		if (hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID.equals(containerModelID)) {
+		if (EnvironmentEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = hypothesis.model.diagram.part.ModelVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID;
+				containerVisualID = EnvironmentEditPart.VISUAL_ID;
 			} else {
 				return -1;
 			}
 		}
 		switch (containerVisualID) {
-		case hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID:
+		case EnvironmentEditPart.VISUAL_ID:
 			if (ModelPackage.eINSTANCE.getHypothesis().isSuperTypeOf(domainElement.eClass())) {
-				return hypothesis.model.diagram.edit.parts.HypothesisEditPart.VISUAL_ID;
+				return HypothesisEditPart.VISUAL_ID;
 			}
 			if (ModelPackage.eINSTANCE.getHappens().isSuperTypeOf(domainElement.eClass())) {
-				return hypothesis.model.diagram.edit.parts.HappensEditPart.VISUAL_ID;
+				return HappensEditPart.VISUAL_ID;
 			}
 			if (ModelPackage.eINSTANCE.getHoldsAt().isSuperTypeOf(domainElement.eClass())) {
-				return hypothesis.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID;
+				return HoldsAtEditPart.VISUAL_ID;
 			}
 			if (ModelPackage.eINSTANCE.getHoldsAtBetween().isSuperTypeOf(domainElement.eClass())) {
-				return hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID;
+				return HoldsAtBetweenEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -135,31 +139,31 @@ public class ModelVisualIDRegistry {
 	*/
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
 		String containerModelID = hypothesis.model.diagram.part.ModelVisualIDRegistry.getModelID(containerView);
-		if (!hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID.equals(containerModelID)) {
+		if (!EnvironmentEditPart.MODEL_ID.equals(containerModelID)) {
 			return false;
 		}
 		int containerVisualID;
-		if (hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID.equals(containerModelID)) {
+		if (EnvironmentEditPart.MODEL_ID.equals(containerModelID)) {
 			containerVisualID = hypothesis.model.diagram.part.ModelVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
-				containerVisualID = hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID;
+				containerVisualID = EnvironmentEditPart.VISUAL_ID;
 			} else {
 				return false;
 			}
 		}
 		switch (containerVisualID) {
-		case hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID:
-			if (hypothesis.model.diagram.edit.parts.HypothesisEditPart.VISUAL_ID == nodeVisualID) {
+		case EnvironmentEditPart.VISUAL_ID:
+			if (HypothesisEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (hypothesis.model.diagram.edit.parts.HappensEditPart.VISUAL_ID == nodeVisualID) {
+			if (HappensEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (hypothesis.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID == nodeVisualID) {
+			if (HoldsAtEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID == nodeVisualID) {
+			if (HoldsAtBetweenEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -211,12 +215,12 @@ public class ModelVisualIDRegistry {
 	*/
 	public static boolean isSemanticLeafVisualID(int visualID) {
 		switch (visualID) {
-		case hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID:
+		case EnvironmentEditPart.VISUAL_ID:
 			return false;
-		case hypothesis.model.diagram.edit.parts.HypothesisEditPart.VISUAL_ID:
-		case hypothesis.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
-		case hypothesis.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
-		case hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+		case HypothesisEditPart.VISUAL_ID:
+		case HappensEditPart.VISUAL_ID:
+		case HoldsAtEditPart.VISUAL_ID:
+		case HoldsAtBetweenEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

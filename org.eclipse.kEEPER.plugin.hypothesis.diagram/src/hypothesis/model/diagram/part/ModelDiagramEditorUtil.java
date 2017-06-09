@@ -50,6 +50,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 
+import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
 import model.Environment;
 import model.ModelFactory;
 
@@ -138,8 +139,7 @@ public class ModelDiagramEditorUtil {
 				Environment model = createInitialModel();
 				attachModelToResource(model, modelResource);
 
-				Diagram diagram = ViewService.createDiagram(model,
-						hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID,
+				Diagram diagram = ViewService.createDiagram(model, EnvironmentEditPart.MODEL_ID,
 						ModelDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				if (diagram != null) {
 					diagramResource.getContents().add(diagram);

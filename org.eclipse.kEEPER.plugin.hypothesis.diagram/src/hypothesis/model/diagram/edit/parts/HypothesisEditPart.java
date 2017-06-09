@@ -29,7 +29,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.window.Window;
-import org.eclipse.kEEPER.plugin.ui.figures.BehaviouralDescriptionFigure;
+import org.eclipse.kEEPER.plugin.ui.figures.HypothesisFigure;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
@@ -39,6 +39,7 @@ import hypothesis.model.diagram.part.ModelDiagramEditor;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
+import model.Hypothesis;
 import model.ModelPackage;
 import model.impl.HappensImpl;
 import model.impl.HoldsAtBetweenImpl;
@@ -63,14 +64,17 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	* @generated
 	*/
 	protected IFigure primaryShape;
-	
+
 	private ModelDiagramEditor editor;
 
 	private TransactionalEditingDomain editingDomain;
 
 	private View view;
+	
+	private Hypothesis h;
+
 	/**
-	* @generated
+	* @generated NOT
 	*/
 	public HypothesisEditPart(View view) {
 		super(view);
@@ -78,6 +82,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				.getActiveEditor();
 		editingDomain = editor.getEditingDomain();
 		this.view = view;
+		this.h = (Hypothesis) view.getElement();
 	}
 
 	/**
@@ -116,18 +121,19 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 		return lep;
 	}
 
+
 	/**
 	* @generated NOT
 	*/
 	protected IFigure createNodeShape(RectangleFigure r) {
-		return primaryShape = new BehaviouralDescriptionFigure(r);
+		return primaryShape = new HypothesisFigure(r, h);
 	}
 
 	/**
 	* @generated
 	*/
-	public BehaviouralDescriptionFigure getPrimaryShape() {
-		return (BehaviouralDescriptionFigure) primaryShape;
+	public org.eclipse.kEEPER.plugin.ui.figures.HypothesisFigure getPrimaryShape() {
+		return (org.eclipse.kEEPER.plugin.ui.figures.HypothesisFigure) primaryShape;
 	}
 
 	/**
@@ -144,14 +150,14 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 	* Body of this method does not depend on settings in generation model
 	* so you may safely remove <i>generated</i> tag and modify it.
 	* 
-	* @generated
+	* @generated NOT
 	*/
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
 		RectangleFigure r = new RectangleFigure();
 		r.setLineWidth(5);
-		r.setSize(200, 120);
+		r.setSize(200, 140);
 		figure.add(r);
 		IFigure shape = createNodeShape(r);
 		figure.add(shape);
@@ -215,7 +221,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 			((Shape) primaryShape).setLineStyle(style);
 		}
 	}
-	
+
 	@Override
 	public void performRequest(Request req) {
 		if (req.getType() == RequestConstants.REQ_OPEN) {
@@ -410,7 +416,7 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				}
 			}
 
-			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
+			// Looking for the context relation the user decided to associate with the new 'holds at' predicate and setting the property
 			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
 				if (contextRelationSelected
 						.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
@@ -499,12 +505,12 @@ public class HypothesisEditPart extends ShapeNodeEditPart {
 				}
 			}
 
-			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
+			// Looking for the context relation the user decided to associate with the new 'holds at between' predicate and setting the property
 			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
 				if (contextRelationSelected
 						.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
 					SetRequest setRequestContextRelation = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
-							ModelPackage.eINSTANCE.getHoldsAt_ContextRelation(),
+							ModelPackage.eINSTANCE.getHoldsAtBetween_ContextRelation(),
 							loadContextRelations.getEnvironment().getContextRelations().get(i));
 					SetValueCommand operation = new SetValueCommand(setRequestContextRelation);
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));

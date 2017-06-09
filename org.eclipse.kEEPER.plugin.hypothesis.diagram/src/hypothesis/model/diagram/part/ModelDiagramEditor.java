@@ -45,6 +45,7 @@ import org.eclipse.ui.navigator.resources.ProjectExplorer;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.IShowInTargetList;
 import org.eclipse.ui.part.ShowInContext;
+import hypothesis.model.diagram.navigator.ModelNavigatorItem;
 
 /**
  * @generated
@@ -259,8 +260,7 @@ public class ModelDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 		}
 		IFile file = WorkspaceSynchronizer.getFile(diagram.eResource());
 		if (file != null) {
-			hypothesis.model.diagram.navigator.ModelNavigatorItem item = new hypothesis.model.diagram.navigator.ModelNavigatorItem(
-					diagram, file, false);
+			ModelNavigatorItem item = new ModelNavigatorItem(diagram, file, false);
 			return new StructuredSelection(item);
 		}
 		return StructuredSelection.EMPTY;
@@ -276,7 +276,7 @@ public class ModelDiagramEditor extends DiagramDocumentEditor implements IGotoMa
 		getDiagramGraphicalViewer().setContextMenu(provider);
 		getSite().registerContextMenu(ActionIds.DIAGRAM_EDITOR_CONTEXT_MENU, provider, getDiagramGraphicalViewer());
 	}
-	
+
 	public Command createAndExecuteShapeRequestCommand(IElementType type, EditPart parent) {
 
 		CreateViewRequest actionRequest = CreateViewRequestFactory.getCreateShapeRequest(type,

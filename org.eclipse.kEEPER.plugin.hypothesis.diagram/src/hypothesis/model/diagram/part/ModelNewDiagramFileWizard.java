@@ -27,7 +27,7 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.osgi.util.NLS;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-
+import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
 
 /**
  * @generated
@@ -61,8 +61,8 @@ public class ModelNewDiagramFileWizard extends Wizard {
 		myFileCreationPage = new WizardNewFileCreationPage(Messages.ModelNewDiagramFileWizard_CreationPageName,
 				StructuredSelection.EMPTY);
 		myFileCreationPage.setTitle(Messages.ModelNewDiagramFileWizard_CreationPageTitle);
-		myFileCreationPage.setDescription(NLS.bind(Messages.ModelNewDiagramFileWizard_CreationPageDescription,
-				hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID));
+		myFileCreationPage.setDescription(
+				NLS.bind(Messages.ModelNewDiagramFileWizard_CreationPageDescription, EnvironmentEditPart.MODEL_ID));
 		IPath filePath;
 		String fileName = URI.decode(domainModelURI.trimFileExtension().lastSegment());
 		if (domainModelURI.isPlatformResource()) {
@@ -112,12 +112,11 @@ public class ModelNewDiagramFileWizard extends Wizard {
 					throws ExecutionException {
 				int diagramVID = ModelVisualIDRegistry
 						.getDiagramVisualID(diagramRootElementSelectionPage.getModelElement());
-				if (diagramVID != hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID) {
+				if (diagramVID != EnvironmentEditPart.VISUAL_ID) {
 					return CommandResult.newErrorCommandResult(Messages.ModelNewDiagramFileWizard_IncorrectRootError);
 				}
 				Diagram diagram = ViewService.createDiagram(diagramRootElementSelectionPage.getModelElement(),
-						hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID,
-						ModelDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+						EnvironmentEditPart.MODEL_ID, ModelDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 				diagramResource.getContents().add(diagram);
 				return CommandResult.newOKCommandResult();
 			}
@@ -165,8 +164,7 @@ public class ModelNewDiagramFileWizard extends Wizard {
 			}
 			boolean result = ViewService.getInstance()
 					.provides(new CreateDiagramViewOperation(new EObjectAdapter(getModelElement()),
-							hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID,
-							ModelDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
+							EnvironmentEditPart.MODEL_ID, ModelDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT));
 			setErrorMessage(
 					result ? null : Messages.ModelNewDiagramFileWizard_RootSelectionPageInvalidSelectionMessage);
 			return result;

@@ -19,6 +19,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import hypothesis.model.diagram.providers.ElementInitializers;
 import model.provider.ModelItemProviderAdapterFactory;
 
 /**
@@ -59,7 +60,7 @@ public class ModelDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	* @generated
 	*/
-	private hypothesis.model.diagram.providers.ElementInitializers initializers;
+	private ElementInitializers initializers;
 
 	/**
 	* @generated
@@ -202,14 +203,14 @@ public class ModelDiagramEditorPlugin extends AbstractUIPlugin {
 	/**
 	* @generated
 	*/
-	public hypothesis.model.diagram.providers.ElementInitializers getElementInitializers() {
+	public ElementInitializers getElementInitializers() {
 		return initializers;
 	}
 
 	/**
 	* @generated
 	*/
-	public void setElementInitializers(hypothesis.model.diagram.providers.ElementInitializers i) {
+	public void setElementInitializers(ElementInitializers i) {
 		this.initializers = i;
 	}
 

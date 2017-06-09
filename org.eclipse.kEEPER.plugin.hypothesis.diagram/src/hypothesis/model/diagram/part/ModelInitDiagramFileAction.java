@@ -17,7 +17,7 @@ import org.eclipse.osgi.util.NLS;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
-
+import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
 
 /**
  * @generated
@@ -81,8 +81,7 @@ public class ModelInitDiagramFileAction implements IObjectActionDelegate {
 			return;
 		}
 		Wizard wizard = new ModelNewDiagramFileWizard(domainModelURI, diagramRoot, editingDomain);
-		wizard.setWindowTitle(NLS.bind(Messages.InitDiagramFile_WizardTitle,
-				hypothesis.model.diagram.edit.parts.EnvironmentEditPart.MODEL_ID));
+		wizard.setWindowTitle(NLS.bind(Messages.InitDiagramFile_WizardTitle, EnvironmentEditPart.MODEL_ID));
 		ModelDiagramEditorUtil.runWizard(getShell(), wizard, "InitDiagramFile"); //$NON-NLS-1$
 	}
 }

@@ -8,12 +8,16 @@ import java.util.List;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
+import hypothesis.model.diagram.edit.parts.EnvironmentEditPart;
+import hypothesis.model.diagram.edit.parts.HappensEditPart;
+import hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart;
+import hypothesis.model.diagram.edit.parts.HoldsAtEditPart;
+import hypothesis.model.diagram.edit.parts.HypothesisEditPart;
 import model.Environment;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
 import model.Hypothesis;
-
 
 /**
  * @generated
@@ -25,7 +29,7 @@ public class ModelDiagramUpdater {
 	*/
 	public static List<ModelNodeDescriptor> getSemanticChildren(View view) {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
-		case hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID:
+		case EnvironmentEditPart.VISUAL_ID:
 			return getEnvironment_1000SemanticChildren(view);
 		}
 		return Collections.emptyList();
@@ -43,7 +47,7 @@ public class ModelDiagramUpdater {
 		for (Iterator<?> it = modelElement.getHypothesis().iterator(); it.hasNext();) {
 			Hypothesis childElement = (Hypothesis) it.next();
 			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == hypothesis.model.diagram.edit.parts.HypothesisEditPart.VISUAL_ID) {
+			if (visualID == HypothesisEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -51,7 +55,7 @@ public class ModelDiagramUpdater {
 		for (Iterator<?> it = modelElement.getHappens().iterator(); it.hasNext();) {
 			Happens childElement = (Happens) it.next();
 			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == hypothesis.model.diagram.edit.parts.HappensEditPart.VISUAL_ID) {
+			if (visualID == HappensEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -59,7 +63,7 @@ public class ModelDiagramUpdater {
 		for (Iterator<?> it = modelElement.getHoldsAts().iterator(); it.hasNext();) {
 			HoldsAt childElement = (HoldsAt) it.next();
 			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == hypothesis.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID) {
+			if (visualID == HoldsAtEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -67,7 +71,7 @@ public class ModelDiagramUpdater {
 		for (Iterator<?> it = modelElement.getHoldsAtBetweens().iterator(); it.hasNext();) {
 			HoldsAtBetween childElement = (HoldsAtBetween) it.next();
 			int visualID = ModelVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID) {
+			if (visualID == HoldsAtBetweenEditPart.VISUAL_ID) {
 				result.add(new ModelNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -80,15 +84,15 @@ public class ModelDiagramUpdater {
 	*/
 	public static List<ModelLinkDescriptor> getContainedLinks(View view) {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
-		case hypothesis.model.diagram.edit.parts.EnvironmentEditPart.VISUAL_ID:
+		case EnvironmentEditPart.VISUAL_ID:
 			return getEnvironment_1000ContainedLinks(view);
-		case hypothesis.model.diagram.edit.parts.HypothesisEditPart.VISUAL_ID:
+		case HypothesisEditPart.VISUAL_ID:
 			return getHypothesis_2001ContainedLinks(view);
-		case hypothesis.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
+		case HappensEditPart.VISUAL_ID:
 			return getHappens_2002ContainedLinks(view);
-		case hypothesis.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+		case HoldsAtEditPart.VISUAL_ID:
 			return getHoldsAt_2003ContainedLinks(view);
-		case hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+		case HoldsAtBetweenEditPart.VISUAL_ID:
 			return getHoldsAtBetween_2004ContainedLinks(view);
 		}
 		return Collections.emptyList();
@@ -99,13 +103,13 @@ public class ModelDiagramUpdater {
 	*/
 	public static List<ModelLinkDescriptor> getIncomingLinks(View view) {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
-		case hypothesis.model.diagram.edit.parts.HypothesisEditPart.VISUAL_ID:
+		case HypothesisEditPart.VISUAL_ID:
 			return getHypothesis_2001IncomingLinks(view);
-		case hypothesis.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
+		case HappensEditPart.VISUAL_ID:
 			return getHappens_2002IncomingLinks(view);
-		case hypothesis.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+		case HoldsAtEditPart.VISUAL_ID:
 			return getHoldsAt_2003IncomingLinks(view);
-		case hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+		case HoldsAtBetweenEditPart.VISUAL_ID:
 			return getHoldsAtBetween_2004IncomingLinks(view);
 		}
 		return Collections.emptyList();
@@ -116,13 +120,13 @@ public class ModelDiagramUpdater {
 	*/
 	public static List<ModelLinkDescriptor> getOutgoingLinks(View view) {
 		switch (ModelVisualIDRegistry.getVisualID(view)) {
-		case hypothesis.model.diagram.edit.parts.HypothesisEditPart.VISUAL_ID:
+		case HypothesisEditPart.VISUAL_ID:
 			return getHypothesis_2001OutgoingLinks(view);
-		case hypothesis.model.diagram.edit.parts.HappensEditPart.VISUAL_ID:
+		case HappensEditPart.VISUAL_ID:
 			return getHappens_2002OutgoingLinks(view);
-		case hypothesis.model.diagram.edit.parts.HoldsAtEditPart.VISUAL_ID:
+		case HoldsAtEditPart.VISUAL_ID:
 			return getHoldsAt_2003OutgoingLinks(view);
-		case hypothesis.model.diagram.edit.parts.HoldsAtBetweenEditPart.VISUAL_ID:
+		case HoldsAtBetweenEditPart.VISUAL_ID:
 			return getHoldsAtBetween_2004OutgoingLinks(view);
 		}
 		return Collections.emptyList();

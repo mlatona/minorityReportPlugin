@@ -51,6 +51,7 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.ListDialog;
 
 import behavDesc.model.diagram.part.ModelDiagramEditor;
+import model.BehaviouralDescription;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
@@ -84,6 +85,8 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	private TransactionalEditingDomain editingDomain;
 
 	private View view;
+	
+	private BehaviouralDescription bd;
 
 	/**
 	* @generated NOT
@@ -94,6 +97,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				.getActiveEditor();
 		editingDomain = editor.getEditingDomain();
 		this.view = view;
+		this.bd = (BehaviouralDescription) view.getElement();
 	}
 
 	/**
@@ -137,7 +141,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 	* @generated NOT
 	*/
 	protected IFigure createNodeShape(RectangleFigure r) {
-		return primaryShape = new BehaviouralDescriptionFigure(r);
+		return primaryShape = new BehaviouralDescriptionFigure(r, bd);
 	}
 
 	/**
@@ -168,7 +172,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 		figure.setLayoutManager(new StackLayout());
 		RectangleFigure r = new RectangleFigure();
 		r.setLineWidth(5);
-		r.setSize(200, 120);
+		r.setSize(200, 140);
 		figure.add(r);
 		IFigure shape = createNodeShape(r);
 		figure.add(shape);
@@ -338,6 +342,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 							.execute(new ICommandProxy(behavDescOperation));
 
 					// Setting the property of Happens
+					
 					SetRequest setRequestTimeInstant = new SetRequest(editor.getEditingDomain(), newHappens,
 							ModelPackage.eINSTANCE.getHappens_Time(), timeSelection);
 					SetValueCommand propertyOperation = new SetValueCommand(setRequestTimeInstant);
@@ -427,7 +432,7 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				}
 			}
 
-			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
+			// Looking for the context relation the user decided to associate with the new 'holds at' predicate and setting the property
 			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
 				if (contextRelationSelected
 						.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
@@ -516,12 +521,12 @@ public class BehaviouralDescriptionEditPart extends ShapeNodeEditPart {
 				}
 			}
 
-			// Looking for the event the user decided to associate with the new 'happens' predicate and setting the property
+			// Looking for the context relation the user decided to associate with the new 'holds at between' predicate and setting the property
 			for (int i = 0; i < loadContextRelations.getEnvironment().getContextRelations().size(); i++) {
 				if (contextRelationSelected
 						.equals(loadContextRelations.getEnvironment().getContextRelations().get(i).getName())) {
 					SetRequest setRequestContextRelation = new SetRequest(editor.getEditingDomain(), newHoldsAtBetween,
-							ModelPackage.eINSTANCE.getHoldsAt_ContextRelation(),
+							ModelPackage.eINSTANCE.getHoldsAtBetween_ContextRelation(),
 							loadContextRelations.getEnvironment().getContextRelations().get(i));
 					SetValueCommand operation = new SetValueCommand(setRequestContextRelation);
 					editor.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(operation));

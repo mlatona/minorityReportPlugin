@@ -40,7 +40,7 @@
           editHelperClassName="HypothesisEditHelper"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
-          figureQualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.BehaviouralDescritionFigure"/>
+          figureQualifiedClassName="org.eclipse.minorityReportPlugin.ui.figures.HypothesisFigure"/>
       <modelFacet>
         <metaClass
             href="../model.genmodel#//model/Hypothesis"/>
@@ -163,9 +163,7 @@
     <requiredPlugins>org.eclipse.draw2d</requiredPlugins>
   </plugin>
   <editor
-      packageName="hypothesis.model.diagram.part"
-      iD="hypothesis.model.diagram.part.ModelDiagramEditorID"
-      contextID="hypothesis.model.diagram.ui.diagramContext"/>
+      iD="hypothesis.model.diagram.part.ModelDiagramEditorID"/>
   <navigator>
     <childReferences
         child="//@diagram"/>
@@ -182,8 +180,7 @@
         parent="//@diagram"
         child="//@diagram/@topLevelNodes.3"/>
   </navigator>
-  <diagramUpdater
-      updateCommandID="hypothesis.model.diagram.updateDiagram"/>
+  <diagramUpdater/>
   <propertySheet
       packageName="hypothesis.model.diagram.sheet">
     <tabs

@@ -8,7 +8,7 @@ import org.eclipse.gef.palette.PaletteGroup;
 import org.eclipse.gef.palette.PaletteRoot;
 import org.eclipse.gef.palette.ToolEntry;
 import org.eclipse.gmf.tooling.runtime.part.DefaultNodeToolEntry;
-
+import hypothesis.model.diagram.providers.ModelElementTypes;
 
 /**
  * @generated
@@ -38,10 +38,9 @@ public class ModelPaletteFactory {
 	*/
 	private ToolEntry createHypothesis1CreationTool() {
 		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Hypothesis1CreationTool_title, null,
-				Collections.singletonList(hypothesis.model.diagram.providers.ModelElementTypes.Hypothesis_2001));
+				Collections.singletonList(ModelElementTypes.Hypothesis_2001));
 		entry.setId("createHypothesis1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(hypothesis.model.diagram.providers.ModelElementTypes
-				.getImageDescriptor(hypothesis.model.diagram.providers.ModelElementTypes.Hypothesis_2001));
+		entry.setSmallIcon(ModelElementTypes.getImageDescriptor(ModelElementTypes.Hypothesis_2001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

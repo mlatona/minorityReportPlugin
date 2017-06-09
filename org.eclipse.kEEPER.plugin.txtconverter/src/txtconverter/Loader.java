@@ -76,7 +76,7 @@ public class Loader {
 		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.typeinstanceModel"));
 		Resource r2 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.contextRelationModel"));
 		Resource r3 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.eventModel"));
-		Resource r4 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.behavDescModel"));	
+		Resource r4 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.bdModel"));	
 		Resource r5 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.hypothesisModel"));		
 
 		r1.load(null);

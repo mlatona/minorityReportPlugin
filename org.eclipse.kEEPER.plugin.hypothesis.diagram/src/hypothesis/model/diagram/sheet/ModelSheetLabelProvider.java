@@ -9,8 +9,9 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Image;
 
+import hypothesis.model.diagram.navigator.ModelNavigatorGroup;
 import hypothesis.model.diagram.part.ModelVisualIDRegistry;
-
+import hypothesis.model.diagram.providers.ModelElementTypes;
 
 /**
  * @generated
@@ -22,8 +23,8 @@ public class ModelSheetLabelProvider extends BaseLabelProvider implements ILabel
 	*/
 	public String getText(Object element) {
 		element = unwrap(element);
-		if (element instanceof hypothesis.model.diagram.navigator.ModelNavigatorGroup) {
-			return ((hypothesis.model.diagram.navigator.ModelNavigatorGroup) element).getGroupName();
+		if (element instanceof ModelNavigatorGroup) {
+			return ((ModelNavigatorGroup) element).getGroupName();
 		}
 		IElementType etype = getElementType(getView(element));
 		return etype == null ? "" : etype.getDisplayName();
@@ -34,7 +35,7 @@ public class ModelSheetLabelProvider extends BaseLabelProvider implements ILabel
 	*/
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
-		return etype == null ? null : hypothesis.model.diagram.providers.ModelElementTypes.getImage(etype);
+		return etype == null ? null : ModelElementTypes.getImage(etype);
 	}
 
 	/**
@@ -67,7 +68,7 @@ public class ModelSheetLabelProvider extends BaseLabelProvider implements ILabel
 		// For intermediate views climb up the containment hierarchy to find the one associated with an element type.
 		while (view != null) {
 			int vid = ModelVisualIDRegistry.getVisualID(view);
-			IElementType etype = hypothesis.model.diagram.providers.ModelElementTypes.getElementType(vid);
+			IElementType etype = ModelElementTypes.getElementType(vid);
 			if (etype != null) {
 				return etype;
 			}
