@@ -5,12 +5,12 @@
          point="org.eclipse.ui.commands">
       <category
             description="Category related to the command for generating the txt file"
-            id="org.eclipse.minorityreportplugin.txtconverter.category"
+            id="org.eclipse.kEEPER.plugin.txtconverter.category"
             name="Generate TXT category">
       </category>
       <command
-            categoryId="org.eclipse.minorityreportplugin.txtconverter.category"
-            id="org.eclipse.minorityreportplugin.txtconverter.generateTxt"
+            categoryId="org.eclipse.kEEPER.plugin.txtconverter.category"
+            id="org.eclipse.kEEPER.plugin.txtconverter.generateTxt"
             description="Command related to the txt generation"
             name="Generate TXT command">
       </command>
@@ -21,7 +21,7 @@
             allPopups="true"
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
-               commandId="org.eclipse.minorityreportplugin.txtconverter.generateTxt"
+               commandId="org.eclipse.kEEPER.plugin.txtconverter.generateTxt"
                label="Gen Encoding"
                mnemonic="O"
                style="push">
@@ -55,7 +55,7 @@
          point="org.eclipse.ui.handlers">
       <handler
             class="txtconverter.ConvertHandler"
-            commandId="org.eclipse.minorityreportplugin.txtconverter.generateTxt">
+            commandId="org.eclipse.kEEPER.plugin.txtconverter.generateTxt">
       </handler>
    </extension>
 
