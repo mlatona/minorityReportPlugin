@@ -216,9 +216,9 @@
       <?gmfgen generated="true"?>
       <viewProvider class="event.model.diagram.providers.ModelViewProvider">
          <Priority name="Lowest"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Event Model"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2005,2007,2008,2009,2010"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4004,4003,4002"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints=""/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints=""/>
       </viewProvider>
    </extension>
 

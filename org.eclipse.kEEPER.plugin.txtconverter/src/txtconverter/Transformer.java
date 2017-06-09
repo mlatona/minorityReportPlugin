@@ -123,6 +123,7 @@ public class Transformer {
 					event = (ComplexEvent) env.getEvents().get(j); //Casting to ComplexEvent because for sure is a complex event
 				}	
 			}
+			//writer.printf("happens("+ event.getName());
 			writeEventParameters(event, writer);
 			
 			// Computing the maximum time between context relations and events of a specified complex event and
