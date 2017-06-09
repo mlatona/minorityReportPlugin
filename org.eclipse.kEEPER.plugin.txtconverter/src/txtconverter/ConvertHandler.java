@@ -12,11 +12,14 @@ import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.commands.IHandler;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.xml.sax.SAXException;
 
@@ -26,30 +29,26 @@ public class ConvertHandler extends AbstractHandler implements IHandler {
 	
 	private Scanner scan;
 	
-	private String path;
+	private IPath path;
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		System.out.println("I'm in ConvertHandler!");
-		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);   
-        ISelection selection = window.getSelectionService().getSelection();     
-        if (selection instanceof IStructuredSelection) {
-            IStructuredSelection ssel = (IStructuredSelection) selection;
-            Object obj = ssel.getFirstElement();
-            IFile file = (IFile) Platform.getAdapterManager().getAdapter(obj, IFile.class);
-            if (file != null) {
-                if (obj instanceof IAdaptable) {
-                      file = (IFile) ((IAdaptable) obj).getAdapter(IFile.class);
-                      path = file.getRawLocation().toOSString();                    
-                      String fileName = "File=" + file.getName();
-                      String filePath = "\nPath: " + path;
-                      
-                      System.out.println(filePath);
-                }
-            }
-        }
+		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+	    if (window != null)
+	    {
+	        IStructuredSelection selection = (IStructuredSelection) window.getSelectionService().getSelection();
+	        Object firstElement = selection.getFirstElement();
+	        if (firstElement instanceof IAdaptable)
+	        {
+	            IProject project = (IProject)((IAdaptable)firstElement).getAdapter(IProject.class);
+	            path = project.getLocation();
+	            System.out.println("PATH: "+path);
+	        }
+	    }
+
 		try { 
-			Transformer transform = new Transformer(path);
+			Transformer transform = new Transformer(path.toString());
 			Environment env;
 			env = transform.getLoader().parseFiles();
 			transform.createTxtFile(env);	

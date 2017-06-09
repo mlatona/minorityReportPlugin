@@ -13,6 +13,7 @@ import model.ModelFactory;
 import model.PrimitiveEvent;
 import model.impl.ComplexEventImpl;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -25,7 +26,12 @@ import java.util.List;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.jface.viewers.TreeSelection;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 
 /*
  * This class has to create a new file .txt based on the information saved in the model
@@ -36,8 +42,12 @@ public class Transformer {
 	
 	private Loader loader;
 	private ModelFactory modelFactory;
+	private String directoryPath;
 	
 	public Transformer(String filePath) throws ParserConfigurationException{
+
+		this.directoryPath = filePath;
+		
 		System.out.println("I'm in transformer and the path is: "+ filePath);
 		modelFactory = model.ModelFactory.eINSTANCE;
 		
@@ -47,7 +57,7 @@ public class Transformer {
 	
 	public void createTxtFile(Environment env) throws FileNotFoundException, UnsupportedEncodingException{
 	    
-		PrintWriter writer = new PrintWriter("/Users/marco/Documents/ThesisWorkspace/WorkspaceRepository/org.eclipse.kEEPER.plugin.txtconverter/output/environment.txt", "UTF-8");
+		PrintWriter writer = new PrintWriter(directoryPath +"/environment.txt", "UTF-8");
 		
 		writer.println("% ****************** Environment Description ******************\n");
 		writer.println("% ********* Context Description *********\n");
@@ -327,7 +337,7 @@ public class Transformer {
 			
 			System.out.println("HYPOTHESIS: " + fileName);
 			
-			PrintWriter writer2 = new PrintWriter("/Users/marco/Documents/ThesisWorkspace/WorkspaceRepository/org.eclipse.kEEPER.plugin.txtconverter/output/" + fileName, "UTF-8");
+			PrintWriter writer2 = new PrintWriter(directoryPath + "/" +fileName, "UTF-8");
 			
 			// HYPOTHESIS OUTPUT ALGORITHM
 				writer2.printf("hypothesis("+ "h"+ (i+1));
