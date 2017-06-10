@@ -2,21 +2,21 @@ package org.eclipse.kEEPER.plugin.ui.figures;
 
 import java.util.ArrayList;
 
+
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PointList;
-import org.eclipse.jface.dialogs.IInputValidator;
-import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 
-import model.BehaviouralDescription;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
 import model.Hypothesis;
+
+
 
 public class HypothesisFigure extends Shape {
 	private int timeInstants;

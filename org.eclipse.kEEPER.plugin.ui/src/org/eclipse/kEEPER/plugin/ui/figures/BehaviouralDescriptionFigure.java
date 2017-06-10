@@ -2,6 +2,7 @@ package org.eclipse.kEEPER.plugin.ui.figures;
 
 import java.awt.Component;
 
+
 import java.awt.EventQueue;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
@@ -35,12 +36,14 @@ import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 
-import org.eclipse.emf.common.util.EList;
-
 import model.BehaviouralDescription;
 import model.Happens;
 import model.HoldsAt;
 import model.HoldsAtBetween;
+
+import org.eclipse.emf.common.util.EList;
+
+
 
 import org.eclipse.draw2d.Graphics;
 
