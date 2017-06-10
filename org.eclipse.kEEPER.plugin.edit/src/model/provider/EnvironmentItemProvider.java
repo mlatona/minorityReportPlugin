@@ -246,6 +246,16 @@ public class EnvironmentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
+				 ModelFactory.eINSTANCE.createParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
+				 ModelFactory.eINSTANCE.createObserver()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.ENVIRONMENT__AGENTS,
 				 ModelFactory.eINSTANCE.createAgent()));
 
 		newChildDescriptors.add
@@ -307,9 +317,9 @@ public class EnvironmentItemProvider
 
 		boolean qualify =
 			childFeature == ModelPackage.Literals.ENVIRONMENT__PARAMETERS ||
+			childFeature == ModelPackage.Literals.ENVIRONMENT__AGENTS ||
 			childFeature == ModelPackage.Literals.ENVIRONMENT__OBSERVERS ||
 			childFeature == ModelPackage.Literals.ENVIRONMENT__ADD_PARAM ||
-			childFeature == ModelPackage.Literals.ENVIRONMENT__AGENTS ||
 			childFeature == ModelPackage.Literals.ENVIRONMENT__EVENTS ||
 			childFeature == ModelPackage.Literals.ENVIRONMENT__PRIMITIVE_EVENTS ||
 			childFeature == ModelPackage.Literals.ENVIRONMENT__COMPLEX_EVENTS;

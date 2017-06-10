@@ -3,11 +3,17 @@ package behavDesc.model.diagram.edit.parts;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 
 import model.Environment;
 import model.Event;
@@ -20,11 +26,13 @@ public class LoadEvents {
 	private ModelPackage modelPackage;
 	private ModelFactory modelFactory;
 	private Environment env;
+	private String path;
 	
 	public LoadEvents() throws IOException{
 		
 		System.out.println("I'm in loadEvents");
-		
+		path = System.getProperty("user.dir");
+	    System.out.println("PATHH: "+ path);
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;
 		
@@ -34,7 +42,8 @@ public class LoadEvents {
 
 		// Load the resource and resolve the proxies
 		ResourceSet rs = new ResourceSetImpl();
-		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/default.eventmodel"));
+
+		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.eventModel"));
 		r1.load(null);
 		env = (Environment) r1.getContents().get(0);
 

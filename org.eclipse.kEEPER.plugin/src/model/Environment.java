@@ -200,7 +200,7 @@ public interface Environment extends EObject {
 	
 	/**
 	 * Returns the value of the '<em><b>Agents</b></em>' containment reference list.
-	 * The list contents are of type {@link model.Agent}.
+	 * The list contents are of type {@link model.Parameter}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Agents</em>' containment reference list isn't clear,
@@ -212,7 +212,7 @@ public interface Environment extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Agent> getAgents();
+	EList<Parameter> getAgents();
 
 	/**
 	 * Returns the value of the '<em><b>Observers</b></em>' containment reference list.

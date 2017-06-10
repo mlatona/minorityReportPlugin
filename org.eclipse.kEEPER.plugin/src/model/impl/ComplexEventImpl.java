@@ -2,6 +2,7 @@
  */
 package model.impl;
 
+import java.util.Collection;
 import model.Agent;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
@@ -9,10 +10,12 @@ import model.ModelPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,14 +54,14 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	protected int time = TIME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBehaviouralDescriptions() <em>Behavioural Descriptions</em>}' reference.
+	 * The cached value of the '{@link #getBehaviouralDescriptions() <em>Behavioural Descriptions</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBehaviouralDescriptions()
 	 * @generated
 	 * @ordered
 	 */
-	protected BehaviouralDescription behaviouralDescriptions;
+	protected EList<BehaviouralDescription> behaviouralDescriptions;
 
 	/**
 	 * The cached value of the '{@link #getAgent() <em>Agent</em>}' reference.
@@ -115,37 +118,11 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BehaviouralDescription getBehaviouralDescriptions() {
-		if (behaviouralDescriptions != null && behaviouralDescriptions.eIsProxy()) {
-			InternalEObject oldBehaviouralDescriptions = (InternalEObject)behaviouralDescriptions;
-			behaviouralDescriptions = (BehaviouralDescription)eResolveProxy(oldBehaviouralDescriptions);
-			if (behaviouralDescriptions != oldBehaviouralDescriptions) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS, oldBehaviouralDescriptions, behaviouralDescriptions));
-			}
+	public EList<BehaviouralDescription> getBehaviouralDescriptions() {
+		if (behaviouralDescriptions == null) {
+			behaviouralDescriptions = new EObjectResolvingEList<BehaviouralDescription>(BehaviouralDescription.class, this, ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS);
 		}
 		return behaviouralDescriptions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BehaviouralDescription basicGetBehaviouralDescriptions() {
-		return behaviouralDescriptions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBehaviouralDescriptions(BehaviouralDescription newBehaviouralDescriptions) {
-		BehaviouralDescription oldBehaviouralDescriptions = behaviouralDescriptions;
-		behaviouralDescriptions = newBehaviouralDescriptions;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS, oldBehaviouralDescriptions, behaviouralDescriptions));
 	}
 
 	/**
@@ -197,8 +174,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 			case ModelPackage.COMPLEX_EVENT__TIME:
 				return getTime();
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
-				if (resolve) return getBehaviouralDescriptions();
-				return basicGetBehaviouralDescriptions();
+				return getBehaviouralDescriptions();
 			case ModelPackage.COMPLEX_EVENT__AGENT:
 				if (resolve) return getAgent();
 				return basicGetAgent();
@@ -211,6 +187,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -218,7 +195,8 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 				setTime((Integer)newValue);
 				return;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
-				setBehaviouralDescriptions((BehaviouralDescription)newValue);
+				getBehaviouralDescriptions().clear();
+				getBehaviouralDescriptions().addAll((Collection<? extends BehaviouralDescription>)newValue);
 				return;
 			case ModelPackage.COMPLEX_EVENT__AGENT:
 				setAgent((Agent)newValue);
@@ -239,7 +217,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 				setTime(TIME_EDEFAULT);
 				return;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
-				setBehaviouralDescriptions((BehaviouralDescription)null);
+				getBehaviouralDescriptions().clear();
 				return;
 			case ModelPackage.COMPLEX_EVENT__AGENT:
 				setAgent((Agent)null);
@@ -259,7 +237,7 @@ public class ComplexEventImpl extends EventImpl implements ComplexEvent {
 			case ModelPackage.COMPLEX_EVENT__TIME:
 				return time != TIME_EDEFAULT;
 			case ModelPackage.COMPLEX_EVENT__BEHAVIOURAL_DESCRIPTIONS:
-				return behaviouralDescriptions != null;
+				return behaviouralDescriptions != null && !behaviouralDescriptions.isEmpty();
 			case ModelPackage.COMPLEX_EVENT__AGENT:
 				return agent != null;
 		}

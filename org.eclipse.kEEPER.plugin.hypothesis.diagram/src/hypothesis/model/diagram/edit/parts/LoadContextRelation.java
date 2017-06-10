@@ -33,7 +33,7 @@ public class LoadContextRelation {
 
 		// Load the resource and resolve the proxies
 		ResourceSet rs = new ResourceSetImpl();
-		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/default.contextRelationmodel"));
+		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.contextRelationmodel"));
 		r1.load(null);
 		env = (Environment) r1.getContents().get(0);
 

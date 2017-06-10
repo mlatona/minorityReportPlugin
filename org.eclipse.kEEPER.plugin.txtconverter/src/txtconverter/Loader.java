@@ -97,10 +97,12 @@ public class Loader {
 		env.setInstances(env1.getInstances());
 		env.setContextRelations(env2.getContextRelations());
 		env.setEvents(env3.getEvents());
+		System.out.println("Eventi primitivi: "+ env3.getEvents());
 		env.setBehavDescriptions(env4.getBehavDescriptions());
 		env.setHypothesis(env5.getHypothesis());
 				
 		// Verification
+		/*
 		for (int i = 0; i < env.getInstances().size(); i++){
 			System.out.println("Instance: " + env.getInstances().get(i).getName() + "  Type: " + env.getInstances().get(i).getType().getName());
 		}
@@ -129,7 +131,7 @@ public class Loader {
 		for (int i = 0; i < env.getInitials().size(); i++){
 			System.out.println("Context relation: "+ env.getInitials().get(i).getContextRelation().getName() + " --> true");
 		}
-
+*/
 		return env; 
 	} //parseFiles()
 	
@@ -153,6 +155,7 @@ public class Loader {
 		env = (Environment) r.getContents().get(0);
 				
 		// Verification
+		/*
 		for (int i = 0; i < env.getInstances().size(); i++){
 			System.out.println("Instance: " + env.getInstances().get(i).getName() + "  Type: " + env.getInstances().get(i).getType().getName());
 		}
@@ -187,6 +190,7 @@ public class Loader {
 		for (int i = 0; i < env.getParameters().size(); i++){
 			System.out.printf("Parameter %d: %s --> type: %s \n", i+1, env.getParameters().get(i).getName(), env.getParameters().get(i).getType().getName() );
 		}
+		*/
 		return env;
 	}
 

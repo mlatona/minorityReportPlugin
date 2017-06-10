@@ -3,11 +3,17 @@ package behavDesc.model.diagram.edit.parts;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 
 import model.ContextRelation;
 import model.Environment;
@@ -19,11 +25,12 @@ public class LoadContextRelation {
 	private ModelPackage modelPackage;
 	private ModelFactory modelFactory;
 	private Environment env;
+	private IPath path;
 	
 	public LoadContextRelation() throws IOException{
 		
 		System.out.println("I'm in LoadContextRelation");
-		
+
 		modelPackage = ModelPackage.eINSTANCE;
 		modelFactory = model.ModelFactory.eINSTANCE;
 		
@@ -33,7 +40,7 @@ public class LoadContextRelation {
 
 		// Load the resource and resolve the proxies
 		ResourceSet rs = new ResourceSetImpl();
-		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-New_configuration/ApplicationInstance/default.contextRelationmodel"));
+		Resource r1 = rs.createResource(URI.createFileURI("/Users/marco/Documents/runtime-EclipseApplication4/ApplicationInstance/default.contextRelationmodel"));
 		r1.load(null);
 		env = (Environment) r1.getContents().get(0);
 

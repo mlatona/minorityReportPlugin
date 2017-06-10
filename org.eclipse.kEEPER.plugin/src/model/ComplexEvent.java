@@ -2,6 +2,8 @@
  */
 package model;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -49,30 +51,20 @@ public interface ComplexEvent extends Event {
 	void setTime(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Behavioural Descriptions</b></em>' reference.
+	 * Returns the value of the '<em><b>Behavioural Descriptions</b></em>' reference list.
+	 * The list contents are of type {@link model.BehaviouralDescription}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Behavioural Descriptions</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Behavioural Descriptions</em>' reference.
-	 * @see #setBehaviouralDescriptions(BehaviouralDescription)
+	 * @return the value of the '<em>Behavioural Descriptions</em>' reference list.
 	 * @see model.ModelPackage#getComplexEvent_BehaviouralDescriptions()
 	 * @model required="true"
 	 * @generated
 	 */
-	BehaviouralDescription getBehaviouralDescriptions();
-
-	/**
-	 * Sets the value of the '{@link model.ComplexEvent#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Behavioural Descriptions</em>' reference.
-	 * @see #getBehaviouralDescriptions()
-	 * @generated
-	 */
-	void setBehaviouralDescriptions(BehaviouralDescription value);
+	EList<BehaviouralDescription> getBehaviouralDescriptions();
 
 	/**
 	 * Returns the value of the '<em><b>Agent</b></em>' reference.

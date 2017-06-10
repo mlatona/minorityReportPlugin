@@ -36,7 +36,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ComplexEvent" eSuperTypes="#//Event">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="behaviouralDescriptions"
-        lowerBound="1" eType="#//BehaviouralDescription"/>
+        lowerBound="1" upperBound="-1" eType="#//BehaviouralDescription"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="#//Agent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BehaviouralDescription">
@@ -98,7 +98,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="initials" upperBound="-1"
         eType="#//Initially" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="agents" upperBound="-1"
-        eType="#//Agent" containment="true"/>
+        eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="observers" upperBound="-1"
         eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="addParam" upperBound="-1"

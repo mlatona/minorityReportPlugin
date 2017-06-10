@@ -91,13 +91,21 @@ public class Transformer {
 		
 		writer.println("\n\n% ********* Behaviour Description *********\n");
 		writer.println("% ***** Primitive Events *****\n");
-		writer.println("event(V):-\n\tpe(V)");
+		writer.println("event(V):-\n\tpe(V)\n\n");
 		// Creating list of primitive events
 		for (int i = 0; i < env.getEvents().size(); i++){
 			if (env.getEvents().get(i) instanceof PrimitiveEvent){
 				System.out.println("Primitive event");
+				writer.printf("pe("+ env.getEvents().get(i).getName());
+				writeEventParameters(env.getEvents().get(i), writer);
+				writer.printf("):-\n\t");
+				for (int j = 0; j < env.getEvents().get(i).getParameters().size(); j++){
+					if (j != env.getEvents().get(i).getParameters().size()-1)
+						writer.printf("%s(%c),", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
+					else
+						writer.printf("%s(%c).\n", env.getEvents().get(i).getParameters().get(j).getType().getName(), env.getEvents().get(i).getParameters().get(j).getType().getName().charAt(0));
+				}
 				
-				// TODO write all primitive events
 			
 			}
 		} // Primitive events
@@ -312,6 +320,7 @@ public class Transformer {
 	private void writeEventParameters(Event ev, PrintWriter writer){
 		writer.printf("(");
 		for (int j = 0; j < ev.getParameters().size(); j++){
+			System.out.println("Parametro: "+ ev.getParameters().get(j));
 			if (j != ev.getParameters().size()-1)
 				writer.printf("%c,", ev.getParameters().get(j).getType().getName().charAt(0));
 			else

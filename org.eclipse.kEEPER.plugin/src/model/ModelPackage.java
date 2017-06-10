@@ -433,7 +433,7 @@ public interface ModelPackage extends EPackage {
 	int COMPLEX_EVENT__TIME = EVENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Behavioural Descriptions</b></em>' reference.
+	 * The feature id for the '<em><b>Behavioural Descriptions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1414,10 +1414,10 @@ public interface ModelPackage extends EPackage {
 	EAttribute getComplexEvent_Time();
 
 	/**
-	 * Returns the meta object for the reference '{@link model.ComplexEvent#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}'.
+	 * Returns the meta object for the reference list '{@link model.ComplexEvent#getBehaviouralDescriptions <em>Behavioural Descriptions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Behavioural Descriptions</em>'.
+	 * @return the meta object for the reference list '<em>Behavioural Descriptions</em>'.
 	 * @see model.ComplexEvent#getBehaviouralDescriptions()
 	 * @see #getComplexEvent()
 	 * @generated
@@ -2192,7 +2192,7 @@ public interface ModelPackage extends EPackage {
 		EAttribute COMPLEX_EVENT__TIME = eINSTANCE.getComplexEvent_Time();
 
 		/**
-		 * The meta object literal for the '<em><b>Behavioural Descriptions</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Behavioural Descriptions</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

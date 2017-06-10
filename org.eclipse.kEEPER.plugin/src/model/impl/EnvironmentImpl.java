@@ -3,8 +3,6 @@
 package model.impl;
 
 import java.util.Collection;
-
-import model.Agent;
 import model.BehaviouralDescription;
 import model.ComplexEvent;
 import model.ContextRelation;
@@ -170,7 +168,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Agent> agents;
+	protected EList<Parameter> agents;
 
 	/**
 	 * The cached value of the '{@link #getObservers() <em>Observers</em>}' containment reference list.
@@ -374,9 +372,9 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Agent> getAgents() {
+	public EList<Parameter> getAgents() {
 		if (agents == null) {
-			agents = new EObjectContainmentEList<Agent>(Agent.class, this, ModelPackage.ENVIRONMENT__AGENTS);
+			agents = new EObjectContainmentEList<Parameter>(Parameter.class, this, ModelPackage.ENVIRONMENT__AGENTS);
 		}
 		return agents;
 	}
@@ -580,7 +578,7 @@ public class EnvironmentImpl extends MinimalEObjectImpl.Container implements Env
 				return;
 			case ModelPackage.ENVIRONMENT__AGENTS:
 				getAgents().clear();
-				getAgents().addAll((Collection<? extends Agent>)newValue);
+				getAgents().addAll((Collection<? extends Parameter>)newValue);
 				return;
 			case ModelPackage.ENVIRONMENT__OBSERVERS:
 				getObservers().clear();
